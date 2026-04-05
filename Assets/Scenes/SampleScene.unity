@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 14009838}
   - component: {fileID: 14009837}
   - component: {fileID: 14009836}
+  - component: {fileID: 14009839}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -321,6 +322,103 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &14009839
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14009835}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: d8317760c43d3584a8d8ef85a23c343b, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.7
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &20544782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -450,12 +548,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773784cd2eb9da4b882bbcd4485468b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlaneData
-  speed: 8
-  rotationSpeed: 8
+  speed: 6
+  rotationSpeed: 6
   price: 3000
-  planeName: 2
-  maxTiltAngle: 40
-  tiltSpeed: 30
+  planeName: BlueProp
+  maxTiltAngle: 30
+  tiltSpeed: 15
   rb: {fileID: 28977423}
   sr: {fileID: 28977424}
   bc: {fileID: 28977425}
@@ -603,7 +701,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 9b28f14519b6af04ebdd65b6f7dd75e7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.01
+  m_Volume: 0.05
   m_Pitch: 0.7
   Loop: 1
   Mute: 0
@@ -1727,11 +1825,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773784cd2eb9da4b882bbcd4485468b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlaneData
-  speed: 10
-  rotationSpeed: 8
+  speed: 6
+  rotationSpeed: 6.5
   price: 5000
-  planeName: 3
-  maxTiltAngle: 20
+  planeName: FastProp
+  maxTiltAngle: 35
   tiltSpeed: 10
   rb: {fileID: 177606169}
   sr: {fileID: 177606170}
@@ -1880,7 +1978,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 9b28f14519b6af04ebdd65b6f7dd75e7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.01
+  m_Volume: 0.05
   m_Pitch: 0.7
   Loop: 1
   Mute: 0
@@ -3039,11 +3137,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773784cd2eb9da4b882bbcd4485468b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlaneData
-  speed: 6
-  rotationSpeed: 5
-  price: 100
-  planeName: 4
-  maxTiltAngle: 20
+  speed: 6.5
+  rotationSpeed: 6
+  price: 6000
+  planeName: BananaRelax
+  maxTiltAngle: 35
   tiltSpeed: 10
   rb: {fileID: 280971582}
   sr: {fileID: 280971579}
@@ -3061,7 +3159,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 9b28f14519b6af04ebdd65b6f7dd75e7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.01
+  m_Volume: 0.05
   m_Pitch: 0.7
   Loop: 1
   Mute: 0
@@ -5162,7 +5260,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 34a4446b9d760334f8f537da1157af2f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5673,12 +5771,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773784cd2eb9da4b882bbcd4485468b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlaneData
-  speed: 6
+  speed: 7
   rotationSpeed: 5
-  price: 100
-  planeName: 4
-  maxTiltAngle: 20
-  tiltSpeed: 10
+  price: 8000
+  planeName: DoubleBig
+  maxTiltAngle: 45
+  tiltSpeed: 5
   rb: {fileID: 484875552}
   sr: {fileID: 484875554}
   bc: {fileID: 484875551}
@@ -5753,7 +5851,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 6f1552b20d473284fb96d4cb4bc2e6d2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.009
+  m_Volume: 0.03
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6276,6 +6374,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6434,6 +6533,19 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4af1ff6f827565548a140cf249632e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraShake
+  vCam: {fileID: 1952108168}
 --- !u!1001 &529380090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7114,7 +7226,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: d5a18e9ea83d5e847827770a752b261e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.8
+  m_Volume: 0.7
   m_Pitch: 0.53
   Loop: 0
   Mute: 0
@@ -7779,12 +7891,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773784cd2eb9da4b882bbcd4485468b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlaneData
-  speed: 6
+  speed: 7
   rotationSpeed: 5
-  price: 100
-  planeName: 4
-  maxTiltAngle: 20
-  tiltSpeed: 10
+  price: 7500
+  planeName: Big
+  maxTiltAngle: 40
+  tiltSpeed: 5
   rb: {fileID: 629258350}
   sr: {fileID: 629258352}
   bc: {fileID: 629258349}
@@ -7859,7 +7971,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 6f1552b20d473284fb96d4cb4bc2e6d2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.009
+  m_Volume: 0.03
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -9869,12 +9981,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773784cd2eb9da4b882bbcd4485468b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlaneData
-  speed: 6
-  rotationSpeed: 5
-  price: 100
-  planeName: 4
-  maxTiltAngle: 20
-  tiltSpeed: 10
+  speed: 8
+  rotationSpeed: 8
+  price: 10000
+  planeName: Jet
+  maxTiltAngle: 50
+  tiltSpeed: 20
   rb: {fileID: 765707804}
   sr: {fileID: 765707806}
   bc: {fileID: 765707803}
@@ -9949,7 +10061,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 0a91693611e3ff941981ee17733c2b33, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.03
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -11580,6 +11692,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896687796}
   m_CullTransparentMesh: 1
+--- !u!1 &898364738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 898364740}
+  - component: {fileID: 898364739}
+  m_Layer: 0
+  m_Name: ChunkManagerClouds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &898364739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898364738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75b45c2e358d4b843990494337c13a67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  chunkSize: 15
+  player: {fileID: 0}
+  chunksAvailable:
+  - {fileID: 5755594087093092225, guid: 3fe3f1b4a083ea148b518f0f89ab9b5c, type: 3}
+  - {fileID: 5755594087093092225, guid: 1b197ef1d1822a24bb769b08ac912b6f, type: 3}
+  - {fileID: 5755594087093092225, guid: b4501ad502b204a4f91343177feee46e, type: 3}
+--- !u!4 &898364740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898364738}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &899053062
 GameObject:
   m_ObjectHideFlags: 0
@@ -14280,12 +14442,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773784cd2eb9da4b882bbcd4485468b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlaneData
-  speed: 7
-  rotationSpeed: 6
-  price: 100
-  planeName: 1
+  speed: 6
+  rotationSpeed: 5
+  price: 1000
+  planeName: RedProp
   maxTiltAngle: 30
-  tiltSpeed: 20
+  tiltSpeed: 10
   rb: {fileID: 1169217272}
   sr: {fileID: 1169217273}
   bc: {fileID: 1169217274}
@@ -14433,7 +14595,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 9b28f14519b6af04ebdd65b6f7dd75e7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.01
+  m_Volume: 0.05
   m_Pitch: 0.7
   Loop: 1
   Mute: 0
@@ -15599,6 +15761,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3456598997693625778, guid: d5138835362265b4aaaf9946e552d764, type: 3}
   m_PrefabInstance: {fileID: 1635685509}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1330948217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1330948219}
+  - component: {fileID: 1330948218}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1330948218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330948217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: fb9525f5d8737494a8c4572243de1a50, type: 2}
+--- !u!4 &1330948219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330948217}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.14396729, y: 0.15481927, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1342677721
 GameObject:
   m_ObjectHideFlags: 0
@@ -16204,10 +16415,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e273aaa5ddf1b3448fd5cf3623f5c83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnObjects
-  objectToSpawn:
-  - {fileID: 5687125188462435035, guid: 453195222d9ded6449a5b029d039a27d, type: 3}
+  starPrefab: {fileID: 5687125188462435035, guid: 453195222d9ded6449a5b029d039a27d, type: 3}
+  powerUpPrefabs:
   - {fileID: 5687125188462435035, guid: 14731412b3bbfa849a7083c5a34a270d, type: 3}
   - {fileID: 5687125188462435035, guid: f37f179ff2ce043448da7621c02d2586, type: 3}
+  starSpawnChance: 50
   spawnPos:
   - {fileID: 1782787742}
   - {fileID: 269385656}
@@ -16217,9 +16429,13 @@ MonoBehaviour:
   - {fileID: 1068994883}
   - {fileID: 56250225}
   - {fileID: 1945204033}
-  player: {fileID: 1183632954}
   maxDistance: 50
   checkInterval: 0.5
+  easyStarChance: 85
+  hardStarChance: 50
+  easySpawnInterval: 3
+  hardSpawnInterval: 5
+  currentSpawnInterval: 0
 --- !u!114 &1403619887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16254,6 +16470,12 @@ MonoBehaviour:
   missilesRequired: 1
   indicatorPrefab: {fileID: 7688344482498268656, guid: 13d7479a9de5c22459a4ae6d7fe9f226, type: 3}
   canvasTransform: {fileID: 2065947248}
+  easyInitialDelay: 5
+  easyMaxMissilesBatch: 3
+  easyFastMissileMultiplier: 2000
+  hardInitialDelay: 3
+  hardMaxMissilesBatch: 5
+  hardFastMissileMultiplier: 1000
 --- !u!1 &1411431589
 GameObject:
   m_ObjectHideFlags: 0
@@ -17643,6 +17865,9 @@ MonoBehaviour:
   starsText: {fileID: 291986150}
   vcam: {fileID: 1952108168}
   transitionDuration: 0.5
+  musicSource: {fileID: 14009839}
+  volumeInPlay: 0.025
+  fadeDuration: 1.5
 --- !u!114 &1475626626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17671,7 +17896,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475626622}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96a4b20474e5b8e47aa590531ea5cf4d, type: 3}
   m_Name: 
@@ -17688,6 +17913,7 @@ MonoBehaviour:
   - {fileID: 175923088}
   - {fileID: 562832127}
   - {fileID: 119525884}
+  - {fileID: 329916683}
 --- !u!114 &1475626628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17751,9 +17977,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NearMissManager
   nearMissText: {fileID: 959248618}
   scoreTarget: {fileID: 1501505343}
+  globalVolume: {fileID: 1330948218}
+  slowMoIntensity: 0.6
+  distortionStrength: -0.5
   comboLeeway: 1.5
   nearMissColor: {r: 1, g: 0.49334335, b: 0.015686274, a: 1}
-  slowMoIntensity: 0.6
 --- !u!1 &1488427401
 GameObject:
   m_ObjectHideFlags: 0
@@ -19437,7 +19665,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00012207031, y: 0}
+  m_AnchoredPosition: {x: 0.00024414062, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1687063660
@@ -22355,11 +22583,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773784cd2eb9da4b882bbcd4485468b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlaneData
-  speed: 6
+  speed: 5
   rotationSpeed: 5
-  price: 100
-  planeName: 0
-  maxTiltAngle: 20
+  price: 0
+  planeName: Default
+  maxTiltAngle: 30
   tiltSpeed: 10
   rb: {fileID: 1889049114}
   sr: {fileID: 1889049113}
@@ -22526,7 +22754,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 9b28f14519b6af04ebdd65b6f7dd75e7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.01
+  m_Volume: 0.05
   m_Pitch: 0.7
   Loop: 1
   Mute: 0
@@ -25538,9 +25766,11 @@ SceneRoots:
   - {fileID: 1952108169}
   - {fileID: 1183632957}
   - {fileID: 176243797}
+  - {fileID: 898364740}
   - {fileID: 1475626624}
   - {fileID: 1934450549}
   - {fileID: 1766683580}
   - {fileID: 471899342}
   - {fileID: 564660631}
   - {fileID: 1711646858}
+  - {fileID: 1330948219}

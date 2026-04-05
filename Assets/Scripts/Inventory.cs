@@ -88,20 +88,86 @@ public class Inventory : MonoBehaviour
 
     public void DieProcess()
     {
-        if (dead) return; // Sécurité pour ne pas mourir deux fois
+        if (dead) return;
+        StartCoroutine(ExecuteDeathSequence());
+    }
 
+    /*IEnumerator ExecuteDeathSequence()
+    {
         dead = true;
         inPlay = false;
 
-        // Désactive le visuel du joueur (ou le joueur entier)
-        player.SetActive(false);
+        // --- 1. FREEZE FRAME (Le choc) ---
+        // On bloque le temps totalement
+        Time.timeScale = 0f;
 
-        // Calcul des étoiles gagnées pour cette run
+        // On lance la secousse d'écran (qui utilise unscaledDeltaTime donc elle bouge quand même !)
+        if (CameraShake.instance != null)
+            CameraShake.instance.Shake(0.25f, 0.4f);
+
+        // On attend 0.2 secondes réelles pendant que le jeu est figé
+        yield return new WaitForSecondsRealtime(0.2f);
+
+        // --- 2. IMPACT & EXPLOSION ---
+        // On remet le temps à 1 pour que les animations/particules fonctionnent
+        Time.timeScale = 1f;
+
+        // Désactive le visuel et lance ton effet d'explosion ici
+        player.SetActive(false);
+        // Exemple : Instantiate(explosionPrefab, player.transform.position, Quaternion.identity);
+
+        // --- 3. CALCULS ET UI ---
         int sessionStars = CalculateStars();
         SaveData(sessionStars);
 
-        // Ouvre le panel de mort
-        UIManager.instance.OpenDiePanel(timerText.text, (int)totalSeconds, score, MissileSpawner.instance.destroyedMissiles, starsPicked);
+        // On attend un tout petit peu que l'explosion soit visible avant le panel
+        yield return new WaitForSeconds(0.5f);
+
+        UIManager.instance.OpenDiePanel(
+            timerText.text,
+            (int)totalSeconds,
+            score,
+            MissileSpawner.instance.destroyedMissiles,
+            starsPicked
+        );
+    }*/
+
+    IEnumerator ExecuteDeathSequence()
+    {
+        dead = true;
+        inPlay = false;
+
+        // 1. LE CHOC (Freeze + Shake + Zoom)
+        Time.timeScale = 0f; // On fige tout
+
+        if (CameraShake.instance != null)
+        {
+            // On secoue fort (Amplitude 3.0)
+            CameraShake.instance.Shake(0.3f, 3f);
+            // On zoom sur le crash (Taille ortho de 5.0 à 3.0 par exemple)
+            CameraShake.instance.ImpactZoom(3f, 10f, 2f, 0.5f);
+        }
+
+        // On laisse le joueur "admirer" son crash pendant 0.25s
+        yield return new WaitForSecondsRealtime(0.25f);
+
+        // 2. L'EXPLOSION (On libère le temps)
+        Time.timeScale = 1f;
+        player.SetActive(false);
+
+        // Ici, fais apparaître ton explosion de particules
+        // Instantiate(explosionPrefab, player.transform.position, Quaternion.identity);
+
+        yield return new WaitForSeconds(0.6f);
+
+        // --- 3. UI ---
+        UIManager.instance.OpenDiePanel(
+            timerText.text,
+            (int)totalSeconds,
+            score,
+            MissileSpawner.instance.destroyedMissiles,
+            starsPicked
+        );
     }
 
     int CalculateStars()

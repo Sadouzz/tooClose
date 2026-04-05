@@ -29,6 +29,9 @@ public class DifficultyChoiceScript : MonoBehaviour
         PlayerPrefs.SetString("Difficulty", "Easy");
         ApplyAlpha(imageEasy, alphaActive);
         ApplyAlpha(imageHard, alphaInactive);
+
+        if (SpawnObjects.instance != null) SpawnObjects.instance.UpdateDifficulty();
+        if (MissileSpawner.instance != null) MissileSpawner.instance.UpdateDifficulty();
     }
 
     public void SetHard()
@@ -36,6 +39,9 @@ public class DifficultyChoiceScript : MonoBehaviour
         PlayerPrefs.SetString("Difficulty", "Hard");
         ApplyAlpha(imageEasy, alphaInactive);
         ApplyAlpha(imageHard, alphaActive);
+
+        if (SpawnObjects.instance != null) SpawnObjects.instance.UpdateDifficulty();
+        if (MissileSpawner.instance != null) MissileSpawner.instance.UpdateDifficulty();
     }
 
     // Fonction utilitaire pour changer l'alpha proprement

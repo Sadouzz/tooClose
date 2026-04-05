@@ -1,31 +1,83 @@
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class SpawnObjects : MonoBehaviour
 {
-    public GameObject[] objectToSpawn;
+    [Header("Prefabs & Probabilities")]
+    public GameObject starPrefab;         // Ton objet index 0 (Etoile)
+    public GameObject[] powerUpPrefabs;    // Le reste des objets
+
+    [Range(0, 100)]
+    public float starSpawnChance = 80f;    // 80% de chances d'avoir une étoile
+
+    [Header("References")]
     public Transform[] spawnPos;
-    float timer;
-    public GameObject player;
     public float maxDistance = 50f;
-    private float nextCheckTime;
     public float checkInterval = 0.5f;
 
+    private float timer;
+    private float nextCheckTime;
+    private GameObject player;
+
+    [Header("Difficulty Settings")]
+    public float easyStarChance = 85f;    // Beaucoup d'étoiles en facile
+    public float hardStarChance = 50f;    // Moins d'étoiles en difficile (plus de powerups ou juste plus vide)
+    public float easySpawnInterval = 1.2f;
+    public float hardSpawnInterval = 0.8f;
+
+    public float currentSpawnInterval;
 
     public static SpawnObjects instance;
+
     private void Awake()
     {
-        if (instance != null)
-        {
-            return;
-        }
+        if (instance != null) return;
         instance = this;
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        // Premier rafraîchissement au démarrage
+        RefreshSpawningPositions();
+        UpdateDifficulty();
+    }
+
+    void Update()
+    {
+        if (Inventory.instance != null && !Inventory.instance.inPlay) return;
+
+        // Gestion du Timer de Spawn
+        timer += Time.deltaTime;
+        if (timer >= currentSpawnInterval) // Un peu plus lent pour ne pas flood l'écran
+        {
+            SpawnRandomObject();
+            timer = 0;
+        }
+
+        // Rafraîchir les positions valides régulièrement
+        if (Time.time > nextCheckTime)
+        {
+            RefreshSpawningPositions();
+            nextCheckTime = Time.time + checkInterval;
+        }
+    }
+
+    public void UpdateDifficulty()
+    {
+        string diff = PlayerPrefs.GetString("Difficulty", "Easy");
+
+        if (diff == "Easy")
+        {
+            starSpawnChance = easyStarChance;
+            currentSpawnInterval = easySpawnInterval;
+        }
+        else
+        {
+            starSpawnChance = hardStarChance;
+            currentSpawnInterval = hardSpawnInterval;
+        }
     }
 
     public void RefreshSpawningPositions()
@@ -33,85 +85,67 @@ public class SpawnObjects : MonoBehaviour
         GameObject[] spawnPosGameObjects = GameObject.FindGameObjectsWithTag("SpawnPos");
         List<Transform> validSpawns = new List<Transform>();
 
-        // Récupère le plan de la caméra pour le champ de vision
-        Plane[] cameraFrustumPlanes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
-
-        foreach (var spawnPos in spawnPosGameObjects)
+        foreach (var sp in spawnPosGameObjects)
         {
-            float dist = Vector3.Distance(player.transform.position, spawnPos.transform.position);
+            float dist = Vector3.Distance(player.transform.position, sp.transform.position);
 
-            // Vérifie la distance ET si le point est hors du champ de vision
-            if (dist < maxDistance/* && !IsInFieldOfView(spawnPos.transform.position)*/)
+            // On ne garde que les spawns à bonne distance et HORS ÉCRAN pour ne pas voir l'objet apparaître
+            if (dist < maxDistance && !IsInFieldOfView(sp.transform.position))
             {
-                validSpawns.Add(spawnPos.transform);
+                validSpawns.Add(sp.transform);
             }
         }
-
         spawnPos = validSpawns.ToArray();
     }
 
     private bool IsInFieldOfView(Vector3 worldPosition)
     {
-        // Convertit la position mondiale en position sur l'écran
         Vector3 screenPoint = Camera.main.WorldToViewportPoint(worldPosition);
-
-        // Vérifie si le point est dans le champ de vision (entre 0 et 1 sur les axes x et y)
-        bool onScreen = screenPoint.z > 0 &&
-                       screenPoint.x > 0 && screenPoint.x < 1 &&
-                       screenPoint.y > 0 && screenPoint.y < 1;
-
-        return onScreen;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (!Inventory.instance.inPlay)
-        {
-            return;
-        }
-
-        timer += Time.deltaTime;
-        if (timer >= 1f)
-        {
-            SpawnRandomObject();
-            timer = 0;
-        }
-        if (Time.time > nextCheckTime)
-        {
-            //RefreshSpawningPositions();
-            nextCheckTime = Time.time + checkInterval;
-        }
+        return screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
     }
 
     void SpawnRandomObject()
     {
-        if (spawnPos.Length == 0 || objectToSpawn.Length == 0)
+        // Sécurité de base
+        if (spawnPos.Length == 0 || (starPrefab == null && powerUpPrefabs.Length == 0))
             return;
 
-        float checkRadius = 1f;
-        int maxTries = spawnPos.Length; // Essayer autant de fois que de points
+        // --- 1. SÉLECTION DE L'OBJET (PROBABILITÉ) ---
+        GameObject prefabToSpawn;
+        float roll = Random.Range(0f, 100f);
+
+        if (roll <= starSpawnChance)
+        {
+            prefabToSpawn = starPrefab;
+        }
+        else
+        {
+            if (powerUpPrefabs.Length > 0)
+                prefabToSpawn = powerUpPrefabs[Random.Range(0, powerUpPrefabs.Length)];
+            else
+                prefabToSpawn = starPrefab; // Fallback sur l'étoile si pas de powerups définis
+        }
+
+        // --- 2. LOGIQUE DE POSITIONNEMENT (VÉRIFICATION DE PLACE) ---
+        float checkRadius = 0.8f;
+        int maxTries = 5; // On limite à 5 essais pour ne pas geler le jeu si tout est plein
         int tries = 0;
 
         while (tries < maxTries)
         {
             int r = Random.Range(0, spawnPos.Length);
-            int p = Random.Range(0, objectToSpawn.Length);
-            Vector3 spawnPosition = new Vector3(spawnPos[r].position.x, spawnPos[r].position.y, 0);
+            Vector2 spawnPosition = spawnPos[r].position;
 
-            // Vérifie s’il y a des triggers autour
-            Collider[] colliders = Physics.OverlapSphere(
-                spawnPosition,
-                checkRadius,
-                ~0, // tout layer
-                QueryTriggerInteraction.Collide // inclure les triggers
-            );
+            // On utilise OverlapCircleAll pour scanner la zone en 2D
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(spawnPosition, checkRadius);
 
             bool areaClear = true;
 
             foreach (var col in colliders)
             {
-                if (col.CompareTag("DecorCollider") || col.CompareTag("Star") || col.CompareTag("Bubble") || col.CompareTag("Obstacle") || col.CompareTag("Turret"))
+                // Liste des tags qui bloquent le spawn
+                if (col.CompareTag("PowerUp") || col.CompareTag("Star") ||
+                    col.CompareTag("Missile"))
                 {
                     areaClear = false;
                     break;
@@ -120,48 +154,24 @@ public class SpawnObjects : MonoBehaviour
 
             if (areaClear)
             {
-                Vector3 finalSpawnPosition = new Vector3(
-                    spawnPos[r].position.x,
-                    spawnPos[r].position.y,
-                    0f
-                );
-
-                GameObject spawned = Instantiate(objectToSpawn[p], finalSpawnPosition, Quaternion.identity);
-
-                //GameObject spawned = Instantiate(objectToSpawn[p], new Vector3(spawnPos[r].position.x, .85f, spawnPos[r].position.z), Quaternion.identity);
-                //spawned.tag = "Crate"; // optionnel : tag pour vérification future
-                return;
+                // Si la zone est libre, on fait apparaître l'objet
+                Instantiate(prefabToSpawn, new Vector3(spawnPosition.x, spawnPosition.y, 0f), Quaternion.identity);
+                return; // On sort de la fonction car le spawn a réussi
             }
 
             tries++;
         }
 
-        Debug.Log("Aucun point de spawn disponible : tous sont occupés.");
+        // Debug.Log("Espace encombré, spawn annulé pour ce tick.");
     }
-
     public void DestroyAllObjects()
     {
-        GameObject[] objectsInGame = GameObject.FindGameObjectsWithTag("Star");
-        foreach (GameObject m in objectsInGame) Destroy(m);
-
-        GameObject[] powersInGame = GameObject.FindGameObjectsWithTag("PowerUp");
-        foreach (GameObject m in powersInGame) Destroy(m);
-    }
-    // Start is called before the first frame update
-    /*void Update()
-    {
-        timer += Time.deltaTime;
-        if (timer >= 1f)
+        // On nettoie tout ce qui a un tag Star ou PowerUp
+        string[] tags = { "Star", "PowerUp" };
+        foreach (string t in tags)
         {
-            SpawnRandomObject();
-            timer = 0;
+            GameObject[] objects = GameObject.FindGameObjectsWithTag(t);
+            foreach (GameObject obj in objects) Destroy(obj);
         }
     }
-
-    void SpawnRandomObject()
-    {
-        int r = Random.Range(0, spawnPos.Length);
-        int p = Random.Range(0, objectToSpawn.Length);
-        Instantiate(objectToSpawn[p], new Vector3(spawnPos[r].position.x, .85f, spawnPos[r].position.z), Quaternion.identity);
-    }*/
 }

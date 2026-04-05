@@ -1,6 +1,9 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using Unity.VisualScripting;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
 
 public class NearMissManager : MonoBehaviour
 {
@@ -10,10 +13,17 @@ public class NearMissManager : MonoBehaviour
     public TextMeshProUGUI nearMissText; // Le texte qui va pop et voler
     public RectTransform scoreTarget;     // L'endroit où le texte s'envole (ton Score HUD)
 
+    [Header("Post-Processing Feedback")]
+    public Volume globalVolume; // Glisse ton Global Volume ici
+    private LensDistortion distortion;
+
+    [Header("Settings")]
+    public float slowMoIntensity = 0.6f;
+    public float distortionStrength = -0.5f;
+
     [Header("Settings")]
     public float comboLeeway = 1.5f;      // Temps avant reset du combo
     public Color nearMissColor = Color.yellow;
-    public float slowMoIntensity = 0.6f;
 
     [Header("Logic")]
     private int currentCombo = 0;
@@ -50,6 +60,9 @@ public class NearMissManager : MonoBehaviour
         // 3. Lancer l'animation (On stoppe l'ancienne si elle tournait encore)
         if (activeAnim != null) StopCoroutine(activeAnim);
         activeAnim = StartCoroutine(AnimateNearMiss(currentCombo, gain, missilePosition));
+
+        StopCoroutine("DoImpactEffects"); // Stop si un effet est déjà en cours
+        StartCoroutine(DoImpactEffects());
 
         // 4. Feedback feeling
         //StartCoroutine(DoSlowMo());
@@ -129,5 +142,43 @@ public class NearMissManager : MonoBehaviour
         Time.timeScale = slowMoIntensity;
         yield return new WaitForSecondsRealtime(0.08f);
         Time.timeScale = 1f;
+    }
+
+    IEnumerator DoImpactEffects()
+    {
+        // --- 1. ONDE DE CHOC (Distortion) ---
+        if (distortion != null)
+        {
+            distortion.intensity.value = distortionStrength;
+            // On s'assure que l'override est bien actif
+            distortion.active = true;
+        }
+
+        // Temps de maintien de l'impact (très court pour le "punch")
+        // 0.05f ou 0.1f est idéal pour un feedback instantané
+        yield return new WaitForSecondsRealtime(0.08f);
+
+        // --- 2. RETOUR À LA NORMALE (Smooth transition) ---
+        float t = 0;
+        while (t < 1)
+        {
+            // On utilise unscaledDeltaTime au cas où tu aurais 
+            // d'autres systèmes qui gèrent le temps ailleurs
+            t += Time.unscaledDeltaTime * 5f;
+
+            // On remet la distortion à 0 progressivement
+            if (distortion != null)
+            {
+                distortion.intensity.value = Mathf.Lerp(distortionStrength, 0f, t);
+            }
+
+            yield return null;
+        }
+
+        // Sécurité finale
+        if (distortion != null)
+        {
+            distortion.intensity.value = 0f;
+        }
     }
 }

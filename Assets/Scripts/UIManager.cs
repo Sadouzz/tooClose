@@ -16,6 +16,11 @@ public class UIManager : MonoBehaviour
     public CinemachineCamera vcam;
     public float transitionDuration = 0.5f;
 
+    [Header("Audio Settings")]
+    public AudioSource musicSource;
+    public float volumeInPlay = 0.4f; // La valeur 'x' que tu souhaites
+    public float fadeDuration = 1.5f; // Temps pour descendre le volume
+
     // Fonction utilitaire pour reset l'offset
 
 
@@ -102,14 +107,36 @@ public class UIManager : MonoBehaviour
 
         if (vcam != null)
         {
-            StopAllCoroutines(); // Évite les conflits si on clique vite
+            // On ne fait plus StopAllCoroutines ici car cela stopperait aussi le fade du son
+            // On stoppe spécifiquement la coroutine de la caméra si nécessaire
             StartCoroutine(SmoothCameraOffset(0f));
+        }
+
+        // --- LANCEMENT DU FADE SONORE ---
+        if (musicSource != null)
+        {
+            StartCoroutine(FadeMusicVolume(volumeInPlay));
         }
 
         Inventory.instance.inPlay = true;
         Inventory.instance.dead = false;
         Inventory.instance.menu = false;
         PlayerMovement.instance.move = true;
+    }
+
+    IEnumerator FadeMusicVolume(float targetVolume)
+    {
+        float startVolume = musicSource.volume;
+        float timer = 0;
+
+        while (timer < fadeDuration)
+        {
+            timer += Time.deltaTime;
+            musicSource.volume = Mathf.Lerp(startVolume, targetVolume, timer / fadeDuration);
+            yield return null;
+        }
+
+        musicSource.volume = targetVolume;
     }
 
     public void EnablePausePanel(bool status)

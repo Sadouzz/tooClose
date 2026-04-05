@@ -3,11 +3,19 @@
   "WorkspaceRootPath": "D:\\Unity\\Projects\\Missiles\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\choosingplanescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\choosingplanescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|d:\\unity\\projects\\missiles\\assets\\scripts\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|d:\\unity\\projects\\missiles\\assets\\scripts\\difficultychoicescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\spawnobjects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spawnobjects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\missilespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\missilespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\difficultychoicescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\difficultychoicescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,12 +23,28 @@
       "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\missilescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\powerupuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\powerupuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\camerashake.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\camerashake.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\diemanagerui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\diemanagerui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\nearmissmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\nearmissmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\choosingplanescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\choosingplanescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\powerupuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\powerupuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\buyplanescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,20 +55,8 @@
       "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cieldefilant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\missilespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\missilespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\nearmissmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\nearmissmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\nearmissdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\nearmissdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\playerpowerupmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -75,14 +87,6 @@
       "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\admob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\diemanagerui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\diemanagerui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\spawnobjects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spawnobjects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Missiles\\assets\\scripts\\settingsscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{19575724-1160-ACAD-94AD-95D47FA48ACA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\settingsscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -106,124 +110,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 191,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PowerUpUIManager.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\PowerUpUIManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PowerUpUIManager.cs",
-              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\PowerUpUIManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PowerUpUIManager.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAwwIMAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-28T23:32:03.602Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "NearMissDetector.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\NearMissDetector.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\NearMissDetector.cs",
-              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\NearMissDetector.cs",
-              "RelativeToolTip": "Assets\\Scripts\\NearMissDetector.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T18:38:04.007Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MissileScript.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\MissileScript.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\MissileScript.cs",
-              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\MissileScript.cs",
-              "RelativeToolTip": "Assets\\Scripts\\MissileScript.cs",
-              "ViewState": "AgIAAKcAAAAAAAAAAAAEwMYAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-26T17:40:13.844Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MissileSpawner.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\MissileSpawner.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\MissileSpawner.cs",
-              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\MissileSpawner.cs",
-              "RelativeToolTip": "Assets\\Scripts\\MissileSpawner.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAxwH8AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-26T20:26:07.849Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UIManager.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\UIManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UIManager.cs",
-              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\UIManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UIManager.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAD4vzIAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T09:30:56.021Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DifficultyChoiceScript.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\DifficultyChoiceScript.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\DifficultyChoiceScript.cs",
-              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\DifficultyChoiceScript.cs",
-              "RelativeToolTip": "Assets\\Scripts\\DifficultyChoiceScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T07:42:28.61Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Inventory.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\Inventory.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Inventory.cs",
-              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\Inventory.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Inventory.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAxwEEAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T19:45:26.095Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "PlayerPowerUpManager.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\PlayerPowerUpManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerPowerUpManager.cs",
-              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\PlayerPowerUpManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlayerPowerUpManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-29T00:02:01.541Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ChoosingPlaneScript.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\ChoosingPlaneScript.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ChoosingPlaneScript.cs",
-              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\ChoosingPlaneScript.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ChoosingPlaneScript.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwCoAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T08:56:31.77Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "BuyPlaneScript.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\BuyPlaneScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BuyPlaneScript.cs",
@@ -231,12 +122,11 @@
               "RelativeToolTip": "Assets\\Scripts\\BuyPlaneScript.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAjwFoAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T09:38:12.17Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-21T09:38:12.17Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "CielDefilant.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\CielDefilant.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CielDefilant.cs",
@@ -248,19 +138,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 7,
               "Title": "DieManagerUI.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\DieManagerUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DieManagerUI.cs",
               "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\DieManagerUI.cs",
               "RelativeToolTip": "Assets\\Scripts\\DieManagerUI.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA1wCYAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAA6wCYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-07T16:02:28.364Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "AdMob.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\AdMob.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AdMob.cs",
@@ -272,7 +162,152 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 4,
+              "Title": "MissileScript.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\MissileScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MissileScript.cs",
+              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\MissileScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MissileScript.cs",
+              "ViewState": "AgIAALgAAAAAAAAAAAAswMsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-26T17:40:13.844Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DifficultyChoiceScript.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\DifficultyChoiceScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DifficultyChoiceScript.cs",
+              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\DifficultyChoiceScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DifficultyChoiceScript.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAIwCsAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T07:42:28.61Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "NearMissManager.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\NearMissManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\NearMissManager.cs",
+              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\NearMissManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\NearMissManager.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAswLYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T19:10:05.719Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MissileSpawner.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\MissileSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MissileSpawner.cs",
+              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\MissileSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MissileSpawner.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAowAoAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-26T20:26:07.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SpawnObjects.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\SpawnObjects.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SpawnObjects.cs",
+              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\SpawnObjects.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SpawnObjects.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAowCsAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-26T17:38:43.222Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UIManager.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\UIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIManager.cs",
+              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\UIManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T09:30:56.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ChoosingPlaneScript.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\ChoosingPlaneScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ChoosingPlaneScript.cs",
+              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\ChoosingPlaneScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ChoosingPlaneScript.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAA1wCoAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T08:56:31.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PlayerPowerUpManager.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\PlayerPowerUpManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerPowerUpManager.cs",
+              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\PlayerPowerUpManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerPowerUpManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-29T00:02:01.541Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Inventory.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\Inventory.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Inventory.cs",
+              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\Inventory.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Inventory.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAuwJMAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T19:45:26.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CameraShake.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\CameraShake.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CameraShake.cs",
+              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\CameraShake.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CameraShake.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAmwEIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-04T22:11:35.199Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "NearMissDetector.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\NearMissDetector.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\NearMissDetector.cs",
+              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\NearMissDetector.cs",
+              "RelativeToolTip": "Assets\\Scripts\\NearMissDetector.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T18:38:04.007Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PowerUpUIManager.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\PowerUpUIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PowerUpUIManager.cs",
+              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\PowerUpUIManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PowerUpUIManager.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAwwIMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-28T23:32:03.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "PowerUpItem.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\PowerUpItem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PowerUpItem.cs",
@@ -284,19 +319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "NearMissManager.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\NearMissManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\NearMissManager.cs",
-              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\NearMissManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\NearMissManager.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAIBJwG8AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T19:10:05.719Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMovement.cs",
@@ -308,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "PlaneData.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\PlaneData.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlaneData.cs",
@@ -320,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "PickUpStar.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\PickUpStar.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PickUpStar.cs",
@@ -332,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "HighScoreScript.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\HighScoreScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\HighScoreScript.cs",
@@ -344,19 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "SpawnObjects.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\SpawnObjects.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\SpawnObjects.cs",
-              "ToolTip": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\SpawnObjects.cs",
-              "RelativeToolTip": "Assets\\Scripts\\SpawnObjects.cs",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAswI0AAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-26T17:38:43.222Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "TimeManagerFreePackWithAd.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\TimeManagerFreePackWithAd.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TimeManagerFreePackWithAd.cs",
@@ -368,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "SettingsScript.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\SettingsScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SettingsScript.cs",
@@ -380,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "ChunkManager.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\ChunkManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ChunkManager.cs",
@@ -392,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "OffScreenIndicator.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Missiles\\Assets\\Scripts\\OffScreenIndicator.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\OffScreenIndicator.cs",

@@ -196,6 +196,12 @@ public class MissileScript : MonoBehaviour
             audio.Play();
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         }
+
+        if (CameraShake.instance != null)
+        {
+            CameraShake.instance.Shake(0.12f, 0.6f);
+        }
+
         OnMissileExplode();
 
         // Mise à jour des scores via le Spawner

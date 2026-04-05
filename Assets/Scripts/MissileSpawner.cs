@@ -33,6 +33,20 @@ public class MissileSpawner : MonoBehaviour
     public Transform canvasTransform; // Glisse ton Canvas ici
     private List<OffScreenIndicator> activeIndicators = new List<OffScreenIndicator>();
 
+    [Header("Réglages par Difficulté")]
+    // Valeurs pour le mode Easy
+    public float easyInitialDelay = 5.0f;
+    public int easyMaxMissilesBatch = 3;
+    public float easyFastMissileMultiplier = 2000f; // Diviseur (plus gros = moins de chance)
+
+    // Valeurs pour le mode Hard
+    public float hardInitialDelay = 3.0f;
+    public int hardMaxMissilesBatch = 5;
+    public float hardFastMissileMultiplier = 1000f; // Diviseur (plus petit = plus de chance)
+
+    private float currentFastMissileMultiplier;
+    private int currentMaxBatch;
+
     void LateUpdate() // On utilise LateUpdate pour que les indicateurs suivent après le mouvement
     {
         for (int i = activeIndicators.Count - 1; i >= 0; i--)
@@ -48,6 +62,32 @@ public class MissileSpawner : MonoBehaviour
     {
         if (instance == null) instance = this;
         currentSpawnDelay = initialSpawnDelay;
+    }
+
+    private void Start()
+    {
+        UpdateDifficulty();
+    }
+
+    public void UpdateDifficulty()
+    {
+        string diff = PlayerPrefs.GetString("Difficulty", "Easy");
+
+        if (diff == "Easy")
+        {
+            initialSpawnDelay = easyInitialDelay;
+            currentMaxBatch = easyMaxMissilesBatch;
+            currentFastMissileMultiplier = easyFastMissileMultiplier;
+        }
+        else
+        {
+            initialSpawnDelay = hardInitialDelay;
+            currentMaxBatch = hardMaxMissilesBatch;
+            currentFastMissileMultiplier = hardFastMissileMultiplier;
+        }
+
+        // Si le jeu n'a pas encore commencé, on applique le délai initial
+        if (!gameStarted) currentSpawnDelay = initialSpawnDelay;
     }
 
     void Update()
@@ -79,7 +119,9 @@ public class MissileSpawner : MonoBehaviour
         if (Inventory.instance.score >= scoreMilestone)
         {
             scoreMilestone += milestoneIncreaser;
-            if (missilesRequired < 5) missilesRequired++;
+            // Utilise la limite selon la difficulté choisie
+            if (missilesRequired < currentMaxBatch) missilesRequired++;
+
             currentSpawnDelay = Mathf.Max(minimumSpawnDelay, currentSpawnDelay - difficultyScaling);
         }
     }
@@ -116,11 +158,12 @@ public class MissileSpawner : MonoBehaviour
         Vector3 spawnPosVector = new Vector3(spawnPos[posIndex].position.x, spawnPos[posIndex].position.y, 0);
 
         int missileType = 0;
-        float fastMissileChance = Mathf.Clamp(Inventory.instance.score / 2000f, 0f, 0.6f);
+        // En Hard (1000f), la chance monte 2x plus vite qu'en Easy (2000f)
+        float fastMissileChance = Mathf.Clamp(Inventory.instance.score / currentFastMissileMultiplier, 0f, 0.7f);
 
         if (Random.value < fastMissileChance && missiles.Length > 1)
         {
-            missileType = 1;
+            missileType = 1; // Missile Rapide
         }
 
         // ON NE GARDE QU'UN SEUL INSTANTIATE ICI
