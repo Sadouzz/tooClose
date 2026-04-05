@@ -26,7 +26,7 @@ public class Inventory : MonoBehaviour
     [Header("State")]
     public bool inPlay = false;
     public bool dead = false, menu = true;
-    public GameObject player; // Assigne l'objet qui contient le PlayerMovement
+    public GameObject player, explosionPrefab; // Assigne l'objet qui contient le PlayerMovement
 
     /*[Header("Near Miss System")]
     public TextMeshProUGUI nearMissText; // Assigne un TextMeshPro caché par défaut
@@ -156,7 +156,10 @@ public class Inventory : MonoBehaviour
         player.SetActive(false);
 
         // Ici, fais apparaître ton explosion de particules
-        // Instantiate(explosionPrefab, player.transform.position, Quaternion.identity);
+        Instantiate(explosionPrefab, player.transform.position, Quaternion.identity);
+
+        int sessionStars = CalculateStars();
+        SaveData(sessionStars);
 
         yield return new WaitForSeconds(0.6f);
 

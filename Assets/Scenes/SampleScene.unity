@@ -16433,8 +16433,8 @@ MonoBehaviour:
   checkInterval: 0.5
   easyStarChance: 85
   hardStarChance: 50
-  easySpawnInterval: 3
-  hardSpawnInterval: 5
+  easySpawnInterval: 2
+  hardSpawnInterval: 4
   currentSpawnInterval: 0
 --- !u!114 &1403619887
 MonoBehaviour:
@@ -17827,6 +17827,7 @@ MonoBehaviour:
   dead: 0
   menu: 1
   player: {fileID: 0}
+  explosionPrefab: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
 --- !u!4 &1475626624
 Transform:
   m_ObjectHideFlags: 0
@@ -20939,7 +20940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8007440758475849610, guid: 96ee82fe271ff6e48885a5a3d3095e37, type: 3}
       propertyPath: m_text
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8007440758475849610, guid: 96ee82fe271ff6e48885a5a3d3095e37, type: 3}
       propertyPath: m_fontSize
