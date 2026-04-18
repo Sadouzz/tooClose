@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     public SpriteRenderer sr;
     public BoxCollider2D bc;
+    public int life;
     public bool move;
     bool isInvincible;
     private float targetLateralAngle;

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using Unity.Cinemachine; // Assure-toi d'avoir le package Cinemachine installé
 
 public class PlayerPowerUpManager : MonoBehaviour
 {
@@ -13,13 +14,23 @@ public class PlayerPowerUpManager : MonoBehaviour
     [Header("PowerUp States")]
     public bool isShieldActive = false;
     public bool isBlazeActive = false;
+    public bool isSlowMoActive = false;
 
     [Header("Visual Effects (Child Objects)")]
     public GameObject shieldEffectObject;
     public GameObject blazeEffectObject;
+    public GameObject slowMoEffectObject;
 
     [Header("Blaze Settings")]
     public float blazeRotationSpeed = 360f;
+
+    [Header("Slow Motion Settings")]
+    public float slowMoFactor = 0.5f; // Multiplicateur de vitesse des missiles (ex: 0.5 = 50% plus lent)
+
+    [Header("Cinemachine Zoom Settings")]
+    public CinemachineCamera virtualCamera; // Glisse ta Virtual Camera ici depuis l'inspecteur
+    public float zoomOutLensSize = 8f;
+    private float normalLensSize = 5f;
 
     private void Awake()
     {
@@ -30,12 +41,27 @@ public class PlayerPowerUpManager : MonoBehaviour
     private void Start()
     {
         Reset();
+
+        // On sauvegarde la taille de base de la caméra au lancement
+        if (virtualCamera != null)
+        {
+            normalLensSize = virtualCamera.Lens.OrthographicSize;
+        }
+        else
+        {
+            Debug.LogWarning("PlayerPowerUpManager : Aucune Virtual Camera n'est assignée !");
+        }
     }
 
     public void Reset()
     {
         if (shieldEffectObject) shieldEffectObject.SetActive(false);
         if (blazeEffectObject) blazeEffectObject.SetActive(false);
+        if (slowMoEffectObject) slowMoEffectObject.SetActive(false);
+
+        isShieldActive = false;
+        isBlazeActive = false;
+        isSlowMoActive = false;
     }
 
     private void Update()
@@ -75,16 +101,24 @@ public class PlayerPowerUpManager : MonoBehaviour
 
         if (string.IsNullOrEmpty(storedPowerUp)) return;
 
-        if (storedPowerUp == "Shield")
+        switch (storedPowerUp)
         {
-            ActivateShield(10f);
-            PowerUpUIManager.instance.ClearStoredPowerUp(); // Vide le slot UI
+            case "Shield":
+                ActivateShield(10f);
+                break;
+            case "Blaze":
+                ActivateBlaze(10f);
+                break;
+            case "SlowMo":
+                ActivateSlowMo(8f);
+                break;
+            case "Zoom":
+                ActivateZoom(8f);
+                break;
         }
-        else if (storedPowerUp == "Blaze")
-        {
-            ActivateBlaze(10f);
-            PowerUpUIManager.instance.ClearStoredPowerUp(); // Vide le slot UI
-        }
+
+        // Vide le slot UI après utilisation
+        PowerUpUIManager.instance.ClearStoredPowerUp();
     }
 
     // --- LOGIQUE SHIELD ---
@@ -124,20 +158,72 @@ public class PlayerPowerUpManager : MonoBehaviour
         isBlazeActive = false;
     }
 
+    // --- LOGIQUE SLOW MOTION ---
+    public void ActivateSlowMo(float duration)
+    {
+        if (isSlowMoActive) return;
+        StartCoroutine(SlowMoRoutine(duration));
+    }
+
+    private IEnumerator SlowMoRoutine(float duration)
+    {
+        isSlowMoActive = true;
+        if (slowMoEffectObject) slowMoEffectObject.SetActive(true);
+
+        yield return new WaitForSeconds(duration);
+
+        if (slowMoEffectObject) slowMoEffectObject.SetActive(false);
+        isSlowMoActive = false;
+    }
+
+    // --- LOGIQUE ZOOM (LOUPE) ---
+    public void ActivateZoom(float duration)
+    {
+        if (virtualCamera == null) return;
+
+        StopCoroutine("ZoomRoutine"); // Évite les conflits si activé plusieurs fois de suite
+        StartCoroutine(ZoomRoutine(duration));
+    }
+
+    private IEnumerator ZoomRoutine(float duration)
+    {
+        float transitionTime = 0.5f;
+        float elapsed = 0;
+
+        // Dézoom progressif (transition fluide)
+        while (elapsed < transitionTime)
+        {
+            virtualCamera.Lens.OrthographicSize = Mathf.Lerp(normalLensSize, zoomOutLensSize, elapsed / transitionTime);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        virtualCamera.Lens.OrthographicSize = zoomOutLensSize; // S'assure d'atteindre la valeur exacte
+
+        // Maintien du dézoom pendant la durée du bonus
+        yield return new WaitForSeconds(duration);
+
+        // Re-zoom progressif pour revenir à la normale
+        elapsed = 0;
+        while (elapsed < transitionTime)
+        {
+            virtualCamera.Lens.OrthographicSize = Mathf.Lerp(zoomOutLensSize, normalLensSize, elapsed / transitionTime);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        virtualCamera.Lens.OrthographicSize = normalLensSize; // Retour parfait à la valeur initiale
+    }
+
     // --- GESTION DES COLLISIONS ---
     public void HandleImpact(Collider2D missileCollider, GameObject missileObject)
     {
-        // 1. Priorité Blaze (on vérifie si le missile touche spécifiquement l'objet qui tourne)
-        if (isBlazeActive)
+        // 1. Priorité Blaze
+        if (isBlazeActive && CheckSpecificColliderImpact(missileCollider, blazeEffectObject))
         {
-            if (CheckSpecificColliderImpact(missileCollider, blazeEffectObject))
-            {
-                DestroyMissile(missileObject);
-                return;
-            }
+            DestroyMissile(missileObject);
+            return;
         }
 
-        // 2. Bouclier (si actif, n'importe quel impact sur le joueur détruit le missile)
+        // 2. Bouclier
         if (isShieldActive)
         {
             DestroyMissile(missileObject);
@@ -161,13 +247,13 @@ public class PlayerPowerUpManager : MonoBehaviour
 
     private void DestroyMissile(GameObject missile)
     {
-        // On récupère le script du missile pour déclencher sa propre explosion
         MissileScript ms = missile.GetComponent<MissileScript>();
         if (ms != null) ms.HandleDestruction(true);
     }
 
     private void TakeDamage()
     {
+        // À adapter si tu as renommé Inventory
         if (Inventory.instance != null) Inventory.instance.DieProcess();
     }
 }

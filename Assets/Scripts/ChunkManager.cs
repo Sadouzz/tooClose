@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class ChunkManager : MonoBehaviour
 {
-    public const float maxViewDist = 12f;
-    public int chunkSize = 20;
+    public float maxViewDist = 12f;
+    public float chunkSize = 20;
 
     public Transform player;
     public GameObject[] chunksAvailable;
@@ -48,7 +48,7 @@ public class ChunkManager : MonoBehaviour
 
                 if (chunkDictionary.ContainsKey(coord))
                 {
-                    chunkDictionary[coord].UpdateChunk();
+                    chunkDictionary[coord].UpdateChunk(maxViewDist); // Pass the variable here
                     if (chunkDictionary[coord].IsVisible())
                         visibleChunksLastUpdate.Add(chunkDictionary[coord]);
                 }
@@ -69,7 +69,7 @@ public class ChunkManager : MonoBehaviour
         Vector2 position;
         Bounds bounds;
 
-        public TerrainChunk2D(Vector2 coord, int size, Transform parent, GameObject[] prefabs)
+        public TerrainChunk2D(Vector2 coord, float size, Transform parent, GameObject[] prefabs)
         {
             position = coord * size;
             bounds = new Bounds(position, Vector2.one * size);
@@ -84,10 +84,10 @@ public class ChunkManager : MonoBehaviour
             SetVisible(false);
         }
 
-        public void UpdateChunk()
+        public void UpdateChunk(float viewDistance) // Add parameter
         {
             float dist = Vector2.Distance(playerPos, position);
-            SetVisible(dist <= maxViewDist);
+            SetVisible(dist <= viewDistance);
         }
 
         public void SetVisible(bool visible)

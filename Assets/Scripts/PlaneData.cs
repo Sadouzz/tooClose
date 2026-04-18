@@ -5,7 +5,7 @@ public class PlaneData : MonoBehaviour
     [Header("Stats")]
     public float speed = 6f;
     public float rotationSpeed = 5f;
-    public int price = 100;
+    public int price = 100, life = 1;
     public string planeName = "Chasseur Bleu";
 
     [Header("Juice Settings")]

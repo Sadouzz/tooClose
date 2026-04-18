@@ -1,0 +1,2457 @@
+fileFormatVersion: 2
+guid: edfb15774bb0ba644a09f780499692dd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -884771852063699850
+    second: scifi_tilesheet_0
+  - first:
+      213: -3078960475063566323
+    second: scifi_tilesheet_1
+  - first:
+      213: -7235628790223950992
+    second: scifi_tilesheet_2
+  - first:
+      213: -1574616700251386702
+    second: scifi_tilesheet_3
+  - first:
+      213: -356286005099892340
+    second: scifi_tilesheet_4
+  - first:
+      213: -5321403064844356963
+    second: scifi_tilesheet_5
+  - first:
+      213: 1607288548000570420
+    second: scifi_tilesheet_6
+  - first:
+      213: 8622764340489838765
+    second: scifi_tilesheet_7
+  - first:
+      213: -7920768896404764520
+    second: scifi_tilesheet_8
+  - first:
+      213: 4947579130841436025
+    second: scifi_tilesheet_9
+  - first:
+      213: -6435640330611684581
+    second: scifi_tilesheet_10
+  - first:
+      213: 8499868006881926708
+    second: scifi_tilesheet_11
+  - first:
+      213: -6669323450275543840
+    second: scifi_tilesheet_12
+  - first:
+      213: -846327298543688054
+    second: scifi_tilesheet_13
+  - first:
+      213: 4372199963847662514
+    second: scifi_tilesheet_14
+  - first:
+      213: -19136094577009886
+    second: scifi_tilesheet_15
+  - first:
+      213: -3214249460097579082
+    second: scifi_tilesheet_16
+  - first:
+      213: -2399032805889199895
+    second: scifi_tilesheet_17
+  - first:
+      213: -4515124988449878751
+    second: scifi_tilesheet_18
+  - first:
+      213: 8042482797666345349
+    second: scifi_tilesheet_19
+  - first:
+      213: 3263415879613245438
+    second: scifi_tilesheet_20
+  - first:
+      213: -4919542540662911526
+    second: scifi_tilesheet_21
+  - first:
+      213: -3088897576350527188
+    second: scifi_tilesheet_22
+  - first:
+      213: -6956310298908029969
+    second: scifi_tilesheet_23
+  - first:
+      213: 2041590807255489881
+    second: scifi_tilesheet_24
+  - first:
+      213: -1604599101027789625
+    second: scifi_tilesheet_25
+  - first:
+      213: 2896955985190824584
+    second: scifi_tilesheet_26
+  - first:
+      213: -4657425192533571914
+    second: scifi_tilesheet_27
+  - first:
+      213: -6863630518970400146
+    second: scifi_tilesheet_28
+  - first:
+      213: 2925936875296683516
+    second: scifi_tilesheet_29
+  - first:
+      213: 6218895409761353268
+    second: scifi_tilesheet_30
+  - first:
+      213: -4231171884551205534
+    second: scifi_tilesheet_31
+  - first:
+      213: -1814230749625641253
+    second: scifi_tilesheet_32
+  - first:
+      213: 4451187357514302685
+    second: scifi_tilesheet_33
+  - first:
+      213: -5150074740126512270
+    second: scifi_tilesheet_34
+  - first:
+      213: -7360543000544624489
+    second: scifi_tilesheet_35
+  - first:
+      213: -6663321947168755724
+    second: scifi_tilesheet_36
+  - first:
+      213: 5604879756795835928
+    second: scifi_tilesheet_37
+  - first:
+      213: 9201626342597836151
+    second: scifi_tilesheet_38
+  - first:
+      213: 2193145452305156392
+    second: scifi_tilesheet_39
+  - first:
+      213: -1271304000414874240
+    second: scifi_tilesheet_40
+  - first:
+      213: 7913371816370331992
+    second: scifi_tilesheet_41
+  - first:
+      213: 1835622749237893309
+    second: scifi_tilesheet_42
+  - first:
+      213: 6257739414564483258
+    second: scifi_tilesheet_43
+  - first:
+      213: -2573706693403493629
+    second: scifi_tilesheet_44
+  - first:
+      213: -8848391941763697782
+    second: scifi_tilesheet_45
+  - first:
+      213: 3538927936194192776
+    second: scifi_tilesheet_46
+  - first:
+      213: -3126594411295975869
+    second: scifi_tilesheet_47
+  - first:
+      213: 9120081772749884147
+    second: scifi_tilesheet_48
+  - first:
+      213: -8256194611644022528
+    second: scifi_tilesheet_49
+  - first:
+      213: -8367311942446538
+    second: scifi_tilesheet_50
+  - first:
+      213: 1500889444004767779
+    second: scifi_tilesheet_51
+  - first:
+      213: -5632445163117826993
+    second: scifi_tilesheet_52
+  - first:
+      213: 8662478791316853811
+    second: scifi_tilesheet_53
+  - first:
+      213: -8091212137695897758
+    second: scifi_tilesheet_54
+  - first:
+      213: 1514842048775690848
+    second: scifi_tilesheet_55
+  - first:
+      213: 989242200505487853
+    second: scifi_tilesheet_56
+  - first:
+      213: -6055305519766582081
+    second: scifi_tilesheet_57
+  - first:
+      213: -8560864108167711726
+    second: scifi_tilesheet_58
+  - first:
+      213: 2992647897644371974
+    second: scifi_tilesheet_59
+  - first:
+      213: 5894046430429113449
+    second: scifi_tilesheet_60
+  - first:
+      213: 291950282576555353
+    second: scifi_tilesheet_61
+  - first:
+      213: -8479400170031028200
+    second: scifi_tilesheet_62
+  - first:
+      213: 8453296550421387576
+    second: scifi_tilesheet_63
+  - first:
+      213: -2565472555944103439
+    second: scifi_tilesheet_64
+  - first:
+      213: 1616764822796026584
+    second: scifi_tilesheet_65
+  - first:
+      213: 6703277102297299506
+    second: scifi_tilesheet_66
+  - first:
+      213: 6492767796420536589
+    second: scifi_tilesheet_67
+  - first:
+      213: 3342749704954122041
+    second: scifi_tilesheet_68
+  - first:
+      213: 5484958458301526018
+    second: scifi_tilesheet_69
+  - first:
+      213: -9079809005549405582
+    second: scifi_tilesheet_70
+  - first:
+      213: -6631992210628517490
+    second: scifi_tilesheet_71
+  - first:
+      213: -5028629644325228503
+    second: scifi_tilesheet_72
+  - first:
+      213: -8665768467529990820
+    second: scifi_tilesheet_73
+  - first:
+      213: 7834776268120192918
+    second: scifi_tilesheet_74
+  - first:
+      213: -4476778963654639846
+    second: scifi_tilesheet_75
+  - first:
+      213: 5376884059751327311
+    second: scifi_tilesheet_76
+  - first:
+      213: -3382673443218591598
+    second: scifi_tilesheet_77
+  - first:
+      213: 7418776941582963630
+    second: scifi_tilesheet_78
+  - first:
+      213: -8677502200382892513
+    second: scifi_tilesheet_79
+  - first:
+      213: 3725119263157635154
+    second: scifi_tilesheet_80
+  - first:
+      213: -8673209269194644575
+    second: scifi_tilesheet_81
+  - first:
+      213: -8567588831931477132
+    second: scifi_tilesheet_82
+  - first:
+      213: 8917302132613865112
+    second: scifi_tilesheet_83
+  - first:
+      213: 9044478829049405941
+    second: scifi_tilesheet_84
+  - first:
+      213: 1471160272521383264
+    second: scifi_tilesheet_85
+  - first:
+      213: 4666928298427591909
+    second: scifi_tilesheet_86
+  - first:
+      213: 7291717942014216606
+    second: scifi_tilesheet_87
+  - first:
+      213: -3131905842355606494
+    second: scifi_tilesheet_88
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: scifi_tilesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 255
+        width: 577
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67c8a7230b8a8b3f0800000000000000
+      internalID: -884771852063699850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_1
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 383
+        width: 32
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d004e5ec2c55545d0800000000000000
+      internalID: -3078960475063566323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_2
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 269
+        width: 258
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07bac1883f1e59b90800000000000000
+      internalID: -7235628790223950992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_3
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 389
+        width: 44
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bc4e1c2476d52ae0800000000000000
+      internalID: -1574616700251386702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_4
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 389
+        width: 30
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c81f39b14c73e0bf0800000000000000
+      internalID: -356286005099892340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 393
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d92f6454b149626b0800000000000000
+      internalID: -5321403064844356963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_6
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 393
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43c902b2b6c3e4610800000000000000
+      internalID: 1607288548000570420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_7
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 272
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da06dc87b763aa770800000000000000
+      internalID: 8622764340489838765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_8
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 319
+        width: 113
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 898c4dd97a6c31290800000000000000
+      internalID: -7920768896404764520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_9
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 319
+        width: 46
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97f80ff810559a440800000000000000
+      internalID: 4947579130841436025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_10
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 323
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1b86bf773300b6a0800000000000000
+      internalID: -6435640330611684581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_11
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 323
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43e97e30be895f570800000000000000
+      internalID: 8499868006881926708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_12
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 255
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e4c42658adc173a0800000000000000
+      internalID: -6669323450275543840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_13
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 260
+        width: 66
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8666965ecd3144f0800000000000000
+      internalID: -846327298543688054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_14
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 263
+        width: 62
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bb9d14c3bc2dac30800000000000000
+      internalID: 4372199963847662514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_15
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 255
+        width: 64
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22b5958c2d30cbff0800000000000000
+      internalID: -19136094577009886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_16
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 265
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b784675521b463d0800000000000000
+      internalID: -3214249460097579082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_17
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 207
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e03778af5ce4bed0800000000000000
+      internalID: -2399032805889199895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_18
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 200
+        width: 21
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12d84f2cebd0751c0800000000000000
+      internalID: -4515124988449878751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_19
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 209
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 581a71b5e73ac9f60800000000000000
+      internalID: 8042482797666345349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_20
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 201
+        width: 29
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef767b2c37bf94d20800000000000000
+      internalID: 3263415879613245438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_21
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 200
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: add4d56cf164abbb0800000000000000
+      internalID: -4919542540662911526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_22
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 212
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c21df0e15080225d0800000000000000
+      internalID: -3088897576350527188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_23
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 211
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feb0236a3a8367f90800000000000000
+      internalID: -6956310298908029969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_24
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 211
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95d9a2bb500355c10800000000000000
+      internalID: 2041590807255489881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_25
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 211
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c4d3508e915bb9e0800000000000000
+      internalID: -1604599101027789625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_26
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 211
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88aad3bae1e043820800000000000000
+      internalID: 2896955985190824584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_27
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 211
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b6c417a6708d5fb0800000000000000
+      internalID: -4657425192533571914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_28
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 211
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e624d37786c7fb0a0800000000000000
+      internalID: -6863630518970400146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_29
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 207
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf57647f5140b9820800000000000000
+      internalID: 2925936875296683516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_30
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 205
+        width: 42
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43ef1221d64fd4650800000000000000
+      internalID: 6218895409761353268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_31
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 203
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26d84b5b69bd745c0800000000000000
+      internalID: -4231171884551205534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_32
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 204
+        width: 53
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd619f3debe82d6e0800000000000000
+      internalID: -1814230749625641253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_33
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 203
+        width: 46
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd48959715bc5cd30800000000000000
+      internalID: 4451187357514302685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_34
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 203
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27b0c046f424788b0800000000000000
+      internalID: -5150074740126512270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_35
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 151
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 790cc8a83291ad990800000000000000
+      internalID: -7360543000544624489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_36
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 145
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff21fa2eff1783a0800000000000000
+      internalID: -6663321947168755724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_37
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 143
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 816f790617888cd40800000000000000
+      internalID: 5604879756795835928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_38
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 141
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77dbb62086eb2bf70800000000000000
+      internalID: 9201626342597836151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_39
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 141
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82989694b2e9f6e10800000000000000
+      internalID: 2193145452305156392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_40
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 141
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0850dbd4fbb6b5ee0800000000000000
+      internalID: -1271304000414874240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_41
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 147
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 851675a7db1f1dd60800000000000000
+      internalID: 7913371816370331992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_42
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 147
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db853f53a21797910800000000000000
+      internalID: 1835622749237893309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_43
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 147
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab0b316b7d4f7d650800000000000000
+      internalID: 6257739414564483258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_44
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 147
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30bb3aff56b584cd0800000000000000
+      internalID: -2573706693403493629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_45
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 147
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a83feb5e862343580800000000000000
+      internalID: -8848391941763697782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_46
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 147
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 885af8a353ccc1130800000000000000
+      internalID: 3538927936194192776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_47
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 143
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3465bf5c2fa1c94d0800000000000000
+      internalID: -3126594411295975869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_48
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 141
+        width: 42
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fa85435d0a019e70800000000000000
+      internalID: 9120081772749884147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_49
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 139
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 001c6707eba1c6d80800000000000000
+      internalID: -8256194611644022528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_50
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 140
+        width: 53
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63212ff59f542eff0800000000000000
+      internalID: -8367311942446538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_51
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 139
+        width: 46
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 328a90d4ffa34d410800000000000000
+      internalID: 1500889444004767779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_52
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 139
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4cae7357f885d1b0800000000000000
+      internalID: -5632445163117826993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_53
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 87
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 334dbce909e473870800000000000000
+      internalID: 8662478791316853811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_54
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 81
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2679e4a0e6d36bf80800000000000000
+      internalID: -8091212137695897758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_55
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 79
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06a991041dcc50510800000000000000
+      internalID: 1514842048775690848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_56
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 77
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de194f54a8e7abd00800000000000000
+      internalID: 989242200505487853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_57
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 77
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbcc9df46bb37fba0800000000000000
+      internalID: -6055305519766582081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_58
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 77
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 214b5467373b13980800000000000000
+      internalID: -8560864108167711726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_59
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 83
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60099ec3865088920800000000000000
+      internalID: 2992647897644371974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_60
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 83
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96ce26f100cdbc150800000000000000
+      internalID: 5894046430429113449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_61
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 83
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95dec053c373d0400800000000000000
+      internalID: 291950282576555353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_62
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 83
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 818e9ec987e135a80800000000000000
+      internalID: -8479400170031028200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_63
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 83
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 839d6e4dc64205570800000000000000
+      internalID: 8453296550421387576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_64
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 83
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f130f58d4c956cd0800000000000000
+      internalID: -2565472555944103439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_65
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 79
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d2ca145a07ef6610800000000000000
+      internalID: 1616764822796026584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_66
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 77
+        width: 42
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23ab0715203d60d50800000000000000
+      internalID: 6703277102297299506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_67
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 75
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d09edb229e1fa1a50800000000000000
+      internalID: 6492767796420536589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_68
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 76
+        width: 53
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93f05d06525d36e20800000000000000
+      internalID: 3342749704954122041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_69
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 75
+        width: 46
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20036d248ac7e1c40800000000000000
+      internalID: 5484958458301526018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_70
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 75
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27ab5dbf0d90ef180800000000000000
+      internalID: -9079809005549405582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_71
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 7
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e816454e83e66f3a0800000000000000
+      internalID: -6631992210628517490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_72
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 13
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 920fef63bf7b63ab0800000000000000
+      internalID: -5028629644325228503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_73
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 5
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5df713fd710db780800000000000000
+      internalID: -8665768467529990820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_74
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 5
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 697f6f36187babc60800000000000000
+      internalID: 7834776268120192918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_75
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 10
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1f7c6560494fd1c0800000000000000
+      internalID: -4476778963654639846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_76
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 10
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4620fb70978e9a40800000000000000
+      internalID: 5376884059751327311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_77
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 19
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 290fec1fc645e01d0800000000000000
+      internalID: -3382673443218591598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_78
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 19
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea359ee625ac4f660800000000000000
+      internalID: 7418776941582963630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_79
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 19
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f16d18069b1539780800000000000000
+      internalID: -8677502200382892513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_80
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 19
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 258c97abb3842b330800000000000000
+      internalID: 3725119263157635154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_81
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 19
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a3270f4f1292a780800000000000000
+      internalID: -8673209269194644575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_82
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 19
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 473de13b95fc91980800000000000000
+      internalID: -8567588831931477132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_83
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 15
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89e58413b0f90cb70800000000000000
+      internalID: 8917302132613865112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_84
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 13
+        width: 42
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f1e7084391748d70800000000000000
+      internalID: 9044478829049405941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_85
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 11
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06dcd4b297c9a6410800000000000000
+      internalID: 1471160272521383264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_86
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 12
+        width: 53
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ecaefb9f8244c040800000000000000
+      internalID: 4666928298427591909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_87
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 11
+        width: 46
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e998918c5d2613560800000000000000
+      internalID: 7291717942014216606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scifi_tilesheet_88
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 11
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22c6c6cda3c3984d0800000000000000
+      internalID: -3131905842355606494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      scifi_tilesheet_0: -884771852063699850
+      scifi_tilesheet_1: -3078960475063566323
+      scifi_tilesheet_10: -6435640330611684581
+      scifi_tilesheet_11: 8499868006881926708
+      scifi_tilesheet_12: -6669323450275543840
+      scifi_tilesheet_13: -846327298543688054
+      scifi_tilesheet_14: 4372199963847662514
+      scifi_tilesheet_15: -19136094577009886
+      scifi_tilesheet_16: -3214249460097579082
+      scifi_tilesheet_17: -2399032805889199895
+      scifi_tilesheet_18: -4515124988449878751
+      scifi_tilesheet_19: 8042482797666345349
+      scifi_tilesheet_2: -7235628790223950992
+      scifi_tilesheet_20: 3263415879613245438
+      scifi_tilesheet_21: -4919542540662911526
+      scifi_tilesheet_22: -3088897576350527188
+      scifi_tilesheet_23: -6956310298908029969
+      scifi_tilesheet_24: 2041590807255489881
+      scifi_tilesheet_25: -1604599101027789625
+      scifi_tilesheet_26: 2896955985190824584
+      scifi_tilesheet_27: -4657425192533571914
+      scifi_tilesheet_28: -6863630518970400146
+      scifi_tilesheet_29: 2925936875296683516
+      scifi_tilesheet_3: -1574616700251386702
+      scifi_tilesheet_30: 6218895409761353268
+      scifi_tilesheet_31: -4231171884551205534
+      scifi_tilesheet_32: -1814230749625641253
+      scifi_tilesheet_33: 4451187357514302685
+      scifi_tilesheet_34: -5150074740126512270
+      scifi_tilesheet_35: -7360543000544624489
+      scifi_tilesheet_36: -6663321947168755724
+      scifi_tilesheet_37: 5604879756795835928
+      scifi_tilesheet_38: 9201626342597836151
+      scifi_tilesheet_39: 2193145452305156392
+      scifi_tilesheet_4: -356286005099892340
+      scifi_tilesheet_40: -1271304000414874240
+      scifi_tilesheet_41: 7913371816370331992
+      scifi_tilesheet_42: 1835622749237893309
+      scifi_tilesheet_43: 6257739414564483258
+      scifi_tilesheet_44: -2573706693403493629
+      scifi_tilesheet_45: -8848391941763697782
+      scifi_tilesheet_46: 3538927936194192776
+      scifi_tilesheet_47: -3126594411295975869
+      scifi_tilesheet_48: 9120081772749884147
+      scifi_tilesheet_49: -8256194611644022528
+      scifi_tilesheet_5: -5321403064844356963
+      scifi_tilesheet_50: -8367311942446538
+      scifi_tilesheet_51: 1500889444004767779
+      scifi_tilesheet_52: -5632445163117826993
+      scifi_tilesheet_53: 8662478791316853811
+      scifi_tilesheet_54: -8091212137695897758
+      scifi_tilesheet_55: 1514842048775690848
+      scifi_tilesheet_56: 989242200505487853
+      scifi_tilesheet_57: -6055305519766582081
+      scifi_tilesheet_58: -8560864108167711726
+      scifi_tilesheet_59: 2992647897644371974
+      scifi_tilesheet_6: 1607288548000570420
+      scifi_tilesheet_60: 5894046430429113449
+      scifi_tilesheet_61: 291950282576555353
+      scifi_tilesheet_62: -8479400170031028200
+      scifi_tilesheet_63: 8453296550421387576
+      scifi_tilesheet_64: -2565472555944103439
+      scifi_tilesheet_65: 1616764822796026584
+      scifi_tilesheet_66: 6703277102297299506
+      scifi_tilesheet_67: 6492767796420536589
+      scifi_tilesheet_68: 3342749704954122041
+      scifi_tilesheet_69: 5484958458301526018
+      scifi_tilesheet_7: 8622764340489838765
+      scifi_tilesheet_70: -9079809005549405582
+      scifi_tilesheet_71: -6631992210628517490
+      scifi_tilesheet_72: -5028629644325228503
+      scifi_tilesheet_73: -8665768467529990820
+      scifi_tilesheet_74: 7834776268120192918
+      scifi_tilesheet_75: -4476778963654639846
+      scifi_tilesheet_76: 5376884059751327311
+      scifi_tilesheet_77: -3382673443218591598
+      scifi_tilesheet_78: 7418776941582963630
+      scifi_tilesheet_79: -8677502200382892513
+      scifi_tilesheet_8: -7920768896404764520
+      scifi_tilesheet_80: 3725119263157635154
+      scifi_tilesheet_81: -8673209269194644575
+      scifi_tilesheet_82: -8567588831931477132
+      scifi_tilesheet_83: 8917302132613865112
+      scifi_tilesheet_84: 9044478829049405941
+      scifi_tilesheet_85: 1471160272521383264
+      scifi_tilesheet_86: 4666928298427591909
+      scifi_tilesheet_87: 7291717942014216606
+      scifi_tilesheet_88: -3131905842355606494
+      scifi_tilesheet_9: 4947579130841436025
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

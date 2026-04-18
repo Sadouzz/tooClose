@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI; // N'oublie pas d'ajouter ça pour manipuler l'UI
 
@@ -10,6 +11,7 @@ public class ChoosingPlaneScript : MonoBehaviour
     [Header("UI Synchronization")]
     // Glisse ici l'objet Parent qui contient toutes les IMAGES des avions en UI
     public Transform uiImagesParent;
+    public TextMeshProUGUI speedText, angleSpeedText, lifeText;
 
     private const string PlaneSaveKey = "SelectedPlaneIndex";
     public static ChoosingPlaneScript instance;
@@ -83,10 +85,19 @@ public class ChoosingPlaneScript : MonoBehaviour
             playerMovement.rotationSpeed = data.rotationSpeed;
             playerMovement.maxTiltAngle = data.maxTiltAngle;
             playerMovement.tiltSpeed = data.tiltSpeed;
+            playerMovement.life = data.life;
             playerMovement.rb = data.rb;
             playerMovement.sr = data.sr;
             playerMovement.bc = data.bc;
+            SyncUI(playerMovement.speed, playerMovement.rotationSpeed, playerMovement.life);
         }
+    }
+
+    void SyncUI(float speed, float angleSpeed, int life)
+    {
+        speedText.text = speed.ToString();
+        angleSpeedText.text = angleSpeed.ToString();
+        lifeText.text = life.ToString();
     }
 
     public int GetCurrentIndex() { return currentIndex; }
