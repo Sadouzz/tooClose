@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ChunkManager : MonoBehaviour
 {
-    public float maxViewDist = 12f;
+    public float maxViewDist = 12f, initMaxViewDist;
     public float chunkSize = 20;
 
     public Transform player;
@@ -22,12 +22,22 @@ public class ChunkManager : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player").transform;
 
         chunksVisibleInViewDist = Mathf.RoundToInt(maxViewDist / chunkSize);
+        initMaxViewDist = maxViewDist;
     }
 
     void Update()
     {
         playerPos = player.position;
         UpdateVisibleChunks();
+
+        if (PlayerPowerUpManager.instance != null && PlayerPowerUpManager.instance.isZoomActive)
+        {
+            maxViewDist = 30;
+        }
+        else
+        {
+            maxViewDist = initMaxViewDist;
+        }
     }
 
     void UpdateVisibleChunks()

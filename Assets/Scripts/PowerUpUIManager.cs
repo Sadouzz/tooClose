@@ -111,6 +111,10 @@ public class PowerUpUIManager : MonoBehaviour
             currentStoredPowerUp = "Blaze";
         else if (name.ToUpper().Contains("SHIELD") || name.ToUpper().Contains("BOUCLIER"))
             currentStoredPowerUp = "Shield";
+        else if (name.ToUpper().Contains("ZOOM"))
+            currentStoredPowerUp = "Zoom";
+        else if (name.ToUpper().Contains("SLOWMO"))
+            currentStoredPowerUp = "SlowMo";
         else
             currentStoredPowerUp = name;
 

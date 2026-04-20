@@ -44,16 +44,28 @@ public class MissileScript : MonoBehaviour
     {
         if (target == null || isExpiring) return;
 
+        // 1. On définit les vitesses de base pour cette frame
+        float currentSpeed = speed;
+        float currentRotSpeed = rotatingSpeed;
+
+        // 2. On vérifie si le SlowMo est actif via le Manager
+        if (PlayerPowerUpManager.instance != null && PlayerPowerUpManager.instance.isSlowMoActive)
+        {
+            // On multiplie par le facteur (ex: 0.5f divise la vitesse par 2)
+            currentSpeed *= PlayerPowerUpManager.instance.slowMoFactor;
+            currentRotSpeed *= PlayerPowerUpManager.instance.slowMoFactor;
+        }
+
         // Calcul de la direction vers le joueur
         Vector2 direction = (Vector2)target.position - rb.position;
         direction.Normalize();
 
-        // Rotation fluide vers la cible
+        // Rotation fluide vers la cible (avec la vitesse potentiellement ralentie)
         float rotateAmount = Vector3.Cross(direction, transform.up).z;
-        rb.angularVelocity = -rotateAmount * rotatingSpeed;
+        rb.angularVelocity = -rotateAmount * currentRotSpeed;
 
-        // Avancement constant
-        rb.linearVelocity = transform.up * speed;
+        // Avancement constant (avec la vitesse potentiellement ralentie)
+        rb.linearVelocity = transform.up * currentSpeed;
     }
 
     IEnumerator LifetimeCountdown()

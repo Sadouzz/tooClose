@@ -108,12 +108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0312826b84c40a949aadef338bbc4527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MissileScript
-  speed: 6.5
+  speed: 6
   rotatingSpeed: 100
   duration: 10
   rb: {fileID: 1112360102430224248}
   missileSound: {fileID: 0}
-  explosionPrefab: {fileID: 6813416509558619124, guid: 3b7f2c753d435d647a80f1f047a113e3, type: 3}
+  explosionPrefab: {fileID: 7431604053453865763, guid: c3a40adc10225ec4891c8573b5ea05e3, type: 3}
   spriteRenderer: {fileID: 0}
   trail: {fileID: 0}
   audio: {fileID: 0}

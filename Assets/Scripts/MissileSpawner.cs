@@ -199,8 +199,13 @@ public class MissileSpawner : MonoBehaviour
     }
     public void DestroyAllMissiles()
     {
-        GameObject[] missilesInGame = GameObject.FindGameObjectsWithTag("Missile");
+        GameObject[] missilesInGame = GetAllMissiles();
         foreach (GameObject m in missilesInGame) Destroy(m);
         currentMissiles = 0;
+    }
+
+    public GameObject[] GetAllMissiles()
+    {
+        return GameObject.FindGameObjectsWithTag("Missile");
     }
 }

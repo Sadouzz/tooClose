@@ -1,7 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
-using Unity.Cinemachine; // Assure-toi d'avoir le package Cinemachine installé
+using Unity.Cinemachine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerPowerUpManager : MonoBehaviour
 {
@@ -15,6 +17,22 @@ public class PlayerPowerUpManager : MonoBehaviour
     public bool isShieldActive = false;
     public bool isBlazeActive = false;
     public bool isSlowMoActive = false;
+    public bool isZoomActive = false;
+
+    [Header("Timers (Cumulables)")]
+    private float shieldTimer = 0f;
+    private float blazeTimer = 0f;
+    private float slowMoTimer = 0f;
+    private float zoomTimer = 0f;
+
+    [Header("UI Settings")]
+    public Slider powerUpSlider;
+    public GameObject sliderParent;
+
+    // --- NOUVEAU : Le texte pour afficher le nom ---
+    public TextMeshProUGUI powerUpNameText; // Remplace "Text" par "TMPro.TextMeshProUGUI" si tu utilises TextMeshPro
+
+    private string activeSliderPowerUp = ""; // Garde en mémoire quel pouvoir le Slider doit afficher
 
     [Header("Visual Effects (Child Objects)")]
     public GameObject shieldEffectObject;
@@ -25,12 +43,12 @@ public class PlayerPowerUpManager : MonoBehaviour
     public float blazeRotationSpeed = 360f;
 
     [Header("Slow Motion Settings")]
-    public float slowMoFactor = 0.5f; // Multiplicateur de vitesse des missiles (ex: 0.5 = 50% plus lent)
+    public float slowMoFactor = 0.5f;
 
     [Header("Cinemachine Zoom Settings")]
-    public CinemachineCamera virtualCamera; // Glisse ta Virtual Camera ici depuis l'inspecteur
-    public float zoomOutLensSize = 8f;
-    private float normalLensSize = 5f;
+    public CinemachineCamera virtualCamera;
+    public float zoomOutLensSize = 15f;
+    public float normalLensSize = 10f;
 
     private void Awake()
     {
@@ -42,7 +60,6 @@ public class PlayerPowerUpManager : MonoBehaviour
     {
         Reset();
 
-        // On sauvegarde la taille de base de la caméra au lancement
         if (virtualCamera != null)
         {
             normalLensSize = virtualCamera.Lens.OrthographicSize;
@@ -62,6 +79,18 @@ public class PlayerPowerUpManager : MonoBehaviour
         isShieldActive = false;
         isBlazeActive = false;
         isSlowMoActive = false;
+        isZoomActive = false;
+
+        shieldTimer = 0f;
+        blazeTimer = 0f;
+        slowMoTimer = 0f;
+        zoomTimer = 0f;
+        activeSliderPowerUp = "";
+
+        if (sliderParent != null) sliderParent.SetActive(false);
+
+        // --- NOUVEAU : On vide le texte au reset ---
+        if (powerUpNameText != null) powerUpNameText.text = "";
     }
 
     private void Update()
@@ -72,6 +101,9 @@ public class PlayerPowerUpManager : MonoBehaviour
         {
             blazeEffectObject.transform.Rotate(0, 0, blazeRotationSpeed * Time.deltaTime, Space.Self);
         }
+
+        // Met à jour la jauge UI en temps réel
+        UpdateSliderUI();
     }
 
     private void DetectDoubleTap()
@@ -96,44 +128,82 @@ public class PlayerPowerUpManager : MonoBehaviour
 
     private void OnDoubleTapPerformed()
     {
-        // On demande à l'UI quel PowerUp est actuellement stocké
         string storedPowerUp = PowerUpUIManager.instance.GetStoredPowerUpName();
 
         if (string.IsNullOrEmpty(storedPowerUp)) return;
 
         switch (storedPowerUp)
         {
-            case "Shield":
-                ActivateShield(10f);
-                break;
-            case "Blaze":
-                ActivateBlaze(10f);
-                break;
-            case "SlowMo":
-                ActivateSlowMo(8f);
-                break;
-            case "Zoom":
-                ActivateZoom(8f);
-                break;
+            case "Shield": ActivateShield(10f); break;
+            case "Blaze": ActivateBlaze(10f); break;
+            case "SlowMo": ActivateSlowMo(8f); break;
+            case "Zoom": ActivateZoom(8f); break;
         }
 
-        // Vide le slot UI après utilisation
         PowerUpUIManager.instance.ClearStoredPowerUp();
+    }
+
+    // --- LOGIQUE DU SLIDER UI ---
+    private void UpdateSliderUI()
+    {
+        if (powerUpSlider == null || sliderParent == null) return;
+
+        float timeToShow = 0f;
+
+        // On regarde le timer du pouvoir actuellement "suivi" par l'UI
+        switch (activeSliderPowerUp)
+        {
+            case "Shield": timeToShow = shieldTimer; break;
+            case "Blaze": timeToShow = blazeTimer; break;
+            case "SlowMo": timeToShow = slowMoTimer; break;
+            case "Zoom": timeToShow = zoomTimer; break;
+        }
+
+        if (timeToShow > 0)
+        {
+            sliderParent.SetActive(true);
+            powerUpSlider.value = timeToShow;
+        }
+        else
+        {
+            // Si le pouvoir suivi est terminé, on cache le Slider
+            sliderParent.SetActive(false);
+            activeSliderPowerUp = "";
+
+            // --- NOUVEAU : On vide le texte ---
+            if (powerUpNameText != null) powerUpNameText.text = "";
+        }
+    }
+
+    private void SetupSlider(string powerUpName, float newTotalTime)
+    {
+        activeSliderPowerUp = powerUpName;
+
+        if (powerUpSlider != null) powerUpSlider.maxValue = newTotalTime;
+
+        // --- NOUVEAU : On met à jour le texte affiché ---
+        if (powerUpNameText != null) powerUpNameText.text = powerUpName;
     }
 
     // --- LOGIQUE SHIELD ---
     public void ActivateShield(float duration)
     {
-        if (isShieldActive) return;
-        StartCoroutine(ShieldRoutine(duration));
+        shieldTimer += duration;
+        SetupSlider("Shield", shieldTimer);
+
+        if (!isShieldActive) StartCoroutine(ShieldRoutine());
     }
 
-    private IEnumerator ShieldRoutine(float duration)
+    private IEnumerator ShieldRoutine()
     {
         isShieldActive = true;
         if (shieldEffectObject) shieldEffectObject.SetActive(true);
 
-        yield return new WaitForSeconds(duration);
+        while (shieldTimer > 0)
+        {
+            shieldTimer -= Time.deltaTime;
+            yield return null;
+        }
 
         if (shieldEffectObject) shieldEffectObject.SetActive(false);
         isShieldActive = false;
@@ -142,17 +212,23 @@ public class PlayerPowerUpManager : MonoBehaviour
     // --- LOGIQUE BLAZE ---
     public void ActivateBlaze(float duration)
     {
-        if (isBlazeActive) return;
-        StartCoroutine(BlazeRoutine(duration));
+        blazeTimer += duration;
+        SetupSlider("Blaze", blazeTimer);
+
+        if (!isBlazeActive) StartCoroutine(BlazeRoutine());
     }
 
-    private IEnumerator BlazeRoutine(float duration)
+    private IEnumerator BlazeRoutine()
     {
         isBlazeActive = true;
         if (blazeEffectObject) blazeEffectObject.SetActive(true);
         if (blazeEffectObject) blazeEffectObject.transform.localRotation = Quaternion.identity;
 
-        yield return new WaitForSeconds(duration);
+        while (blazeTimer > 0)
+        {
+            blazeTimer -= Time.deltaTime;
+            yield return null;
+        }
 
         if (blazeEffectObject) blazeEffectObject.SetActive(false);
         isBlazeActive = false;
@@ -161,16 +237,22 @@ public class PlayerPowerUpManager : MonoBehaviour
     // --- LOGIQUE SLOW MOTION ---
     public void ActivateSlowMo(float duration)
     {
-        if (isSlowMoActive) return;
-        StartCoroutine(SlowMoRoutine(duration));
+        slowMoTimer += duration;
+        SetupSlider("SlowMo", slowMoTimer);
+
+        if (!isSlowMoActive) StartCoroutine(SlowMoRoutine());
     }
 
-    private IEnumerator SlowMoRoutine(float duration)
+    private IEnumerator SlowMoRoutine()
     {
         isSlowMoActive = true;
         if (slowMoEffectObject) slowMoEffectObject.SetActive(true);
 
-        yield return new WaitForSeconds(duration);
+        while (slowMoTimer > 0)
+        {
+            slowMoTimer -= Time.deltaTime;
+            yield return null;
+        }
 
         if (slowMoEffectObject) slowMoEffectObject.SetActive(false);
         isSlowMoActive = false;
@@ -181,56 +263,57 @@ public class PlayerPowerUpManager : MonoBehaviour
     {
         if (virtualCamera == null) return;
 
-        StopCoroutine("ZoomRoutine"); // Évite les conflits si activé plusieurs fois de suite
-        StartCoroutine(ZoomRoutine(duration));
+        zoomTimer += duration;
+        SetupSlider("Zoom", zoomTimer);
+
+        if (!isZoomActive)
+        {
+            StartCoroutine(ZoomRoutine());
+        }
+        else if (CameraShake.instance != null)
+        {
+            CameraShake.instance.Shake(0.15f, 1.5f);
+        }
     }
 
-    private IEnumerator ZoomRoutine(float duration)
+    private IEnumerator ZoomRoutine()
     {
-        float transitionTime = 0.5f;
-        float elapsed = 0;
+        isZoomActive = true;
 
-        // Dézoom progressif (transition fluide)
-        while (elapsed < transitionTime)
+        if (CameraShake.instance != null) CameraShake.instance.Shake(0.3f, 3f);
+
+        while (zoomTimer > 0)
         {
-            virtualCamera.Lens.OrthographicSize = Mathf.Lerp(normalLensSize, zoomOutLensSize, elapsed / transitionTime);
-            elapsed += Time.deltaTime;
+            virtualCamera.Lens.OrthographicSize = Mathf.Lerp(virtualCamera.Lens.OrthographicSize, zoomOutLensSize, Time.deltaTime * 10f);
+            zoomTimer -= Time.deltaTime;
             yield return null;
         }
-        virtualCamera.Lens.OrthographicSize = zoomOutLensSize; // S'assure d'atteindre la valeur exacte
 
-        // Maintien du dézoom pendant la durée du bonus
-        yield return new WaitForSeconds(duration);
-
-        // Re-zoom progressif pour revenir à la normale
-        elapsed = 0;
-        while (elapsed < transitionTime)
+        while (Mathf.Abs(virtualCamera.Lens.OrthographicSize - normalLensSize) > 0.1f)
         {
-            virtualCamera.Lens.OrthographicSize = Mathf.Lerp(zoomOutLensSize, normalLensSize, elapsed / transitionTime);
-            elapsed += Time.deltaTime;
+            virtualCamera.Lens.OrthographicSize = Mathf.Lerp(virtualCamera.Lens.OrthographicSize, normalLensSize, Time.deltaTime * 8f);
             yield return null;
         }
-        virtualCamera.Lens.OrthographicSize = normalLensSize; // Retour parfait à la valeur initiale
+
+        virtualCamera.Lens.OrthographicSize = normalLensSize;
+        isZoomActive = false;
     }
 
     // --- GESTION DES COLLISIONS ---
     public void HandleImpact(Collider2D missileCollider, GameObject missileObject)
     {
-        // 1. Priorité Blaze
         if (isBlazeActive && CheckSpecificColliderImpact(missileCollider, blazeEffectObject))
         {
             DestroyMissile(missileObject);
             return;
         }
 
-        // 2. Bouclier
         if (isShieldActive)
         {
             DestroyMissile(missileObject);
             return;
         }
 
-        // 3. Sinon, dégâts normaux
         TakeDamage();
     }
 
@@ -253,7 +336,6 @@ public class PlayerPowerUpManager : MonoBehaviour
 
     private void TakeDamage()
     {
-        // À adapter si tu as renommé Inventory
         if (Inventory.instance != null) Inventory.instance.DieProcess();
     }
 }
