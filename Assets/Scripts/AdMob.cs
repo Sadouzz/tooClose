@@ -330,7 +330,8 @@ public class AdMob : MonoBehaviour
         {
             if (Inventory.instance.menu)
             {
-                //adButton.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Pas de Pub";
+                StatusAdButtons(false);
+                adButton.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Pas de Pub";
             }
             
         }
@@ -358,7 +359,8 @@ public class AdMob : MonoBehaviour
                 {
                     Inventory.instance.AdsReward();
                 }
-                adButton.interactable = false;
+                //adButton.interactable = false;
+                StatusAdButtons(false);
                 if (currentScene.name == "Menu")
                 {
                     adButtonMission.interactable = false;

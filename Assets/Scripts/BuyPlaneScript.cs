@@ -33,6 +33,7 @@ public class BuyPlaneScript : MonoBehaviour
             {
                 item.SetActive(true);
             }
+            selectionScript.SaveCurrentSelection();
             buyPanel.SetActive(false);
         }
         else
