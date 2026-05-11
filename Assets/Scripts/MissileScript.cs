@@ -183,7 +183,16 @@ public class MissileScript : MonoBehaviour
             }
 
             // Si on arrive ici, c'est qu'aucun PowerUp n'était actif
-            Inventory.instance.DieProcess();
+            if (PlayerMovement.instance.life > 1)
+            {
+                PlayerMovement.instance.life--;
+                if (PlayerMovement.instance.life == 1)
+                {
+                    PlayerMovement.instance.smoke.SetActive(true);
+                }
+            }
+            else
+                Inventory.instance.DieProcess();
             HandleDestruction(true);
         }
 

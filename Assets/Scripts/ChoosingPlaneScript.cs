@@ -89,6 +89,9 @@ public class ChoosingPlaneScript : MonoBehaviour
             playerMovement.rb = data.rb;
             playerMovement.sr = data.sr;
             playerMovement.bc = data.bc;
+            if (data.smoke != null){
+                playerMovement.smoke = data.smoke;
+            }
             SyncUI(playerMovement.speed, playerMovement.rotationSpeed, playerMovement.life);
         }
     }

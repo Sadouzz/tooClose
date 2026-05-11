@@ -16,4 +16,5 @@ public class PlaneData : MonoBehaviour
     public Rigidbody2D rb;
     public SpriteRenderer sr;
     public BoxCollider2D bc;
+    public GameObject smoke;
 }
