@@ -319,7 +319,7 @@ public class AdMob : MonoBehaviour
                 */
             }
 
-            if(Inventory.instance.menu)
+            if (Inventory.instance != null && Inventory.instance.menu)
             {
                 StatusAdButtons(true);
                 //adButtonMission.interactable = true;
@@ -328,12 +328,15 @@ public class AdMob : MonoBehaviour
         }
         else
         {
-            if (Inventory.instance.menu)
+            if (Inventory.instance != null && Inventory.instance.menu)
             {
                 StatusAdButtons(false);
-                adButton.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Pas de Pub";
+                if (adButton != null && adButton.transform.childCount > 1)
+                {
+                    adButton.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Pas de Pub";
+                }
             }
-            
+
         }
     }
 

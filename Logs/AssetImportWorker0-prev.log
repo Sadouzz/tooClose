@@ -2,8 +2,8 @@
 Built from '6000.2/staging' branch; Version is '6000.2.11f1 (7134d7685e5d) revision 7419095'; Using compiler version '194234433'; Build Type 'Release'
 OS: 'Windows 11  (10.0.26200) 64bit Professional' Language: 'fr' Physical Memory: 16149 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
-Date: 2026-05-10T11:25:47Z
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Ousman" at "2026-05-10T11:25:47.071157Z"
+Date: 2026-05-11T18:47:59Z
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Ousman" at "2026-05-11T18:47:59.023462Z"
 
 COMMAND LINE ARGUMENTS:
 D:\Unity\6000.2.11f1\Editor\Unity.exe
@@ -17,7 +17,7 @@ D:/Unity/Projects/tooClose
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-9348
+45619
 -licensingIpc
 LicenseClient-Ousman
 -job-worker-count
@@ -65,29 +65,29 @@ D:/Unity/Projects/tooClose
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [11768]  Target information:
+Player connection [25236]  Target information:
 
-Player connection [11768]  * "[IP] 172.30.80.1 [Port] 0 [Flags] 2 [Guid] 1930895925 [EditorId] 1930895925 [Version] 1048832 [Id] WindowsEditor(7,HP-PAVILION-OS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [25236]  * "[IP] 172.30.80.1 [Port] 0 [Flags] 2 [Guid] 2983793586 [EditorId] 2983793586 [Version] 1048832 [Id] WindowsEditor(7,HP-PAVILION-OS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [11768]  * "[IP] 192.168.1.11 [Port] 0 [Flags] 2 [Guid] 1930895925 [EditorId] 1930895925 [Version] 1048832 [Id] WindowsEditor(7,HP-PAVILION-OS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [25236]  * "[IP] 192.168.1.9 [Port] 0 [Flags] 2 [Guid] 2983793586 [EditorId] 2983793586 [Version] 1048832 [Id] WindowsEditor(7,HP-PAVILION-OS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [11768] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [11768] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [25236] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [25236] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 3
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
 [Physics::Module] Id: 0xdecafbad
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 26996, path: "D:/Unity/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 14088, path: "D:/Unity/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.17.4+4293ba1
-  Session Id:              d82a8ae9c44f45e68b0bf967725e554d
-  Correlation Id:          9980bbd642d076bc82da900243732c6b
-  External correlation Id: 7129169876961647164
+  Session Id:              3b5953cc42af4dc5aac9b96e3d765f31
+  Correlation Id:          470ee0c36a6829df79096aac2c60e3a8
+  External correlation Id: 1884365788620106420
   Machine Id:              japEv33VSu3fV8G5dVxPNuj/pTA=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Ousman" (connect: 0.00s, validation: 0.00s, handshake: 0.09s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Ousman-notifications" at "2026-05-10T11:25:47.1689118Z"
-[Licensing::Module] Licensing Background thread has ended after 0.10s
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Ousman" (connect: 0.00s, validation: 0.01s, handshake: 0.14s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Ousman-notifications" at "2026-05-11T18:47:59.1709794Z"
+[Licensing::Module] Licensing Background thread has ended after 0.15s
 Library Redirect Path: Library/
 [Physics::Module] Selected backend.
 [Physics::Module] Name: PhysX
@@ -101,7 +101,7 @@ Library Redirect Path: Library/
   Product: Unity Personal
   Type: Assigned
   Expiration: Unlimited
-Refreshing native plugins compatible for Editor in 69.24 ms, found 8 plugins.
+Refreshing native plugins compatible for Editor in 73.11 ms, found 8 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.2.11f1 (7134d7685e5d)
 [Subsystems] Discovering subsystems at path D:/Unity/6000.2.11f1/Editor/Data/Resources/UnitySubsystems
@@ -124,44 +124,44 @@ Register platform support module: D:/Unity/6000.2.11f1/Editor/Data/PlaybackEngin
 Register platform support module: D:/Unity/6000.2.11f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 [Licensing::Client] Successfully resolved entitlement details
 Register platform support module: D:/Unity/6000.2.11f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
-Registered in 0.011348 seconds.
-- Loaded All Assemblies, in  0.888 seconds
+Registered in 0.017383 seconds.
+- Loaded All Assemblies, in  1.056 seconds
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
 Native extension for iOS target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 1084 ms
+Android Extension - Scanning For ADB Devices 1505 ms
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.907 seconds
-Domain Reload Profiling: 2782ms
-	BeginReloadAssembly (338ms)
+- Finished resetting the current domain, in  2.630 seconds
+Domain Reload Profiling: 3665ms
+	BeginReloadAssembly (368ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (59ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (101ms)
-	LoadAllAssembliesAndSetupDomain (359ms)
-		LoadAssemblies (329ms)
+		CreateAndSetChildDomain (2ms)
+	RebuildCommonClasses (81ms)
+	RebuildNativeTypeToScriptingClass (29ms)
+	initialDomainReloadingComplete (150ms)
+	LoadAllAssembliesAndSetupDomain (406ms)
+		LoadAssemblies (350ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (354ms)
-			TypeCache.Refresh (350ms)
-				TypeCache.ScanAssembly (320ms)
+		AnalyzeDomain (399ms)
+			TypeCache.Refresh (396ms)
+				TypeCache.ScanAssembly (361ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (1908ms)
+	FinalizeReload (2631ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1793ms)
+		SetupLoadedEditorAssemblies (2507ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (1360ms)
-			SetLoadedEditorAssemblies (7ms)
-			BeforeProcessingInitializeOnLoad (115ms)
-			ProcessInitializeOnLoadAttributes (203ms)
-			ProcessInitializeOnLoadMethodAttributes (109ms)
+			InitializePlatformSupportModulesInManaged (1858ms)
+			SetLoadedEditorAssemblies (10ms)
+			BeforeProcessingInitializeOnLoad (160ms)
+			ProcessInitializeOnLoadAttributes (328ms)
+			ProcessInitializeOnLoadMethodAttributes (152ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -175,11 +175,11 @@ Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInter
 Begin MonoManager ReloadAssembly
 [Licensing::Client] Successfully resolved entitlement details
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  2.448 seconds
+- Loaded All Assemblies, in  2.917 seconds
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
 'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
 'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 21.87 ms, found 8 plugins.
+Refreshing native plugins compatible for Editor in 45.36 ms, found 8 plugins.
 Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for WindowsStandalone target not found
@@ -197,18 +197,22 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 
 (Filename: Assets/GooglePlayGames/com.google.play.games/Editor/GPGSUpgrader.cs Line: 38)
 
-GPGSUpgrader done
+System.IO.IOException: Sharing violation on path D:\Unity\Projects\tooClose\ProjectSettings\GooglePlayGameSettings.txt
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <bed9669261d44da0a59448ecde2b1a5c>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <bed9669261d44da0a59448ecde2b1a5c>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
+  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding, System.Int32 bufferSize) [0x00055] in <bed9669261d44da0a59448ecde2b1a5c>:0 
+  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append) [0x00008] in <bed9669261d44da0a59448ecde2b1a5c>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamWriter..ctor(string,bool)
+  at GooglePlayGames.Editor.GPGSProjectSettings.Save () [0x00035] in D:\Unity\Projects\tooClose\Assets\GooglePlayGames\com.google.play.games\Editor\GPGSProjectSettings.cs:182 
+  at GooglePlayGames.Editor.GPGSUpgrader..cctor () [0x0003a] in D:\Unity\Projects\tooClose\Assets\GooglePlayGames\com.google.play.games\Editor\GPGSUpgrader.cs:43 
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
 UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/com.google.play.games/Editor/GPGSUpgrader.cs:57)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEngine.Debug:LogError (object)
 UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: Assets/GooglePlayGames/com.google.play.games/Editor/GPGSUpgrader.cs Line: 57)
 
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
@@ -217,493 +221,230 @@ Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-Refreshing native plugins compatible for Editor in 43.33 ms, found 8 plugins.
+Refreshing native plugins compatible for Editor in 37.68 ms, found 8 plugins.
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.531 seconds
-Domain Reload Profiling: 4943ms
-	BeginReloadAssembly (370ms)
+- Finished resetting the current domain, in  2.506 seconds
+Domain Reload Profiling: 5373ms
+	BeginReloadAssembly (477ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (9ms)
+		DisableScriptedObjects (12ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (53ms)
-	RebuildCommonClasses (94ms)
-	RebuildNativeTypeToScriptingClass (27ms)
-	initialDomainReloadingComplete (100ms)
-	LoadAllAssembliesAndSetupDomain (1820ms)
-		LoadAssemblies (1202ms)
+		CreateAndSetChildDomain (65ms)
+	RebuildCommonClasses (90ms)
+	RebuildNativeTypeToScriptingClass (30ms)
+	initialDomainReloadingComplete (129ms)
+	LoadAllAssembliesAndSetupDomain (2139ms)
+		LoadAssemblies (1553ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (845ms)
-			TypeCache.Refresh (611ms)
-				TypeCache.ScanAssembly (561ms)
-			BuildScriptInfoCaches (201ms)
-			ResolveRequiredComponents (24ms)
-	FinalizeReload (2532ms)
+		AnalyzeDomain (870ms)
+			TypeCache.Refresh (645ms)
+				TypeCache.ScanAssembly (596ms)
+			BuildScriptInfoCaches (180ms)
+			ResolveRequiredComponents (31ms)
+	FinalizeReload (2507ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (2264ms)
+		SetupLoadedEditorAssemblies (2150ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (45ms)
-			SetLoadedEditorAssemblies (7ms)
-			BeforeProcessingInitializeOnLoad (369ms)
-			ProcessInitializeOnLoadAttributes (1460ms)
-			ProcessInitializeOnLoadMethodAttributes (353ms)
-			AfterProcessingInitializeOnLoad (31ms)
+			InitializePlatformSupportModulesInManaged (60ms)
+			SetLoadedEditorAssemblies (9ms)
+			BeforeProcessingInitializeOnLoad (483ms)
+			ProcessInitializeOnLoadAttributes (1295ms)
+			ProcessInitializeOnLoadMethodAttributes (281ms)
+			AfterProcessingInitializeOnLoad (21ms)
 			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (11ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 38.86 ms, found 8 plugins.
+Refreshing native plugins compatible for Editor in 37.67 ms, found 8 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 8536 unused Assets / (4.8 MB). Loaded Objects now: 9235.
-Memory consumption went from 160.3 MB to 155.5 MB.
-Total: 26.498300 ms (FindLiveObjects: 1.437700 ms CreateObjectMapping: 2.352900 ms MarkObjects: 13.777700 ms  DeleteObjects: 8.928400 ms)
+Unloading 8536 unused Assets / (5.7 MB). Loaded Objects now: 9236.
+Memory consumption went from 160.5 MB to 154.8 MB.
+Total: 22.734200 ms (FindLiveObjects: 2.038400 ms CreateObjectMapping: 1.511700 ms MarkObjects: 11.987900 ms  DeleteObjects: 7.194300 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 215454.201041 seconds.
-  path: Assets/Gemini_Generated_Image_hsggawhsggawhsgg.png
-  artifactKey: Guid(d23d2f2561332404eb955077e81f9981) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gemini_Generated_Image_hsggawhsggawhsgg.png using Guid(d23d2f2561332404eb955077e81f9981) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '34e671fdaed8468c17eddc28100ab017') in 0.223243 seconds
+  Time since last request: 328402.937894 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Default/panel_glass_notch_br.png
+  artifactKey: Guid(86aad68e11904244fa1c244397b07969) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Default/panel_glass_notch_br.png using Guid(86aad68e11904244fa1c244397b07969) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3072de57db6ae3760ebf23c86b85d574') in 0.1751633 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000060 seconds.
-  path: Assets/Prefabs/SmokeBigPlane.prefab
-  artifactKey: Guid(d1b7aa87c960a884c942bf23012794b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/SmokeBigPlane.prefab using Guid(d1b7aa87c960a884c942bf23012794b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '12e924623b113d3d6febb8a3d6017a2f') in 0.6224792 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000079 seconds.
-  path: Assets/Gemini_Generated_Image_nvxizjnvxizjnvxi.png
-  artifactKey: Guid(b71a5c3b811ec94499fa6567f96fd5cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gemini_Generated_Image_nvxizjnvxizjnvxi.png using Guid(b71a5c3b811ec94499fa6567f96fd5cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fcf1dc67e5a68a1586ae98383fa896fb') in 0.0305106 seconds
+  Time since last request: 0.000050 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Default/panel_rectangle_screws.png
+  artifactKey: Guid(866189e6ee4a88840a5536e9b7d5d0d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Default/panel_rectangle_screws.png using Guid(866189e6ee4a88840a5536e9b7d5d0d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '57991b19d16f0bf118eaa6304928c32e') in 0.0247415 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/TooClose!NewLogo.png
-  artifactKey: Guid(c002aa1b20af9f047b31f2030276f23f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TooClose!NewLogo.png using Guid(c002aa1b20af9f047b31f2030276f23f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '033dbb6bcfc0a070aa8d7d6076c81d50') in 0.0231226 seconds
+  Time since last request: 0.000065 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Double/panel_glass_notches.png
+  artifactKey: Guid(9885024c0b9b3d54c97f5cbe3fda39d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Double/panel_glass_notches.png using Guid(9885024c0b9b3d54c97f5cbe3fda39d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '57f08e3e15e3631ce7c77b00e21907a3') in 0.0214682 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Assets/Prefabs/FireCircle.prefab
-  artifactKey: Guid(f37f179ff2ce043448da7621c02d2586) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/FireCircle.prefab using Guid(f37f179ff2ce043448da7621c02d2586) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bfc7dba7c781544a117ebe57f6a935c2') in 0.033996 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+  Time since last request: 0.000083 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Default/panel_rectangle.png
+  artifactKey: Guid(49b59495336e41c4c833470e3455239f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Default/panel_rectangle.png using Guid(49b59495336e41c4c833470e3455239f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1acf804ed7b972a42aecdc6ba73cd618') in 0.0193516 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000063 seconds.
-  path: Assets/Prefabs/Chunks/Chunk1.prefab
-  artifactKey: Guid(b100a12965d996b4192846911817270b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Chunks/Chunk1.prefab using Guid(b100a12965d996b4192846911817270b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00a52ae3814c08ca907ad139137a09e4') in 0.0195573 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+  Time since last request: 0.000042 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Double/panel_glass.png
+  artifactKey: Guid(d54c67bd82d20ff48898e37b7eca4347) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Double/panel_glass.png using Guid(d54c67bd82d20ff48898e37b7eca4347) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '224cd538b55022de4172201194dca97e') in 0.0229211 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000071 seconds.
+  path: Assets/Imports/ByMeTooClose!/Others/panelTitle.png
+  artifactKey: Guid(e10cbe16a43406945803691c46e4724d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/ByMeTooClose!/Others/panelTitle.png using Guid(e10cbe16a43406945803691c46e4724d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bb9973d02216a8128a441d37f9a72c33') in 0.0392713 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Imports/ByMeTooClose!/Others/panelImage.png
+  artifactKey: Guid(2d7364ae21a0a284c984a5f4395f802e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/ByMeTooClose!/Others/panelImage.png using Guid(2d7364ae21a0a284c984a5f4395f802e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd306bc70de893f4c4b10285c324504c6') in 0.0313739 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000034 seconds.
-  path: Assets/Screenshot_20260321_212629_Missiles.jpg.jpeg
-  artifactKey: Guid(9c44cde17c3b0a542823a392cae264c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Screenshot_20260321_212629_Missiles.jpg.jpeg using Guid(9c44cde17c3b0a542823a392cae264c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cb35d6575a0804fdb2b86b50538e2a57') in 0.0284312 seconds
+  path: Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Double/panel_rectangle_screws.png
+  artifactKey: Guid(b7cc55af06b8e764f839112b94a001d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Double/panel_rectangle_screws.png using Guid(b7cc55af06b8e764f839112b94a001d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e98335ac174a2b6183d397aa4da4e8e4') in 0.0207513 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000052 seconds.
-  path: Assets/Prefabs/MissileExplosion.prefab
-  artifactKey: Guid(c3a40adc10225ec4891c8573b5ea05e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/MissileExplosion.prefab using Guid(c3a40adc10225ec4891c8573b5ea05e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fc6fe34e052405f738c4e6559f369214') in 0.0262315 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000069 seconds.
-  path: Assets/Prefabs/Chunks
-  artifactKey: Guid(fa1c0fc944deaeb4c91cc3b9ffa911a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Chunks using Guid(fa1c0fc944deaeb4c91cc3b9ffa911a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c11532106de41e5ef4dc29b3e49609bd') in 0.0011335 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+  Time since last request: 0.000044 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Double/panel_glass_notch_br.png
+  artifactKey: Guid(6793a099230a96243bb68a76d18ec1e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Double/panel_glass_notch_br.png using Guid(6793a099230a96243bb68a76d18ec1e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '130439328d9bad90d56bbb11eae5c8fe') in 0.0340325 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000038 seconds.
-  path: Assets/Joystick.png
-  artifactKey: Guid(65dbb5382f1ad214d9c739ae1dc9ddf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick.png using Guid(65dbb5382f1ad214d9c739ae1dc9ddf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'df80d5e59d05a71ae65fc2c2dc33ad01') in 0.0202453 seconds
+  path: Assets/Imports/kenney_game-icons-expansion/Game icons (base)/PNG/White/2x/zoomDefault.png
+  artifactKey: Guid(4ecf926882262d54fa2ebbe69ef58c3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/Game icons (base)/PNG/White/2x/zoomDefault.png using Guid(4ecf926882262d54fa2ebbe69ef58c3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a80b7293227a840734094578d8fbfb6a') in 0.0259992 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Prefabs/Chunks/Grid.prefab
-  artifactKey: Guid(a295991de286a9e4e8a416becf509c86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Chunks/Grid.prefab using Guid(a295991de286a9e4e8a416becf509c86) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bfa71501c829128e6eacb9eb0f457be3') in 0.1065056 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 97
+  Time since last request: 0.000039 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Double/panel_glass_notches_top.png
+  artifactKey: Guid(c2f4e68dea430a44a8672cff73879c44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Double/panel_glass_notches_top.png using Guid(c2f4e68dea430a44a8672cff73879c44) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '096e7b629e60ddb3c8cb9c8b6a395bf3') in 0.0254857 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000107 seconds.
-  path: Assets/Prefabs/Shield.prefab
-  artifactKey: Guid(14731412b3bbfa849a7083c5a34a270d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Shield.prefab using Guid(14731412b3bbfa849a7083c5a34a270d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f185e0658a352036f213b55ca95a7fcd') in 0.0665134 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+  Time since last request: 0.000044 seconds.
+  path: Assets/Imports/ByMeTooClose!/Others/zoom.png
+  artifactKey: Guid(c9e0c243e471165459a3bb44b126c615) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/ByMeTooClose!/Others/zoom.png using Guid(c9e0c243e471165459a3bb44b126c615) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dec42e719256e6e299c456d274a75447') in 0.0459243 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/Prefabs/TrailMissile.prefab
-  artifactKey: Guid(e6979255cadee2f4dae34a7501ee8e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/TrailMissile.prefab using Guid(e6979255cadee2f4dae34a7501ee8e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '64d5eacea546265b64e93bdbf99a26d4') in 0.0187746 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+  Time since last request: 0.000029 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Default/panel_glass_tab_blade.png
+  artifactKey: Guid(71a6c1b5a5664b949bb1977636bea315) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Default/panel_glass_tab_blade.png using Guid(71a6c1b5a5664b949bb1977636bea315) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e432a07797ed1fa00dd99bf198638321') in 0.0224256 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000053 seconds.
-  path: Assets/Prefabs/Trail.prefab
-  artifactKey: Guid(d5138835362265b4aaaf9946e552d764) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Trail.prefab using Guid(d5138835362265b4aaaf9946e552d764) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd9df34bf21c67338fdad29c908afc1e1') in 0.022631 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 17
+  Time since last request: 0.000038 seconds.
+  path: Assets/Imports/ByMeTooClose!/Others/panel.png
+  artifactKey: Guid(3a4d53e267948bc46af4aacaad536bea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/ByMeTooClose!/Others/panel.png using Guid(3a4d53e267948bc46af4aacaad536bea) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '766a1d457fcca0fed572d62da46b8ef8') in 0.0305755 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 15.042692 seconds.
-  path: Assets/Prefabs/Chunks/Chunk.prefab
-  artifactKey: Guid(9eefd90dce698d343a837ff03829bb42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Chunks/Chunk.prefab using Guid(9eefd90dce698d343a837ff03829bb42) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f6423a28a1bfe46c88871b60de0c793d') in 0.0558983 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 133
+  Time since last request: 0.000042 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Double/panel_glass_notch_tr.png
+  artifactKey: Guid(ecd2c506b73bb3b4d9ba50144ed28d73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Double/panel_glass_notch_tr.png using Guid(ecd2c506b73bb3b4d9ba50144ed28d73) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7ccf663e0fd7ec4315a2cefb66969f5f') in 0.0579573 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.217307 seconds.
-  path: Assets/Prefabs/Chunks/Chunk.prefab
-  artifactKey: Guid(9eefd90dce698d343a837ff03829bb42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Chunks/Chunk.prefab using Guid(9eefd90dce698d343a837ff03829bb42) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '55dc66e450f4abb8b35f09bc63d6d8c9') in 0.0542594 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 133
+  Time since last request: 0.000032 seconds.
+  path: Assets/Imports/kenney_space-shooter-redux/PNG/Parts/wingYellow_5.png
+  artifactKey: Guid(de079a3ee5b25ae47bdecdd010821858) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-redux/PNG/Parts/wingYellow_5.png using Guid(de079a3ee5b25ae47bdecdd010821858) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd50c3837ad010ee555d1dc637375f5ca') in 0.0195359 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.173549 seconds.
-  path: Assets/Prefabs/Chunks/Chunk.prefab
-  artifactKey: Guid(9eefd90dce698d343a837ff03829bb42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Chunks/Chunk.prefab using Guid(9eefd90dce698d343a837ff03829bb42) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7d3380d96b55afcc08435fdd834f160e') in 0.0485154 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 133
-
-========================================================================
-Received Prepare
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  2.423 seconds
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 35.13 ms, found 8 plugins.
-Native extension for iOS target not found
-Native extension for Android target not found
-Native extension for WindowsStandalone target not found
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-GPGSUpgrader start
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/com.google.play.games/Editor/GPGSUpgrader.cs:38)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: Assets/GooglePlayGames/com.google.play.games/Editor/GPGSUpgrader.cs Line: 38)
-
-GPGSUpgrader done
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/com.google.play.games/Editor/GPGSUpgrader.cs:57)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: Assets/GooglePlayGames/com.google.play.games/Editor/GPGSUpgrader.cs Line: 57)
-
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.147 seconds
-Domain Reload Profiling: 4555ms
-	BeginReloadAssembly (552ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (51ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (142ms)
-	RebuildCommonClasses (350ms)
-	RebuildNativeTypeToScriptingClass (22ms)
-	initialDomainReloadingComplete (81ms)
-	LoadAllAssembliesAndSetupDomain (1402ms)
-		LoadAssemblies (1159ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (481ms)
-			TypeCache.Refresh (23ms)
-				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (418ms)
-			ResolveRequiredComponents (30ms)
-	FinalizeReload (2148ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1773ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (49ms)
-			SetLoadedEditorAssemblies (9ms)
-			BeforeProcessingInitializeOnLoad (345ms)
-			ProcessInitializeOnLoadAttributes (1026ms)
-			ProcessInitializeOnLoadMethodAttributes (324ms)
-			AfterProcessingInitializeOnLoad (19ms)
-			EditorAssembliesLoaded (1ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (42ms)
-Refreshing native plugins compatible for Editor in 31.01 ms, found 8 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 8534 unused Assets / (5.1 MB). Loaded Objects now: 9276.
-Memory consumption went from 162.2 MB to 157.2 MB.
-Total: 17.874000 ms (FindLiveObjects: 1.691800 ms CreateObjectMapping: 1.194200 ms MarkObjects: 8.754300 ms  DeleteObjects: 6.231400 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 42.170501 seconds.
-  path: Assets/Prefabs/Chunks/Clouds/CloudChunk1.prefab
-  artifactKey: Guid(3fe3f1b4a083ea148b518f0f89ab9b5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Chunks/Clouds/CloudChunk1.prefab using Guid(3fe3f1b4a083ea148b518f0f89ab9b5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5a8ddd0af1139daa75613e715d2aa1ce') in 1.098314 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 32
+  Time since last request: 0.000051 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Default/panel_glass_screws.png
+  artifactKey: Guid(1080e0c4856985341bfae5959e412dd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Default/panel_glass_screws.png using Guid(1080e0c4856985341bfae5959e412dd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '98642b75a9914473bbe84193cf38091b') in 0.0190617 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000115 seconds.
-  path: Assets/Prefabs/Chunks/Clouds/CloudChunk4.prefab
-  artifactKey: Guid(26a7dba1d0c2ac244b9fa7f69a9be0f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Chunks/Clouds/CloudChunk4.prefab using Guid(26a7dba1d0c2ac244b9fa7f69a9be0f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7dbff0ccb868646a0f9bb8433a0a157c') in 0.1169137 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+  Time since last request: 0.000030 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/Game icons (base)/PNG/White/2x/zoom.png
+  artifactKey: Guid(06ff93f47113c3c4e8930ae70f572965) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/Game icons (base)/PNG/White/2x/zoom.png using Guid(06ff93f47113c3c4e8930ae70f572965) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6ace8518de3a1540086f9ebc479701ce') in 0.0257698 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 13.808051 seconds.
-  path: Assets/Prefabs/Chunks/Clouds/CloudChunk4.prefab
-  artifactKey: Guid(26a7dba1d0c2ac244b9fa7f69a9be0f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Chunks/Clouds/CloudChunk4.prefab using Guid(26a7dba1d0c2ac244b9fa7f69a9be0f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c2094f143b6d8bf5b7b3b2da0b64dae3') in 0.0610442 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Prepare
-[Licensing::Client] Successfully resolved entitlement details
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-Begin MonoManager ReloadAssembly
-[Licensing::Client] Successfully resolved entitlement details
-Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  2.881 seconds
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 29.62 ms, found 8 plugins.
-Native extension for iOS target not found
-Native extension for Android target not found
-Native extension for WindowsStandalone target not found
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-GPGSUpgrader start
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/com.google.play.games/Editor/GPGSUpgrader.cs:38)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: Assets/GooglePlayGames/com.google.play.games/Editor/GPGSUpgrader.cs Line: 38)
-
-GPGSUpgrader done
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/com.google.play.games/Editor/GPGSUpgrader.cs:57)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: Assets/GooglePlayGames/com.google.play.games/Editor/GPGSUpgrader.cs Line: 57)
-
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  3.446 seconds
-Domain Reload Profiling: 6308ms
-	BeginReloadAssembly (840ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (42ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (106ms)
-	RebuildCommonClasses (85ms)
-	RebuildNativeTypeToScriptingClass (21ms)
-	initialDomainReloadingComplete (83ms)
-	LoadAllAssembliesAndSetupDomain (1831ms)
-		LoadAssemblies (1825ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (598ms)
-			TypeCache.Refresh (16ms)
-				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (551ms)
-			ResolveRequiredComponents (24ms)
-	FinalizeReload (3447ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (2932ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (60ms)
-			SetLoadedEditorAssemblies (8ms)
-			BeforeProcessingInitializeOnLoad (686ms)
-			ProcessInitializeOnLoadAttributes (1915ms)
-			ProcessInitializeOnLoadMethodAttributes (211ms)
-			AfterProcessingInitializeOnLoad (50ms)
-			EditorAssembliesLoaded (2ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (39ms)
-Refreshing native plugins compatible for Editor in 65.88 ms, found 8 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 8534 unused Assets / (5.5 MB). Loaded Objects now: 9299.
-Memory consumption went from 162.3 MB to 156.8 MB.
-Total: 22.609300 ms (FindLiveObjects: 1.330600 ms CreateObjectMapping: 1.807700 ms MarkObjects: 12.762000 ms  DeleteObjects: 6.707200 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 56.448525 seconds.
-  path: Assets/Prefabs/Chunks/Chunk.prefab
-  artifactKey: Guid(9eefd90dce698d343a837ff03829bb42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Chunks/Chunk.prefab using Guid(9eefd90dce698d343a837ff03829bb42) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4b6574ddb2eebf60fe2c4e1b51ea039b') in 0.6572004 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 133
+  Time since last request: 0.000051 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Double/panel_glass_notch_bl.png
+  artifactKey: Guid(f15fa45d859ba9540b09d19960d1632d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Double/panel_glass_notch_bl.png using Guid(f15fa45d859ba9540b09d19960d1632d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0ba9614662b58b50a1b4375b1f12ee87') in 0.0280346 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.621965 seconds.
-  path: Assets/Prefabs/Chunks/Chunk.prefab
-  artifactKey: Guid(9eefd90dce698d343a837ff03829bb42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Chunks/Chunk.prefab using Guid(9eefd90dce698d343a837ff03829bb42) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bc4045a8197488e1847c5d99f910aefb') in 0.0654548 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 133
+  Time since last request: 0.000076 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Default/panel_glass_notches_top.png
+  artifactKey: Guid(aa4872709bf040d4d91c75d5c7b50f51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Default/panel_glass_notches_top.png using Guid(aa4872709bf040d4d91c75d5c7b50f51) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '426f160f9006d6e61f6faadb3a4a4dfa') in 0.0201018 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
-Received Prepare
-[Licensing::Client] Successfully resolved entitlement details
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-Begin MonoManager ReloadAssembly
-[Licensing::Client] Successfully resolved entitlement details
-Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  3.028 seconds
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 30.43 ms, found 8 plugins.
-Native extension for iOS target not found
-Native extension for Android target not found
-Native extension for WindowsStandalone target not found
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-GPGSUpgrader start
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/com.google.play.games/Editor/GPGSUpgrader.cs:38)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Default/panel_glass_notches.png
+  artifactKey: Guid(147b5f686468bee44bbf410ef367884d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Default/panel_glass_notches.png using Guid(147b5f686468bee44bbf410ef367884d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '269776b5b6ace56e97fedaf64658131a') in 0.0215984 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
-(Filename: Assets/GooglePlayGames/com.google.play.games/Editor/GPGSUpgrader.cs Line: 38)
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Double/panel_glass_tab_blade.png
+  artifactKey: Guid(d9fe33f6b330290408cc3745900a9b03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Double/panel_glass_tab_blade.png using Guid(d9fe33f6b330290408cc3745900a9b03) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '125a2b8e353aa956eb5a5111a9a410cf') in 0.0205263 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
-GPGSUpgrader done
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/com.google.play.games/Editor/GPGSUpgrader.cs:57)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/Game icons (base)/PNG/White/2x/zoomIn.png
+  artifactKey: Guid(ccab460c010ae3c4f9de7a7316cd622a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/Game icons (base)/PNG/White/2x/zoomIn.png using Guid(ccab460c010ae3c4f9de7a7316cd622a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0e467cc368af1f7a22610e3b41c82e91') in 0.016194 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
-(Filename: Assets/GooglePlayGames/com.google.play.games/Editor/GPGSUpgrader.cs Line: 57)
-
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.120 seconds
-Domain Reload Profiling: 5100ms
-	BeginReloadAssembly (663ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (63ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (138ms)
-	RebuildCommonClasses (98ms)
-	RebuildNativeTypeToScriptingClass (47ms)
-	initialDomainReloadingComplete (126ms)
-	LoadAllAssembliesAndSetupDomain (2046ms)
-		LoadAssemblies (1640ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (706ms)
-			TypeCache.Refresh (17ms)
-				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (650ms)
-			ResolveRequiredComponents (27ms)
-	FinalizeReload (2122ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1772ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (38ms)
-			SetLoadedEditorAssemblies (9ms)
-			BeforeProcessingInitializeOnLoad (337ms)
-			ProcessInitializeOnLoadAttributes (1167ms)
-			ProcessInitializeOnLoadMethodAttributes (189ms)
-			AfterProcessingInitializeOnLoad (32ms)
-			EditorAssembliesLoaded (2ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (40ms)
-Refreshing native plugins compatible for Editor in 91.45 ms, found 8 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 8534 unused Assets / (5.1 MB). Loaded Objects now: 9322.
-Memory consumption went from 162.3 MB to 157.3 MB.
-Total: 29.794600 ms (FindLiveObjects: 1.633900 ms CreateObjectMapping: 2.110000 ms MarkObjects: 18.888900 ms  DeleteObjects: 7.159400 ms)
-
-Prepare: number of updated asset objects reloaded= 0
