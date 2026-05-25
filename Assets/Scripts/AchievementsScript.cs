@@ -72,6 +72,10 @@ public class AchievementsScript : MonoBehaviour
         // Mission 14 — Detruire 30 ennemis en une seule partie
         if (MissileSpawner.instance.destroyedEnemies >= 30)
             CompleteMission("mission14", "MISSION 14 TERMINEE");
+
+        // Mission 15 — Regarder 30 pubs
+        if (AdMob.instance != null && AdMob.instance.watchedCount >= 30)
+            CompleteMission("mission15", "MISSION 15 TERMINEE");
     }
 
     // -------------------------------------------------------
@@ -84,7 +88,7 @@ public class AchievementsScript : MonoBehaviour
         PlayerPrefs.SetString(key, "yes");
         PlayerPrefs.Save();
 
-        if (NotificationScript.instance != null)
-            NotificationScript.instance.CallNotif(label, missionsSprite);
+        //if (NotificationScript.instance != null)
+        //    NotificationScript.instance.CallNotif(label, missionsSprite);
     }
 }

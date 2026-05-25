@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class NearMissDetector : MonoBehaviour
 {
@@ -16,10 +16,10 @@ public class NearMissDetector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Missile")) // Vérifie que c'est bien un missile
+        if (other.CompareTag("Missile")) // VÃ©rifie que c'est bien un missile
         {
-            // On demande à l'Inventory de calculer les points
-            // On passe la position du missile pour savoir où afficher le texte
+            // On demande Ã  l'Inventory de calculer les points
+            // On passe la position du missile pour savoir oÃ¹ afficher le texte
             NearMissManager.instance.TriggerNearMiss(other.transform.position);
         }
     }
@@ -28,7 +28,7 @@ public class NearMissDetector : MonoBehaviour
     {
         if (other.CompareTag("Missile"))
         {
-            // Calcul de la proximité (1.0 = très près, 0.1 = limite du cercle)
+            // Calcul de la proximitÃ© (1.0 = trÃ¨s prÃ¨s, 0.1 = limite du cercle)
             float distance = Vector2.Distance(transform.position, other.transform.position);
             float radius = GetComponent<CircleCollider2D>().radius;
             float proximityFactor = 1f - (distance / radius);
@@ -44,7 +44,7 @@ public class NearMissDetector : MonoBehaviour
     
     System.Collections.IEnumerator NearMissEffect()
     {
-        Time.timeScale = 0.5f; // Ralenti à 50%
+        Time.timeScale = 0.5f; // Ralenti Ã  50%
         yield return new WaitForSecondsRealtime(0.1f);
         Time.timeScale = 1f;
     }
@@ -58,13 +58,13 @@ public class NearMissDetector : MonoBehaviour
         }
         else
         {
-            comboMultiplier = 1.0f; // Réinitialisation
+            comboMultiplier = 1.0f; // RÃ©initialisation
         }
 
         lastMissTime = Time.time;
 
         // 2. Lancer l'effet visuel et le texte
         //UIController.Instance.ShowNearMissText(comboMultiplier);
-        //EffectsManager.Instance.DoSlowMotion(0.2f, 0.1f); // Durée, Intensité
+        //EffectsManager.Instance.DoSlowMotion(0.2f, 0.1f); // DurÃ©e, IntensitÃ©
     }*/
 }

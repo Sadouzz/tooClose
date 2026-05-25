@@ -11,7 +11,7 @@ public class NearMissManager : MonoBehaviour
 
     [Header("UI Elements")]
     public TextMeshProUGUI nearMissText; // Le texte qui va pop et voler
-    public RectTransform scoreTarget;     // L'endroit où le texte s'envole (ton Score HUD)
+    public RectTransform scoreTarget;     // L'endroit oÃ¹ le texte s'envole (ton Score HUD)
 
     [Header("Post-Processing Feedback")]
     public Volume globalVolume; // Glisse ton Global Volume ici
@@ -35,6 +35,16 @@ public class NearMissManager : MonoBehaviour
     private void Start()
     {
         if (nearMissText != null) nearMissText.gameObject.SetActive(false);
+
+        // RÃ©cupÃ©rer l'override LensDistortion depuis le Global Volume
+        if (globalVolume != null && globalVolume.profile != null)
+        {
+            globalVolume.profile.TryGet(out distortion);
+            if (distortion == null)
+            {
+                Debug.LogWarning("[NearMissManager] LensDistortion non trouvÃ©e dans le Volume Profile !");
+            }
+        }
     }
 
     private void Update()
@@ -53,7 +63,7 @@ public class NearMissManager : MonoBehaviour
         comboTimer = comboLeeway;
         int gain = 50 * currentCombo;
 
-        // 2. Mise à jour Score
+        // 2. Mise Ã  jour Score
         Inventory.instance.score += gain;
         Inventory.instance.scoreText.text = Inventory.instance.score.ToString();
 
@@ -61,7 +71,7 @@ public class NearMissManager : MonoBehaviour
         if (activeAnim != null) StopCoroutine(activeAnim);
         activeAnim = StartCoroutine(AnimateNearMiss(currentCombo, gain, missilePosition));
 
-        StopCoroutine("DoImpactEffects"); // Stop si un effet est déjà en cours
+        StopCoroutine("DoImpactEffects"); // Stop si un effet est dÃ©jÃ  en cours
         StartCoroutine(DoImpactEffects());
 
         // 4. Feedback feeling
@@ -73,11 +83,11 @@ public class NearMissManager : MonoBehaviour
         nearMissText.text = "TOO CLOSE! x" + combo + "\n+" + gain;
         nearMissText.color = nearMissColor;
 
-        // Conversion position monde -> écran
+        // Conversion position monde -> Ã©cran
         Vector2 screenPos = Camera.main.WorldToScreenPoint(worldPos);
         nearMissText.rectTransform.position = screenPos;
 
-        // SÉCURITÉ : On remet la rotation à zéro pour éviter que le texte soit penché
+        // SÃ‰CURITÃ‰ : On remet la rotation Ã  zÃ©ro pour Ã©viter que le texte soit penchÃ©
         nearMissText.rectTransform.rotation = Quaternion.identity;
 
         nearMissText.gameObject.SetActive(true);
@@ -90,15 +100,15 @@ public class NearMissManager : MonoBehaviour
         {
             t += Time.unscaledDeltaTime * 10f;
 
-            // CORRECTION DU SCALE : On utilise Mathf.Abs pour être SÛR que le scale n'est jamais négatif (ce qui renverse le texte)
-            // Et on ajoute un clamp pour ne pas dépasser 1.2f
+            // CORRECTION DU SCALE : On utilise Mathf.Abs pour Ãªtre SÃ›R que le scale n'est jamais nÃ©gatif (ce qui renverse le texte)
+            // Et on ajoute un clamp pour ne pas dÃ©passer 1.2f
             float scaleValue = Mathf.Abs(Mathf.Sin(t * Mathf.PI * 1.1f) * 1.2f);
 
             nearMissText.rectTransform.localScale = new Vector3(scaleValue, scaleValue, 1);
             yield return null;
         }
 
-        // On s'assure qu'il finit à une taille normale (1,1,1) sans être renversé
+        // On s'assure qu'il finit Ã  une taille normale (1,1,1) sans Ãªtre renversÃ©
         nearMissText.rectTransform.localScale = Vector3.one;
 
         yield return new WaitForSecondsRealtime(0.3f);
@@ -113,7 +123,7 @@ public class NearMissManager : MonoBehaviour
 
             nearMissText.rectTransform.position = Vector2.Lerp(startPos, scoreTarget.position, easedT);
 
-            // On réduit la taille vers le score sans jamais descendre en dessous de zéro
+            // On rÃ©duit la taille vers le score sans jamais descendre en dessous de zÃ©ro
             float flyScale = Mathf.Lerp(1f, 0.3f, easedT);
             nearMissText.rectTransform.localScale = new Vector3(flyScale, flyScale, 1);
 
@@ -154,19 +164,19 @@ public class NearMissManager : MonoBehaviour
             distortion.active = true;
         }
 
-        // Temps de maintien de l'impact (très court pour le "punch")
-        // 0.05f ou 0.1f est idéal pour un feedback instantané
+        // Temps de maintien de l'impact (trÃ¨s court pour le "punch")
+        // 0.05f ou 0.1f est idÃ©al pour un feedback instantanÃ©
         yield return new WaitForSecondsRealtime(0.08f);
 
-        // --- 2. RETOUR À LA NORMALE (Smooth transition) ---
+        // --- 2. RETOUR Ã€ LA NORMALE (Smooth transition) ---
         float t = 0;
         while (t < 1)
         {
-            // On utilise unscaledDeltaTime au cas où tu aurais 
-            // d'autres systèmes qui gèrent le temps ailleurs
+            // On utilise unscaledDeltaTime au cas oÃ¹ tu aurais 
+            // d'autres systÃ¨mes qui gÃ¨rent le temps ailleurs
             t += Time.unscaledDeltaTime * 5f;
 
-            // On remet la distortion à 0 progressivement
+            // On remet la distortion Ã  0 progressivement
             if (distortion != null)
             {
                 distortion.intensity.value = Mathf.Lerp(distortionStrength, 0f, t);
@@ -175,7 +185,7 @@ public class NearMissManager : MonoBehaviour
             yield return null;
         }
 
-        // Sécurité finale
+        // SÃ©curitÃ© finale
         if (distortion != null)
         {
             distortion.intensity.value = 0f;

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using TMPro;
@@ -45,7 +45,21 @@ public class BuyPlaneScript : MonoBehaviour
                 item.SetActive(false);
             }
             buyPanel.SetActive(true);
-            priceText.text = data.price.ToString();
+
+            Button buyBtn = buyPanel.GetComponent<Button>();
+            if (buyBtn == null) buyBtn = buyPanel.GetComponentInChildren<Button>();
+
+            // Si c'est le dernier avion, il se gagne par mission, pas achetable
+            if (index == selectionScript.transform.childCount - 1)
+            {
+                priceText.text = "MISSION 15";
+                if (buyBtn != null) buyBtn.interactable = false;
+            }
+            else
+            {
+                priceText.text = data.price.ToString();
+                if (buyBtn != null) buyBtn.interactable = true;
+            }
         }
     }
 
@@ -77,6 +91,10 @@ public class BuyPlaneScript : MonoBehaviour
     public void BuyCurrentPlane()
     {
         int currentIndex = selectionScript.GetCurrentIndex();
+
+        // Impossible d'acheter le dernier avion (gagné par mission)
+        if (currentIndex == selectionScript.transform.childCount - 1) return;
+
         PlaneData data = selectionScript.transform.GetChild(currentIndex).GetComponent<PlaneData>();
 
         // Simulation de monnaie (TotalStars)

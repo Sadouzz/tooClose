@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class PlaneData : MonoBehaviour
 {
@@ -9,8 +9,8 @@ public class PlaneData : MonoBehaviour
     public string planeName = "Chasseur Bleu";
 
     [Header("Juice Settings")]
-    public float maxTiltAngle = 20f; // Inclinaison max spécifique à cet avion
-    public float tiltSpeed = 10f;    // Vitesse d'inclinaison spécifique
+    public float maxTiltAngle = 20f; // Inclinaison max spÃ©cifique Ã  cet avion
+    public float tiltSpeed = 10f;    // Vitesse d'inclinaison spÃ©cifique
 
     [Header("References")]
     public Rigidbody2D rb;

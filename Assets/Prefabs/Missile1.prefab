@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MissileScript
   speed: 6
   rotatingSpeed: 100
-  duration: 10
+  duration: 7.5
   rb: {fileID: 1112360102430224248}
   missileSound: {fileID: 0}
   explosionPrefab: {fileID: 7431604053453865763, guid: c3a40adc10225ec4891c8573b5ea05e3, type: 3}

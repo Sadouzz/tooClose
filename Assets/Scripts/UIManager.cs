@@ -9,6 +9,10 @@ public class UIManager : MonoBehaviour
 {
     public GameObject playPanel, menuPanel, diePanel, pausePanel, highscorePanel, settingsPanel, shopPanel, infoPanel, missionsPanel;
     public TextMeshProUGUI starsText;
+    
+    [Header("Missions")]
+    public GameObject missionsBadge; // Le badge visuel (ex: un point rouge) sur le bouton mission
+    private float badgeCheckTimer = 0f;
 
     public static UIManager instance;
 
@@ -43,6 +47,34 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         starsText.text = PlayerPrefs.GetInt("stars", 0).ToString();
+
+        // Vérifie les récompenses en attente (badge) toutes les secondes
+        badgeCheckTimer -= Time.deltaTime;
+        if (badgeCheckTimer <= 0)
+        {
+            badgeCheckTimer = 1f;
+            CheckMissionsBadge();
+        }
+    }
+
+    void CheckMissionsBadge()
+    {
+        if (missionsBadge == null) return;
+        
+        bool hasPendingReward = false;
+        // On vérifie les 15 missions
+        for (int i = 1; i <= 15; i++)
+        {
+            bool completed = PlayerPrefs.GetString("mission" + i, "no") == "yes";
+            bool collected = PlayerPrefs.GetString("mission" + i + "Collected", "no") == "yes";
+            if (completed && !collected)
+            {
+                hasPendingReward = true;
+                break;
+            }
+        }
+        
+        missionsBadge.SetActive(hasPendingReward);
     }
 
     /*public void SaveData()
