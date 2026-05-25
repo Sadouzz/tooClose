@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ChunkManager : MonoBehaviour
 {
-    public float maxViewDist = 12f, initMaxViewDist;
+    public float maxViewDist = 20, initMaxViewDist;
     public float chunkSize = 20;
 
     public Transform player;
@@ -32,11 +32,15 @@ public class ChunkManager : MonoBehaviour
 
         if (PlayerPowerUpManager.instance != null && PlayerPowerUpManager.instance.isZoomActive)
         {
-            maxViewDist = 30;
+            maxViewDist = 35;
         }
         else if (PlayerMovement.instance != null && PlayerMovement.instance.currentPhase == PlayerMovement.GamePhase.Shooting)
         {
-            maxViewDist = 25f; // Augmenté pour la phase de tir afin d'éviter les vides sur les bords !
+            maxViewDist = 30; // Augmenté pour la phase de tir afin d'éviter les vides sur les bords !
+        }
+        else if (PlayerMovement.instance != null && PlayerMovement.instance.currentPhase == PlayerMovement.GamePhase.Shooting && PlayerPowerUpManager.instance.isZoomActive)
+        {
+            maxViewDist = 40; // Augmenté pour la phase de tir afin d'éviter les vides sur les bords !
         }
         else
         {

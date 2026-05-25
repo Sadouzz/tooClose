@@ -82,7 +82,7 @@ public class AdMob : MonoBehaviour
         if (_bannerView != null) DestroyAd();
 
         _bannerAdjusted = false;
-        _bannerView = new BannerView(_adUnitIdBanner, AdSize.Banner, AdPosition.Top);
+        _bannerView = new BannerView(_adUnitIdBanner, AdSize.Banner, AdPosition.Bottom);
         ListenToAdEvents();
     }
 
@@ -95,7 +95,7 @@ public class AdMob : MonoBehaviour
             MobileAdsEventExecutor.ExecuteInUpdate(() =>
             {
                 Debug.Log("Banner view loaded an ad with response : " + _bannerView.GetResponseInfo());
-                AdjustUIForBanner();
+                //AdjustUIForBanner();
             });
         };
 
@@ -221,21 +221,23 @@ public class AdMob : MonoBehaviour
 
         float canvasHeightUnits = canvas.GetComponent<RectTransform>().rect.height;
 
-        // GetHeightInPixels() retourne des dp (density-independent pixels)
-        float bannerDp = _bannerView != null ? _bannerView.GetHeightInPixels() : 0f;
-        if (bannerDp <= 0f) bannerDp = 50f; // Fallback : bannière standard AdMob = 50dp
-
-        // Screen.dpi est unreliable sur Android Unity (peut retourner 96 par défaut).
-        // On lit la vraie densité depuis l'API Android via le pont Java.
+        // La vraie densité de l'écran via le pont Java Android
         float density = GetAndroidDensity();
 
+        // GetHeightInPixels() retourne bien des pixels physiques sur l'appareil !
+        float bannerPhysicalPx = _bannerView != null ? _bannerView.GetHeightInPixels() : 0f;
+
+        // Fallback : si la hauteur est 0 (ex: dans l'éditeur), on utilise 50 dp convertis en pixels
+        if (bannerPhysicalPx <= 0f) 
+        {
+            bannerPhysicalPx = 50f * density;
+        }
+
         // dp → pixels physiques → unités Canvas (formule proportionnelle)
-        float bannerPhysicalPx = bannerDp * density;
         float result = (bannerPhysicalPx / Screen.height) * canvasHeightUnits;
 
-        Debug.Log("[AdMob] bannerDp=" + bannerDp
+        Debug.Log("[AdMob] bannerPhysicalPx=" + bannerPhysicalPx
                   + "  density=" + density
-                  + "  bannerPhysicalPx=" + bannerPhysicalPx
                   + "  Screen.height=" + Screen.height
                   + "  canvasHeightUnits=" + canvasHeightUnits
                   + "  → offset=" + result + " unités Canvas");

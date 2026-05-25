@@ -2,8 +2,8 @@
 Built from '6000.2/staging' branch; Version is '6000.2.11f1 (7134d7685e5d) revision 7419095'; Using compiler version '194234433'; Build Type 'Release'
 OS: 'Windows 11  (10.0.26200) 64bit Professional' Language: 'fr' Physical Memory: 16149 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
-Date: 2026-05-24T20:02:30Z
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Ousman" at "2026-05-24T20:02:30.3737108Z"
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Ousman" at "2026-05-25T17:28:13.0754565Z"
+Date: 2026-05-25T17:28:13Z
 
 COMMAND LINE ARGUMENTS:
 D:\Unity\6000.2.11f1\Editor\Unity.exe
@@ -17,7 +17,7 @@ D:/Unity/Projects/tooClose
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-14439
+44047
 -licensingIpc
 LicenseClient-Ousman
 -job-worker-count
@@ -65,29 +65,29 @@ D:/Unity/Projects/tooClose
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [12996]  Target information:
+Player connection [19676]  Target information:
 
-Player connection [12996]  * "[IP] 172.17.224.1 [Port] 0 [Flags] 2 [Guid] 1463208594 [EditorId] 1463208594 [Version] 1048832 [Id] WindowsEditor(7,HP-PAVILION-OS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [19676]  * "[IP] 172.17.224.1 [Port] 0 [Flags] 2 [Guid] 3814405446 [EditorId] 3814405446 [Version] 1048832 [Id] WindowsEditor(7,HP-PAVILION-OS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [12996]  * "[IP] 192.168.1.8 [Port] 0 [Flags] 2 [Guid] 1463208594 [EditorId] 1463208594 [Version] 1048832 [Id] WindowsEditor(7,HP-PAVILION-OS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [19676]  * "[IP] 192.168.1.8 [Port] 0 [Flags] 2 [Guid] 3814405446 [EditorId] 3814405446 [Version] 1048832 [Id] WindowsEditor(7,HP-PAVILION-OS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [12996] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [12996] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [19676] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [19676] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 3
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
 [Physics::Module] Id: 0xdecafbad
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 15564, path: "D:/Unity/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 18416, path: "D:/Unity/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.17.4+4293ba1
-  Session Id:              616f4a1cc95846b2abf87828718091c9
-  Correlation Id:          c96127178ef4e9e6189362b0433c766b
-  External correlation Id: 3493792163640136770
+  Session Id:              a27059afcc194a9498b20cb8687f693b
+  Correlation Id:          a5978ae480c3eaf5172f37e1f716c71b
+  External correlation Id: 366090133016436899
   Machine Id:              japEv33VSu3fV8G5dVxPNuj/pTA=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Ousman" (connect: 0.00s, validation: 0.00s, handshake: 0.10s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Ousman-notifications" at "2026-05-24T20:02:30.4825368Z"
-[Licensing::Module] Licensing Background thread has ended after 0.11s
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Ousman" (connect: 0.00s, validation: 0.01s, handshake: 0.15s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Ousman-notifications" at "2026-05-25T17:28:13.2346412Z"
+[Licensing::Module] Licensing Background thread has ended after 0.16s
 Library Redirect Path: Library/
 [Physics::Module] Selected backend.
 [Physics::Module] Name: PhysX
@@ -101,7 +101,7 @@ Library Redirect Path: Library/
   Product: Unity Personal
   Type: Assigned
   Expiration: Unlimited
-Refreshing native plugins compatible for Editor in 48.70 ms, found 8 plugins.
+Refreshing native plugins compatible for Editor in 63.07 ms, found 8 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.2.11f1 (7134d7685e5d)
 [Subsystems] Discovering subsystems at path D:/Unity/6000.2.11f1/Editor/Data/Resources/UnitySubsystems
@@ -117,51 +117,51 @@ Initialize mono
 Mono path[0] = 'D:/Unity/6000.2.11f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/6000.2.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Unity/6000.2.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56964
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56136
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/6000.2.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: D:/Unity/6000.2.11f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 [Licensing::Client] Successfully resolved entitlement details
 Register platform support module: D:/Unity/6000.2.11f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
-Registered in 0.013540 seconds.
-- Loaded All Assemblies, in  0.804 seconds
+Registered in 0.015703 seconds.
+- Loaded All Assemblies, in  1.004 seconds
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
 Native extension for iOS target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 473 ms
+Android Extension - Scanning For ADB Devices 612 ms
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.227 seconds
-Domain Reload Profiling: 2021ms
-	BeginReloadAssembly (261ms)
+- Finished resetting the current domain, in  1.586 seconds
+Domain Reload Profiling: 2559ms
+	BeginReloadAssembly (264ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (74ms)
-	RebuildNativeTypeToScriptingClass (20ms)
-	initialDomainReloadingComplete (111ms)
-	LoadAllAssembliesAndSetupDomain (327ms)
-		LoadAssemblies (250ms)
+	RebuildCommonClasses (77ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (121ms)
+	LoadAllAssembliesAndSetupDomain (495ms)
+		LoadAssemblies (252ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (321ms)
-			TypeCache.Refresh (318ms)
-				TypeCache.ScanAssembly (290ms)
+		AnalyzeDomain (483ms)
+			TypeCache.Refresh (476ms)
+				TypeCache.ScanAssembly (447ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (1228ms)
+	FinalizeReload (1586ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1142ms)
+		SetupLoadedEditorAssemblies (1451ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (706ms)
+			InitializePlatformSupportModulesInManaged (905ms)
 			SetLoadedEditorAssemblies (7ms)
-			BeforeProcessingInitializeOnLoad (113ms)
-			ProcessInitializeOnLoadAttributes (222ms)
-			ProcessInitializeOnLoadMethodAttributes (95ms)
+			BeforeProcessingInitializeOnLoad (153ms)
+			ProcessInitializeOnLoadAttributes (266ms)
+			ProcessInitializeOnLoadMethodAttributes (118ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -175,172 +175,263 @@ Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInter
 Begin MonoManager ReloadAssembly
 [Licensing::Client] Successfully resolved entitlement details
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  1.765 seconds
-Compilation Pipeline: Could not read file Assets/GooglePlayGames/com.google.play.games/Editor/Google.Play.Games.Editor.asmdef
-Fatal Error! Compilation Pipeline: Could not read file Assets/GooglePlayGames/com.google.play.games/Editor/Google.Play.Games.Editor.asmdef
-Crash!!!
-SymInit: Symbol-SearchPath: 'D:/Unity/6000.2.11f1/Editor/Data/Mono;.;D:\Unity\Projects\tooClose;D:\Unity\Projects\tooClose\Library\BurstCache\JIT;D:\Unity\6000.2.11f1\Editor;C:\WINDOWS;C:\WINDOWS\system32;', symOptions: 534, UserName: 'Ousman'
-OS-Version: 10.0.0
-D:\Unity\6000.2.11f1\Editor\Unity.exe:Unity.exe (00007FF7742B0000), size: 290816 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 6000.2.11.13527
-C:\WINDOWS\SYSTEM32\ntdll.dll:ntdll.dll (00007FFFE3A60000), size: 2519040 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\System32\KERNEL32.DLL:KERNEL32.DLL (00007FFFE22A0000), size: 823296 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\System32\KERNELBASE.dll:KERNELBASE.dll (00007FFFE0880000), size: 4157440 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8457
-C:\WINDOWS\System32\USER32.dll:USER32.dll (00007FFFE3750000), size: 1859584 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8457
-C:\WINDOWS\System32\win32u.dll:win32u.dll (00007FFFE05C0000), size: 159744 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8457
-C:\WINDOWS\System32\GDI32.dll:GDI32.dll (00007FFFE2770000), size: 176128 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\System32\gdi32full.dll:gdi32full.dll (00007FFFE0490000), size: 1228800 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8457
-C:\WINDOWS\System32\msvcp_win.dll:msvcp_win.dll (00007FFFE0740000), size: 667648 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\System32\ucrtbase.dll:ucrtbase.dll (00007FFFE05F0000), size: 1355776 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\System32\IMM32.DLL:IMM32.DLL (00007FFFE2670000), size: 204800 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-D:\Unity\6000.2.11f1\Editor\Unity.dll:Unity.dll (00007FFEE9450000), size: 87814144 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 6000.2.11.13527
-C:\WINDOWS\System32\CRYPT32.dll:CRYPT32.dll (00007FFFE0DF0000), size: 1540096 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\System32\ADVAPI32.dll:ADVAPI32.dll (00007FFFE26B0000), size: 745472 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\System32\msvcrt.dll:msvcrt.dll (00007FFFE17E0000), size: 692224 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 7.0.26100.8246
-C:\WINDOWS\System32\sechost.dll:sechost.dll (00007FFFE1950000), size: 684032 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\System32\RPCRT4.dll:RPCRT4.dll (00007FFFE1A00000), size: 1146880 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-D:\Unity\6000.2.11f1\Editor\libfbxsdk.dll:libfbxsdk.dll (00007FFEF8DE0000), size: 8019968 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2020.3.7.0
-D:\Unity\6000.2.11f1\Editor\s3tcompress.dll:s3tcompress.dll (00007FFF67860000), size: 180224 (result: 0), SymType: '-deferred-', PDB: ''
-D:\Unity\6000.2.11f1\Editor\etccompress.dll:etccompress.dll (00007FFEF8900000), size: 5070848 (result: 0), SymType: '-deferred-', PDB: ''
-C:\WINDOWS\System32\ole32.dll:ole32.dll (00007FFFE2370000), size: 1667072 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8457
-C:\WINDOWS\System32\combase.dll:combase.dll (00007FFFE3110000), size: 3682304 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\System32\SETUPAPI.dll:SETUPAPI.dll (00007FFFE27A0000), size: 4747264 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-D:\Unity\6000.2.11f1\Editor\compress_bc7e.dll:compress_bc7e.dll (00007FFF14280000), size: 1433600 (result: 0), SymType: '-deferred-', PDB: ''
-D:\Unity\6000.2.11f1\Editor\ispc_texcomp.dll:ispc_texcomp.dll (00007FFF2BEA0000), size: 1826816 (result: 0), SymType: '-deferred-', PDB: ''
-D:\Unity\6000.2.11f1\Editor\FreeImage.dll:FreeImage.dll (0000000180000000), size: 5783552 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 3.18.0.0
-C:\WINDOWS\System32\SHELL32.dll:SHELL32.dll (00007FFFE1B20000), size: 7790592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8457
-C:\WINDOWS\System32\WS2_32.dll:WS2_32.dll (00007FFFE34A0000), size: 524288 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-D:\Unity\6000.2.11f1\Editor\WinPixEventRuntime.dll:WinPixEventRuntime.dll (00007FFF851D0000), size: 57344 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.0.2403.8001
-C:\WINDOWS\System32\SHLWAPI.dll:SHLWAPI.dll (00007FFFE3530000), size: 417792 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8457
-C:\WINDOWS\System32\Windows.Storage.dll:Windows.Storage.dll (00007FFFE0F70000), size: 8830976 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8457
-D:\Unity\6000.2.11f1\Editor\umbraoptimizer64.dll:umbraoptimizer64.dll (00007FFF14150000), size: 1187840 (result: 0), SymType: '-deferred-', PDB: ''
-C:\WINDOWS\System32\OLEAUT32.dll:OLEAUT32.dll (00007FFFE2C30000), size: 888832 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8457_none_3e0b2faee331e92d\COMCTL32.dll:COMCTL32.dll (00007FFFC2E90000), size: 2695168 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 6.10.26100.8457
-C:\WINDOWS\System32\WINTRUST.dll:WINTRUST.dll (00007FFFE07F0000), size: 532480 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\SYSTEM32\bcrypt.dll:bcrypt.dll (00007FFFE0380000), size: 172032 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8246
-C:\WINDOWS\SYSTEM32\d3d11.dll:d3d11.dll (00007FFFDCA80000), size: 2498560 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8457
-C:\WINDOWS\SYSTEM32\d3d12.dll:d3d12.dll (00007FFF879C0000), size: 151552 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\SYSTEM32\MSVCP140.dll:MSVCP140.dll (00007FFFA3BE0000), size: 557056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.50.35719.0
-C:\WINDOWS\SYSTEM32\dxgi.dll:dxgi.dll (00007FFFDDB80000), size: 1302528 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8457
-C:\WINDOWS\SYSTEM32\dwmapi.dll:dwmapi.dll (00007FFFDDDD0000), size: 192512 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8457
-C:\WINDOWS\SYSTEM32\HID.DLL:HID.DLL (00007FFFDE8A0000), size: 61440 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1150
-C:\WINDOWS\SYSTEM32\VCRUNTIME140.dll:VCRUNTIME140.dll (00007FFFB19A0000), size: 122880 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.50.35719.0
-C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL:IPHLPAPI.DLL (00007FFFDEBD0000), size: 204800 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8457
-C:\WINDOWS\SYSTEM32\VCRUNTIME140_1.dll:VCRUNTIME140_1.dll (00007FFFA3BD0000), size: 45056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.50.35719.0
-C:\WINDOWS\SYSTEM32\OPENGL32.dll:OPENGL32.dll (00007FFFC1020000), size: 1110016 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\SYSTEM32\WINHTTP.dll:WINHTTP.dll (00007FFFD7E20000), size: 1216512 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\SYSTEM32\WINMM.dll:WINMM.dll (00007FFFD5FB0000), size: 221184 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8457
-C:\WINDOWS\SYSTEM32\GLU32.dll:GLU32.dll (00007FFFC0FF0000), size: 184320 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1150
-D:\Unity\6000.2.11f1\Editor\SketchUpAPI.dll:SketchUpAPI.dll (00007FFEF6670000), size: 8990720 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 23.0.0.0
-D:\Unity\6000.2.11f1\Editor\NativeProxyHelper.dll:NativeProxyHelper.dll (00007FFF13780000), size: 1789952 (result: 0), SymType: '-deferred-', PDB: ''
-C:\WINDOWS\SYSTEM32\VERSION.dll:VERSION.dll (00007FFFCD2E0000), size: 45056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1150
-C:\WINDOWS\SYSTEM32\WSOCK32.dll:WSOCK32.dll (00007FFF84630000), size: 40960 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1
-C:\WINDOWS\SYSTEM32\powrprof.dll:powrprof.dll (00007FFFE02F0000), size: 385024 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.3912
-D:\Unity\6000.2.11f1\Editor\SketchUpCommonPreferences.dll:SketchUpCommonPreferences.dll (00007FFF46B00000), size: 499712 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 23.0.0.0
-C:\WINDOWS\SYSTEM32\dxcore.dll:dxcore.dll (00007FFFDDAE0000), size: 282624 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\SYSTEM32\Secur32.dll:Secur32.dll (00007FFFDD8B0000), size: 53248 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
-C:\WINDOWS\SYSTEM32\SSPICLI.DLL:SSPICLI.DLL (00007FFFDF480000), size: 299008 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-D:\Unity\6000.2.11f1\Editor\OpenRL.dll:OpenRL.dll (00000242667A0000), size: 12779520 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.5.0.2907
-C:\WINDOWS\SYSTEM32\MSVCP100.dll:MSVCP100.dll (000000006AF00000), size: 622592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.40219.325
-C:\WINDOWS\SYSTEM32\MSVCR100.dll:MSVCR100.dll (000000006AE20000), size: 860160 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.40219.325
-D:\Unity\6000.2.11f1\Editor\embree.dll:embree.dll (00007FFEF5680000), size: 16711680 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2.14.0.0
-C:\WINDOWS\SYSTEM32\cfgmgr32.DLL:cfgmgr32.DLL (00007FFFE0000000), size: 331776 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8115
-D:\Unity\6000.2.11f1\Editor\tbb.dll:tbb.dll (00007FFF43F40000), size: 303104 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2020.3.2022.1111
-C:\WINDOWS\SYSTEM32\MSWSOCK.DLL:MSWSOCK.DLL (00007FFFDF730000), size: 442368 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-D:\Unity\6000.2.11f1\Editor\OpenRL_pthread.dll:OpenRL_pthread.dll (0000024265180000), size: 61440 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2.9.0.0
-C:\WINDOWS\SYSTEM32\UMPDC.dll:UMPDC.dll (00007FFFE02C0000), size: 81920 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8115
-C:\WINDOWS\SYSTEM32\MSASN1.dll:MSASN1.dll (00007FFFDFB90000), size: 77824 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8246
-C:\WINDOWS\System32\bcryptprimitives.dll:bcryptprimitives.dll (00007FFFE0D40000), size: 688128 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\SYSTEM32\kernel.appcore.dll:kernel.appcore.dll (00007FFFDF1E0000), size: 110592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\system32\uxtheme.dll:uxtheme.dll (00007FFFDD920000), size: 696320 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8457
-C:\WINDOWS\System32\SHCORE.dll:SHCORE.dll (00007FFFE2D90000), size: 1007616 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8457
-C:\WINDOWS\SYSTEM32\profapi.dll:profapi.dll (00007FFFE03B0000), size: 167936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\system32\IconCodecService.dll:IconCodecService.dll (00007FFFA3750000), size: 45056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1
-C:\WINDOWS\SYSTEM32\CRYPTSP.dll:CRYPTSP.dll (00007FFFDFB30000), size: 110592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\system32\rsaenh.dll:rsaenh.dll (00007FFFDF140000), size: 233472 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
-C:\WINDOWS\SYSTEM32\WindowsCodecs.dll:WindowsCodecs.dll (00007FFFDBFA0000), size: 2281472 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\SYSTEM32\CRYPTBASE.dll:CRYPTBASE.dll (00007FFFDF990000), size: 49152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8246
-C:\WINDOWS\System32\imagehlp.dll:imagehlp.dll (00007FFFE35A0000), size: 131072 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.4202
-C:\WINDOWS\System32\clbcatq.dll:clbcatq.dll (00007FFFE1890000), size: 712704 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2001.12.10941.16384
-C:\WINDOWS\System32\NSI.dll:NSI.dll (00007FFFE3740000), size: 40960 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8246
-C:\WINDOWS\System32\netprofm.dll:netprofm.dll (00007FFFD7DA0000), size: 450560 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL:dhcpcsvc6.DLL (00007FFFD81D0000), size: 118784 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL:dhcpcsvc.DLL (00007FFFD8170000), size: 151552 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\SYSTEM32\DNSAPI.dll:DNSAPI.dll (00007FFFDEC60000), size: 1253376 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8457
-C:\WINDOWS\system32\napinsp.dll:napinsp.dll (00007FFF9CCE0000), size: 98304 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1150
-C:\WINDOWS\System32\winrnr.dll:winrnr.dll (00007FFF9A6C0000), size: 77824 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\system32\nlansp_c.dll:nlansp_c.dll (00007FFF923E0000), size: 139264 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8115
-C:\WINDOWS\system32\wshbth.dll:wshbth.dll (00007FFF923C0000), size: 90112 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
-C:\WINDOWS\System32\fwpuclnt.dll:fwpuclnt.dll (00007FFFD8580000), size: 548864 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8457
-C:\Windows\System32\rasadhlp.dll:rasadhlp.dll (00007FFFD53D0000), size: 45056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7920
-C:\WINDOWS\System32\npmproxy.dll:npmproxy.dll (00007FFFCEC50000), size: 102400 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-D:\Unity\6000.2.11f1\Editor\AMDUnityPlugin.DLL:AMDUnityPlugin.DLL (00007FFEF3960000), size: 8843264 (result: 0), SymType: '-deferred-', PDB: ''
-D:\Unity\6000.2.11f1\Editor\NVUnityPlugin.DLL:NVUnityPlugin.DLL (00007FFEFCBA0000), size: 1605632 (result: 0), SymType: '-deferred-', PDB: ''
-C:\WINDOWS\SYSTEM32\gpapi.dll:gpapi.dll (00007FFFDF7A0000), size: 192512 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\Windows\System32\cryptnet.dll:cryptnet.dll (00007FFFC8C80000), size: 241664 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\SYSTEM32\WINNSI.DLL:WINNSI.DLL (00007FFFD9070000), size: 57344 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8246
-D:\Unity\6000.2.11f1\Editor\Data\Tools\astcenc-avx2.dll:astcenc-avx2.dll (00007FFF43EE0000), size: 352256 (result: 0), SymType: '-deferred-', PDB: ''
-C:\WINDOWS\System32\MMDevApi.dll:MMDevApi.dll (00007FFFCC030000), size: 626688 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\System32\DEVOBJ.dll:DEVOBJ.dll (00007FFFDFFD0000), size: 184320 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1150
-C:\WINDOWS\SYSTEM32\directxdatabasehelper.dll:directxdatabasehelper.dll (00007FFFD8D20000), size: 397312 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8457
-C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_0fdf6ce291234272\igd10iumd64.dll:igd10iumd64.dll (00007FFFD7940000), size: 4579328 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 31.0.101.4502
-C:\WINDOWS\SYSTEM32\apphelp.dll:apphelp.dll (00007FFFDD800000), size: 655360 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_0fdf6ce291234272\igd10um64xe.DLL:igd10um64xe.DLL (00007FFFD5FF0000), size: 26009600 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 31.0.101.4502
-C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_0fdf6ce291234272\IntelControlLib.dll:IntelControlLib.dll (00007FFFD58E0000), size: 569344 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.0.148.0
-C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_0fdf6ce291234272\igdgmm64.dll:igdgmm64.dll (00007FFFD4F00000), size: 4423680 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 31.0.101.4502
-C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_0fdf6ce291234272\igc64.dll:igc64.dll (00007FFFD1050000), size: 65720320 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 31.0.101.4502
-C:\WINDOWS\SYSTEM32\opencl.dll:opencl.dll (00007FFFC11A0000), size: 98304 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 3.0.6.0
-D:\Unity\6000.2.11f1\Editor\radeonrays.dll:radeonrays.dll (00007FFF43910000), size: 344064 (result: 0), SymType: '-deferred-', PDB: ''
-D:\Unity\6000.2.11f1\Editor\Data\MonoBleedingEdge\EmbedRuntime\mono-2.0-bdwgc.dll:mono-2.0-bdwgc.dll (00007FFEF2F10000), size: 10760192 (result: 0), SymType: '-deferred-', PDB: ''
-D:\Unity\6000.2.11f1\Editor\Data\PlaybackEngines\iOSSupport\x64\UnityEditor.iOS.Native.dll:UnityEditor.iOS.Native.dll (00007FFF438C0000), size: 303104 (result: 0), SymType: '-deferred-', PDB: ''
-C:\WINDOWS\SYSTEM32\PROPSYS.dll:PROPSYS.dll (00007FFFDB830000), size: 1073152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 7.0.26100.8457
-C:\Windows\System32\Windows.FileExplorer.Common.dll:Windows.FileExplorer.Common.dll (00007FFF89CB0000), size: 786432 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8457
-C:\WINDOWS\SYSTEM32\wintypes.dll:wintypes.dll (00007FFFD8410000), size: 1482752 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\system32\NetworkExplorer.dll:NetworkExplorer.dll (00007FFF7B340000), size: 110592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8115
-C:\Windows\System32\Windows.StateRepositoryPS.dll:Windows.StateRepositoryPS.dll (00007FFFC5850000), size: 802816 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\SYSTEM32\windows.staterepositoryclient.dll:windows.staterepositoryclient.dll (00007FFFC5210000), size: 294912 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\SYSTEM32\edputil.dll:edputil.dll (00007FFF81910000), size: 167936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8115
-C:\WINDOWS\SYSTEM32\urlmon.dll:urlmon.dll (00007FFFB1A30000), size: 1953792 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 11.0.26100.8457
-C:\WINDOWS\SYSTEM32\iertutil.dll:iertutil.dll (00007FFFC5280000), size: 2899968 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 11.0.26100.8457
-C:\WINDOWS\SYSTEM32\netutils.dll:netutils.dll (00007FFFDEB90000), size: 53248 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1882
-C:\WINDOWS\SYSTEM32\srvcli.dll:srvcli.dll (00007FFFCEFD0000), size: 167936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1150
-C:\Windows\System32\cldapi.dll:cldapi.dll (00007FFF81940000), size: 204800 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8457
-C:\WINDOWS\SYSTEM32\virtdisk.dll:virtdisk.dll (00007FFFCEDA0000), size: 94208 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\SYSTEM32\Wldp.dll:Wldp.dll (00007FFFDFA30000), size: 434176 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\system32\wbem\wbemprox.dll:wbemprox.dll (00007FFFCE0C0000), size: 73728 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\SYSTEM32\wbemcomn.dll:wbemcomn.dll (00007FFFCF980000), size: 499712 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7920
-C:\WINDOWS\system32\wbem\wbemsvc.dll:wbemsvc.dll (00007FFFCD2F0000), size: 86016 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\system32\wbem\fastprox.dll:fastprox.dll (00007FFFCD540000), size: 983040 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\WINDOWS\SYSTEM32\amsi.dll:amsi.dll (00007FFFCCE70000), size: 118784 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7309
-C:\WINDOWS\SYSTEM32\USERENV.dll:USERENV.dll (00007FFFDF7E0000), size: 208896 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
-C:\Program Files\McAfee\WPS\1.39.160.1\mc-sec-plugin-x64.dll:mc-sec-plugin-x64.dll (00007FFFCCA80000), size: 1187840 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.139.286.0
-C:\WINDOWS\SYSTEM32\dbghelp.dll:dbghelp.dll (00007FFFDE390000), size: 2367488 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
+- Loaded All Assemblies, in  2.975 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 37.47 ms, found 8 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Refreshing native plugins compatible for Editor in 66.58 ms, found 8 plugins.
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.689 seconds
+Domain Reload Profiling: 5625ms
+	BeginReloadAssembly (433ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (46ms)
+	RebuildCommonClasses (72ms)
+	RebuildNativeTypeToScriptingClass (21ms)
+	initialDomainReloadingComplete (104ms)
+	LoadAllAssembliesAndSetupDomain (2304ms)
+		LoadAssemblies (1595ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (1005ms)
+			TypeCache.Refresh (803ms)
+				TypeCache.ScanAssembly (751ms)
+			BuildScriptInfoCaches (159ms)
+			ResolveRequiredComponents (32ms)
+	FinalizeReload (2690ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (2280ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (42ms)
+			SetLoadedEditorAssemblies (8ms)
+			BeforeProcessingInitializeOnLoad (476ms)
+			ProcessInitializeOnLoadAttributes (1355ms)
+			ProcessInitializeOnLoadMethodAttributes (371ms)
+			AfterProcessingInitializeOnLoad (28ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 203.46 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 8483 unused Assets / (5.3 MB). Loaded Objects now: 9187.
+Memory consumption went from 161.4 MB to 156.1 MB.
+Total: 51.895800 ms (FindLiveObjects: 4.643600 ms CreateObjectMapping: 4.846700 ms MarkObjects: 29.709500 ms  DeleteObjects: 12.694100 ms)
 
-========== OUTPUTTING STACK TRACE ==================
+========================================================================
+Received Import Request.
+  Time since last request: 84207.048711 seconds.
+  path: Assets/Prefabs/Enemy.prefab
+  artifactKey: Guid(73571a2371c276347b77857a5bd6311b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy.prefab using Guid(73571a2371c276347b77857a5bd6311b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b5972acb26bf887b1a0d5926c86a5a37') in 0.6040663 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 15
 
-0x00007FFFE093FE0A (KERNELBASE) RaiseException
-0x00007FFEEB076519 (Unity) EditorMonoConsole::LogToConsoleImplementation
-0x00007FFEEB077200 (Unity) EditorMonoConsole::LogToConsoleImplementation
-0x00007FFEEBD255AD (Unity) DebugStringToFilePostprocessedStacktrace
-0x00007FFEEBD24929 (Unity) DebugStringToFile
-0x00007FFEEB602D55 (Unity) RegisterAssemblyDefinition
-0x00007FFEEBA291C5 (Unity) ProcessAssemblyAssets
-0x00007FFEEBA29F26 (Unity) UpdateScriptCompilationPipelineCaches
-0x00007FFEEB9CCFF4 (Unity) AssetImportWorkerClient::RegisterTransientArtifacts
-0x00007FFEEB9BDA41 (Unity) <lambda_3a9c7c2eddb05db64411c28c6b8b8d90>::operator()
-0x00007FFEEB9FD6AF (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)>,asio::io_context::basic_executor_type<std::allocator<void>,0> >::do_complete
-0x00007FFEEB9EAFA1 (Unity) asio::detail::win_iocp_io_context::do_one
-0x00007FFEEB9EC18E (Unity) asio::detail::win_iocp_io_context::run
-0x00007FFEEB9FBD19 (Unity) IOService::Run
-0x00007FFEEB9CE7AF (Unity) AssetImportWorkerClient::Run
-0x00007FFEEB992888 (Unity) RunAssetImportWorkerClientV2
-0x00007FFEEB9928FB (Unity) RunAssetImporterV2
-0x00007FFEEB174820 (Unity) Application::InitializeProject
-0x00007FFEEB7584F5 (Unity) UnityMain
-0x00007FF7742B2F2A (Unity) __scrt_common_main_seh
-0x00007FFFE22CE957 (KERNEL32) BaseThreadInitThunk
-0x00007FFFE3A6427C (ntdll) RtlUserThreadStart
+========================================================================
+Received Prepare
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  2.535 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 39.11 ms, found 8 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.276 seconds
+Domain Reload Profiling: 4794ms
+	BeginReloadAssembly (444ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (46ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (93ms)
+	RebuildCommonClasses (79ms)
+	RebuildNativeTypeToScriptingClass (22ms)
+	initialDomainReloadingComplete (76ms)
+	LoadAllAssembliesAndSetupDomain (1896ms)
+		LoadAssemblies (1542ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (554ms)
+			TypeCache.Refresh (20ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (495ms)
+			ResolveRequiredComponents (30ms)
+	FinalizeReload (2277ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1915ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (52ms)
+			SetLoadedEditorAssemblies (9ms)
+			BeforeProcessingInitializeOnLoad (508ms)
+			ProcessInitializeOnLoadAttributes (1128ms)
+			ProcessInitializeOnLoadMethodAttributes (183ms)
+			AfterProcessingInitializeOnLoad (34ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (41ms)
+Refreshing native plugins compatible for Editor in 60.08 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 8481 unused Assets / (5.6 MB). Loaded Objects now: 9222.
+Memory consumption went from 163.2 MB to 157.6 MB.
+Total: 27.303600 ms (FindLiveObjects: 1.599000 ms CreateObjectMapping: 1.765400 ms MarkObjects: 13.423500 ms  DeleteObjects: 10.513300 ms)
 
-========== END OF STACKTRACE ===========
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+[Licensing::Client] Successfully resolved entitlement details
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  3.558 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 59.57 ms, found 8 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.485 seconds
+Domain Reload Profiling: 6976ms
+	BeginReloadAssembly (727ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (32ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (1ms)
+		CreateAndSetChildDomain (148ms)
+	RebuildCommonClasses (105ms)
+	RebuildNativeTypeToScriptingClass (28ms)
+	initialDomainReloadingComplete (127ms)
+	LoadAllAssembliesAndSetupDomain (2504ms)
+		LoadAssemblies (2015ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (832ms)
+			TypeCache.Refresh (18ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (770ms)
+			ResolveRequiredComponents (33ms)
+	FinalizeReload (3486ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (3046ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (58ms)
+			SetLoadedEditorAssemblies (18ms)
+			BeforeProcessingInitializeOnLoad (620ms)
+			ProcessInitializeOnLoadAttributes (2106ms)
+			ProcessInitializeOnLoadMethodAttributes (202ms)
+			AfterProcessingInitializeOnLoad (41ms)
+			EditorAssembliesLoaded (2ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (40ms)
+Refreshing native plugins compatible for Editor in 84.38 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 8481 unused Assets / (3.4 MB). Loaded Objects now: 9225.
+Memory consumption went from 163.1 MB to 159.7 MB.
+Total: 40.360800 ms (FindLiveObjects: 2.904400 ms CreateObjectMapping: 2.898400 ms MarkObjects: 24.035200 ms  DeleteObjects: 10.520300 ms)
 
-A crash has been intercepted by the crash handler. For call stack and other details, see the latest crash report generated in:
- * C:/Users/ousma/AppData/Local/Temp/Unity/Editor/Crashes
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+[Licensing::Client] Successfully resolved entitlement details
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  2.052 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 34.57 ms, found 8 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.600 seconds
+Domain Reload Profiling: 3634ms
+	BeginReloadAssembly (434ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (27ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (1ms)
+		CreateAndSetChildDomain (94ms)
+	RebuildCommonClasses (110ms)
+	RebuildNativeTypeToScriptingClass (23ms)
+	initialDomainReloadingComplete (62ms)
+	LoadAllAssembliesAndSetupDomain (1405ms)
+		LoadAssemblies (1181ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (424ms)
+			TypeCache.Refresh (21ms)
+				TypeCache.ScanAssembly (3ms)
+			BuildScriptInfoCaches (360ms)
+			ResolveRequiredComponents (34ms)
+	FinalizeReload (1600ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1315ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (85ms)
+			SetLoadedEditorAssemblies (15ms)
+			BeforeProcessingInitializeOnLoad (361ms)
+			ProcessInitializeOnLoadAttributes (733ms)
+			ProcessInitializeOnLoadMethodAttributes (100ms)
+			AfterProcessingInitializeOnLoad (20ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (22ms)
+Refreshing native plugins compatible for Editor in 23.81 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 8481 unused Assets / (5.8 MB). Loaded Objects now: 9228.
+Memory consumption went from 163.1 MB to 157.3 MB.
+Total: 12.943900 ms (FindLiveObjects: 1.205800 ms CreateObjectMapping: 1.471300 ms MarkObjects: 5.316100 ms  DeleteObjects: 4.948700 ms)
+
+Prepare: number of updated asset objects reloaded= 0

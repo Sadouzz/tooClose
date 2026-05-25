@@ -5,6 +5,8 @@ public class OffScreenIndicator : MonoBehaviour
 {
     public Transform target;
     public float margin = 40f;
+    [Tooltip("Marge sp√©cifique pour le bas afin d'√©viter la banni√®re publicitaire (en pixels)")]
+    public float bottomMargin = 150f;
     private CanvasGroup canvasGroup;
     private RectTransform rectTransform;
 
@@ -13,7 +15,7 @@ public class OffScreenIndicator : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
 
-        // S…CURIT… : Si on a oubliÈ d'ajouter le CanvasGroup sur le Prefab, le script l'ajoute tout seul
+        // S√âCURIT√â : Si on a oubli√© d'ajouter le CanvasGroup sur le Prefab, le script l'ajoute tout seul
         if (canvasGroup == null)
         {
             canvasGroup = gameObject.AddComponent<CanvasGroup>();
@@ -28,26 +30,27 @@ public class OffScreenIndicator : MonoBehaviour
             return;
         }
 
-        // On vÈrifie que la camÈra existe pour Èviter d'autres erreurs
+        // On v√©rifie que la cam√©ra existe pour √©viter d'autres erreurs
         if (Camera.main == null) return;
 
         Vector3 screenPos = Camera.main.WorldToScreenPoint(target.position);
 
-        // Ta logique de dÈtection...
+        // Ta logique de d√©tection...
         bool isOffScreen = screenPos.z < 0 || screenPos.x <= 0 || screenPos.x >= Screen.width || screenPos.y <= 0 || screenPos.y >= Screen.height;
 
-        // Utilisation sÈcurisÈe
+        // Utilisation s√©curis√©e
         canvasGroup.alpha = isOffScreen ? 1f : 0f;
 
         if (isOffScreen)
         {
             canvasGroup.alpha = 1;
 
-            // Inversion si le missile est derriËre pour Èviter l'effet miroir
+            // Inversion si le missile est derri√®re pour √©viter l'effet miroir
             if (screenPos.z < 0) screenPos *= -1;
 
             float x = Mathf.Clamp(screenPos.x, margin, Screen.width - margin);
-            float y = Mathf.Clamp(screenPos.y, margin, Screen.height - margin);
+            // On utilise bottomMargin pour √©viter que l'indicateur ne passe sous la banni√®re publicitaire
+            float y = Mathf.Clamp(screenPos.y, bottomMargin, Screen.height - margin);
 
             transform.position = new Vector3(x, y, 0);
 
@@ -58,7 +61,7 @@ public class OffScreenIndicator : MonoBehaviour
         }
         else
         {
-            canvasGroup.alpha = 0; // Cache l'icÙne si le missile est visible
+            canvasGroup.alpha = 0; // Cache l'ic√¥ne si le missile est visible
         }
     }
 }
