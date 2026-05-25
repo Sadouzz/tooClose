@@ -34,9 +34,24 @@ public class ChunkManager : MonoBehaviour
         {
             maxViewDist = 30;
         }
+        else if (PlayerMovement.instance != null && PlayerMovement.instance.currentPhase == PlayerMovement.GamePhase.Shooting)
+        {
+            maxViewDist = 25f; // Augmenté pour la phase de tir afin d'éviter les vides sur les bords !
+        }
         else
         {
             maxViewDist = initMaxViewDist;
+        }
+
+        chunksVisibleInViewDist = Mathf.RoundToInt(maxViewDist / chunkSize);
+    }
+
+    public void ForceUpdateChunks()
+    {
+        if (player != null)
+        {
+            playerPos = player.position;
+            UpdateVisibleChunks();
         }
     }
 

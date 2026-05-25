@@ -50,6 +50,8 @@ public class PlayerPowerUpManager : MonoBehaviour
     public float zoomOutLensSize = 15f;
     public float normalLensSize = 10f;
 
+    public int usedPowersCount;
+
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -86,6 +88,7 @@ public class PlayerPowerUpManager : MonoBehaviour
         slowMoTimer = 0f;
         zoomTimer = 0f;
         activeSliderPowerUp = "";
+        usedPowersCount = 0;
 
         if (sliderParent != null) sliderParent.SetActive(false);
 
@@ -139,7 +142,7 @@ public class PlayerPowerUpManager : MonoBehaviour
             case "SlowMo": ActivateSlowMo(8f); break;
             case "Zoom": ActivateZoom(8f); break;
         }
-
+        usedPowersCount++;
         PowerUpUIManager.instance.ClearStoredPowerUp();
     }
 

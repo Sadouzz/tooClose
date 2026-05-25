@@ -12,6 +12,8 @@ TagManager:
   - PowerUp
   - EventSoundPickPowerUp
   - EventSoundMissileExplosion
+  - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX

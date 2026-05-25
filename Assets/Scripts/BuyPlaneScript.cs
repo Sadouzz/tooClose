@@ -1,30 +1,32 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using TMPro;
 
 public class BuyPlaneScript : MonoBehaviour
 {
+    public static BuyPlaneScript instance;
     public ChoosingPlaneScript selectionScript;
     public GameObject[] playButtons;
     public GameObject buyPanel;
     public GameObject infoPanel; // Panel qui dit "Stars insuffisantes"
     public TextMeshProUGUI priceText, infoPanelText;
 
-    // Simule ton stock de monnaie (à lier à ton vrai système de monnaie plus tard)
+    // Simule ton stock de monnaie (Ã  lier Ã  ton vrai systÃ¨me de monnaie plus tard)
     private int playerStars;
 
     void Start()
     {
-        // On récupère les stars au démarrage
+        if (instance == null) instance = this;
+        // On rÃ©cupÃ¨re les stars au dÃ©marrage
         playerStars = PlayerPrefs.GetInt("stars", 0);
         infoPanel.SetActive(false);
     }
 
-    // Cette fonction sera appelée par ChoosingPlaneScript à chaque changement
+    // Cette fonction sera appelÃ©e par ChoosingPlaneScript Ã  chaque changement
     public void UpdateUI(int index, PlaneData data)
     {
-        // Vérifie si l'avion est déjà acheté (L'avion 0 est gratuit par défaut)
+        // VÃ©rifie si l'avion est dÃ©jÃ  achetÃ© (L'avion 0 est gratuit par dÃ©faut)
         bool isUnlocked = (index == 0) || PlayerPrefs.GetInt("Unlocked_" + index, 0) == 1;
 
         if (isUnlocked)
@@ -54,11 +56,11 @@ public class BuyPlaneScript : MonoBehaviour
 
         if (playerStars >= data.price)
         {
-            // Achat réussi
+            // Achat rÃ©ussi
             playerStars -= data.price;
             PlayerPrefs.SetInt("TotalStars", playerStars);
 
-            // On enregistre le déblocage
+            // On enregistre le dÃ©blocage
             PlayerPrefs.SetInt("Unlocked_" + currentIndex, 1);
             PlayerPrefs.Save();
 
@@ -82,13 +84,13 @@ public class BuyPlaneScript : MonoBehaviour
 
         if (stars >= data.price)
         {
-            // 1. Déduire le prix
+            // 1. DÃ©duire le prix
             PlayerPrefs.SetInt("stars", stars - data.price);
 
-            // 2. Marquer comme débloqué
+            // 2. Marquer comme dÃ©bloquÃ©
             PlayerPrefs.SetInt("Unlocked_" + currentIndex, 1);
 
-            // 3. PUISQUE L'ACHAT EST FAIT, ON SAUVEGARDE CET INDEX COMME ÉTANT LE CHOIX ACTUEL
+            // 3. PUISQUE L'ACHAT EST FAIT, ON SAUVEGARDE CET INDEX COMME Ã‰TANT LE CHOIX ACTUEL
             selectionScript.SaveCurrentSelection();
 
             UpdateUI(currentIndex, data);

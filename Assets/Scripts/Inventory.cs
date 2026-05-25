@@ -29,7 +29,7 @@ public class Inventory : MonoBehaviour
     public GameObject player, explosionPrefab; // Assigne l'objet qui contient le PlayerMovement
 
     /*[Header("Near Miss System")]
-    public TextMeshProUGUI nearMissText; // Assigne un TextMeshPro caché par défaut
+    public TextMeshProUGUI nearMissText; // Assigne un TextMeshPro cachÃ© par dÃ©faut
     public Animator nearMissAnimator;    // L'animateur du texte
     private int nearMissCombo = 0;
     private float comboResetTimer;
@@ -101,18 +101,18 @@ public class Inventory : MonoBehaviour
         // On bloque le temps totalement
         Time.timeScale = 0f;
 
-        // On lance la secousse d'écran (qui utilise unscaledDeltaTime donc elle bouge quand même !)
+        // On lance la secousse d'Ã©cran (qui utilise unscaledDeltaTime donc elle bouge quand mÃªme !)
         if (CameraShake.instance != null)
             CameraShake.instance.Shake(0.25f, 0.4f);
 
-        // On attend 0.2 secondes réelles pendant que le jeu est figé
+        // On attend 0.2 secondes rÃ©elles pendant que le jeu est figÃ©
         yield return new WaitForSecondsRealtime(0.2f);
 
         // --- 2. IMPACT & EXPLOSION ---
-        // On remet le temps à 1 pour que les animations/particules fonctionnent
+        // On remet le temps Ã  1 pour que les animations/particules fonctionnent
         Time.timeScale = 1f;
 
-        // Désactive le visuel et lance ton effet d'explosion ici
+        // DÃ©sactive le visuel et lance ton effet d'explosion ici
         player.SetActive(false);
         // Exemple : Instantiate(explosionPrefab, player.transform.position, Quaternion.identity);
 
@@ -144,18 +144,18 @@ public class Inventory : MonoBehaviour
         {
             // On secoue fort (Amplitude 3.0)
             CameraShake.instance.Shake(0.3f, 3f);
-            // On zoom sur le crash (Taille ortho de 5.0 à 3.0 par exemple)
+            // On zoom sur le crash (Taille ortho de 5.0 Ã  3.0 par exemple)
             CameraShake.instance.ImpactZoom(3f, 10f, 2f, 0.5f);
         }
 
         // On laisse le joueur "admirer" son crash pendant 0.25s
         yield return new WaitForSecondsRealtime(0.25f);
 
-        // 2. L'EXPLOSION (On libère le temps)
+        // 2. L'EXPLOSION (On libÃ¨re le temps)
         Time.timeScale = 1f;
         player.SetActive(false);
 
-        // Ici, fais apparaître ton explosion de particules
+        // Ici, fais apparaÃ®tre ton explosion de particules
         Instantiate(explosionPrefab, player.transform.position, Quaternion.identity);
 
         int sessionStars = CalculateStars();
@@ -181,40 +181,50 @@ public class Inventory : MonoBehaviour
 
     public void SaveData(int stars)
     {
-        // 1. Mise à jour du total d'étoiles permanent
+        // 1. Mise Ã  jour du total d'Ã©toiles permanent
         addedStarsLastDie = stars;
         int currentTotal = PlayerPrefs.GetInt("stars", 0);
+        int totalDestroyedMissiles = PlayerPrefs.GetInt("totalDestroyedMissiles", 0);
+        PlayerPrefs.SetInt("totalDestroyedMissiles", totalDestroyedMissiles + MissileSpawner.instance.destroyedMissiles);
+        int totalDestroyedEnemies = PlayerPrefs.GetInt("totalDestroyedEnemies", 0);
+        PlayerPrefs.SetInt("totalDestroyedEnemies", totalDestroyedEnemies + MissileSpawner.instance.destroyedEnemies);
         PlayerPrefs.SetInt("stars", currentTotal + stars);
-        // On récupère la difficulté et on compare directement pour obtenir un booléen
+        // On rÃ©cupÃ¨re la difficultÃ© et on compare directement pour obtenir un boolÃ©en
         bool isHardMode = PlayerPrefs.GetString("Difficulty", "Easy") != "Easy";
 
-        // On envoie le résultat au script de Highscore
+
+        // On envoie le rÃ©sultat au script de Highscore
         HighScoreScript.instance.SaveNewScore(score, isHardMode);
 
     }
 
-    // Appelé par le bouton "Revive / Watch Ad"
+    // AppelÃ© par le bouton "Revive / Watch Ad"
     public void AdsReward()
     {
-        // 1. On annule les étoiles gagnées (puisqu'on continue la partie)
+        // 1. On annule les Ã©toiles gagnÃ©es (puisqu'on continue la partie)
         int currentTotal = PlayerPrefs.GetInt("stars", 0);
+        int totalDestroyedMissiles = PlayerPrefs.GetInt("totalDestroyedMissiles", 0);
+        PlayerPrefs.SetInt("totalDestroyedMissiles", totalDestroyedMissiles - MissileSpawner.instance.destroyedMissiles);
+        int totalDestroyedEnemies = PlayerPrefs.GetInt("totalDestroyedEnemies", 0);
+        PlayerPrefs.SetInt("totalDestroyedEnemies", totalDestroyedEnemies - MissileSpawner.instance.destroyedEnemies);
         PlayerPrefs.SetInt("stars", currentTotal - addedStarsLastDie);
+        
 
-        // 2. On réinitialise les états
+        // 2. On rÃ©initialise les Ã©tats
         dead = false;
         inPlay = true;
 
-        // 3. ON RÉACTIVE LE JOUEUR
+        // 3. ON RÃ‰ACTIVE LE JOUEUR
         player.SetActive(true);
 
-        // 4. On lance l'invincibilité et le clignotement
+        // 4. On lance l'invincibilitÃ© et le clignotement
         if (PlayerMovement.instance != null)
         {
             StartCoroutine(PlayerMovement.instance.InvincibleTiming());
             PlayerMovement.instance.move = true;
         }
 
-        // 5. Nettoyage de l'écran
+        // 5. Nettoyage de l'Ã©cran
         MissileSpawner.instance.DestroyAllMissiles();
         
         
@@ -226,14 +236,14 @@ public class Inventory : MonoBehaviour
 
     public void ResetData()
     {
-        // Réinitialisation des statistiques numériques
+        // RÃ©initialisation des statistiques numÃ©riques
         score = 0;
         scoreTimer = 0;
         totalSeconds = 0;
         starsPicked = 0;
         addedStarsLastDie = 0;
         MissileSpawner.instance.ResetData();
-        // Réinitialisation de l'UI
+        // RÃ©initialisation de l'UI
         scoreText.text = "0";
         timerText.text = "00:00:00";
         pickedStarsText.text = "0";
@@ -241,7 +251,7 @@ public class Inventory : MonoBehaviour
 
         
 
-        // Réinitialisation des états
+        // RÃ©initialisation des Ã©tats
         //dead = false;
         //inPlay = true; // On repasse en jeu
     }
@@ -260,7 +270,7 @@ public class Inventory : MonoBehaviour
         // APPEL DE L'ANIMATION COOL
         //PowerUpUIManager.instance.ShowNearMissFeedback(nearMissCombo, gain, missilePos);
 
-        // Effet de ralenti (optionnel mais recommandé pour le feeling)
+        // Effet de ralenti (optionnel mais recommandÃ© pour le feeling)
         //StartCoroutine(BriefSlowMotion());
     }*/
 
@@ -270,16 +280,16 @@ public class Inventory : MonoBehaviour
         comboResetTimer = COMBO_LEEWAY;
         nearMissCombo++;
 
-        // 2. Calcul du gain : (Valeur fixe + Bonus proximité) * Combo
+        // 2. Calcul du gain : (Valeur fixe + Bonus proximitÃ©) * Combo
         int gain = Mathf.RoundToInt((50 * proximityBonus) * nearMissCombo);
         score += gain;
         scoreText.text = score.ToString();
 
-        // 3. Affichage du texte animé
+        // 3. Affichage du texte animÃ©
         if (nearMissText != null)
         {
             nearMissText.text = "NEAR MISS x" + nearMissCombo + "\n+" + gain;
-            // Déclenche l'animation (nomme ton trigger "Pop" dans l'Animator)
+            // DÃ©clenche l'animation (nomme ton trigger "Pop" dans l'Animator)
             nearMissAnimator.SetTrigger("Pop");
         }
     }*/

@@ -7,7 +7,7 @@ using Unity.Cinemachine;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject playPanel, menuPanel, diePanel, pausePanel, highscorePanel, settingsPanel, shopPanel, infoPanel;
+    public GameObject playPanel, menuPanel, diePanel, pausePanel, highscorePanel, settingsPanel, shopPanel, infoPanel, missionsPanel;
     public TextMeshProUGUI starsText;
 
     public static UIManager instance;
@@ -64,13 +64,13 @@ public class UIManager : MonoBehaviour
             float percent = elapsed / transitionDuration;
 
             // On utilise Lerp pour une transition fluide
-            // "SmoothStep" rend le début et la fin encore plus doux
+            // "SmoothStep" rend le dÃ©but et la fin encore plus doux
             composer.TargetOffset.y = Mathf.SmoothStep(startY, targetY, percent);
 
             yield return null;
         }
 
-        composer.TargetOffset.y = targetY; // Sécurité finale
+        composer.TargetOffset.y = targetY; // SÃ©curitÃ© finale
     }
 
     public void OpenDiePanel(string time, int totalSeconds, int score, int destroyedTurrets, int stars)
@@ -108,7 +108,7 @@ public class UIManager : MonoBehaviour
         if (vcam != null)
         {
             // On ne fait plus StopAllCoroutines ici car cela stopperait aussi le fade du son
-            // On stoppe spécifiquement la coroutine de la caméra si nécessaire
+            // On stoppe spÃ©cifiquement la coroutine de la camÃ©ra si nÃ©cessaire
             StartCoroutine(SmoothCameraOffset(0f));
         }
 
@@ -165,13 +165,46 @@ public class UIManager : MonoBehaviour
         PowerUpUIManager.instance.ClearStoredPowerUp();
         PlayerPowerUpManager.instance.Reset();
 
+        // Disable Cinemachine virtual camera to prevent it from interpolating/damping from old position
+        if (vcam != null)
+        {
+            vcam.enabled = false;
+        }
+
         PlayerMovement.instance.transform.position = Vector2.zero;
         PlayerMovement.instance.transform.rotation = Quaternion.identity;
+        PlayerMovement.instance.ResetCameraProxy();
+
+        if (vcam != null)
+        {
+            vcam.transform.position = new Vector3(0, 0, vcam.transform.position.z);
+            
+            // If there's a composer offset, reset it immediately to avoid offset lag
+            var composer = vcam.GetComponent<CinemachinePositionComposer>();
+            if (composer != null)
+            {
+                composer.TargetOffset = Vector3.zero;
+            }
+            
+            vcam.enabled = true;
+        }
+
+        if (Camera.main != null)
+        {
+            Camera.main.transform.position = new Vector3(0, 0, Camera.main.transform.position.z);
+        }
+
+        // Force all ChunkManagers in the scene to immediately update active chunks around the player's new position
+        ChunkManager[] chunkManagers = FindObjectsByType<ChunkManager>(FindObjectsSortMode.None);
+        foreach (ChunkManager cm in chunkManagers)
+        {
+            cm.ForceUpdateChunks();
+        }
 
         GameObject playerShip = PlayerMovement.instance.transform.GetChild(0).GetChild(ChoosingPlaneScript.instance.currentIndex).gameObject;
         playerShip.SetActive(true);
 
-        // 3. Reset de la physique (très important pour éviter l'élan résiduel)
+        // 3. Reset de la physique (trÃ¨s important pour Ã©viter l'Ã©lan rÃ©siduel)
         Rigidbody2D rb = PlayerMovement.instance.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
@@ -187,6 +220,11 @@ public class UIManager : MonoBehaviour
     {
         settingsPanel.SetActive(status);
         //settingsPanel.GetComponent<Animator>().SetBool("out", status);
+    }
+
+    public void EnableMissionsPanel(bool status)
+    {
+        missionsPanel.SetActive(status);
     }
 
     public void EnableShopPanel(bool status)

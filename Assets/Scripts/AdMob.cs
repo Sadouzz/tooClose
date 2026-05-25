@@ -1,224 +1,287 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using GoogleMobileAds;
-using GoogleMobileAds.Api;
 using System;
-using UnityEngine.UI;
+using UnityEngine;
+using GoogleMobileAds.Api;
+using GoogleMobileAds.Common;
 using TMPro;
-//using GooglePlayGames.BasicApi;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class AdMob : MonoBehaviour
 {
-    public Button adButton, adButtonDiePanel, adButtonMission;
-    bool adReady;
-    public int watchedCount;
-    Scene currentScene;
+    private BannerView _bannerView;
+    private RewardedAd _rewardedAd;
 
-    public GameObject[] objectsToMove;
+#if UNITY_ANDROID
+    private string _adUnitIdBanner = "ca-app-pub-3940256099942544/6300978111";
+    private string _adUnitId       = "ca-app-pub-3940256099942544/5224354917";
+#elif UNITY_IPHONE
+    private string _adUnitIdBanner = "ca-app-pub-3940256099942544/2934735716";
+    private string _adUnitId       = "ca-app-pub-3940256099942544/1712485313";
+#else
+    private string _adUnitIdBanner = "unused";
+    private string _adUnitId       = "unused";
+#endif
 
     public static AdMob instance;
+    private Scene currentScene;
+
+    public int watchedCount = 0;
+
+    public Button adButton;
+    public Button adButtonMission;
+    public bool adReady;
+
+    public GameObject[] objectsToMove;
+    private Dictionary<RectTransform, float> originalYPositions = new Dictionary<RectTransform, float>();
+
+    // Flag pour éviter un double-ajustement si OnBannerAdLoaded est appelé plusieurs fois
+    private bool _bannerAdjusted = false;
+
+    private bool isInitialized = false;
+
     private void Awake()
     {
-        currentScene = SceneManager.GetActiveScene();
-        if (instance != null)
-        {
-            return;
-        }
-        instance = this;
-    }
-
-    void StatusAdButtons(bool status)
-    {
-        adButton.interactable = status;
-        adButtonDiePanel.interactable = status;
+        if (instance == null) instance = this;
+        else if (instance != this) Destroy(gameObject);
     }
 
     void Start()
     {
-        /*PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
-        PlayGamesPlatform.InitializeInstance(config);
-        PlayGamesPlatform.Activate();
-
-        // Optional: Automatically sign in the user
-        SignInToGooglePlayServices();*/
+        currentScene = SceneManager.GetActiveScene();
         watchedCount = PlayerPrefs.GetInt("watchedAdsCount", 0);
-        StatusAdButtons(false);
-        //adButton.interactable = false;
-        /*
-        if (Inventory.instance.menu)
-        {
-            adButtonMission.interactable = false;
-        }
-        */
-
-        InitializeAdMob();
     }
 
-    // Start is called before the first frame update
-    void InitializeAdMob()
+    public void InitializeAdMob()
     {
-        MobileAds.RaiseAdEventsOnUnityMainThread = true;
+        if (isInitialized) return;
+        isInitialized = true;
 
-        // Initialize the Google Mobile Ads SDK.
+        Debug.Log("AdMob: Initializing MobileAds SDK.");
         MobileAds.Initialize((InitializationStatus initStatus) =>
         {
-            RequestConfiguration requestConfiguration = new RequestConfiguration
+            MobileAdsEventExecutor.ExecuteInUpdate(() =>
             {
-                TagForChildDirectedTreatment = TagForChildDirectedTreatment.True,
-                MaxAdContentRating = MaxAdContentRating.G
-            };
-
-            MobileAds.SetRequestConfiguration(requestConfiguration);
-            //tr.text = "Ini";
-            if(PlayerPrefs.GetString("noBannerAdsPaid", "no") == "no")
-            {
+                Debug.Log("AdMob: MobileAds SDK initialized. Loading ads.");
+                LoadRewardedAd();
                 LoadAd();
-            }
-            LoadRewardedAd();
-            
-            // This callback is called once the MobileAds SDK is initialized.
+            });
         });
-
-        
     }
 
+    void StatusAdButtons(bool status)
+    {
+        if (adButton != null) adButton.interactable = status;
+        if (adButtonMission != null) adButtonMission.interactable = status;
+    }
 
-    // These ad units are configured to always serve test ads.
-#if UNITY_ANDROID
-    private string _adUnitId = "ca-app-pub-3940256099942544/5224354917";
-#elif UNITY_IPHONE
-  private string _adUnitId = "ca-app-pub-3940256099942544/1712485313";
-#else
-    private string _adUnitId = "unused";
-#endif
-
-    private RewardedAd _rewardedAd;
-
-
-    // These ad units are configured to always serve test ads.
-#if UNITY_ANDROID
-    private string _bannerAdUnitId = "ca-app-pub-3940256099942544/6300978111";
-#elif UNITY_IPHONE
-  private string _bannerAdUnitId = "ca-app-pub-3940256099942544/2934735716";
-#else
-    private string _bannerAdUnitId = "unused";
-#endif
-
-    BannerView _bannerView;
-
-    /// <summary>
-    /// Creates a 320x50 banner view at top of the screen.
-    /// </summary>
     public void CreateBannerView()
     {
         Debug.Log("Creating banner view");
 
-        // If we already have a banner, destroy the old one.
-        if (_bannerView != null)
-        {
-            DestroyAd();
-        }
+        if (_bannerView != null) DestroyAd();
 
-        // Create a 320x50 banner at top of the screen
-        _bannerView = new BannerView(_bannerAdUnitId, AdSize.Banner, AdPosition.Top);
-        float bannerHeightInPixels = _bannerView.GetHeightInPixels();
-
-        // Convertir la taille de la banni�re de pixels en unit�s Unity
-        float bannerHeightInUnits = bannerHeightInPixels / Screen.dpi * 2.54f; // Conversion en cm puis en Unity units
-
-        // D�caler le RectTransform de l'�l�ment UI en fonction de la taille de la banni�re
-        /*Vector2 offset = uiElementToAdjust.offsetMax;
-        offset.y = -bannerHeightInUnits;  // D�caler vers le bas
-        uiElementToAdjust.offsetMax = offset;*/
-
-        /*for (int i = 0; i < objectsToMove.Length; i++)
-        {
-            Vector2 rectOffsetMax = objectsToMove[i].GetComponent<RectTransform>().offsetMax;
-            rectOffsetMax.y = -bannerHeightInUnits;
-            Vector2 rectOffsetMin = objectsToMove[i].GetComponent<RectTransform>().offsetMax;
-            rectOffsetMin.y = -bannerHeightInUnits;
-
-            objectsToMove[i].GetComponent<RectTransform>().offsetMax = rectOffsetMax;
-            objectsToMove[i].GetComponent<RectTransform>().offsetMin = rectOffsetMin;
-        }*/
-        _bannerView.OnBannerAdLoaded += HandleOnAdLoaded;
+        _bannerAdjusted = false;
+        _bannerView = new BannerView(_adUnitIdBanner, AdSize.Banner, AdPosition.Top);
+        ListenToAdEvents();
     }
 
-    private void HandleOnAdLoaded()
+    private void ListenToAdEvents()
     {
-        Debug.Log("HandleOnAdLoaded");
-        Debug.Log("Height/currentResolution: " + Screen.height / (float)Screen.currentResolution.height);
-        Debug.Log("Height: " + Screen.height);
-        Debug.Log("currentResolution: " + Screen.currentResolution.height);
-        Debug.Log("dpi: " + Screen.dpi);
-
-        // Obtenir la hauteur de la banni�re en pixels
-        float bannerHeightInPixels = _bannerView.GetHeightInPixels();
-        //Debug.Log(bannerHeightInPixels);
-        // Convertir la taille de la banni�re de pixels en unit�s Unity
-        float bannerHeightInUnits = bannerHeightInPixels * Screen.height / (float)Screen.currentResolution.height; // Conversion en cm puis en Unity units
-        //Debug.Log("Height in Unity: " + Screen.height / (float)Screen.currentResolution.height);
-        // D�caler le RectTransform de l'�l�ment UI en fonction de la taille de la banni�re
-        /*Vector2 offset = uiElementToAdjust.offsetMax;
-        offset.y = -bannerHeightInUnits;  // D�caler vers le bas
-        uiElementToAdjust.offsetMax = offset;*/
-        float height = 0;
-        if (Screen.currentResolution.height > Screen.height)
+        // ⚠️ Tous les callbacks AdMob arrivent sur un thread background.
+        //    On dispatch systématiquement sur le main thread via MobileAdsEventExecutor.
+        _bannerView.OnBannerAdLoaded += () =>
         {
-            height = (1 - 0.94875f) * Screen.currentResolution.height;
-        }
-        else
+            MobileAdsEventExecutor.ExecuteInUpdate(() =>
+            {
+                Debug.Log("Banner view loaded an ad with response : " + _bannerView.GetResponseInfo());
+                AdjustUIForBanner();
+            });
+        };
+
+        _bannerView.OnBannerAdLoadFailed += (LoadAdError error) =>
         {
-            height = (1 - 0.94875f) * Screen.height + 10;
+            MobileAdsEventExecutor.ExecuteInUpdate(() =>
+            {
+                Debug.LogError("Banner view failed to load an ad with error : " + error);
+            });
+        };
+
+        _bannerView.OnAdPaid += (AdValue adValue) =>
+        {
+            MobileAdsEventExecutor.ExecuteInUpdate(() =>
+            {
+                Debug.Log("Banner view paid " + adValue.Value + " " + adValue.CurrencyCode);
+            });
+        };
+
+        _bannerView.OnAdImpressionRecorded += () =>
+        {
+            MobileAdsEventExecutor.ExecuteInUpdate(() =>
+            {
+                Debug.Log("Banner view recorded an impression.");
+            });
+        };
+
+        _bannerView.OnAdClicked += () =>
+        {
+            MobileAdsEventExecutor.ExecuteInUpdate(() =>
+            {
+                Debug.Log("Banner view was clicked.");
+            });
+        };
+
+        _bannerView.OnAdFullScreenContentOpened += () =>
+        {
+            MobileAdsEventExecutor.ExecuteInUpdate(() =>
+            {
+                Debug.Log("Banner view opened full screen content.");
+            });
+        };
+
+        _bannerView.OnAdFullScreenContentClosed += () =>
+        {
+            MobileAdsEventExecutor.ExecuteInUpdate(() =>
+            {
+                Debug.Log("Banner view closed full screen content.");
+            });
+        };
+    }
+
+    // -------------------------------------------------------
+    // Décale les éléments UI sous la bannière
+    // -------------------------------------------------------
+    private void AdjustUIForBanner()
+    {
+        // Evite un double-décalage si le callback est déclenché plusieurs fois
+        if (_bannerAdjusted) return;
+
+        float height = GetBannerHeightInUIUnits();
+        Debug.Log("[AdMob] Banner UI height (unités Canvas) : " + height);
+
+        if (height <= 0f)
+        {
+            Debug.LogWarning("[AdMob] Hauteur calculée nulle ou négative — décalage annulé.");
+            return;
         }
-
-        height = 50 * (1440/0.692f) / 800;
-
-        Debug.Log("D�calage avec 50 height  50 * (1440/0.692f) / 800:" + height);
-        Debug.Log("BannerHeightsInPixels: " + bannerHeightInPixels);
-
-        //float bannerHeightInUnity = bannerHeightInPixels * Screen.height / (float)Screen.currentResolution.height;
 
         for (int i = 0; i < objectsToMove.Length; i++)
         {
-            Vector2 rectOffsetMax = objectsToMove[i].GetComponent<RectTransform>().offsetMax;
-            rectOffsetMax.y = -height;
-            Vector2 rectOffsetMin = objectsToMove[i].GetComponent<RectTransform>().offsetMax;
-            rectOffsetMin.y = -height;
+            if (objectsToMove[i] == null) continue;
+            RectTransform rt = objectsToMove[i].GetComponent<RectTransform>();
+            if (rt == null) continue;
 
-            objectsToMove[i].GetComponent<RectTransform>().offsetMax = rectOffsetMax;
-            objectsToMove[i].GetComponent<RectTransform>().offsetMin = rectOffsetMin;
+            // Sauvegarde de la position Y originale (une seule fois par session)
+            if (!originalYPositions.ContainsKey(rt))
+                originalYPositions[rt] = rt.anchoredPosition.y;
 
-            //objectsToMove[i].GetComponent<RectTransform>().anchoredPosition = new Vector2(objectsToMove[i].GetComponent<RectTransform>().anchoredPosition.x, objectsToMove[i].GetComponent<RectTransform>().anchoredPosition.y - height);
+            // Bannière en haut → les éléments ancrés en HAUT descendent (Y diminue)
+            //                   → les éléments ancrés en BAS remontent  (Y augmente)
+            bool anchorIsTop = rt.anchorMin.y >= 0.5f;
+            Vector2 newPos = rt.anchoredPosition;
+            newPos.y = anchorIsTop
+                ? originalYPositions[rt] - height
+                : originalYPositions[rt] + height;
+            rt.anchoredPosition = newPos;
         }
-    
 
+        _bannerAdjusted = true;
     }
 
-    /// <summary>
-    /// Creates the banner view and loads a banner ad.
-    /// </summary>
-    public void LoadAd()
+    // -------------------------------------------------------
+    // Calcul de la hauteur de la bannière en unités Canvas
+    // -------------------------------------------------------
+    private float GetBannerHeightInUIUnits()
     {
-        // create an instance of a banner view first.
-        if (_bannerView == null)
+        // Récupération du Canvas racine
+        Canvas canvas = null;
+        for (int i = 0; i < objectsToMove.Length; i++)
         {
-            CreateBannerView();
+            if (objectsToMove[i] != null)
+            {
+                canvas = objectsToMove[i].GetComponentInParent<Canvas>();
+                if (canvas != null)
+                {
+                    while (canvas.transform.parent != null)
+                    {
+                        Canvas parentCanvas = canvas.transform.parent.GetComponentInParent<Canvas>();
+                        if (parentCanvas != null) canvas = parentCanvas;
+                        else break;
+                    }
+                    break;
+                }
+            }
         }
 
-        // create our request used to load the ad.
-        var adRequest = new AdRequest();
+        if (canvas == null)
+        {
+            Debug.LogError("[AdMob] Aucun Canvas trouvé — décalage impossible.");
+            return 0f;
+        }
 
-        // send the request to load the ad.
+        float canvasHeightUnits = canvas.GetComponent<RectTransform>().rect.height;
+
+        // GetHeightInPixels() retourne des dp (density-independent pixels)
+        float bannerDp = _bannerView != null ? _bannerView.GetHeightInPixels() : 0f;
+        if (bannerDp <= 0f) bannerDp = 50f; // Fallback : bannière standard AdMob = 50dp
+
+        // Screen.dpi est unreliable sur Android Unity (peut retourner 96 par défaut).
+        // On lit la vraie densité depuis l'API Android via le pont Java.
+        float density = GetAndroidDensity();
+
+        // dp → pixels physiques → unités Canvas (formule proportionnelle)
+        float bannerPhysicalPx = bannerDp * density;
+        float result = (bannerPhysicalPx / Screen.height) * canvasHeightUnits;
+
+        Debug.Log("[AdMob] bannerDp=" + bannerDp
+                  + "  density=" + density
+                  + "  bannerPhysicalPx=" + bannerPhysicalPx
+                  + "  Screen.height=" + Screen.height
+                  + "  canvasHeightUnits=" + canvasHeightUnits
+                  + "  → offset=" + result + " unités Canvas");
+
+        return result;
+    }
+
+    // -------------------------------------------------------
+    // Lit la densité réelle de l'écran via DisplayMetrics Android
+    // (Screen.dpi retourne souvent 96 par défaut sur Android Unity)
+    // -------------------------------------------------------
+    private float GetAndroidDensity()
+    {
+#if UNITY_ANDROID && !UNITY_EDITOR
+        try
+        {
+            using (var unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+            using (var activity   = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity"))
+            using (var resources  = activity.Call<AndroidJavaObject>("getResources"))
+            using (var metrics    = resources.Call<AndroidJavaObject>("getDisplayMetrics"))
+            {
+                float d = metrics.Get<float>("density");
+                Debug.Log("[AdMob] Android DisplayMetrics.density = " + d);
+                return d;
+            }
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning("[AdMob] Impossible de lire DisplayMetrics.density : " + e.Message
+                             + " — fallback Screen.dpi");
+        }
+#endif
+        // Fallback éditeur / iOS / erreur
+        float fallback = Screen.dpi > 0f ? Screen.dpi / 160f : 2f;
+        Debug.Log("[AdMob] density fallback = " + fallback + " (Screen.dpi=" + Screen.dpi + ")");
+        return fallback;
+    }
+
+    public void LoadAd()
+    {
+        if (_bannerView == null) CreateBannerView();
+        var adRequest = new AdRequest();
         Debug.Log("Loading banner ad.");
         _bannerView.LoadAd(adRequest);
     }
 
-    /// <summary>
-    /// Destroys the banner view.
-    /// </summary>
     public void DestroyAd()
     {
         if (_bannerView != null)
@@ -226,27 +289,22 @@ public class AdMob : MonoBehaviour
             Debug.Log("Destroying banner view.");
             _bannerView.Destroy();
             _bannerView = null;
+            _bannerAdjusted = false;
 
-
-            for (int i = 0; i < objectsToMove.Length; i++)
+            // Restauration des positions originales
+            foreach (var kv in originalYPositions)
             {
-                Vector2 rectOffsetMax = objectsToMove[i].GetComponent<RectTransform>().offsetMax;
-                rectOffsetMax.y = 0;
-                Vector2 rectOffsetMin = objectsToMove[i].GetComponent<RectTransform>().offsetMax;
-                rectOffsetMin.y = 0;
-
-                objectsToMove[i].GetComponent<RectTransform>().offsetMax = rectOffsetMax;
-                objectsToMove[i].GetComponent<RectTransform>().offsetMin = rectOffsetMin;
+                if (kv.Key == null) continue;
+                Vector2 pos = kv.Key.anchoredPosition;
+                pos.y = kv.Value;
+                kv.Key.anchoredPosition = pos;
             }
+            originalYPositions.Clear();
         }
     }
 
-    /// <summary>
-    /// Loads the rewarded ad.
-    /// </summary>
     public void LoadRewardedAd()
     {
-        // Clean up the old ad before loading a new one.
         if (_rewardedAd != null)
         {
             _rewardedAd.Destroy();
@@ -254,44 +312,24 @@ public class AdMob : MonoBehaviour
         }
 
         Debug.Log("Loading the rewarded ad.");
-
-        // create our request used to load the ad.
         var adRequest = new AdRequest();
+        adRequest.Extras = new Dictionary<string, string> { { "npa", "1" } };
 
-        // Ajoutez un param�tre pour d�sactiver les annonces personnalis�es
-        adRequest.Extras = new Dictionary<string, string> {
-        { "npa", "1" }  // "npa" signifie "Non-Personalized Ads"
-    };
-
-        // send the request to load the ad.
-        RewardedAd.Load(_adUnitId, adRequest,
-            (RewardedAd ad, LoadAdError error) =>
+        RewardedAd.Load(_adUnitId, adRequest, (RewardedAd ad, LoadAdError error) =>
+        {
+            MobileAdsEventExecutor.ExecuteInUpdate(() =>
             {
-                // if error is not null, the load request failed.
                 if (error != null || ad == null)
                 {
-                    Debug.LogError("Rewarded ad failed to load an ad " +
-                                   "with error : " + error);
+                    Debug.LogError("Rewarded ad failed to load an ad with error : " + error);
                     StatusAdButtons(false);
-                    /*
-                    adButton.interactable = false;
-                    if (currentScene.name == "Menu")
-                    {
-                        adButtonMission.interactable = false;
-                    }
-                    */
-                    
                     return;
                 }
-
-                Debug.Log("Rewarded ad loaded with response : "
-                          + ad.GetResponseInfo());
-
+                Debug.Log("Rewarded ad loaded");
                 _rewardedAd = ad;
                 adReady = true;
-                
-                
             });
+        });
     }
 
     void Update()
@@ -301,30 +339,15 @@ public class AdMob : MonoBehaviour
             var buttComp = adButton.gameObject.GetComponent<TimeManagerFreePackWithAd>();
             if (buttComp != null)
             {
-                if (buttComp.finished)
-                {
-                    StatusAdButtons(true);
-                    //adButton.interactable = true;
-                }
+                if (buttComp.finished) StatusAdButtons(true);
             }
             else
             {
                 StatusAdButtons(true);
-                //adButton.interactable = true;
-                /*
-                if (currentScene.name == "Parking")
-                {
-                    adButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Regarder une Pub pour continuer";
-                }
-                */
             }
 
             if (Inventory.instance != null && Inventory.instance.menu)
-            {
                 StatusAdButtons(true);
-                //adButtonMission.interactable = true;
-            }
-            
         }
         else
         {
@@ -332,46 +355,38 @@ public class AdMob : MonoBehaviour
             {
                 StatusAdButtons(false);
                 if (adButton != null && adButton.transform.childCount > 1)
-                {
                     adButton.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Pas de Pub";
-                }
             }
-
         }
     }
 
     public void ShowRewardedAd(string _reward)
     {
-        const string rewardMsg =
-            "Rewarded ad rewarded the user. Type: {0}, amount: {1}.";
-
         if (_rewardedAd != null && _rewardedAd.CanShowAd())
         {
             _rewardedAd.Show((Reward reward) =>
             {
-                // TODO: Reward the user.
-                Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
-                if(_reward == "250stars")
+                MobileAdsEventExecutor.ExecuteInUpdate(() =>
                 {
-                    Debug.Log("250stars");
-                    PlayerPrefs.SetInt("stars", PlayerPrefs.GetInt("stars", 0) + 250);
-                    PlayerPrefs.Save();
-                    //UIScript.instance.ClaimRewardOnPack("blue");
-                }
-                if (_reward == "LifeRegen")
-                {
-                    Inventory.instance.AdsReward();
-                }
-                //adButton.interactable = false;
-                StatusAdButtons(false);
-                if (currentScene.name == "Menu")
-                {
-                    adButtonMission.interactable = false;
-                }
-                adReady = false;
-                watchedCount++;
-                PlayerPrefs.SetInt("watchedAdsCount", watchedCount);
-                LoadRewardedAd();
+                    if (_reward == "250stars")
+                    {
+                        PlayerPrefs.SetInt("stars", PlayerPrefs.GetInt("stars", 0) + 250);
+                        PlayerPrefs.Save();
+                    }
+                    if (_reward == "LifeRegen")
+                    {
+                        Inventory.instance.AdsReward();
+                    }
+
+                    StatusAdButtons(false);
+                    if (currentScene.name == "Menu")
+                        adButtonMission.interactable = false;
+
+                    adReady = false;
+                    watchedCount++;
+                    PlayerPrefs.SetInt("watchedAdsCount", watchedCount);
+                    LoadRewardedAd();
+                });
             });
         }
     }

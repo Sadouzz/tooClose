@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,11 +17,9 @@ public class MissileScript : MonoBehaviour
     public TrailRenderer trail;
     public AudioSource audio;
 
-    // Dans PlayerPowerUpManager.cs
     [Header("PowerUp States")]
-    
-    public bool isShieldActive = false; // Doit être PUBLIC
-    public bool isBlazeActive = false;   // Doit être PUBLIC
+    public bool isShieldActive = false; 
+    public bool isBlazeActive = false;   
 
     private Transform target;
     private bool isExpiring = false;
@@ -36,7 +34,7 @@ public class MissileScript : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null) target = player.transform;
 
-        // Lance le compte à rebours avant auto-destruction
+        // Lance le compte Ã  rebours avant auto-destruction
         StartCoroutine(LifetimeCountdown());
     }
 
@@ -44,11 +42,11 @@ public class MissileScript : MonoBehaviour
     {
         if (target == null || isExpiring) return;
 
-        // 1. On définit les vitesses de base pour cette frame
+        // 1. On dÃ©finit les vitesses de base pour cette frame
         float currentSpeed = speed;
         float currentRotSpeed = rotatingSpeed;
 
-        // 2. On vérifie si le SlowMo est actif via le Manager
+        // 2. On vÃ©rifie si le SlowMo est actif via le Manager
         if (PlayerPowerUpManager.instance != null && PlayerPowerUpManager.instance.isSlowMoActive)
         {
             // On multiplie par le facteur (ex: 0.5f divise la vitesse par 2)
@@ -76,14 +74,10 @@ public class MissileScript : MonoBehaviour
 
     IEnumerator FadeOutAndDestroy()
     {
-        isExpiring = true; // Empêche le missile de continuer à traquer le joueur
-        //rb.linearVelocity = Vector2.zero; // Stop le mouvement physique
+        isExpiring = true; // EmpÃªche le missile de continuer Ã  traquer le joueur
 
         float fadeDuration = 0.75f;
         float elapsed = 0f;
-
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        TrailRenderer trail = GetComponentInChildren<TrailRenderer>();
 
         Vector3 startScale = transform.localScale;
         Color startColor = spriteRenderer.color;
@@ -93,7 +87,7 @@ public class MissileScript : MonoBehaviour
             elapsed += Time.deltaTime;
             float t = elapsed / fadeDuration;
 
-            // Réduction de la taille
+            // RÃ©duction de la taille
             transform.localScale = Vector3.Lerp(startScale, Vector3.zero, t);
 
             // Fondu transparent
@@ -101,74 +95,42 @@ public class MissileScript : MonoBehaviour
             newColor.a = Mathf.Lerp(startColor.a, 0f, t);
             spriteRenderer.color = newColor;
 
-            /*Gradient originalGradient = trail.colorGradient;
-
-            if (trail != null)
-            {
-                Gradient newGradient = new Gradient();
-
-                GradientColorKey[] colorKeys = originalGradient.colorKeys;
-                GradientAlphaKey[] alphaKeys = originalGradient.alphaKeys;
-
-                for (int i = 0; i < alphaKeys.Length; i++)
-                {
-                    alphaKeys[i].alpha = Mathf.Lerp(originalGradient.alphaKeys[i].alpha, 0f, t);
-                }
-
-                newGradient.SetKeys(colorKeys, alphaKeys);
-                trail.colorGradient = newGradient;
-            }
-            */
             yield return null;
         }
 
-        HandleDestruction(false); // Détruire sans explosion
+        HandleDestruction(false); // DÃ©truire sans explosion
     }
 
     public void OnMissileExplode()
     {
-        // 1. Récupérer le Particle System enfant
+        // 1. RÃ©cupÃ©rer le Particle System enfant
         ParticleSystem trail = GetComponentInChildren<ParticleSystem>();
 
         if (trail != null)
         {
-            // 2. Le détacher du missile (il devient un objet racine dans la hiérarchie)
+            // 2. Le dÃ©tacher du missile (il devient un objet racine dans la hiÃ©rarchie)
             trail.transform.parent = null;
 
-            // 3. Arrêter l'émission de nouvelles particules
+            // 3. ArrÃªter l'Ã©mission de nouvelles particules
             var emission = trail.emission;
             emission.enabled = false;
 
-            // 4. Détruire l'objet de la traînée une fois que les dernières particules sont mortes
+            // 4. DÃ©truire l'objet de la traÃ®nÃ©e une fois que les derniÃ¨res particules sont mortes
             Destroy(trail.gameObject, trail.main.startLifetime.constantMax);
         }
 
-        // 5. Détruire le missile normalement
+        // 5. DÃ©truire le missile normalement
         Destroy(this.gameObject);
     }
 
-    /*void OnTriggerEnter2D(Collider2D col)
-    {
-        if (isExpiring) return;
-
-        if (col.CompareTag("Player"))
-        {
-            Inventory.instance.DieProcess();
-            HandleDestruction(true);
-        }
-        else if (col.CompareTag("Missile") /*|| col.CompareTag("Obstacle")) // Ajoute tes tags ici
-        {
-            HandleDestruction(true);
-        }
-    }*/
     void OnTriggerEnter2D(Collider2D col)
     {
         if (isExpiring) return;
 
-        // 1. COLLISION AVEC LE JOUEUR (On vérifie les PowerUps d'abord)
+        // 1. COLLISION AVEC LE JOUEUR (On vÃ©rifie les PowerUps d'abord)
         if (col.CompareTag("Player"))
         {
-            // On récupère le manager sur le joueur
+            // On rÃ©cupÃ¨re le manager sur le joueur
             PlayerPowerUpManager powerUpManager = col.GetComponentInParent<PlayerPowerUpManager>();
 
             if (powerUpManager != null)
@@ -178,11 +140,11 @@ public class MissileScript : MonoBehaviour
                 {
                     // Le missile explose mais le joueur survit !
                     HandleDestruction(true);
-                    return; // On arrête la fonction ici
+                    return; // On arrÃªte la fonction ici
                 }
             }
 
-            // Si on arrive ici, c'est qu'aucun PowerUp n'était actif
+            // Si on arrive ici, c'est qu'aucun PowerUp n'Ã©tait actif
             if (PlayerMovement.instance.life > 1)
             {
                 PlayerMovement.instance.life--;
@@ -202,14 +164,21 @@ public class MissileScript : MonoBehaviour
             HandleDestruction(true);
         }
 
-        // 3. COLLISION AVEC LE BLAZE (SI TU AS MIS UN TAG "Blaze" SUR L'ICONE QUI TOURNE)
+        // 3. COLLISION AVEC LE BLAZE
         else if (col.CompareTag("Blaze"))
         {
             HandleDestruction(true);
         }
+
+        // 4. COLLISION AVEC LES BULLETS (LASERS) DU JOUEUR
+        else if (col.CompareTag("Bullet"))
+        {
+            Destroy(col.gameObject); // DÃ©truire la balle laser
+            HandleDestruction(true); // DÃ©truire le missile avec une explosion !
+        }
     }
 
-// Centralisation de la destruction pour éviter la répétition de code
+    // Centralisation de la destruction pour Ã©viter la rÃ©pÃ©tition de code
     public void HandleDestruction(bool spawnExplosion)
     {
         if (spawnExplosion && explosionPrefab != null)
@@ -225,7 +194,7 @@ public class MissileScript : MonoBehaviour
 
         OnMissileExplode();
 
-        // Mise à jour des scores via le Spawner
+        // Mise Ã  jour des scores via le Spawner
         if (MissileSpawner.instance != null)
         {
             MissileSpawner.instance.currentMissiles--;
