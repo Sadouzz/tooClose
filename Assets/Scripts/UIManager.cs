@@ -7,7 +7,7 @@ using Unity.Cinemachine;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject playPanel, menuPanel, diePanel, pausePanel, highscorePanel, settingsPanel, shopPanel, infoPanel, missionsPanel;
+    public GameObject playPanel, menuPanel, diePanel, pausePanel, highscorePanel, settingsPanel, shopPanel, infoPanel, missionsPanel, upgradePanel;
     public TextMeshProUGUI starsText;
     
     [Header("Missions")]
@@ -268,5 +268,10 @@ public class UIManager : MonoBehaviour
     public void EnableInfoPanel(bool status)
     {
         infoPanel.SetActive(status);
+    }
+
+    public void EnableUpgradePanel(bool status)
+    {
+        upgradePanel.SetActive(status);
     }
 }

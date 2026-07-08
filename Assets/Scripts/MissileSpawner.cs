@@ -61,12 +61,20 @@ public class MissileSpawner : MonoBehaviour
     [Tooltip("Liste specifique de vagues qui doivent etre en mode combat (ex: 2, 3...)")]
     public List<int> specificCombatWaves = new List<int>();
 
+    [Header("Wave Sounds")]
+    public AudioClip standardWaveSound;
+    public AudioClip combatWaveSound;
+    private AudioSource waveAudioSource;
+
     [Header("Shooting Wave Settings")]
     public int baseEnemiesToSpawn = 5;
     public int enemiesToSpawnThisWave;
     public int enemiesDestroyedThisWave;
     public int activeEnemies;
     public GameObject enemyPrefab;
+    public GameObject fastEnemyPrefab;
+    [Range(0f, 1f)]
+    public float fastEnemySpawnChance = 0.2f;
 
     bool justStarted = true;
 
@@ -89,6 +97,9 @@ public class MissileSpawner : MonoBehaviour
     {
         if (instance == null) instance = this;
         currentSpawnDelay = initialSpawnDelay;
+
+        waveAudioSource = gameObject.AddComponent<AudioSource>();
+        waveAudioSource.playOnAwake = false;
     }
 
     private void Start()
@@ -150,6 +161,7 @@ public class MissileSpawner : MonoBehaviour
 
     public bool IsCombatWave(int wave)
     {
+        /* --- MODE COMBAT DESACTIVE ---
         if (specificCombatWaves != null && specificCombatWaves.Contains(wave))
         {
             return true;
@@ -159,6 +171,7 @@ public class MissileSpawner : MonoBehaviour
         {
             return true;
         }
+        */
 
         return false;
     }
@@ -212,7 +225,7 @@ public class MissileSpawner : MonoBehaviour
                 PlayerMovement.instance.InitializeCameraProxyY();
             }
 
-            yield return StartCoroutine(ShowWaveBanner("VAGUE " + currentWave + "\nMODE COMBAT !", Color.red));
+            yield return StartCoroutine(ShowWaveBanner("VAGUE " + currentWave + "\nMODE COMBAT !", Color.red, true));
 
             int divisionFactor = combatWaveFrequency > 0 ? combatWaveFrequency : 5;
             enemiesToSpawnThisWave = baseEnemiesToSpawn + (currentWave / divisionFactor) * 2;
@@ -227,7 +240,7 @@ public class MissileSpawner : MonoBehaviour
             missilesToSpawnThisWave = 3 + currentWave * 2; // Wave 1: 5 missiles
             missilesSpawnedThisWave = 0;
 
-            yield return StartCoroutine(ShowWaveBanner("VAGUE " + currentWave, new Color(1f, 0.9f, 0f)));
+            yield return StartCoroutine(ShowWaveBanner("VAGUE " + currentWave, new Color(1f, 0.9f, 0f), false));
             
             int toSpawn = Mathf.Min(missilesRequired, missilesToSpawnThisWave);
             SpawnMissileBatch(toSpawn);
@@ -364,7 +377,7 @@ public class MissileSpawner : MonoBehaviour
         // Mode combat de l'espace si la vague est de type combat
         if (IsCombatWave(currentWave))
         {
-            yield return StartCoroutine(ShowWaveBanner("VAGUE " + currentWave + "\nMODE COMBAT !", Color.red));
+            yield return StartCoroutine(ShowWaveBanner("VAGUE " + currentWave + "\nMODE COMBAT !", Color.red, true));
 
             // Activer le mode shooting
             if (PlayerMovement.instance != null)
@@ -394,7 +407,7 @@ public class MissileSpawner : MonoBehaviour
                 // REMOVED rotation reset here so the player's plane doesn't rotate unexpectedly during dodging wave changes!
             }
 
-            yield return StartCoroutine(ShowWaveBanner("VAGUE " + currentWave, new Color(1f, 0.9f, 0f)));
+            yield return StartCoroutine(ShowWaveBanner("VAGUE " + currentWave, new Color(1f, 0.9f, 0f), false));
 
             missilesToSpawnThisWave = 3 + currentWave * 2;
             missilesSpawnedThisWave = 0;
@@ -446,6 +459,12 @@ public class MissileSpawner : MonoBehaviour
         Vector3 spawnPosVector = new Vector3(PlayerMovement.instance.cameraTargetProxy.position.x + relX, absY, 0);
 
         GameObject prefab = enemyPrefab != null ? enemyPrefab : proceduralEnemyTemplate;
+        
+        if (fastEnemyPrefab != null && Random.value < fastEnemySpawnChance)
+        {
+            prefab = fastEnemyPrefab;
+        }
+
         if (prefab != null)
         {
             // Rotated 180 degrees on the Z axis so the enemy ship faces downwards towards the player!
@@ -504,12 +523,20 @@ public class MissileSpawner : MonoBehaviour
         waveBannerText.gameObject.SetActive(false);
     }
 
-    IEnumerator ShowWaveBanner(string message, Color color)
+    IEnumerator ShowWaveBanner(string message, Color color, bool isCombat)
     {
         if (waveBannerText == null) CreateDynamicWaveUI();
 
         if (waveBannerText != null)
         {
+            if (waveAudioSource != null)
+            {
+                if (isCombat && combatWaveSound != null)
+                    waveAudioSource.PlayOneShot(combatWaveSound);
+                else if (!isCombat && standardWaveSound != null)
+                    waveAudioSource.PlayOneShot(standardWaveSound);
+            }
+
             waveBannerText.gameObject.SetActive(true);
             waveBannerText.text = message;
             waveBannerText.color = new Color(color.r, color.g, color.b, 0f);

@@ -119,7 +119,7 @@ public class BuyPlaneScript : MonoBehaviour
         }
     }
 
-    void ShowInfoPanel()
+    public void ShowInfoPanel()
     {
         infoPanel.SetActive(true);
         infoPanelText.text = "Pas assez d'etoiles necessaires";

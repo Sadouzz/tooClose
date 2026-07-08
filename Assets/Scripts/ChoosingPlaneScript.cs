@@ -1,6 +1,6 @@
-using TMPro;
+ï»¿using TMPro;
 using UnityEngine;
-using UnityEngine.UI; // N'oublie pas d'ajouter ça pour manipuler l'UI
+using UnityEngine.UI;
 
 public class ChoosingPlaneScript : MonoBehaviour
 {
@@ -9,7 +9,6 @@ public class ChoosingPlaneScript : MonoBehaviour
     public BuyPlaneScript buyScript;
 
     [Header("UI Synchronization")]
-    // Glisse ici l'objet Parent qui contient toutes les IMAGES des avions en UI
     public Transform uiImagesParent;
     public TextMeshProUGUI speedText, angleSpeedText, lifeText;
 
@@ -44,14 +43,12 @@ public class ChoosingPlaneScript : MonoBehaviour
     {
         PlayerPrefs.SetInt(PlaneSaveKey, currentIndex);
         PlayerPrefs.Save();
-        Debug.Log("Avion sauvegardé : " + currentIndex);
     }
 
     private void UpdateActivePlane()
     {
         if (transform.childCount == 0) return;
 
-        // --- 1. Mise à jour des objets physiques (3D/2D GameObjects) ---
         for (int i = 0; i < transform.childCount; i++)
         {
             GameObject child = transform.GetChild(i).gameObject;
@@ -66,15 +63,26 @@ public class ChoosingPlaneScript : MonoBehaviour
             }
         }
 
-        // --- 2. Mise à jour des IMAGES UI (Le nouveau code) ---
         if (uiImagesParent != null)
         {
             for (int i = 0; i < uiImagesParent.childCount; i++)
             {
-                // On active l'image correspondante à l'index, on cache les autres
                 uiImagesParent.GetChild(i).gameObject.SetActive(i == currentIndex);
             }
         }
+
+        if (PlaneUpgradeManager.instance != null)
+        {
+            PlaneUpgradeManager.instance.OnPlaneChanged(currentIndex);
+        }
+    }
+
+    public void UpdateActivePlaneStatsOnly()
+    {
+        if (transform.childCount == 0) return;
+        GameObject child = transform.GetChild(currentIndex).gameObject;
+        PlaneData data = child.GetComponent<PlaneData>();
+        SyncPlayerData(data);
     }
 
     private void SyncPlayerData(PlaneData data)
@@ -92,6 +100,12 @@ public class ChoosingPlaneScript : MonoBehaviour
             if (data.smoke != null){
                 playerMovement.smoke = data.smoke;
             }
+
+            if (PlaneUpgradeManager.instance != null)
+            {
+                PlaneUpgradeManager.instance.ApplyUpgradesToPlane(currentIndex, playerMovement, data);
+            }
+
             SyncUI(playerMovement.speed, playerMovement.rotationSpeed, playerMovement.life);
         }
     }

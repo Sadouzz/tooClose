@@ -31,6 +31,10 @@ public class PlayerMovement : MonoBehaviour
     public float fireRate = 0.15f;
     private float nextFireTime = 0f;
 
+    [Header("Player Audio")]
+    public AudioClip shootSound;
+    private AudioSource audioSource;
+
     public SpriteRenderer sr;
     public BoxCollider2D bc;
     public int life;
@@ -58,6 +62,10 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         if (instance == null) instance = this;
+
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.volume = 0.2f; // Ajusté à 50%
     }
 
     void Start()
@@ -337,6 +345,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
                 bullet.SetActive(true); // S'assurer qu'il est actif
+                
+                if (shootSound != null && audioSource != null)
+                {
+                    audioSource.pitch = Random.Range(0.85f, 1.15f);
+                    audioSource.PlayOneShot(shootSound);
+                }
             }
             nextFireTime = Time.time + fireRate;
         }

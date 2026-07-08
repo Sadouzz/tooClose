@@ -379,6 +379,13 @@ public class AdMob : MonoBehaviour
                     {
                         Inventory.instance.AdsReward();
                     }
+                    if (_reward == "PlaneUpgrade")
+                    {
+                        if (PlaneUpgradeManager.instance != null)
+                        {
+                            PlaneUpgradeManager.instance.GrantUpgradeFromAd();
+                        }
+                    }
 
                     StatusAdButtons(false);
                     if (currentScene.name == "Menu")

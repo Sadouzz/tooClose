@@ -110,6 +110,10 @@ MonoBehaviour:
   minWaveToShootMissiles: 1
   enemyMissileSpeed: 2.5
   enemyMissileRotationSpeed: 80
+  chargeSound: {fileID: 8300000, guid: 9faccea8f3236de4d85051d3bb847170, type: 3}
+  shootSound: {fileID: 8300000, guid: b80e621f82b7e8843b127127bf7de5ee, type: 3}
+  circleRadius: 0.5
+  circleColor: {r: 1, g: 0.19713613, b: 0, a: 0.8}
 --- !u!61 &-7772651143923713859
 BoxCollider2D:
   m_ObjectHideFlags: 0

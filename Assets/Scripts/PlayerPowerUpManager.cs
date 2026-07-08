@@ -32,7 +32,7 @@ public class PlayerPowerUpManager : MonoBehaviour
     // --- NOUVEAU : Le texte pour afficher le nom ---
     public TextMeshProUGUI powerUpNameText; // Remplace "Text" par "TMPro.TextMeshProUGUI" si tu utilises TextMeshPro
 
-    private string activeSliderPowerUp = ""; // Garde en mémoire quel pouvoir le Slider doit afficher
+    private string activeSliderPowerUp = ""; // Garde en mï¿½moire quel pouvoir le Slider doit afficher
 
     [Header("Visual Effects (Child Objects)")]
     public GameObject shieldEffectObject;
@@ -68,7 +68,7 @@ public class PlayerPowerUpManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("PlayerPowerUpManager : Aucune Virtual Camera n'est assignée !");
+            Debug.LogWarning("PlayerPowerUpManager : Aucune Virtual Camera n'est assignï¿½e !");
         }
     }
 
@@ -105,7 +105,7 @@ public class PlayerPowerUpManager : MonoBehaviour
             blazeEffectObject.transform.Rotate(0, 0, blazeRotationSpeed * Time.deltaTime, Space.Self);
         }
 
-        // Met à jour la jauge UI en temps réel
+        // Met ï¿½ jour la jauge UI en temps rï¿½el
         UpdateSliderUI();
     }
 
@@ -169,7 +169,7 @@ public class PlayerPowerUpManager : MonoBehaviour
         }
         else
         {
-            // Si le pouvoir suivi est terminé, on cache le Slider
+            // Si le pouvoir suivi est terminï¿½, on cache le Slider
             sliderParent.SetActive(false);
             activeSliderPowerUp = "";
 
@@ -184,7 +184,7 @@ public class PlayerPowerUpManager : MonoBehaviour
 
         if (powerUpSlider != null) powerUpSlider.maxValue = newTotalTime;
 
-        // --- NOUVEAU : On met à jour le texte affiché ---
+        // --- NOUVEAU : On met ï¿½ jour le texte affichï¿½ ---
         if (powerUpNameText != null) powerUpNameText.text = powerUpName;
     }
 
@@ -192,7 +192,7 @@ public class PlayerPowerUpManager : MonoBehaviour
     public void ActivateShield(float duration)
     {
         shieldTimer += duration;
-        SetupSlider("Shield", shieldTimer);
+        SetupSlider("Bouclier", shieldTimer);
 
         if (!isShieldActive) StartCoroutine(ShieldRoutine());
     }

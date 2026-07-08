@@ -21,12 +21,28 @@ public class EnemyScript : MonoBehaviour
     public float enemyMissileSpeed = 2.5f; // Vitesse des missiles ennemis (plus lent)
     public float enemyMissileRotationSpeed = 80f; // Vitesse de rotation des missiles ennemis
     private float nextEnemyFireTime = 0f;
+    private float lastEnemyFireTime = 0f;
+
+    [Header("Enemy Audio")]
+    public AudioClip chargeSound;
+    public AudioClip shootSound;
+    private AudioSource audioSource;
+    private bool hasPlayedChargeSound = false;
 
     private Transform healthBarFill;
     private GameObject healthBarObj;
+    
+    private LineRenderer shootCircle;
+    private int circleSegments = 36;
+    public float circleRadius = 1.0f;
+    public Color circleColor = new Color(1f, 0.5f, 0f, 0.8f); // Orange-ish outline
 
     void Start()
     {
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.volume = 0.2f;
+
         currentHealth = maxHealth;
         GameObject p = GameObject.FindGameObjectWithTag("Player");
         if (p != null) player = p.transform;
@@ -56,7 +72,10 @@ public class EnemyScript : MonoBehaviour
         spawnDelayOffset = Random.Range(0f, 100f);
 
         // Initialiser le prochain tir avec un petit decalage aléatoire pour eviter le tir synchrone
+        lastEnemyFireTime = Time.time;
         nextEnemyFireTime = Time.time + Random.Range(1.5f, enemyFireRate);
+        
+        CreateShootCircle();
 
         // Automatically fetch the explosion prefab from a missile template if possible
         if (MissileSpawner.instance != null && MissileSpawner.instance.missiles.Length > 0)
@@ -111,12 +130,32 @@ public class EnemyScript : MonoBehaviour
         // --- ENEMY MISSILE FIRING SYSTEM ---
         if (MissileSpawner.instance != null && MissileSpawner.instance.currentWave >= minWaveToShootMissiles)
         {
+            float fill = 0f;
+            if (nextEnemyFireTime > lastEnemyFireTime)
+            {
+                fill = (Time.time - lastEnemyFireTime) / (nextEnemyFireTime - lastEnemyFireTime);
+            }
+            UpdateShootCircle(fill);
+
+            if (!hasPlayedChargeSound && fill >= 0.8f && chargeSound != null && audioSource != null)
+            {
+                hasPlayedChargeSound = true;
+                audioSource.pitch = Random.Range(0.95f, 1.05f);
+                audioSource.PlayOneShot(chargeSound);
+            }
+
             if (Time.time >= nextEnemyFireTime)
             {
                 // Set next fire time with a minor random range to prevent synchronized volleys
+                lastEnemyFireTime = Time.time;
                 nextEnemyFireTime = Time.time + enemyFireRate + Random.Range(-1.0f, 1.5f);
+                hasPlayedChargeSound = false;
                 ShootMissile();
             }
+        }
+        else
+        {
+            UpdateShootCircle(0f);
         }
     }
 
@@ -124,6 +163,12 @@ public class EnemyScript : MonoBehaviour
     {
         if (MissileSpawner.instance != null && MissileSpawner.instance.missiles != null && MissileSpawner.instance.missiles.Length > 0)
         {
+            if (shootSound != null && audioSource != null)
+            {
+                audioSource.pitch = Random.Range(0.85f, 1.15f);
+                audioSource.PlayOneShot(shootSound);
+            }
+
             GameObject missilePrefab = MissileSpawner.instance.missiles[0];
             Vector3 spawnPos = transform.position + Vector3.down * 0.8f;
             
@@ -245,6 +290,57 @@ public class EnemyScript : MonoBehaviour
                 }
             }
             Explode();
+        }
+    }
+
+    void CreateShootCircle()
+    {
+        GameObject circleObj = new GameObject("ShootCircle");
+        circleObj.transform.SetParent(transform);
+        circleObj.transform.localPosition = Vector3.zero;
+
+        shootCircle = circleObj.AddComponent<LineRenderer>();
+        shootCircle.useWorldSpace = false;
+        shootCircle.startWidth = 0.06f;
+        shootCircle.endWidth = 0.06f;
+        
+        // Use a basic sprite material or line material
+        shootCircle.material = new Material(Shader.Find("Sprites/Default"));
+        shootCircle.startColor = circleColor;
+        shootCircle.endColor = circleColor;
+        shootCircle.sortingOrder = 5;
+        
+        UpdateShootCircle(0f);
+    }
+
+    void UpdateShootCircle(float fillPercentage)
+    {
+        if (shootCircle == null) return;
+        
+        fillPercentage = Mathf.Clamp01(fillPercentage);
+        
+        if (fillPercentage <= 0.01f)
+        {
+            shootCircle.enabled = false;
+            return;
+        }
+
+        shootCircle.enabled = true;
+        
+        int activeSegments = Mathf.RoundToInt(fillPercentage * circleSegments);
+        shootCircle.positionCount = activeSegments + 1;
+        
+        float angle = 90f; // Start at top
+        float angleStep = 360f / circleSegments;
+
+        for (int i = 0; i <= activeSegments; i++)
+        {
+            float rad = angle * Mathf.Deg2Rad;
+            float x = Mathf.Cos(rad) * circleRadius;
+            float y = Mathf.Sin(rad) * circleRadius;
+            shootCircle.SetPosition(i, new Vector3(x, y, 0));
+            
+            angle -= angleStep; // Go clockwise
         }
     }
 
