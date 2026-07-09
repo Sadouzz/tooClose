@@ -1,4 +1,4 @@
-﻿using TMPro;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -118,4 +118,10 @@ public class ChoosingPlaneScript : MonoBehaviour
     }
 
     public int GetCurrentIndex() { return currentIndex; }
+
+    public PlaneData GetCurrentPlaneData()
+    {
+        if (transform.childCount == 0) return null;
+        return transform.GetChild(currentIndex).GetComponent<PlaneData>();
+    }
 }

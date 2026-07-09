@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -54,7 +54,9 @@ public class PlaneUpgradeManager : MonoBehaviour
 
     [Header("Ad Offer Settings")]
     [Range(0, 100)] public int adOfferChance = 30; // 30% de chance
-    public GameObject adOfferPopup; // Le panel Popup à afficher
+    public GameObject adOfferPopup; // Le panel Popup complet
+    public TextMeshProUGUI popupCostText; // Le texte du prix sur le bouton "Achat avec Etoiles"
+    public Button popupBuyWithStarsButton; // Le bouton "Achat avec Etoiles" dans le popup
     private bool isCurrentOfferAd = false;
 
     private UpgradeType currentSelectedType = UpgradeType.Speed;
@@ -132,29 +134,23 @@ public class PlaneUpgradeManager : MonoBehaviour
 
             int currentLevel = GetUpgradeLevel(currentPlaneIndex, tab.type);
 
-            if (tab.nameText != null) tab.nameText.text = data.upgradeName + " (" + currentLevel + "/" + data.maxLevel + ")";
+            int maxLvl = GetMaxLevel(tab.type);
+
+            if (tab.nameText != null) tab.nameText.text = data.upgradeName + " (" + currentLevel + "/" + maxLvl + ")";
             if (tab.descText != null) tab.descText.text = data.description;
 
-            if (currentLevel >= data.maxLevel)
+            if (currentLevel >= maxLvl)
             {
                 if (tab.costText != null) tab.costText.text = "MAX";
                 if (tab.buyButton != null) tab.buyButton.interactable = false;
             }
             else
             {
-                if (isSelected && isCurrentOfferAd)
-                {
-                    // Affichage spécial pour l'offre pub
-                    if (tab.costText != null) tab.costText.text = "PUB";
-                    if (tab.buyButton != null) tab.buyButton.interactable = true; // Toujours cliquable
-                }
-                else
-                {
-                    // Achat normal avec des étoiles
-                    int cost = CalculateCost(data, currentLevel);
-                    if (tab.costText != null) tab.costText.text = cost.ToString();
-                    if (tab.buyButton != null) tab.buyButton.interactable = (currentStars >= cost);
-                }
+                int cost = CalculateCost(data, currentLevel);
+                if (tab.costText != null) tab.costText.text = cost.ToString();
+                
+                // Le bouton est cliquable si on a assez d'étoiles OU si une pub est dispo
+                if (tab.buyButton != null) tab.buyButton.interactable = (currentStars >= cost || isCurrentOfferAd);
             }
         }
     }
@@ -163,24 +159,34 @@ public class PlaneUpgradeManager : MonoBehaviour
     {
         if (isCurrentOfferAd)
         {
-            // Ouvre le popup de pub
+            // Ouvre le popup de choix
             if (adOfferPopup != null)
             {
+                UpgradeData data = GetUpgradeData(currentSelectedType);
+                int currentLevel = GetUpgradeLevel(currentPlaneIndex, currentSelectedType);
+                int cost = CalculateCost(data, currentLevel);
+                int currentStars = PlayerPrefs.GetInt("stars", 0);
+
+                if (popupCostText != null) popupCostText.text = cost.ToString();
+                
+                // Si on n'a pas assez d'étoiles, on grise le bouton d'achat en étoiles du popup
+                if (popupBuyWithStarsButton != null) popupBuyWithStarsButton.interactable = (currentStars >= cost);
+
                 adOfferPopup.SetActive(true);
             }
             else 
             {
-                // Fallback si on a oublié d'assigner le popup, lance direct la pub
+                // Fallback si on a oublié d'assigner le popup
                 ConfirmWatchAdForUpgrade();
             }
         }
         else
         {
-            BuyUpgrade(currentSelectedType);
+            BuyUpgrade(currentSelectedType); // Achat direct si pas d'offre pub
         }
     }
 
-    // A lier au bouton "OUI" du Popup
+    // A lier au bouton "OUI / Regarder la pub" du Popup
     public void ConfirmWatchAdForUpgrade()
     {
         if (adOfferPopup != null) adOfferPopup.SetActive(false);
@@ -190,12 +196,18 @@ public class PlaneUpgradeManager : MonoBehaviour
         }
     }
 
-    // A lier au bouton "NON" du Popup
-    public void CancelWatchAd()
+    // A lier au bouton "Achat avec Etoiles" du Popup
+    public void BuyFromPopupWithStars()
     {
         if (adOfferPopup != null) adOfferPopup.SetActive(false);
-        // Optionnel : Annuler l'offre si le joueur refuse pour qu'il puisse payer en étoiles
-        isCurrentOfferAd = false;
+        BuyUpgrade(currentSelectedType);
+    }
+
+    // A lier au bouton "X" (Fermer) du Popup
+    public void ClosePopup()
+    {
+        if (adOfferPopup != null) adOfferPopup.SetActive(false);
+        isCurrentOfferAd = false; // Annule l'offre de pub
         UpdateAllTabsUI();
     }
 
@@ -205,7 +217,8 @@ public class PlaneUpgradeManager : MonoBehaviour
         if (data == null) return;
 
         int currentLevel = GetUpgradeLevel(currentPlaneIndex, currentSelectedType);
-        if (currentLevel >= data.maxLevel) return;
+        int maxLvl = GetMaxLevel(currentSelectedType);
+        if (currentLevel >= maxLvl) return;
 
         // Gain du niveau gratuit
         PlayerPrefs.SetInt(GetSaveKey(currentPlaneIndex, currentSelectedType), currentLevel + 1);
@@ -227,7 +240,8 @@ public class PlaneUpgradeManager : MonoBehaviour
         if (data == null) return;
 
         int currentLevel = GetUpgradeLevel(currentPlaneIndex, type);
-        if (currentLevel >= data.maxLevel) return;
+        int maxLvl = GetMaxLevel(type);
+        if (currentLevel >= maxLvl) return;
 
         int cost = CalculateCost(data, currentLevel);
         int currentStars = PlayerPrefs.GetInt("stars", 0);
@@ -250,7 +264,7 @@ public class PlaneUpgradeManager : MonoBehaviour
 
     public int GetUpgradeLevel(int planeIndex, UpgradeType type)
     {
-        return PlayerPrefs.GetInt(GetSaveKey(planeIndex, type), 0);
+        return PlayerPrefs.GetInt(GetSaveKey(planeIndex, type), 1);
     }
 
     private string GetSaveKey(int planeIndex, UpgradeType type)
@@ -260,7 +274,8 @@ public class PlaneUpgradeManager : MonoBehaviour
 
     private int CalculateCost(UpgradeData data, int level)
     {
-        return Mathf.RoundToInt(data.baseCost * Mathf.Pow(data.costMultiplier, level));
+        // level - 1 car le niveau de base est 1 (le premier achat est l'amélioration vers le niveau 2)
+        return Mathf.RoundToInt(data.baseCost * Mathf.Pow(data.costMultiplier, level - 1));
     }
 
     private UpgradeData GetUpgradeData(UpgradeType type)
@@ -272,18 +287,51 @@ public class PlaneUpgradeManager : MonoBehaviour
         return null;
     }
 
+    public int GetMaxLevel(UpgradeType type)
+    {
+        if (ChoosingPlaneScript.instance == null) return GetUpgradeData(type).maxLevel;
+        
+        PlaneData planeData = ChoosingPlaneScript.instance.GetCurrentPlaneData();
+        if (planeData == null) return GetUpgradeData(type).maxLevel;
+
+        switch (type)
+        {
+            case UpgradeType.Speed: return planeData.maxSpeedLevel;
+            case UpgradeType.Handling: return planeData.maxHandlingLevel;
+            case UpgradeType.Armor: return planeData.maxArmorLevel;
+        }
+        return GetUpgradeData(type).maxLevel;
+    }
+
+    public float GetBonusPerLevel(UpgradeType type)
+    {
+        if (ChoosingPlaneScript.instance == null) return GetUpgradeData(type).bonusPerLevel;
+        
+        PlaneData planeData = ChoosingPlaneScript.instance.GetCurrentPlaneData();
+        if (planeData == null) return GetUpgradeData(type).bonusPerLevel;
+
+        switch (type)
+        {
+            case UpgradeType.Speed: return planeData.bonusSpeedPerLevel;
+            case UpgradeType.Handling: return planeData.bonusHandlingPerLevel;
+            case UpgradeType.Armor: return planeData.bonusArmorPerLevel;
+        }
+        return GetUpgradeData(type).bonusPerLevel;
+    }
+
     public void ApplyUpgradesToPlane(int planeIndex, PlayerMovement playerMovement, PlaneData baseData)
     {
         int speedLevel = GetUpgradeLevel(planeIndex, UpgradeType.Speed);
         int handlingLevel = GetUpgradeLevel(planeIndex, UpgradeType.Handling);
         int armorLevel = GetUpgradeLevel(planeIndex, UpgradeType.Armor);
 
-        UpgradeData speedData = GetUpgradeData(UpgradeType.Speed);
-        UpgradeData handlingData = GetUpgradeData(UpgradeType.Handling);
-        UpgradeData armorData = GetUpgradeData(UpgradeType.Armor);
+        float speedBonus = GetBonusPerLevel(UpgradeType.Speed);
+        float handlingBonus = GetBonusPerLevel(UpgradeType.Handling);
+        float armorBonus = GetBonusPerLevel(UpgradeType.Armor);
 
-        playerMovement.speed = baseData.speed + (speedLevel * (speedData != null ? speedData.bonusPerLevel : 0f));
-        playerMovement.rotationSpeed = baseData.rotationSpeed + (handlingLevel * (handlingData != null ? handlingData.bonusPerLevel : 0f));
-        playerMovement.life = baseData.life + (int)(armorLevel * (armorData != null ? armorData.bonusPerLevel : 0f));
+        // On fait (Level - 1) car le niveau 1 représente les statistiques de base sans bonus
+        playerMovement.speed = baseData.speed + ((speedLevel - 1) * speedBonus);
+        playerMovement.rotationSpeed = baseData.rotationSpeed + ((handlingLevel - 1) * handlingBonus);
+        playerMovement.life = baseData.life + (int)((armorLevel - 1) * armorBonus);
     }
 }
