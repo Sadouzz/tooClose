@@ -173,7 +173,7 @@ public class Inventory : MonoBehaviour
         );
     }
 
-    int CalculateStars()
+    public int CalculateStars()
     {
         // Ta logique de conversion Score/Temps -> Etoiles
         return (int)(totalSeconds / 10) + (score / 10) + MissileSpawner.instance.destroyedMissiles + starsPicked;

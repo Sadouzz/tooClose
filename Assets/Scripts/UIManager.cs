@@ -128,7 +128,81 @@ public class UIManager : MonoBehaviour
     public void Home()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+
+        // Sauvegarder la progression si le joueur quitte la partie en cours depuis le menu pause
+        if (Inventory.instance != null && Inventory.instance.inPlay && !Inventory.instance.dead)
+        {
+            int sessionStars = Inventory.instance.CalculateStars();
+            Inventory.instance.SaveData(sessionStars);
+        }
+        
+        // --- SOFT RESET : On nettoie la scène au lieu de la recharger ---
+        
+        // 1. Reset des données
+        Inventory.instance.ResetData();
+
+        // 2. Nettoyage de l'écran
+        MissileSpawner.instance.DestroyAllMissiles();
+        SpawnObjects.instance.DestroyAllObjects();
+        PowerUpUIManager.instance.ClearStoredPowerUp();
+        PlayerPowerUpManager.instance.Reset();
+
+        // 3. Reset du joueur et de la caméra
+        if (vcam != null) vcam.enabled = false;
+        
+        PlayerMovement.instance.transform.position = Vector2.zero;
+        PlayerMovement.instance.transform.rotation = Quaternion.identity;
+        PlayerMovement.instance.ResetCameraProxy();
+        
+        Rigidbody2D rb = PlayerMovement.instance.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+        }
+
+        if (vcam != null)
+        {
+            vcam.transform.position = new Vector3(0, 0, vcam.transform.position.z);
+            var composer = vcam.GetComponent<CinemachinePositionComposer>();
+            if (composer != null) 
+            {
+                // Dans le menu principal, l'offset Y doit être à 2.25 (et 0 dans le jeu)
+                composer.TargetOffset = new Vector3(composer.TargetOffset.x, 2.25f, composer.TargetOffset.z);
+            }
+            vcam.enabled = true;
+        }
+
+        if (Camera.main != null)
+            Camera.main.transform.position = new Vector3(0, 0, Camera.main.transform.position.z);
+
+        ChunkManager[] chunkManagers = FindObjectsByType<ChunkManager>(FindObjectsSortMode.None);
+        foreach (ChunkManager cm in chunkManagers)
+        {
+            cm.ForceUpdateChunks();
+        }
+        
+        GameObject playerShip = PlayerMovement.instance.transform.GetChild(0).GetChild(ChoosingPlaneScript.instance.currentIndex).gameObject;
+        playerShip.SetActive(true);
+
+        // 4. Reset des états
+        Inventory.instance.inPlay = false;
+        Inventory.instance.dead = false;
+        Inventory.instance.menu = true;
+        PlayerMovement.instance.move = false;
+
+        // 5. Affichage des panels pour le menu principal
+        playPanel.SetActive(false);
+        diePanel.SetActive(false);
+        pausePanel.SetActive(false);
+        menuPanel.SetActive(true);
+
+        // Remettre la musique au volume d'origine du menu (si on avait fait un fade)
+        if (musicSource != null)
+        {
+            StopAllCoroutines(); // Stoppe le fade en cours
+            musicSource.volume = 1f; // Remet le volume à 100% pour le menu (ou la valeur que vous préférez)
+        }
     }
 
     public void Play()

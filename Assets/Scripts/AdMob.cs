@@ -95,7 +95,7 @@ public class AdMob : MonoBehaviour
             MobileAdsEventExecutor.ExecuteInUpdate(() =>
             {
                 Debug.Log("Banner view loaded an ad with response : " + _bannerView.GetResponseInfo());
-                //AdjustUIForBanner();
+                AdjustUIForBanner(); // Décommenté pour que la bannière repousse l'UI correctement
             });
         };
 
@@ -330,36 +330,51 @@ public class AdMob : MonoBehaviour
                 Debug.Log("Rewarded ad loaded");
                 _rewardedAd = ad;
                 adReady = true;
+
+                // FIX: On s'abonne à la fermeture de la pub. 
+                // Si le joueur ferme la pub (avec ou sans récompense), on recharge la suivante.
+                _rewardedAd.OnAdFullScreenContentClosed += () =>
+                {
+                    MobileAdsEventExecutor.ExecuteInUpdate(() =>
+                    {
+                        adReady = false;
+                        LoadRewardedAd();
+                    });
+                };
             });
         });
     }
 
     void Update()
     {
+        // 1. Détermine si le bouton principal peut être cliqué (Pub prête ET Timer fini)
+        bool mainButtonInteractable = false;
+        
         if (adReady)
         {
-            var buttComp = adButton.gameObject.GetComponent<TimeManagerFreePackWithAd>();
-            if (buttComp != null)
+            if (adButton != null)
             {
-                if (buttComp.finished) StatusAdButtons(true);
+                var buttComp = adButton.gameObject.GetComponent<TimeManagerFreePackWithAd>();
+                if (buttComp != null)
+                {
+                    mainButtonInteractable = buttComp.finished;
+                }
+                else
+                {
+                    mainButtonInteractable = true;
+                }
             }
-            else
-            {
-                StatusAdButtons(true);
-            }
+        }
 
-            if (Inventory.instance != null && Inventory.instance.menu)
-                StatusAdButtons(true);
-        }
-        else
-        {
-            if (Inventory.instance != null && Inventory.instance.menu)
-            {
-                StatusAdButtons(false);
-                if (adButton != null && adButton.transform.childCount > 1)
-                    adButton.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Pas de Pub";
-            }
-        }
+        // 2. Détermine si le bouton des missions peut être cliqué (Juste Pub prête)
+        bool missionButtonInteractable = adReady;
+
+        // 3. Application des états
+        if (adButton != null) 
+            adButton.interactable = mainButtonInteractable;
+            
+        if (adButtonMission != null) 
+            adButtonMission.interactable = missionButtonInteractable;
     }
 
     public void ShowRewardedAd(string _reward)
@@ -388,13 +403,13 @@ public class AdMob : MonoBehaviour
                     }
 
                     StatusAdButtons(false);
-                    if (currentScene.name == "Menu")
+                    if (currentScene.name == "Menu" && adButtonMission != null)
                         adButtonMission.interactable = false;
 
-                    adReady = false;
                     watchedCount++;
                     PlayerPrefs.SetInt("watchedAdsCount", watchedCount);
-                    LoadRewardedAd();
+                    // Le rechargement de la pub (adReady = false et LoadRewardedAd)
+                    // est maintenant géré par l'événement OnAdFullScreenContentClosed
                 });
             });
         }

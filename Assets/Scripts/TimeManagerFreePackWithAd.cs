@@ -27,46 +27,49 @@ public class TimeManagerFreePackWithAd : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         DateTime dateNow = DateTime.Now;
         DateTime dateFinish = DateTime.Parse(PlayerPrefs.GetString("dateFinishWithAd", DateTime.Now.ToString()));
-
         TimeSpan difference = dateFinish.Subtract(dateNow);
 
         if(difference <= TimeSpan.Zero)
         {
             //Finished
             finished = true;
-            timerText.text = "Regarder";
-            freepackButton.interactable = true;
         }
         else
         {
-            //Not finished
             finished = false;
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         TimeSpan ts = DateTime.Parse(PlayerPrefs.GetString("dateFinishWithAd", DateTime.Now.ToString())).Subtract(DateTime.Now);
-        if (!finished)
-        {
-            freepackButton.interactable = false;
-            timerText.text = ts.Minutes + "min" + ts.Seconds + "s";
-        }
-        else
-        {
-            timerText.text = "REGARDER UNE PUB";
-        }
-
+        
         if (ts <= TimeSpan.Zero)
         {
             finished = true;
-            freepackButton.interactable = true;
         }
-        
+        else
+        {
+            finished = false;
+        }
+
+        if (!finished)
+        {
+            timerText.text = ts.Minutes + "m " + ts.Seconds + "s";
+        }
+        else
+        {
+            if (AdMob.instance != null && !AdMob.instance.adReady)
+            {
+                timerText.text = "PAS DE PUB";
+            }
+            else
+            {
+                timerText.text = "REGARDER UNE PUB";
+            }
+        }
     }
 
     public void OnResetTimer()
