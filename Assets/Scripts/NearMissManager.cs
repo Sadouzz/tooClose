@@ -75,6 +75,7 @@ public class NearMissManager : MonoBehaviour
         StartCoroutine(DoImpactEffects());
 
         // 4. Feedback feeling
+        Handheld.Vibrate();
         //StartCoroutine(DoSlowMo());
     }
     IEnumerator AnimateNearMiss(int combo, int gain, Vector3 worldPos)

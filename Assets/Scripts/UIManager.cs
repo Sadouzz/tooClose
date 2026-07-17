@@ -37,10 +37,31 @@ public class UIManager : MonoBehaviour
         instance = this;
     }
 
+    [Header("UI Audio Settings")]
+    public AudioClip clickSound;
+    private AudioSource sfxSource;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        // Création de l'AudioSource pour les SFX
+        sfxSource = gameObject.AddComponent<AudioSource>();
+        sfxSource.playOnAwake = false;
+
+        // Ajouter le son à tous les boutons actuels de la scène
+        UnityEngine.UI.Button[] buttons = FindObjectsByType<UnityEngine.UI.Button>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        foreach (UnityEngine.UI.Button btn in buttons)
+        {
+            btn.onClick.AddListener(PlayClickSound);
+        }
+    }
+
+    public void PlayClickSound()
+    {
+        if (clickSound != null && sfxSource != null)
+        {
+            sfxSource.PlayOneShot(clickSound);
+        }
     }
 
     // Update is called once per frame
