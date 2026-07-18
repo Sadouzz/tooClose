@@ -6,8 +6,18 @@ public class ChunkManager : MonoBehaviour
     public float maxViewDist = 20, initMaxViewDist;
     public float chunkSize = 20;
 
+    public static ChunkManager instance;
+
+    void Awake()
+    {
+        instance = this;
+    }
+
     public Transform player;
-    public GameObject[] chunksAvailable;
+    
+    [UnityEngine.Serialization.FormerlySerializedAs("chunksAvailable")]
+    public GameObject[] chunksAvailableEasy;
+    public GameObject[] chunksAvailableHard;
 
     public static Vector2 playerPos;
 
@@ -59,6 +69,17 @@ public class ChunkManager : MonoBehaviour
         }
     }
 
+    public void UpdateDifficulty()
+    {
+        foreach (var chunk in chunkDictionary.Values)
+        {
+            chunk.DestroyChunk();
+        }
+        chunkDictionary.Clear();
+        visibleChunksLastUpdate.Clear();
+        ForceUpdateChunks();
+    }
+
     void UpdateVisibleChunks()
     {
         foreach (var chunk in visibleChunksLastUpdate)
@@ -83,8 +104,11 @@ public class ChunkManager : MonoBehaviour
                 }
                 else
                 {
+                    string difficulty = PlayerPrefs.GetString("Difficulty", "Easy");
+                    GameObject[] currentChunks = (difficulty == "Hard" && chunksAvailableHard != null && chunksAvailableHard.Length > 0) ? chunksAvailableHard : chunksAvailableEasy;
+
                     chunkDictionary.Add(coord,
-                        new TerrainChunk2D(coord, chunkSize, transform, chunksAvailable));
+                        new TerrainChunk2D(coord, chunkSize, transform, currentChunks));
                 }
             }
         }
@@ -127,6 +151,12 @@ public class ChunkManager : MonoBehaviour
         public bool IsVisible()
         {
             return chunkObject.activeSelf;
+        }
+
+        public void DestroyChunk()
+        {
+            if (chunkObject != null)
+                Object.Destroy(chunkObject);
         }
     }
 }

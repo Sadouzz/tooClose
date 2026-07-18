@@ -6,12 +6,11 @@ public class DifficultyChoiceScript : MonoBehaviour
     public Image imageEasy, imageHard;
 
     [Header("Settings de Transparence")]
-    [Range(0f, 1f)] public float alphaActive = 1f;    // 100% opaque
-    [Range(0f, 1f)] public float alphaInactive = 0.3f; // 30% transparent
+    [Range(0f, 1f)] public float alphaActive = 1f;
+    [Range(0f, 1f)] public float alphaInactive = 0.3f;
 
     private void Start()
     {
-        // On initialise au démarrage
         if (PlayerPrefs.GetString("Difficulty", "Easy") == "Easy")
         {
             ApplyAlpha(imageEasy, alphaActive);
@@ -32,6 +31,7 @@ public class DifficultyChoiceScript : MonoBehaviour
 
         if (SpawnObjects.instance != null) SpawnObjects.instance.UpdateDifficulty();
         if (MissileSpawner.instance != null) MissileSpawner.instance.UpdateDifficulty();
+        if (ChunkManager.instance != null) ChunkManager.instance.UpdateDifficulty();
     }
 
     public void SetHard()
@@ -42,13 +42,12 @@ public class DifficultyChoiceScript : MonoBehaviour
 
         if (SpawnObjects.instance != null) SpawnObjects.instance.UpdateDifficulty();
         if (MissileSpawner.instance != null) MissileSpawner.instance.UpdateDifficulty();
+        if (ChunkManager.instance != null) ChunkManager.instance.UpdateDifficulty();
     }
 
-    // Fonction utilitaire pour changer l'alpha proprement
     private void ApplyAlpha(Image img, float alpha)
     {
         if (img == null) return;
-
         Color c = img.color;
         c.a = alpha;
         img.color = c;

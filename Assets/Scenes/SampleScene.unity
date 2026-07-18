@@ -18098,7 +18098,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.276062, y: -10.1}
+  m_AnchoredPosition: {x: 0.276062, y: -10.099976}
   m_SizeDelta: {x: 568.5521, y: 82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &670642034
@@ -23362,8 +23362,9 @@ MonoBehaviour:
   initMaxViewDist: 0
   chunkSize: 12
   player: {fileID: 0}
-  chunksAvailable:
+  chunksAvailableEasy:
   - {fileID: 5755594087093092225, guid: 26a7dba1d0c2ac244b9fa7f69a9be0f2, type: 3}
+  chunksAvailableHard: []
 --- !u!4 &898364740
 Transform:
   m_ObjectHideFlags: 0
@@ -40362,8 +40363,10 @@ MonoBehaviour:
   initMaxViewDist: 0
   chunkSize: 12.04
   player: {fileID: 0}
-  chunksAvailable:
+  chunksAvailableEasy:
   - {fileID: 517715577794561041, guid: e866bdae5d9072e4e9cf79153b3694c3, type: 3}
+  chunksAvailableHard:
+  - {fileID: 517715577794561041, guid: 9eefd90dce698d343a837ff03829bb42, type: 3}
 --- !u!4 &1610605279
 Transform:
   m_ObjectHideFlags: 0
