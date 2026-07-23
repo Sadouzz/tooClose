@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI; 
 using TMPro;
+using UnityEngine.Localization.Settings;
 
 public class SettingsScript : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class SettingsScript : MonoBehaviour
     public TextMeshProUGUI soundText;
     public TextMeshProUGUI musicText;
     public TextMeshProUGUI vibrationText;
+    public TextMeshProUGUI languageText; // Le texte du bouton de langue
 
     private string movementModeKey = "MovementMode";
 
@@ -24,12 +26,33 @@ public class SettingsScript : MonoBehaviour
         if (instance == null) instance = this;
     }
 
+    private void OnEnable()
+    {
+        LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
+    }
+
+    private void OnDisable()
+    {
+        LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
+    }
+
+    private void OnLocaleChanged(UnityEngine.Localization.Locale locale)
+    {
+        UpdateLanguageUI(locale);
+    }
+
     private void Start()
     {
         UpdateSettingsUI();
         UpdateAudioVibrationUI();
         ApplyMusicSetting();
         ApplySoundSetting();
+        
+        // Mettre à jour le texte de la langue au démarrage
+        if (LocalizationSettings.SelectedLocale != null)
+        {
+            UpdateLanguageUI(LocalizationSettings.SelectedLocale);
+        }
     }
 
     // --- Mouvement ---
@@ -140,6 +163,41 @@ public class SettingsScript : MonoBehaviour
             
         if (vibrationText != null)
             vibrationText.text = PlayerPrefs.GetInt("Vibration", 1) == 1 ? "Vibration : ON" : "Vibration : OFF";
+    }
+
+    private void UpdateLanguageUI(UnityEngine.Localization.Locale locale)
+    {
+        if (languageText != null)
+        {
+            if (locale.Identifier.Code == "fr")
+            {
+                languageText.text = "LANG : FR 🇫🇷";
+            }
+            else if (locale.Identifier.Code == "en")
+            {
+                languageText.text = "LANG : EN 🇬🇧";
+            }
+            else
+            {
+                languageText.text = "LANG : " + locale.Identifier.Code.ToUpper();
+            }
+        }
+    }
+
+    // --- Langue ---
+    public void ToggleLanguage()
+    {
+        // On récupère toutes les langues disponibles (français, anglais)
+        var locales = LocalizationSettings.AvailableLocales.Locales;
+        
+        // On trouve l'index de la langue actuelle
+        int currentIndex = locales.IndexOf(LocalizationSettings.SelectedLocale);
+        
+        // On passe à la suivante (revient à 0 si on était à la fin)
+        int nextIndex = (currentIndex + 1) % locales.Count;
+        
+        // On applique la nouvelle langue !
+        LocalizationSettings.SelectedLocale = locales[nextIndex];
     }
 
     public void DeleteAllPlayerPrefs()

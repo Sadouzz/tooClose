@@ -5,6 +5,13 @@ using System;
 
 public class AdMobConsentManager : MonoBehaviour
 {
+    public static AdMobConsentManager instance;
+
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+    }
+
     void Start()
     {
         // 1. On lance la vérification du consentement dès le démarrage

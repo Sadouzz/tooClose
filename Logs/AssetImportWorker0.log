@@ -1,0 +1,1974 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.2/staging' branch; Version is '6000.2.11f1 (7134d7685e5d) revision 7419095'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) 64bit Professional' Language: 'fr' Physical Memory: 16149 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+Date: 2026-07-23T20:55:15Z
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Ousman" at "2026-07-23T20:55:15.3269482Z"
+
+COMMAND LINE ARGUMENTS:
+D:\Unity\6000.2.11f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Unity/Projects/tooClose
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+34482
+-licensingIpc
+LicenseClient-Ousman
+-job-worker-count
+3
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name
+AssetImport
+Successfully changed project path to: D:/Unity/Projects/tooClose
+D:/Unity/Projects/tooClose
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [21548]  Target information:
+
+Player connection [21548]  * "[IP] 192.168.16.1 [Port] 0 [Flags] 2 [Guid] 1770956319 [EditorId] 1770956319 [Version] 1048832 [Id] WindowsEditor(7,HP-PAVILION-OS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [21548]  * "[IP] 192.168.1.7 [Port] 0 [Flags] 2 [Guid] 1770956319 [EditorId] 1770956319 [Version] 1048832 [Id] WindowsEditor(7,HP-PAVILION-OS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [21548] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [21548] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 3
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 33828, path: "D:/Unity/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              126eea40be284d71863f35a6a776234b
+  Correlation Id:          52b5adaf79f628c8b4543e91f1df01fc
+  External correlation Id: 5954951977967790112
+  Machine Id:              japEv33VSu3fV8G5dVxPNuj/pTA=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Ousman" (connect: 0.00s, validation: 0.01s, handshake: 0.09s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Ousman-notifications" at "2026-07-23T20:55:15.4262617Z"
+[Licensing::Module] Licensing Background thread has ended after 0.10s
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 11270117553698-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Refreshing native plugins compatible for Editor in 82.12 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.2.11f1 (7134d7685e5d)
+[Subsystems] Discovering subsystems at path D:/Unity/6000.2.11f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Unity/Projects/tooClose/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) Iris(R) Xe Graphics (ID=0x9a49)
+    Vendor:   Intel
+    VRAM:     8074 MB
+    Driver:   31.0.101.4502
+Initialize mono
+Mono path[0] = 'D:/Unity/6000.2.11f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity/6000.2.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/Unity/6000.2.11f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56344
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/6000.2.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: D:/Unity/6000.2.11f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: D:/Unity/6000.2.11f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Registered in 0.019936 seconds.
+- Loaded All Assemblies, in  0.846 seconds
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+Native extension for iOS target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 478 ms
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.310 seconds
+Domain Reload Profiling: 2146ms
+	BeginReloadAssembly (341ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (2ms)
+	RebuildCommonClasses (72ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (110ms)
+	LoadAllAssembliesAndSetupDomain (291ms)
+		LoadAssemblies (327ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (283ms)
+			TypeCache.Refresh (280ms)
+				TypeCache.ScanAssembly (257ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (1312ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1145ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (722ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (108ms)
+			ProcessInitializeOnLoadAttributes (216ms)
+			ProcessInitializeOnLoadMethodAttributes (92ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  3.153 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 28.91 ms, found 8 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Refreshing native plugins compatible for Editor in 28.53 ms, found 8 plugins.
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.529 seconds
+Domain Reload Profiling: 5611ms
+	BeginReloadAssembly (388ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (75ms)
+	RebuildCommonClasses (58ms)
+	RebuildNativeTypeToScriptingClass (23ms)
+	initialDomainReloadingComplete (77ms)
+	LoadAllAssembliesAndSetupDomain (2534ms)
+		LoadAssemblies (1903ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (832ms)
+			TypeCache.Refresh (520ms)
+				TypeCache.ScanAssembly (482ms)
+			BuildScriptInfoCaches (282ms)
+			ResolveRequiredComponents (20ms)
+	FinalizeReload (2530ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (2069ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (32ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (333ms)
+			ProcessInitializeOnLoadAttributes (1319ms)
+			ProcessInitializeOnLoadMethodAttributes (361ms)
+			AfterProcessingInitializeOnLoad (19ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 28.39 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9567 unused Assets / (6.3 MB). Loaded Objects now: 10286.
+Memory consumption went from 166.1 MB to 159.8 MB.
+Total: 16.861800 ms (FindLiveObjects: 1.199700 ms CreateObjectMapping: 1.116200 ms MarkObjects: 9.093000 ms  DeleteObjects: 5.451600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 212409.315330 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_03.png
+  artifactKey: Guid(22798a3c1b61a484491fc336bd65a077) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_03.png using Guid(22798a3c1b61a484491fc336bd65a077) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e1f36ae8d8ed40235274dfee42adefcf') in 0.1464139 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style F/Default/joystick_hexagon_nub_b.png
+  artifactKey: Guid(be93d97ba7ea9d845a73698180e1484e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style F/Default/joystick_hexagon_nub_b.png using Guid(be93d97ba7ea9d845a73698180e1484e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9813312c91a4dec30c783ad37a06cc2c') in 0.0170575 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_11.png
+  artifactKey: Guid(5596b6f02064b6749997f991742bc476) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_11.png using Guid(5596b6f02064b6749997f991742bc476) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0c480a0db3fc2e934d0e6bbe3dd18da5') in 0.0349339 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style D/Default/joystick_hexagon_nub_b.png
+  artifactKey: Guid(f5b3172f6fc981243a8dcd99e67cfd83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style D/Default/joystick_hexagon_nub_b.png using Guid(f5b3172f6fc981243a8dcd99e67cfd83) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ad07368ccb95c95f2e4b7a82540d3a9a') in 0.0212397 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style F/Large (2×)/joystick_hexagon_nub_b.png
+  artifactKey: Guid(1a7dad98472be9f448f59f1d693e7705) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style F/Large (2×)/joystick_hexagon_nub_b.png using Guid(1a7dad98472be9f448f59f1d693e7705) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ab60b2f9494afa1c360ef1b0eb09065b') in 0.0243533 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style D/Default/joystick_hexagon_nub_a.png
+  artifactKey: Guid(15319bf5edaaf6441931418435e82a21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style D/Default/joystick_hexagon_nub_a.png using Guid(15319bf5edaaf6441931418435e82a21) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0b5e692f7d040508b01bd4d5edfac8c0') in 0.0396691 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_01.png
+  artifactKey: Guid(a75a9250211d1724ea8440bb710a6e81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_01.png using Guid(a75a9250211d1724ea8440bb710a6e81) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c92d5ebf194d2f4a4127debd866b32e5') in 0.0308068 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Highlights B/Large (2×)/joystick_hexagon_nub_highlight.png
+  artifactKey: Guid(65d92b336b701ae4cbb3610de2fde151) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Highlights B/Large (2×)/joystick_hexagon_nub_highlight.png using Guid(65d92b336b701ae4cbb3610de2fde151) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '720c5340dc7db23989ef126c4da4e183') in 0.0275471 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000086 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style D/Default/joystick_hexagon_nub_c.png
+  artifactKey: Guid(9d81d0d56bf3d6b43a37d100ef949da4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style D/Default/joystick_hexagon_nub_c.png using Guid(9d81d0d56bf3d6b43a37d100ef949da4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd933ec7d7d18d634ac81799b483e2c74') in 0.0237832 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style B/Large (2×)/joystick_hexagon_nub_b.png
+  artifactKey: Guid(fcb0b8bae767ac041bd82bd5c531bcf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style B/Large (2×)/joystick_hexagon_nub_b.png using Guid(fcb0b8bae767ac041bd82bd5c531bcf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5d9b9015a6a7b1efcf651b5083a63708') in 0.0323637 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_09.png
+  artifactKey: Guid(476bcb635f1f58f41be9039ee69ba4a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_09.png using Guid(476bcb635f1f58f41be9039ee69ba4a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b5d199b35ebe8052ada31f09218e560f') in 0.0282579 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style F/Large (2×)/joystick_hexagon_pad_a.png
+  artifactKey: Guid(07f3b6cd8848a3e4ea101d2fe61e9957) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style F/Large (2×)/joystick_hexagon_pad_a.png using Guid(07f3b6cd8848a3e4ea101d2fe61e9957) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '19c43180e5b34526934c74559ce8e253') in 0.0556492 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style A/Default/joystick_hexagon_nub_c.png
+  artifactKey: Guid(dbd1bb01f6b180e40974d88117cab03c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style A/Default/joystick_hexagon_nub_c.png using Guid(dbd1bb01f6b180e40974d88117cab03c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '60644367eb01f53d9f54403ca0eb1f97') in 0.0258879 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_18.png
+  artifactKey: Guid(09e69cf732aca0d4089fc47046cca805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_18.png using Guid(09e69cf732aca0d4089fc47046cca805) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '85a015c4b1f8d43da8e1c26837ecb7ec') in 0.0284272 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_10.png
+  artifactKey: Guid(9eab19d2689dd814b9bb408b7ec477f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_10.png using Guid(9eab19d2689dd814b9bb408b7ec477f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd2716092ebdf2a108aa44b10a50ef21b') in 0.028731 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_06.png
+  artifactKey: Guid(970d69c2e70358a4bb8c622ad6ab9781) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_06.png using Guid(970d69c2e70358a4bb8c622ad6ab9781) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '428630dd35efe1e14e038210ccd7426d') in 0.0153776 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style B/Default/joystick_hexagon_nub_a.png
+  artifactKey: Guid(b1f23308ef225a747a463aecf7237b8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style B/Default/joystick_hexagon_nub_a.png using Guid(b1f23308ef225a747a463aecf7237b8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fdbc021cf32a8c06222b0fcd3f2bd079') in 0.0148002 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000102 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/Game icons (base)/PNG/White/2x/joystick.png
+  artifactKey: Guid(a5bb1a5d887230247940c6f75a696a39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/Game icons (base)/PNG/White/2x/joystick.png using Guid(a5bb1a5d887230247940c6f75a696a39) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fb2159dabd6b2c463c26331d56a0d01f') in 0.0260056 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style H/Default/joystick_hexagon_nub_b.png
+  artifactKey: Guid(92cce6207ff666f4297ec4fb5174cd9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style H/Default/joystick_hexagon_nub_b.png using Guid(92cce6207ff666f4297ec4fb5174cd9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '15daa3b9afc4969ccc65560b5c9a1b7f') in 0.0164985 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style F/Default/joystick_hexagon_nub_c.png
+  artifactKey: Guid(98ffbb3938792e742b2d274dce0eb5b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style F/Default/joystick_hexagon_nub_c.png using Guid(98ffbb3938792e742b2d274dce0eb5b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3eee707978f5a4bfae967eb801dde655') in 0.0170062 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_19.png
+  artifactKey: Guid(e58a8e607980eb94fb0c13dd2187aef9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_19.png using Guid(e58a8e607980eb94fb0c13dd2187aef9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'be37b3ef60a00c2d9bed2cd11edb8d84') in 0.0300912 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style G/Default/joystick_hexagon_nub_b.png
+  artifactKey: Guid(4545fbe96c5424246900ad8fb3a075e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style G/Default/joystick_hexagon_nub_b.png using Guid(4545fbe96c5424246900ad8fb3a075e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd21901dfc99e53a5e3f99d77cb31978b') in 0.0444063 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style A/Large (2×)/joystick_hexagon_nub_a.png
+  artifactKey: Guid(3aa7c5805a5bba8489127314929fa148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style A/Large (2×)/joystick_hexagon_nub_a.png using Guid(3aa7c5805a5bba8489127314929fa148) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '087aac31def56cbbc8901fa98c88c26c') in 0.0303142 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_12.png
+  artifactKey: Guid(336b64fe75d1c0146804b3bfc7661e67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_12.png using Guid(336b64fe75d1c0146804b3bfc7661e67) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f82e981f27a85be243b0c14e0b253d0b') in 0.0237713 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_21.png
+  artifactKey: Guid(6c8567ed69b04f54eab7a58462c41283) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_21.png using Guid(6c8567ed69b04f54eab7a58462c41283) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e17f33465cc43d9a8f97469f1a54b77b') in 0.0287629 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style E/Large (2×)/joystick_hexagon_nub_b.png
+  artifactKey: Guid(67a9ee992f960784da0c17a12a902cdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style E/Large (2×)/joystick_hexagon_nub_b.png using Guid(67a9ee992f960784da0c17a12a902cdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '42e688037fc05b6a14c17b3020d4f7b5') in 0.0243832 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style E/Default/joystick_hexagon_pad_a.png
+  artifactKey: Guid(f56b8453d1a218f41874db3d8ea802e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style E/Default/joystick_hexagon_pad_a.png using Guid(f56b8453d1a218f41874db3d8ea802e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3b1042db9fc97a4d86012b8e3eb7f317') in 0.0177487 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style C/Large (2×)/joystick_hexagon_nub_b.png
+  artifactKey: Guid(3782bb6dfea1b0345ad5b1a360292a51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style C/Large (2×)/joystick_hexagon_nub_b.png using Guid(3782bb6dfea1b0345ad5b1a360292a51) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fbcb0fc57b03a2122c37562db42ea1f2') in 0.0190227 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style A/Large (2×)/joystick_hexagon_nub_c.png
+  artifactKey: Guid(e2aab8d893b7e514ab863a27af71f368) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style A/Large (2×)/joystick_hexagon_nub_c.png using Guid(e2aab8d893b7e514ab863a27af71f368) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f38636cc8868b50af1693be024b4c5e7') in 0.0181363 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style H/Large (2×)/joystick_hexagon_nub_b.png
+  artifactKey: Guid(98fcd17e3ef78664ea5ed7adceb7ab71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style H/Large (2×)/joystick_hexagon_nub_b.png using Guid(98fcd17e3ef78664ea5ed7adceb7ab71) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b9eb202fef444520676394b0b494bbdb') in 0.0164002 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style F/Large (2×)/joystick_hexagon_nub_a.png
+  artifactKey: Guid(78c98d07eee0623448937bb1dcae65f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style F/Large (2×)/joystick_hexagon_nub_a.png using Guid(78c98d07eee0623448937bb1dcae65f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e63970d303e05a9c271401b09f90fd09') in 0.0278028 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000082 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_02.png
+  artifactKey: Guid(ff42677d258eda646a6e3a36b5b07dd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_02.png using Guid(ff42677d258eda646a6e3a36b5b07dd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '07c66fa7b995ad3b024e25cd0635c3bc') in 0.0331467 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style E/Default/joystick_hexagon_nub_b.png
+  artifactKey: Guid(5d94b5fe1cd1ae64f8070b0656b60b73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style E/Default/joystick_hexagon_nub_b.png using Guid(5d94b5fe1cd1ae64f8070b0656b60b73) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '159b2f23adda3bc006a3fb73695c583c') in 0.0161343 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style F/Default/joystick_hexagon_nub_a.png
+  artifactKey: Guid(34310d2d6bb138a48ba701786f01979f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style F/Default/joystick_hexagon_nub_a.png using Guid(34310d2d6bb138a48ba701786f01979f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1aa6a39e0558fd4e4fc0ba1e2b94baa8') in 0.0321125 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style B/Default/joystick_hexagon_pad_a.png
+  artifactKey: Guid(ecb90028919aaba46a356e47b5427d92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style B/Default/joystick_hexagon_pad_a.png using Guid(ecb90028919aaba46a356e47b5427d92) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '15a6687adecc30164fb5007097f5df5a') in 0.0187416 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_15.png
+  artifactKey: Guid(ec63a042a6ed2d84a90b9e25c71318c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_15.png using Guid(ec63a042a6ed2d84a90b9e25c71318c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e6de647eec6446b785e7af0b11b35b16') in 0.0163532 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_07.png
+  artifactKey: Guid(9833f325a1fc2e54da1aaca421807cc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_07.png using Guid(9833f325a1fc2e54da1aaca421807cc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '80fc3f86b1eb759b2376e53c3ffc5d7c') in 0.014644 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_23.png
+  artifactKey: Guid(3d9a116c01a6577489587194fe696f41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_23.png using Guid(3d9a116c01a6577489587194fe696f41) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f7f57ff9a9d95459e40e7f6322651439') in 0.0300284 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style D/Large (2×)/joystick_hexagon_nub_a.png
+  artifactKey: Guid(41b6e768ecaecbd48ae0e26333e3e185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style D/Large (2×)/joystick_hexagon_nub_a.png using Guid(41b6e768ecaecbd48ae0e26333e3e185) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8aac4dc6e941214638489eba43920792') in 0.017984 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_24.png
+  artifactKey: Guid(c09c78ab1e6a98847b2855a2fceffbce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_24.png using Guid(c09c78ab1e6a98847b2855a2fceffbce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'aa02f1c6a51db0a57b327a2d60707325') in 0.0168754 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_16.png
+  artifactKey: Guid(bc3127e28a7796843a331fdb6063f4ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/fightJoy_16.png using Guid(bc3127e28a7796843a331fdb6063f4ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '74c5a3cf959831ba6c42e2e4d8a4c274') in 0.0155754 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style H/Large (2×)/joystick_hexagon_nub_a.png
+  artifactKey: Guid(94a80b68e4a87b340ac56fefdd2fede2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style H/Large (2×)/joystick_hexagon_nub_a.png using Guid(94a80b68e4a87b340ac56fefdd2fede2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3c9dac37a46ffb2bd11dbcab444d5b1d') in 0.0193385 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style E/Default/joystick_hexagon_nub_c.png
+  artifactKey: Guid(504a88374dc38324f8f9d1880f850673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style E/Default/joystick_hexagon_nub_c.png using Guid(504a88374dc38324f8f9d1880f850673) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '098cba4dd2619fb724e975f32e269b08') in 0.0223718 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style G/Default/joystick_hexagon_nub_a.png
+  artifactKey: Guid(9b0605cde2944c24eb8d5e5566689d53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style G/Default/joystick_hexagon_nub_a.png using Guid(9b0605cde2944c24eb8d5e5566689d53) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fae2660e3d61dac84a593882838d53ae') in 0.0131883 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style E/Large (2×)/joystick_hexagon_nub_c.png
+  artifactKey: Guid(8d007a0085aa4d24e90a18c6735ae73b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style E/Large (2×)/joystick_hexagon_nub_c.png using Guid(8d007a0085aa4d24e90a18c6735ae73b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8ad849d44ec23ca4748e098232f12c97') in 0.0439521 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 20.526314 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style A/Default/joystick_polygon_pad_d.png
+  artifactKey: Guid(b65c9e37ce371614eb48d268c0681375) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style A/Default/joystick_polygon_pad_d.png using Guid(b65c9e37ce371614eb48d268c0681375) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '72eb06c0bc338c87395b92232589c174') in 0.0157897 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Highlights B/Large (2×)/joystick_polygon_pad_highlight.png
+  artifactKey: Guid(0f0cfe51e3901874cb3a6a3e607d3dbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Highlights B/Large (2×)/joystick_polygon_pad_highlight.png using Guid(0f0cfe51e3901874cb3a6a3e607d3dbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4de08bea0178e06e3744b62aa75a3694') in 0.0200579 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style D/Large (2×)/joystick_polygon_pad_d.png
+  artifactKey: Guid(97b7e9655ecee3a46b8e1e79d80cdaaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style D/Large (2×)/joystick_polygon_pad_d.png using Guid(97b7e9655ecee3a46b8e1e79d80cdaaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0629300283dc389de3c65c91870230af') in 0.0186194 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Imports/kenney_car-kit/Previews/police.png
+  artifactKey: Guid(8ceba5263e4834843bf6b7549eec348e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_car-kit/Previews/police.png using Guid(8ceba5263e4834843bf6b7549eec348e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b86e81dc09c97d4451c9bad00d69d7c0') in 0.0170874 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style C/Default/joystick_polygon_pad_d.png
+  artifactKey: Guid(d4461ab53631a8844a1bcd746c92298b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style C/Default/joystick_polygon_pad_d.png using Guid(d4461ab53631a8844a1bcd746c92298b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1a0ce4b889ae87482d232b376ff9a44d') in 0.0147668 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style D/Default/joystick_polygon_pad_d.png
+  artifactKey: Guid(72b0f20b94f2f6e4b9945df30b0d4ac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style D/Default/joystick_polygon_pad_d.png using Guid(72b0f20b94f2f6e4b9945df30b0d4ac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cafceb8a38acf90d2cdd6c48b782d06d') in 0.0182871 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style G/Default/joystick_polygon_pad_d.png
+  artifactKey: Guid(642bcdcf45df8f842a62d95174b1534a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style G/Default/joystick_polygon_pad_d.png using Guid(642bcdcf45df8f842a62d95174b1534a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1535c89ecfa23e45f7553a039422c63d') in 0.0161064 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style C/Large (2×)/joystick_polygon_pad_d.png
+  artifactKey: Guid(8961023272023ad42b7cde4c59a702c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style C/Large (2×)/joystick_polygon_pad_d.png using Guid(8961023272023ad42b7cde4c59a702c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ddf1f773063837916e3cb0451c464e5f') in 0.0198406 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style E/Large (2×)/joystick_polygon_pad_d.png
+  artifactKey: Guid(6b9abf037b7148d4aa2bb75a507ca7a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style E/Large (2×)/joystick_polygon_pad_d.png using Guid(6b9abf037b7148d4aa2bb75a507ca7a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '44a003dc44382e6e4468284e25749491') in 0.0162803 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.678030 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style F/Large (2×)/joystick_polygon_pad_c.png
+  artifactKey: Guid(562b0bd5b011517469916600d5adf89c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style F/Large (2×)/joystick_polygon_pad_c.png using Guid(562b0bd5b011517469916600d5adf89c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9b1ee5537abb07d622195df5b4c3bdd2') in 0.0187111 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.762669 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style F/Default/joystick_polygon_pad_c.png
+  artifactKey: Guid(eacf5543abcc0414db8a54a867358fb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style F/Default/joystick_polygon_pad_c.png using Guid(eacf5543abcc0414db8a54a867358fb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '50589c3e47f5edfd6e84914a82a25171') in 0.0157374 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style B/Default/joystick_polygon_pad_c.png
+  artifactKey: Guid(50d1ada50137cd34f86e5a156658788f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style B/Default/joystick_polygon_pad_c.png using Guid(50d1ada50137cd34f86e5a156658788f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3d2e596f3002f10e2461cdaf2ecf12e6') in 0.0168528 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style H/Large (2×)/joystick_polygon_pad_c.png
+  artifactKey: Guid(22103abf4757bc645842926d542f5b29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style H/Large (2×)/joystick_polygon_pad_c.png using Guid(22103abf4757bc645842926d542f5b29) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3c057f4b57ee90d829e216a02af937b1') in 0.0157755 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style C/Default/joystick_polygon_pad_c.png
+  artifactKey: Guid(bbc4db5315e38eb4483b7366bbca15b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style C/Default/joystick_polygon_pad_c.png using Guid(bbc4db5315e38eb4483b7366bbca15b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6e0b22e61d05c9d6e9466063067cb2b6') in 0.0167416 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style E/Default/joystick_polygon_pad_c.png
+  artifactKey: Guid(d47bd992624ff3e45b143b0aa9db3d01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style E/Default/joystick_polygon_pad_c.png using Guid(d47bd992624ff3e45b143b0aa9db3d01) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fd30d9f92cbd02bbe2d87f9ec8de63ed') in 0.0161605 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 296.445357 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Building/spaceBuilding_018.png
+  artifactKey: Guid(5b30d505323be2e45af23d23bd6d710b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Building/spaceBuilding_018.png using Guid(5b30d505323be2e45af23d23bd6d710b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '75976506256df45edbd3ae45c920bb94') in 0.0176041 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Building/spaceBuilding_021.png
+  artifactKey: Guid(8d0b5acbb3f29aa46b14cce969dfb9d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Building/spaceBuilding_021.png using Guid(8d0b5acbb3f29aa46b14cce969dfb9d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6cfb6811f9002d438c749122ea1f2219') in 0.0154561 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Building/spaceBuilding_019.png
+  artifactKey: Guid(5b0822cf02f6c4c4aa44817304b34dd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Building/spaceBuilding_019.png using Guid(5b0822cf02f6c4c4aa44817304b34dd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '38b3e76b79c1785a92be12ea16c91f1b') in 0.0145371 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Building/spaceBuilding_024.png
+  artifactKey: Guid(e3d3c9b060581f148b5611ba7ce257e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Building/spaceBuilding_024.png using Guid(e3d3c9b060581f148b5611ba7ce257e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8133194d8fa3be2d47b89be6d4fb900b') in 0.0146156 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Building/spaceBuilding_023.png
+  artifactKey: Guid(6df316895ce1f2f418a95456156729dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Building/spaceBuilding_023.png using Guid(6df316895ce1f2f418a95456156729dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '626e042615a17bf85e6cf4afcb7ae460') in 0.0158583 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Building/spaceBuilding_022.png
+  artifactKey: Guid(cbecfe58877ae5d46bb5a44a585a2a54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Building/spaceBuilding_022.png using Guid(cbecfe58877ae5d46bb5a44a585a2a54) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '76db92a0d74b1d26f823e995d4b5476a') in 0.0133714 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Building/spaceBuilding_022.png
+  artifactKey: Guid(bc28db90070e2e44eaed2f2a241525fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Building/spaceBuilding_022.png using Guid(bc28db90070e2e44eaed2f2a241525fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '263e87388b9c6af89e63817dacbe02b3') in 0.0135577 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Building/spaceBuilding_019.png
+  artifactKey: Guid(284c4fd5e92cc294d97f0b1d262bff26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Building/spaceBuilding_019.png using Guid(284c4fd5e92cc294d97f0b1d262bff26) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5316bc38f8dbd417b95cb939ac6bfd96') in 0.0136659 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.352916 seconds.
+  path: Assets/Imports/ByMeTooClose!/Others/button.png
+  artifactKey: Guid(e1c62e06a701dff40be72db4b856b59e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/ByMeTooClose!/Others/button.png using Guid(e1c62e06a701dff40be72db4b856b59e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '13d022e31461659fc9c84c1203e6a7e3') in 0.078486 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style D/Large (2×)/button_bean.png
+  artifactKey: Guid(704506df74bd32441b79703723811ee0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style D/Large (2×)/button_bean.png using Guid(704506df74bd32441b79703723811ee0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dcf224d0e5fbecbd9c9040235d30350a') in 0.0169387 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style B/Large (2×)/button_bean.png
+  artifactKey: Guid(942b4d3142242c642b133075aca9feb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style B/Large (2×)/button_bean.png using Guid(942b4d3142242c642b133075aca9feb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'adaf446c5ca88f616dd5b02ff51d8dca') in 0.0186337 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style B/Default/button_bean.png
+  artifactKey: Guid(78f468e895337bf47a28b44cf5bbb5a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style B/Default/button_bean.png using Guid(78f468e895337bf47a28b44cf5bbb5a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '45da545218250d36b6db51e2aeed347a') in 0.0143428 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style C/Large (2×)/button_bean.png
+  artifactKey: Guid(8d04cd9546a75f34f88ca24334e74f36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style C/Large (2×)/button_bean.png using Guid(8d04cd9546a75f34f88ca24334e74f36) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '84ca189fb34857b5c4baa8d01157a9e8') in 0.0147526 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style C/Default/button_bean.png
+  artifactKey: Guid(e64999d5c5f48a942806600c15456eff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style C/Default/button_bean.png using Guid(e64999d5c5f48a942806600c15456eff) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4cb7ac98fce383382726a1aca4acadd3') in 0.0141201 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style H/Default/button_bean.png
+  artifactKey: Guid(593ae76ae7725664c9b06eb8ab4b261b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style H/Default/button_bean.png using Guid(593ae76ae7725664c9b06eb8ab4b261b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4eee30eb35daec96c693c9e159aa8501') in 0.0158754 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style G/Large (2×)/button_bean.png
+  artifactKey: Guid(93207b5e6e61f17439393dbfcd612886) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style G/Large (2×)/button_bean.png using Guid(93207b5e6e61f17439393dbfcd612886) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9186376cdcfd043845f4abe30aaf8794') in 0.0175842 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style G/Default/button_bean.png
+  artifactKey: Guid(e80cb5778a1b86744bd7681ca80d805f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style G/Default/button_bean.png using Guid(e80cb5778a1b86744bd7681ca80d805f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '69f5d3500274844b6a19ebc9c6395a39') in 0.0168129 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style H/Large (2×)/button_bean.png
+  artifactKey: Guid(535de5b10e39ca742a0b1ef85545b11b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style H/Large (2×)/button_bean.png using Guid(535de5b10e39ca742a0b1ef85545b11b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f4277f7bc992d000ca29737d9c9d8cdf') in 0.0181956 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Highlights A/Default/button_bean_highlight.png
+  artifactKey: Guid(43726419c36ac7c488de225acf8cfa07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Highlights A/Default/button_bean_highlight.png using Guid(43726419c36ac7c488de225acf8cfa07) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e94a2553edbe81ecaab5ca35a8a44de3') in 0.0197946 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.275642 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style H/Default/button_diamond.png
+  artifactKey: Guid(d7706e57e892cfc4099d1060a3d507a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style H/Default/button_diamond.png using Guid(d7706e57e892cfc4099d1060a3d507a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b6a750bbebd3c6ee57443081021e000d') in 0.0144464 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style B/Default/button_diamond.png
+  artifactKey: Guid(7dc2b6a50c33e064cad639d3511a0a0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style B/Default/button_diamond.png using Guid(7dc2b6a50c33e064cad639d3511a0a0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8a7408479cbd8787671336d6b2143a4c') in 0.0142307 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.132315 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style G/Large (2×)/button_diamond.png
+  artifactKey: Guid(de567ff0fece1d64bba5366c008cb786) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style G/Large (2×)/button_diamond.png using Guid(de567ff0fece1d64bba5366c008cb786) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f09742e5d9022d23ee4c867c7c0051cc') in 0.0175876 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style E/Default/button_diamond.png
+  artifactKey: Guid(a183594595821314996ce06dc68cf8f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style E/Default/button_diamond.png using Guid(a183594595821314996ce06dc68cf8f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5dc7f7f1beaf76844f3fdb77643e2a7f') in 0.0153232 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style D/Default/button_diamond.png
+  artifactKey: Guid(b71bff098ecb18440aba55c89e6ed5f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style D/Default/button_diamond.png using Guid(b71bff098ecb18440aba55c89e6ed5f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a3b506cb555221e738512bbac657579c') in 0.0149041 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style A/Default/button_diamond.png
+  artifactKey: Guid(0e4d57a8e20ba0a4ea998cb4a6ac3a53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style A/Default/button_diamond.png using Guid(0e4d57a8e20ba0a4ea998cb4a6ac3a53) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '37d3a92172d6a655a845ce4eefdee4e9') in 0.0152482 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style D/Large (2×)/button_diamond.png
+  artifactKey: Guid(1f7f944c0c07f7841877b2c23ad2cef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style D/Large (2×)/button_diamond.png using Guid(1f7f944c0c07f7841877b2c23ad2cef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ab8c0f553e508797659332ac0647779e') in 0.0154175 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000071 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Highlights B/Default/button_diamond_highlight.png
+  artifactKey: Guid(341cb3562b792c74aa6e23bed09104a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Highlights B/Default/button_diamond_highlight.png using Guid(341cb3562b792c74aa6e23bed09104a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'add5782cf0468c9e26c696560c817b92') in 0.0120271 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000087 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style G/Large (2×)/button_diamond_wide.png
+  artifactKey: Guid(d5c74a9ab07a2e742b4521bfe13ac97e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style G/Large (2×)/button_diamond_wide.png using Guid(d5c74a9ab07a2e742b4521bfe13ac97e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ee69781320821b30fc62ed2bde72b1f6') in 0.0162765 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style H/Default/button_diamond_wide.png
+  artifactKey: Guid(d814a21a577a2e640ac5eeea9216083e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style H/Default/button_diamond_wide.png using Guid(d814a21a577a2e640ac5eeea9216083e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fb3b1b68c9fa674c831618e0bc6ecc9f') in 0.0271637 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style B/Large (2×)/button_diamond_wide.png
+  artifactKey: Guid(ffbf682161adbde4aaa2d1fb0a85f5dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style B/Large (2×)/button_diamond_wide.png using Guid(ffbf682161adbde4aaa2d1fb0a85f5dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8f96efad32b98312d39b64e41ac7923d') in 0.0165416 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style A/Default/button_hexagon.png
+  artifactKey: Guid(1276479c43884964ea237f338f46aba1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style A/Default/button_hexagon.png using Guid(1276479c43884964ea237f338f46aba1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '73db345d5cd142d4fd694d229ef26f9e') in 0.0152042 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style B/Default/button_hexagon.png
+  artifactKey: Guid(fe8cf67f69e0d2449a00272e788d7828) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style B/Default/button_hexagon.png using Guid(fe8cf67f69e0d2449a00272e788d7828) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '869f92a09e0c0179e88310f9ef1271f3') in 0.0149591 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000114 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style B/Large (2×)/button_hexagon.png
+  artifactKey: Guid(7eadd780f53077442a19ed299369af19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style B/Large (2×)/button_hexagon.png using Guid(7eadd780f53077442a19ed299369af19) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7b496cafe59b9df8b6a54eccf1d85e62') in 0.0182109 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style F/Large (2×)/button_hexagon.png
+  artifactKey: Guid(ae8d9ad9e88455a46b1ff25222c736c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style F/Large (2×)/button_hexagon.png using Guid(ae8d9ad9e88455a46b1ff25222c736c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4ba0df78de27e7094d0014fe983566ba') in 0.0153547 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Highlights A/Large (2×)/button_hexagon_highlight.png
+  artifactKey: Guid(aae4d27c5d9345b4b9b802819493d476) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Highlights A/Large (2×)/button_hexagon_highlight.png using Guid(aae4d27c5d9345b4b9b802819493d476) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9e031db32a5d10aaba3527bffff9e270') in 0.0139903 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style E/Default/button_hexagon_wide.png
+  artifactKey: Guid(4dbdf8c99766ba34dbdc56c299686d3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style E/Default/button_hexagon_wide.png using Guid(4dbdf8c99766ba34dbdc56c299686d3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '98c2da18b87cbae2c53a7438008c3ad6') in 0.0173062 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style E/Large (2×)/button_hexagon_wide.png
+  artifactKey: Guid(29176e0425b70a94f9c8a051be40d358) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style E/Large (2×)/button_hexagon_wide.png using Guid(29176e0425b70a94f9c8a051be40d358) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e23d3c9d20ea8abf85ca3bd637bd0f89') in 0.0180214 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style A/Default/button_hexagon_wide.png
+  artifactKey: Guid(2a6473f3083d9eb4a8c98b68c0c653cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style A/Default/button_hexagon_wide.png using Guid(2a6473f3083d9eb4a8c98b68c0c653cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '939c2a690a92887ed4447ed310f4fd63') in 0.0412794 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style F/Large (2×)/button_hexagon_wide.png
+  artifactKey: Guid(1481f41c593754f48a5d72dbfebdfe7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style F/Large (2×)/button_hexagon_wide.png using Guid(1481f41c593754f48a5d72dbfebdfe7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bc66a161bfc42760707d8372df792974') in 0.0221126 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style H/Default/button_hexagon_wide.png
+  artifactKey: Guid(4bfacfbdbb4d9014392e5cf13edaf7d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style H/Default/button_hexagon_wide.png using Guid(4bfacfbdbb4d9014392e5cf13edaf7d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f85c27b0d3105b0efe43107ac0f76794') in 0.01617 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style H/Large (2×)/button_hexagon_wide.png
+  artifactKey: Guid(91d4c0ff30e05a54c99539dcb08942e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style H/Large (2×)/button_hexagon_wide.png using Guid(91d4c0ff30e05a54c99539dcb08942e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd16c38f90150bac4ed37c16ddfc42e0a') in 0.017669 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Highlights A/Large (2×)/button_diamond_highlight.png
+  artifactKey: Guid(eaf0b8f26ad05744b876211c4100faba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Highlights A/Large (2×)/button_diamond_highlight.png using Guid(eaf0b8f26ad05744b876211c4100faba) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'aecb542b6e947275cf1c248c320608ef') in 0.0233519 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style C/Default/button_diamond_wide.png
+  artifactKey: Guid(a6405278b1104b946b19bead405e1caa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style C/Default/button_diamond_wide.png using Guid(a6405278b1104b946b19bead405e1caa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e02359fd5ae5dd7af746b1e8835a7ec5') in 0.0160972 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style C/Default/button_hexagon.png
+  artifactKey: Guid(9bf2f95e1d9134544a419b54f6259fc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style C/Default/button_hexagon.png using Guid(9bf2f95e1d9134544a419b54f6259fc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4715dc20a353941c460516445ad9ac5c') in 0.0199086 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style D/Default/button_hexagon_wide.png
+  artifactKey: Guid(2112d92dc2c034646ae88f4caea98c80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style D/Default/button_hexagon_wide.png using Guid(2112d92dc2c034646ae88f4caea98c80) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '71e5555ed0eab8086e26ea7bec42d393') in 0.018717 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Highlights B/Large (2×)/button_hexagon_wide_highlight.png
+  artifactKey: Guid(7ed0c1fe36a60ee48bdc597cf3efb2e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Highlights B/Large (2×)/button_hexagon_wide_highlight.png using Guid(7ed0c1fe36a60ee48bdc597cf3efb2e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6750ad2b5c7dfbf2751f91fce19195bb') in 0.0200349 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style G/Default/button_hexagon.png
+  artifactKey: Guid(a834860dc036ea64b9f8a9be74acaf43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style G/Default/button_hexagon.png using Guid(a834860dc036ea64b9f8a9be74acaf43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ca26b6b2474875b152ec1d87e4eb166e') in 0.0219287 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style C/Default/button_hexagon_wide.png
+  artifactKey: Guid(e0aaccfcd1102dd418447ca209294154) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style C/Default/button_hexagon_wide.png using Guid(e0aaccfcd1102dd418447ca209294154) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ed32766071bf7e6118fee648b842fd87') in 0.0197162 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Highlights A/Large (2×)/button_hexagon_wide_highlight.png
+  artifactKey: Guid(92e582c2d6f70d74f84d203cb72e4ec1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Highlights A/Large (2×)/button_hexagon_wide_highlight.png using Guid(92e582c2d6f70d74f84d203cb72e4ec1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f4b5f358d62adbb16c7d85e8eea33161') in 0.0182621 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style D/Default/button_hexagon.png
+  artifactKey: Guid(05a4d500bee19b2499adaa90c688d52d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style D/Default/button_hexagon.png using Guid(05a4d500bee19b2499adaa90c688d52d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '57689b36a99fdf074f00b8908e69d07b') in 0.0137215 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style A/Large (2×)/button_hexagon_wide.png
+  artifactKey: Guid(0cdb78c0083e8144aa570f51ad8de9a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style A/Large (2×)/button_hexagon_wide.png using Guid(0cdb78c0083e8144aa570f51ad8de9a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ac914c099d1d622096acf4159d5daf4f') in 0.0179329 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style F/Default/button_hexagon_wide.png
+  artifactKey: Guid(be3f799f5ba381f4f87ee4cd927957ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style F/Default/button_hexagon_wide.png using Guid(be3f799f5ba381f4f87ee4cd927957ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd61418ac037ce9c4071f854ed239cd66') in 0.017215 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style H/Large (2×)/button_hexagon.png
+  artifactKey: Guid(6b03328cfde379642a729b08f3c63022) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style H/Large (2×)/button_hexagon.png using Guid(6b03328cfde379642a729b08f3c63022) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f18a1c1afe4f274dc2c543fec7f8884a') in 0.0211375 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Imports/kenney_ui-pack/PNG/Grey/Double/button_round_depth_border.png
+  artifactKey: Guid(389e526457d61d646a5a1607fa1a2473) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack/PNG/Grey/Double/button_round_depth_border.png using Guid(389e526457d61d646a5a1607fa1a2473) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4a1b29b6a5d208bcf5802c1be2a2b07d') in 0.0164388 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Highlights B/Large (2×)/button_diamond_highlight.png
+  artifactKey: Guid(fbbe86dcc292db44ab7431669f495f57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Highlights B/Large (2×)/button_diamond_highlight.png using Guid(fbbe86dcc292db44ab7431669f495f57) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '839c58f586cc5b3e09478d8dec9664f7') in 0.0199861 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style B/Large (2×)/button_hexagon_wide.png
+  artifactKey: Guid(ad749181f03b39e4c9cca8a73826a800) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style B/Large (2×)/button_hexagon_wide.png using Guid(ad749181f03b39e4c9cca8a73826a800) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd3f8882ad9b0712848b3c4c69c6b149c') in 0.0144702 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style G/Default/button_hexagon_wide.png
+  artifactKey: Guid(9459e9d5eadac6741b8924e3fcb5f5d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style G/Default/button_hexagon_wide.png using Guid(9459e9d5eadac6741b8924e3fcb5f5d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8795e4fc58949ec77517d37527ca7589') in 0.0175388 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Imports/kenney_ui-pack/PNG/Red/Double/button_round_depth_gloss.png
+  artifactKey: Guid(a3af02ec847c9f144be0e177386b9f00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack/PNG/Red/Double/button_round_depth_gloss.png using Guid(a3af02ec847c9f144be0e177386b9f00) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f8a7ee95e9fea2960c58debdbb8576bb') in 0.0225158 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Imports/kenney_ui-pack/PNG/Grey/Default/button_round_depth_gloss.png
+  artifactKey: Guid(0b2e580acedaa6e46ad61ef96b76b450) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack/PNG/Grey/Default/button_round_depth_gloss.png using Guid(0b2e580acedaa6e46ad61ef96b76b450) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '58b8d84ca6a459867ddacfa7e925af01') in 0.0148084 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style B/Default/button_diamond_wide.png
+  artifactKey: Guid(52c8ad3ac3d15a849a08d3999fab60aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style B/Default/button_diamond_wide.png using Guid(52c8ad3ac3d15a849a08d3999fab60aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cbb017d961dcf5563afc67c98179d787') in 0.0211536 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Imports/kenney_ui-pack/PNG/Yellow/Double/button_round_depth_border.png
+  artifactKey: Guid(8fc37dee1dd2b2a4390ade7a9d72f58c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack/PNG/Yellow/Double/button_round_depth_border.png using Guid(8fc37dee1dd2b2a4390ade7a9d72f58c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b3ebb21f67dc05fe8b05d67e279833b5') in 0.0176584 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style F/Large (2×)/button_diamond_wide.png
+  artifactKey: Guid(eef0741c022a88f4783b0e85a99bb1db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style F/Large (2×)/button_diamond_wide.png using Guid(eef0741c022a88f4783b0e85a99bb1db) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '88352c2255395b8f27b0b3ebdfda8d63') in 0.0230584 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Imports/kenney_ui-pack/PNG/Red/Double/button_round_depth_gradient.png
+  artifactKey: Guid(e8b5071a89d6f1044b87c13b6d84c5fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack/PNG/Red/Double/button_round_depth_gradient.png using Guid(e8b5071a89d6f1044b87c13b6d84c5fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4396bc5c4e6ce197c7485e3d861dc04f') in 0.015461 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style D/Large (2×)/button_hexagon.png
+  artifactKey: Guid(a59fe554510212944a3d166e265b7478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style D/Large (2×)/button_hexagon.png using Guid(a59fe554510212944a3d166e265b7478) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cb6fac5b1e12889e122ddc736e5588ca') in 0.0158135 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Imports/kenney_ui-pack/PNG/Grey/Double/button_round_depth_line.png
+  artifactKey: Guid(67bf8e49f1ebf7849975127af9def6bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack/PNG/Grey/Double/button_round_depth_line.png using Guid(67bf8e49f1ebf7849975127af9def6bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1d12f3301576250f3c465357e3424a54') in 0.0166242 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000101 seconds.
+  path: Assets/Imports/kenney_ui-pack/PNG/Extra/Double/button_round_depth_line.png
+  artifactKey: Guid(1b52b76ea484fe84093affddbe5620a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack/PNG/Extra/Double/button_round_depth_line.png using Guid(1b52b76ea484fe84093affddbe5620a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '09c260554b5aec24491361b377812bbd') in 0.0239973 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Style E/Large (2×)/button_hexagon.png
+  artifactKey: Guid(4ee786c700e489a4aae76a5980ef61d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Style E/Large (2×)/button_hexagon.png using Guid(4ee786c700e489a4aae76a5980ef61d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cd45ada4f47f0a70db06531546b1fc60') in 0.0213495 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Imports/kenney_ui-pack/PNG/Grey/Default/button_round_depth_border.png
+  artifactKey: Guid(d9034d78a7bd44340b1d2c3213a6d187) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack/PNG/Grey/Default/button_round_depth_border.png using Guid(d9034d78a7bd44340b1d2c3213a6d187) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0114a106b02567f359cdd842cdb825f1') in 0.0150741 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Imports/kenney_ui-pack/PNG/Red/Double/button_round_depth_line.png
+  artifactKey: Guid(1e1a54e984c271043b9cccda649c903c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack/PNG/Red/Double/button_round_depth_line.png using Guid(1e1a54e984c271043b9cccda649c903c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ae307b4bedda3e850641f4b279362aee') in 0.0174643 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.067509 seconds.
+  path: Assets/Imports/kenney_ui-pack/PNG/Grey/Default/button_round_gloss.png
+  artifactKey: Guid(8dd226b0fe7e3674cb308d2800dd6e9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack/PNG/Grey/Default/button_round_gloss.png using Guid(8dd226b0fe7e3674cb308d2800dd6e9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a00ba27c5dc94448136a81b48eda6b21') in 0.0210511 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Imports/kenney_ui-pack/PNG/Grey/Default/button_round_gradient.png
+  artifactKey: Guid(aef8ef12bd56bf940a9195556434d76f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack/PNG/Grey/Default/button_round_gradient.png using Guid(aef8ef12bd56bf940a9195556434d76f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5032a292cb3a774f0d9ec083f77ddd19') in 0.0182117 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Imports/kenney_ui-pack/PNG/Red/Double/button_round_gradient.png
+  artifactKey: Guid(590d06ed9ace9c2448d99d468012accc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack/PNG/Red/Double/button_round_gradient.png using Guid(590d06ed9ace9c2448d99d468012accc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6f1389a35ed23c4f4b904e173d0b68aa') in 0.031621 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Imports/kenney_ui-pack/PNG/Yellow/Double/button_round_gradient.png
+  artifactKey: Guid(93a82dd79768fd343b89bd6b8c14d867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack/PNG/Yellow/Double/button_round_gradient.png using Guid(93a82dd79768fd343b89bd6b8c14d867) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '359937c2c2f15d49c21a54d0d6b234e8') in 0.0174548 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 88.017120 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Icons/Default/icon_arrow.png
+  artifactKey: Guid(60ad9884629eefd47a261ebeee21285e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Icons/Default/icon_arrow.png using Guid(60ad9884629eefd47a261ebeee21285e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2db873b6dd67759566013768053736a2') in 0.029021 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Imports/kenney_ui-pack/PNG/Extra/Double/icon_arrow_down_dark.png
+  artifactKey: Guid(63cb8acc30e15a24081ebc3e2aae6e2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack/PNG/Extra/Double/icon_arrow_down_dark.png using Guid(63cb8acc30e15a24081ebc3e2aae6e2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f24863e9f8ed07da17f45e60eaa1b288') in 0.0148901 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Imports/kenney_ui-pack/PNG/Extra/Double/icon_arrow_up_dark.png
+  artifactKey: Guid(9c2b0a5d6c559984fbd5cf64595a540b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack/PNG/Extra/Double/icon_arrow_up_dark.png using Guid(9c2b0a5d6c559984fbd5cf64595a540b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6eead6f2ba17cb411aa1b78904c95c4b') in 0.0162417 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Imports/kenney_ui-pack/PNG/Extra/Double/icon_arrow_up_outline.png
+  artifactKey: Guid(9741e4a84c8503845a195371f44f4d4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack/PNG/Extra/Double/icon_arrow_up_outline.png using Guid(9741e4a84c8503845a195371f44f4d4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ae6f5e3e814c377cb7e82064ccf8e19f') in 0.0140499 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Imports/kenney_ui-pack/PNG/Extra/Double/icon_arrow_up_light.png
+  artifactKey: Guid(3dcc082fe51d6d041b55b148a732895f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack/PNG/Extra/Double/icon_arrow_up_light.png using Guid(3dcc082fe51d6d041b55b148a732895f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '29b9a7a2d9b5754b035f29d105531f2d') in 0.0114351 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 135.026914 seconds.
+  path: Assets/Imports/ByMe/Maps/BeachChunkMap.png
+  artifactKey: Guid(06f657be538c51441a9d84d174696191) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/ByMe/Maps/BeachChunkMap.png using Guid(06f657be538c51441a9d84d174696191) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd948dcc118b19e65094d426153fad2f1') in 0.0253143 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Imports/kenney_pixel-ui-pack/9-Slice/Ancient/brown_pressed.png
+  artifactKey: Guid(4aad10a516310c54f8686d5f2772825a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_pixel-ui-pack/9-Slice/Ancient/brown_pressed.png using Guid(4aad10a516310c54f8686d5f2772825a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3ae719fa9ed5820b29c1259227155f0e') in 0.0214898 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.536338 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/cloudUpload.png
+  artifactKey: Guid(8e4b189039b5baf4b9a767722db2ebda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/PNG/White/2x/cloudUpload.png using Guid(8e4b189039b5baf4b9a767722db2ebda) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3d5c7e3c7cbf19e4b6402d586133f6f5') in 0.0131676 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/Imports/kenney_car-kit/Previews/debris-plate-small-a.png
+  artifactKey: Guid(29153f62bb17e6d47a62e47f4bf5c3d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_car-kit/Previews/debris-plate-small-a.png using Guid(29153f62bb17e6d47a62e47f4bf5c3d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f0382766cdddc62f4026895a0e86910b') in 0.0189014 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Imports/kenney_smoke-particles/PNG/Explosion/explosion07.png
+  artifactKey: Guid(4e9a8d172c39a4a48bf654ed4201e112) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_smoke-particles/PNG/Explosion/explosion07.png using Guid(4e9a8d172c39a4a48bf654ed4201e112) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '61e544419119c6e7f6254aff138301bb') in 0.0927532 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Imports/kenney_car-kit/Previews/debris-plate-b.png
+  artifactKey: Guid(bfcfff3e0bf8f424aa5f940364dad327) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_car-kit/Previews/debris-plate-b.png using Guid(bfcfff3e0bf8f424aa5f940364dad327) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '181e765deae83c3e722131294d41f0a4') in 0.020497 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Imports/kenney_car-kit/Previews/debris-plate-a.png
+  artifactKey: Guid(740197fd4a151ad4fb8072c05ce86873) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_car-kit/Previews/debris-plate-a.png using Guid(740197fd4a151ad4fb8072c05ce86873) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2136881776ab3c99b3ce140e07f45c51') in 0.023662 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Imports/mobile-controls-1/Sprites/Icons/Default/icon_play.png
+  artifactKey: Guid(c5b78a8a17f1f434c8a8d4a107cebe74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/mobile-controls-1/Sprites/Icons/Default/icon_play.png using Guid(c5b78a8a17f1f434c8a8d4a107cebe74) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '09546536c616fe8c7b6c03c22a0eae70') in 0.0206091 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Imports/kenney_smoke-particles/PNG/Explosion/explosion01.png
+  artifactKey: Guid(f0ba87a161ce35342a9789183a2e55b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_smoke-particles/PNG/Explosion/explosion01.png using Guid(f0ba87a161ce35342a9789183a2e55b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e8d6d7fbf3156c802c7624b09d5b5261') in 0.0275949 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Imports/kenney_smoke-particles/PNG/Explosion/explosion00.png
+  artifactKey: Guid(84055d385ecc7ab4fa722c2aa9c88d24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_smoke-particles/PNG/Explosion/explosion00.png using Guid(84055d385ecc7ab4fa722c2aa9c88d24) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7209f971f7031da415cb2f0cba4a6f39') in 0.0217483 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Joystick Pack/Sprites/Handles/Handle_Plain_Arrows.png
+  artifactKey: Guid(f353d42d1db27ff42b78b28efd86b316) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Joystick Pack/Sprites/Handles/Handle_Plain_Arrows.png using Guid(f353d42d1db27ff42b78b28efd86b316) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1c5921d5d68fac2fb97b253c05cab0b7') in 0.0159356 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Imports/kenney_smoke-particles/PNG/Explosion/explosion05.png
+  artifactKey: Guid(98ac0eae240b5394ca10368554e63edf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_smoke-particles/PNG/Explosion/explosion05.png using Guid(98ac0eae240b5394ca10368554e63edf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '294f995ddfa83b2777ee94c50d65c7bf') in 0.030988 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.541138 seconds.
+  path: Assets/Imports/kenney_ui-pack/PNG/Extra/Double/icon_play_dark.png
+  artifactKey: Guid(2fc99ca36d77ce74d8074134f1db4c9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack/PNG/Extra/Double/icon_play_dark.png using Guid(2fc99ca36d77ce74d8074134f1db4c9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8358d48a2f038a692436afb936476645') in 0.021578 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Imports/kenney_game-icons-expansion/Game icons (base)/PNG/White/2x/multiplayer.png
+  artifactKey: Guid(265ae9abb3e3bfa489e8f7f573a468c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_game-icons-expansion/Game icons (base)/PNG/White/2x/multiplayer.png using Guid(265ae9abb3e3bfa489e8f7f573a468c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd93ecf63dd27214e175de89a1c69b4c2') in 0.0186628 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 338.159968 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_037.png
+  artifactKey: Guid(c00bb8fea61ac054d8ab1b3afc10852d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_037.png using Guid(c00bb8fea61ac054d8ab1b3afc10852d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9ba617eaea27fc53c1d7de4b48c430a6') in 0.0275482 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_040.png
+  artifactKey: Guid(3e9b60f6f20214c48b11389101abb1e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_040.png using Guid(3e9b60f6f20214c48b11389101abb1e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4467be4cd0823eaaa3a67ee440cbf6bc') in 0.0180271 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_038.png
+  artifactKey: Guid(868df0f1dd4f2504e93250f1fbc4e4b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_038.png using Guid(868df0f1dd4f2504e93250f1fbc4e4b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1a4b52c0bb014dba2357a40c2320d91b') in 0.0168312 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.247356 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_031.png
+  artifactKey: Guid(e841c3ae32fee514ebb1e791d2e3de1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_031.png using Guid(e841c3ae32fee514ebb1e791d2e3de1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ec9590fdf06aa808a4d3f157100297e7') in 0.0175797 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_034.png
+  artifactKey: Guid(85516c2e51500d7468625e42f631ce6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_034.png using Guid(85516c2e51500d7468625e42f631ce6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f5f120d358365e38e5dae5f6ae4a742c') in 0.0212323 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_036.png
+  artifactKey: Guid(a1b29355bcf73f24baee4b50ac2a83da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_036.png using Guid(a1b29355bcf73f24baee4b50ac2a83da) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd10c88cfb737a602f98a177e68d748da') in 0.0176049 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_033.png
+  artifactKey: Guid(1cd6bb693ecef474d8a9bec448f7b3b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_033.png using Guid(1cd6bb693ecef474d8a9bec448f7b3b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b96c05b2d868e2c74757ad044bb9ea15') in 0.0165224 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_035.png
+  artifactKey: Guid(8a9daf2e4e5be7a42871e1db4518b45e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_035.png using Guid(8a9daf2e4e5be7a42871e1db4518b45e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ce6ef9844f7582df537918d0c15a3696') in 0.016927 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_033.png
+  artifactKey: Guid(6af64333963daad4abe2d9ed34d5d23c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_033.png using Guid(6af64333963daad4abe2d9ed34d5d23c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1c5c49508583cbc2536c4f556845cc47') in 0.0113376 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_024.png
+  artifactKey: Guid(6c9ba24a49b0d8844ae3a0432b223792) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_024.png using Guid(6c9ba24a49b0d8844ae3a0432b223792) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '278f430f822d37de43a85db5758c7659') in 0.0164697 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_026.png
+  artifactKey: Guid(37cae1f9e00285d4f802d526e0e0673c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_026.png using Guid(37cae1f9e00285d4f802d526e0e0673c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6f1a42feecf1aa555dd7b1b9bc19be89') in 0.0180739 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_028.png
+  artifactKey: Guid(a84faac43c741f54dbad922ef9c5153b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_028.png using Guid(a84faac43c741f54dbad922ef9c5153b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '268b192ec83c84163d986badbfedb15e') in 0.0180031 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_018.png
+  artifactKey: Guid(8fef0386a568d2c42876c2240761a5e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_018.png using Guid(8fef0386a568d2c42876c2240761a5e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '40c8fee2dcc3b07c76b7ab92cd34bd2e') in 0.019429 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_024.png
+  artifactKey: Guid(7851e32ab5caa554581f95ccf2be0be8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_024.png using Guid(7851e32ab5caa554581f95ccf2be0be8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '35a303c18d760aad89e11a641727eed1') in 0.0149343 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_008.png
+  artifactKey: Guid(2311c009b219b6349bbd585d79c45de9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_008.png using Guid(2311c009b219b6349bbd585d79c45de9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8b4027502dbacbca03793c280cb52ff6') in 0.026568 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_004.png
+  artifactKey: Guid(7218d285d3c5596459548378e553a13d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_004.png using Guid(7218d285d3c5596459548378e553a13d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a8d562ca77b3c973a43003b6227c1f7d') in 0.016486 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_002.png
+  artifactKey: Guid(98a72c4731695714793a926002f24beb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_002.png using Guid(98a72c4731695714793a926002f24beb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e6e69b96827a129c3f2760fe99ab9452') in 0.0163584 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_027.png
+  artifactKey: Guid(86c01a12550b5ba4eb1639ed0d7ac2bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_027.png using Guid(86c01a12550b5ba4eb1639ed0d7ac2bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4b1516a0c0fd49ce16b3248dbae16b48') in 0.0158521 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_013.png
+  artifactKey: Guid(b6cba39b64b3b1140b8490b9809570ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_013.png using Guid(b6cba39b64b3b1140b8490b9809570ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '47084b1af92e357b6d7c72f39c4ace95') in 0.016535 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_030.png
+  artifactKey: Guid(ea710a19dc41cbd40a7ea0fe077a9d5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_030.png using Guid(ea710a19dc41cbd40a7ea0fe077a9d5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '92bd60281a084586e8750e8f3be0624e') in 0.0192898 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_006.png
+  artifactKey: Guid(c3d0d67c56601bc408dd5cbe906863b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_006.png using Guid(c3d0d67c56601bc408dd5cbe906863b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '41195d51ec98e5c9a62e3b91694e1ebb') in 0.0180864 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_026.png
+  artifactKey: Guid(677a01fa3631970428f7ffeb520de034) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_026.png using Guid(677a01fa3631970428f7ffeb520de034) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '73a4e4cd59e4d510331303e91b83b0de') in 0.015723 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_021.png
+  artifactKey: Guid(d55441b731164b24fbc860a7fbaee6e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_021.png using Guid(d55441b731164b24fbc860a7fbaee6e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1be053559d0418bac19303e7c05fce26') in 0.0203504 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_016.png
+  artifactKey: Guid(cc308fd5fbb170f408d6a19198535f47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_016.png using Guid(cc308fd5fbb170f408d6a19198535f47) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '54658f4cb971eb74ba4494a365e9959c') in 0.0415834 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_011.png
+  artifactKey: Guid(eebf1440f3399f445ba6b7638c83aae6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_011.png using Guid(eebf1440f3399f445ba6b7638c83aae6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b4ef25ee9c5fa4f72220d11395186b3d') in 0.0190456 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_001.png
+  artifactKey: Guid(2f0b4cdb205c9ac4f83dcb64a34281d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_001.png using Guid(2f0b4cdb205c9ac4f83dcb64a34281d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b6bc1b479b2e48525f727d648d0e1a93') in 0.0172292 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_014.png
+  artifactKey: Guid(f6b345344fcaf8c478481283fac7a72c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_014.png using Guid(f6b345344fcaf8c478481283fac7a72c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '956d1b1227bff6fb71ffbc5d537ab2fd') in 0.0197835 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_004.png
+  artifactKey: Guid(2b9a33c4a2b0f7f4b94f273cd6a5850b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_004.png using Guid(2b9a33c4a2b0f7f4b94f273cd6a5850b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c31f2a849dfea6d1acc077a4599026ca') in 0.0171141 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_005.png
+  artifactKey: Guid(356372bbca0d06c4986e6868b8588dcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_005.png using Guid(356372bbca0d06c4986e6868b8588dcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '63ccc334d64a61b9fe71cbac96393697') in 0.0133294 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_022.png
+  artifactKey: Guid(a898d4f22eef90948ac2eb823cbdac3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_022.png using Guid(a898d4f22eef90948ac2eb823cbdac3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '11419e97a34fd0eeeb2bfc9a1099984b') in 0.020404 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_017.png
+  artifactKey: Guid(886c0c18e7ed2394ab7aefcd83f66e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_017.png using Guid(886c0c18e7ed2394ab7aefcd83f66e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '072d7ccf14e428849a5b66cc6824b937') in 0.0167465 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_006.png
+  artifactKey: Guid(fc8e9f7f8ee40164db46392e40a76518) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_006.png using Guid(fc8e9f7f8ee40164db46392e40a76518) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '961b084412b7881aef442bbe5b70a611') in 0.0165161 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_025.png
+  artifactKey: Guid(884c170660f24464fbbdea8306baaddd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_025.png using Guid(884c170660f24464fbbdea8306baaddd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '37432596abc7e422b0d015fe6b4ff75f') in 0.0158629 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_031.png
+  artifactKey: Guid(7d879d958a0f9a44c938caf7d5814422) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_031.png using Guid(7d879d958a0f9a44c938caf7d5814422) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8737fd7821ae1bbbe1ba0640c469806c') in 0.0190093 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_018.png
+  artifactKey: Guid(b0eaa35a0d40bec4888f1df5623ae75a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_018.png using Guid(b0eaa35a0d40bec4888f1df5623ae75a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '043d668a904c42d00df834687ea48762') in 0.0159934 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_017.png
+  artifactKey: Guid(f0b3f550cb40fd94694888b5ddaa66f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_017.png using Guid(f0b3f550cb40fd94694888b5ddaa66f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f0b80ba7b6a31717a79f1724e40310dd') in 0.0172539 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_009.png
+  artifactKey: Guid(b4fd95e3cf196ee4c9b092ad5860e1af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_009.png using Guid(b4fd95e3cf196ee4c9b092ad5860e1af) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9657f9eca15fb2e3e21ba9770575c012') in 0.02093 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_030.png
+  artifactKey: Guid(a07b57ef57036954d81e3992262147ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites/Missiles/spaceMissiles_030.png using Guid(a07b57ef57036954d81e3992262147ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cfbb0f7ac65b2c61023732493ef9a024') in 0.0231891 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_009.png
+  artifactKey: Guid(1bc132691e3512642998d2626b5786a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_009.png using Guid(1bc132691e3512642998d2626b5786a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a686998e2cc6b934dfa9671f0da1b9a0') in 0.0192067 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_014.png
+  artifactKey: Guid(eb767ab447201b5498ae02ea28a368ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_014.png using Guid(eb767ab447201b5498ae02ea28a368ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cbee3abcd84dfac76f31e0b11c6b215a') in 0.0166388 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_019.png
+  artifactKey: Guid(0d1134c3a9f94234ea0b56012f68ffe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_space-shooter-extension/PNG/Sprites X2/Missiles/spaceMissiles_019.png using Guid(0d1134c3a9f94234ea0b56012f68ffe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b6f1168ac9f090b04d967aba489f5ca1') in 0.0154395 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Prepare
+[Licensing::Client] Successfully resolved entitlement details
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  2.787 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 36.35 ms, found 8 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.248 seconds
+Domain Reload Profiling: 5025ms
+	BeginReloadAssembly (950ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (207ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (1ms)
+		CreateAndSetChildDomain (278ms)
+	RebuildCommonClasses (45ms)
+	RebuildNativeTypeToScriptingClass (22ms)
+	initialDomainReloadingComplete (74ms)
+	LoadAllAssembliesAndSetupDomain (1682ms)
+		LoadAssemblies (1338ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (558ms)
+			TypeCache.Refresh (22ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (501ms)
+			ResolveRequiredComponents (20ms)
+	FinalizeReload (2251ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1781ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (35ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (345ms)
+			ProcessInitializeOnLoadAttributes (1008ms)
+			ProcessInitializeOnLoadMethodAttributes (295ms)
+			AfterProcessingInitializeOnLoad (91ms)
+			EditorAssembliesLoaded (2ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (144ms)
+Refreshing native plugins compatible for Editor in 61.06 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9565 unused Assets / (5.0 MB). Loaded Objects now: 10426.
+Memory consumption went from 167.5 MB to 162.5 MB.
+Total: 29.483700 ms (FindLiveObjects: 4.014700 ms CreateObjectMapping: 3.269600 ms MarkObjects: 14.825100 ms  DeleteObjects: 7.371800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 194.350940 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Default/bar_shadow_round_outline_small_l.png
+  artifactKey: Guid(763e07cc453b9a4439d98f30b1fc6bec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Default/bar_shadow_round_outline_small_l.png using Guid(763e07cc453b9a4439d98f30b1fc6bec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cef4470533e192c824cbade5b492fe17') in 0.1099744 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion 1/PNG/Extra/Default/bar_shadow_round_small_l.png
+  artifactKey: Guid(8b3437eeb2096fd40866e1be58c9b37d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion 1/PNG/Extra/Default/bar_shadow_round_small_l.png using Guid(8b3437eeb2096fd40866e1be58c9b37d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4e95ce5b50045048706bd9a59fa472b6') in 0.0147567 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion 1/PNG/Extra/Default/bar_shadow_round_outline_small_r.png
+  artifactKey: Guid(205852f83a5bcbf4db5ecd1cbf8d7740) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion 1/PNG/Extra/Default/bar_shadow_round_outline_small_r.png using Guid(205852f83a5bcbf4db5ecd1cbf8d7740) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd92d24e339c6eea58d3d1b10e3982ab6') in 0.0133993 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Default/bar_shadow_round_outline_small_m.png
+  artifactKey: Guid(3a3e1117155178247a06724c66dd4d3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Default/bar_shadow_round_outline_small_m.png using Guid(3a3e1117155178247a06724c66dd4d3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0e948226ae12ffda9788a25ada53b6fe') in 0.0236405 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Default/bar_shadow_round_outline_small_r.png
+  artifactKey: Guid(835aaa6ef6e50fa48982ee652c0f60c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Default/bar_shadow_round_outline_small_r.png using Guid(835aaa6ef6e50fa48982ee652c0f60c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '55aee57987df72b0e823d81161e91710') in 0.0270395 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Double/bar_shadow_round_small_l.png
+  artifactKey: Guid(8ffd31461191ec7458a95c610d434318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Double/bar_shadow_round_small_l.png using Guid(8ffd31461191ec7458a95c610d434318) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6a9e5e838be16f3751b63d7afbea5ee1') in 0.0151776 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Double/bar_shadow_round_outline_small_m.png
+  artifactKey: Guid(d4136d48046161842b64557bed496ad7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion/PNG/Extra/Double/bar_shadow_round_outline_small_m.png using Guid(d4136d48046161842b64557bed496ad7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a0f42b2d885dd774ad35f9766fb88478') in 0.0150331 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Imports/kenney_ui-pack-space-expansion 1/PNG/Extra/Default/bar_shadow_round_outline_small_l.png
+  artifactKey: Guid(366272400d6903b418f551ff97141cc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/kenney_ui-pack-space-expansion 1/PNG/Extra/Default/bar_shadow_round_outline_small_l.png using Guid(366272400d6903b418f551ff97141cc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8f17ed7235c0ce6a1b56c08a72da6457') in 0.0139792 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Prepare
+[Licensing::Client] Successfully resolved entitlement details
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  2.084 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 30.58 ms, found 8 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.197 seconds
+Domain Reload Profiling: 4259ms
+	BeginReloadAssembly (463ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (23ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (87ms)
+	RebuildCommonClasses (102ms)
+	RebuildNativeTypeToScriptingClass (45ms)
+	initialDomainReloadingComplete (159ms)
+	LoadAllAssembliesAndSetupDomain (1291ms)
+		LoadAssemblies (1124ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (383ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (343ms)
+			ResolveRequiredComponents (20ms)
+	FinalizeReload (2199ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1844ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (38ms)
+			SetLoadedEditorAssemblies (9ms)
+			BeforeProcessingInitializeOnLoad (518ms)
+			ProcessInitializeOnLoadAttributes (1086ms)
+			ProcessInitializeOnLoadMethodAttributes (157ms)
+			AfterProcessingInitializeOnLoad (34ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (34ms)
+Refreshing native plugins compatible for Editor in 52.37 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9565 unused Assets / (5.1 MB). Loaded Objects now: 10438.
+Memory consumption went from 167.6 MB to 162.4 MB.
+Total: 21.245300 ms (FindLiveObjects: 1.274600 ms CreateObjectMapping: 1.959800 ms MarkObjects: 12.292900 ms  DeleteObjects: 5.716400 ms)
+
+Prepare: number of updated asset objects reloaded= 0

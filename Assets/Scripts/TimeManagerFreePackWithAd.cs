@@ -76,5 +76,18 @@ public class TimeManagerFreePackWithAd : MonoBehaviour
     {
         finished = false;
         PlayerPrefs.SetString("dateFinishWithAd", DateTime.Now.AddSeconds(interval).ToString());
+
+        // 1 sur 4 : On incremente un compteur, si c'est un multiple de 4, on envoie la notif
+        int adPackCount = PlayerPrefs.GetInt("AdPackNotificationCount", 0);
+        adPackCount++;
+        PlayerPrefs.SetInt("AdPackNotificationCount", adPackCount);
+
+        if (adPackCount % 4 == 0)
+        {
+            if (PushNotificationManager.instance != null)
+            {
+                PushNotificationManager.instance.ScheduleNotification("Pack prêt !", "Votre pack publicitaire est de nouveau disponible.", interval);
+            }
+        }
     }
 }
