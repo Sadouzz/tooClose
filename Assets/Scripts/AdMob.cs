@@ -95,7 +95,7 @@ public class AdMob : MonoBehaviour
             MobileAdsEventExecutor.ExecuteInUpdate(() =>
             {
                 Debug.Log("Banner view loaded an ad with response : " + _bannerView.GetResponseInfo());
-                AdjustUIForBanner(); // Décommenté pour que la bannière repousse l'UI correctement
+                //AdjustUIForBanner(); // Décommenté pour que la bannière repousse l'UI correctement
             });
         };
 
