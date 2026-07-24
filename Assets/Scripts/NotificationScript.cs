@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Localization.Settings;
 
 public class NotificationScript : MonoBehaviour
 {
@@ -10,6 +11,16 @@ public class NotificationScript : MonoBehaviour
     public TextMeshProUGUI text;
     public TextMeshProUGUI title;
     public Image reward;
+
+    [Header("Localization")]
+    public string stringTableName = "UITexts";
+
+    private string GetTranslation(string key, string fallback)
+    {
+        string tr = LocalizationSettings.StringDatabase.GetLocalizedString(stringTableName, key);
+        if (string.IsNullOrEmpty(tr) || tr.Contains("No translation")) return fallback;
+        return tr;
+    }
 
     public static NotificationScript instance;
 
@@ -48,7 +59,7 @@ public class NotificationScript : MonoBehaviour
             _isShowing = true;
             var (label, sprite) = _queue.Dequeue();
 
-            title.text  = "MISSION TERMINÉE";
+            title.text  = GetTranslation("MISSION TERMINÉE", "MISSION TERMINÉE");
             text.text   = label;
             reward.sprite = sprite;
 

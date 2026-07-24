@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Localization.Settings;
 
 public class MissileSpawner : MonoBehaviour
 {
@@ -10,6 +11,16 @@ public class MissileSpawner : MonoBehaviour
     public Transform[] spawnPos;
     public GameObject[] missiles; // 0: Normal, 1: Rapide
     public static MissileSpawner instance;
+
+    [Header("Localization")]
+    public string stringTableName = "UITexts";
+
+    private string GetTranslation(string key, string fallback)
+    {
+        string tr = LocalizationSettings.StringDatabase.GetLocalizedString(stringTableName, key);
+        if (string.IsNullOrEmpty(tr) || tr.Contains("No translation")) return fallback;
+        return tr;
+    }
 
     [Header("Difficulte")]
     public float initialSpawnDelay = 5.0f;
@@ -225,7 +236,7 @@ public class MissileSpawner : MonoBehaviour
                 PlayerMovement.instance.InitializeCameraProxyY();
             }
 
-            yield return StartCoroutine(ShowWaveBanner("VAGUE " + currentWave + "\nMODE COMBAT !", Color.red, true));
+            yield return StartCoroutine(ShowWaveBanner(GetTranslation("VAGUE", "VAGUE") + " " + currentWave + "\n" + GetTranslation("MODE COMBAT !", "MODE COMBAT !"), Color.red, true));
 
             int divisionFactor = combatWaveFrequency > 0 ? combatWaveFrequency : 5;
             enemiesToSpawnThisWave = baseEnemiesToSpawn + (currentWave / divisionFactor) * 2;
@@ -240,7 +251,7 @@ public class MissileSpawner : MonoBehaviour
             missilesToSpawnThisWave = 3 + currentWave * 2; // Wave 1: 5 missiles
             missilesSpawnedThisWave = 0;
 
-            yield return StartCoroutine(ShowWaveBanner("VAGUE " + currentWave, new Color(1f, 0.9f, 0f), false));
+            yield return StartCoroutine(ShowWaveBanner(GetTranslation("VAGUE", "VAGUE") + " " + currentWave, new Color(1f, 0.9f, 0f), false));
             
             int toSpawn = Mathf.Min(missilesRequired, missilesToSpawnThisWave);
             SpawnMissileBatch(toSpawn);
@@ -369,7 +380,7 @@ public class MissileSpawner : MonoBehaviour
         // Attendre que l'ecran soit propre
         yield return new WaitForSeconds(1.2f);
         
-        // Nettoyer tous les missiles (comme les missiles tirés par les ennemis)
+        // Nettoyer tous les missiles (comme les missiles tirÃ©s par les ennemis)
         DestroyAllMissiles();
 
         currentWave++;
@@ -377,7 +388,7 @@ public class MissileSpawner : MonoBehaviour
         // Mode combat de l'espace si la vague est de type combat
         if (IsCombatWave(currentWave))
         {
-            yield return StartCoroutine(ShowWaveBanner("VAGUE " + currentWave + "\nMODE COMBAT !", Color.red, true));
+            yield return StartCoroutine(ShowWaveBanner(GetTranslation("VAGUE", "VAGUE") + " " + currentWave + "\n" + GetTranslation("MODE COMBAT !", "MODE COMBAT !"), Color.red, true));
 
             // Activer le mode shooting
             if (PlayerMovement.instance != null)
@@ -407,7 +418,7 @@ public class MissileSpawner : MonoBehaviour
                 // REMOVED rotation reset here so the player's plane doesn't rotate unexpectedly during dodging wave changes!
             }
 
-            yield return StartCoroutine(ShowWaveBanner("VAGUE " + currentWave, new Color(1f, 0.9f, 0f), false));
+            yield return StartCoroutine(ShowWaveBanner(GetTranslation("VAGUE", "VAGUE") + " " + currentWave, new Color(1f, 0.9f, 0f), false));
 
             missilesToSpawnThisWave = 3 + currentWave * 2;
             missilesSpawnedThisWave = 0;

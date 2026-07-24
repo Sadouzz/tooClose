@@ -19,6 +19,16 @@ public class SettingsScript : MonoBehaviour
     public TextMeshProUGUI vibrationText;
     public TextMeshProUGUI languageText; // Le texte du bouton de langue
 
+    [Header("Localization")]
+    public string stringTableName = "UITexts";
+    
+    private string GetTranslation(string key, string fallback)
+    {
+        string tr = LocalizationSettings.StringDatabase.GetLocalizedString(stringTableName, key);
+        if (string.IsNullOrEmpty(tr) || tr.Contains("No translation")) return fallback;
+        return tr;
+    }
+
     private string movementModeKey = "MovementMode";
 
     private void Awake()
@@ -29,6 +39,7 @@ public class SettingsScript : MonoBehaviour
     private void OnEnable()
     {
         LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
+        UpdateAudioVibrationUI(); // Met à jour le texte dès qu'on ouvre les paramètres
     }
 
     private void OnDisable()
@@ -39,6 +50,7 @@ public class SettingsScript : MonoBehaviour
     private void OnLocaleChanged(UnityEngine.Localization.Locale locale)
     {
         UpdateLanguageUI(locale);
+        UpdateAudioVibrationUI();
     }
 
     private void Start()
@@ -155,14 +167,17 @@ public class SettingsScript : MonoBehaviour
     // --- UI Texts Update ---
     private void UpdateAudioVibrationUI()
     {
+        string onSuffix = " : ON";
+        string offSuffix = " : OFF";
+
         if (soundText != null)
-            soundText.text = PlayerPrefs.GetInt("Sound", 1) == 1 ? "Sons : ON" : "Sons : OFF";
+            soundText.text = GetTranslation("Sons", "Sons") + (PlayerPrefs.GetInt("Sound", 1) == 1 ? onSuffix : offSuffix);
             
         if (musicText != null)
-            musicText.text = PlayerPrefs.GetInt("Music", 1) == 1 ? "Musique : ON" : "Musique : OFF";
+            musicText.text = GetTranslation("Musique", "Musique") + (PlayerPrefs.GetInt("Music", 1) == 1 ? onSuffix : offSuffix);
             
         if (vibrationText != null)
-            vibrationText.text = PlayerPrefs.GetInt("Vibration", 1) == 1 ? "Vibration : ON" : "Vibration : OFF";
+            vibrationText.text = GetTranslation("Vibration", "Vibration") + (PlayerPrefs.GetInt("Vibration", 1) == 1 ? onSuffix : offSuffix);
     }
 
     private void UpdateLanguageUI(UnityEngine.Localization.Locale locale)

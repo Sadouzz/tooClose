@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using UnityEngine.Localization.Settings;
 
 public class PowerUpUIManager : MonoBehaviour
 {
@@ -18,8 +19,18 @@ public class PowerUpUIManager : MonoBehaviour
     public float pulseDuration = 0.3f;
     public float pulseScaleAmount = 1.3f;
 
+    [Header("Localization")]
+    public string stringTableName = "UITexts";
+
+    private string GetTranslation(string key, string fallback)
+    {
+        string tr = LocalizationSettings.StringDatabase.GetLocalizedString(stringTableName, key);
+        if (string.IsNullOrEmpty(tr) || tr.Contains("No translation")) return fallback;
+        return tr;
+    }
+
     [Header("Logic Storage")]
-    private string currentStoredPowerUp = ""; // Garde en mémoire le powerup ramassé
+    private string currentStoredPowerUp = ""; // Garde en mÃ©moire le powerup ramassÃ©
 
     public AudioSource audio;
 
@@ -40,7 +51,7 @@ public class PowerUpUIManager : MonoBehaviour
         return currentStoredPowerUp;
     }
 
-    // Cette fonction vide le slot une fois le powerup utilisé
+    // Cette fonction vide le slot une fois le powerup utilisÃ©
     public void ClearStoredPowerUp()
     {
         currentStoredPowerUp = "";
@@ -62,7 +73,7 @@ public class PowerUpUIManager : MonoBehaviour
     IEnumerator AnimatePowerUp(string name, Sprite icon, Vector3 worldPos, Color color)
     {
         // 1. Initialisation
-        nameText.text = name;
+        nameText.text = GetTranslation(name, name);
         nameText.color = color;
         flyingIcon.sprite = icon;
 

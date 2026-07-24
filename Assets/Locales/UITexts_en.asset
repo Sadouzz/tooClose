@@ -26,6 +26,194 @@ MonoBehaviour:
     m_Localized: Hard
     m_Metadata:
       m_Items: []
+  - m_Id: 446566359318528
+    m_Localized: SPEED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 447028915552256
+    m_Localized: More health points
+    m_Metadata:
+      m_Items: []
+  - m_Id: 447207928446976
+    m_Localized: UPGRADE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 450631222902784
+    m_Localized: Life
+    m_Metadata:
+      m_Items: []
+  - m_Id: 451094836101120
+    m_Localized: Handling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 451335962443776
+    m_Localized: Fly faster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 451474240258048
+    m_Localized: Turn more sharply
+    m_Metadata:
+      m_Items: []
+  - m_Id: 451667106938880
+    m_Localized: More health points
+    m_Metadata:
+      m_Items: []
+  - m_Id: 454929482727424
+    m_Localized: NO ADS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 456723793395712
+    m_Localized: WATCH AN AD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 460214104440832
+    m_Localized: HIGH SCORE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 460497631002624
+    m_Localized: SETTINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 461367575789568
+    m_Localized: Sounds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 463169738194944
+    m_Localized: RATE US
+    m_Metadata:
+      m_Items: []
+  - m_Id: 463297953873920
+    m_Localized: Tutorial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 463573125382144
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 463793087266816
+    m_Localized: DELETE PROGRESSION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 463919579086848
+    m_Localized: Privacy and Terms of Use
+    m_Metadata:
+      m_Items: []
+  - m_Id: 464498585976832
+    m_Localized: Please take note of our terms and conditions.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 464660020543488
+    m_Localized: CLICK HERE TO VIEW THEM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 464751422816256
+    m_Localized: I confirm that I have read the terms and conditions and accept them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 464852560068608
+    m_Localized: Advertising preferences
+    m_Metadata:
+      m_Items: []
+  - m_Id: 465126058049536
+    m_Localized: USE THE JOYSTICK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 465211860926464
+    m_Localized: To turn the plane
+    m_Metadata:
+      m_Items: []
+  - m_Id: 465346917515264
+    m_Localized: COLLECT THE STARS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 465448721661952
+    m_Localized: AVOID THE MISSILES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 465892206395392
+    m_Localized: watch the ad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 466064441294848
+    m_Localized: PURCHASE WITH STARS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 466280770912256
+    m_Localized: Not enough stars
+    m_Metadata:
+      m_Items: []
+  - m_Id: 466834846859264
+    m_Localized: Play for 20 seconds in a single game.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 466968364138496
+    m_Localized: Destroy a total of 150 missiles.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467056209641472
+    m_Localized: Use 10 power-ups in a single match.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467144323579904
+    m_Localized: Destroy a total of 500 missiles.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467218780864512
+    m_Localized: Play for 120 seconds in a single game.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467285252194304
+    m_Localized: Destroy 100 missiles in a single match.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467354508541952
+    m_Localized: Watch 10 ads
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467424205291520
+    m_Localized: Play for 240 seconds in a single match.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467540567867392
+    m_Localized: Watch 30 ads
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467720524480512
+    m_Localized: Reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467964997877760
+    m_Localized: Collect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468752675586048
+    m_Localized: MISSION COMPLETE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 470889954492416
+    m_Localized: WAVE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 470942110662656
+    m_Localized: COMBAT MODE !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 471275817877504
+    m_Localized: BLAZE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 471327063883776
+    m_Localized: SHILED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 471377546526720
+    m_Localized: SLOWMO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 471452410658816
+    m_Localized: ZOOM
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

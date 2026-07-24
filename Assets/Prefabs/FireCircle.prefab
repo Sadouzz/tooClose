@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f266c44c588a78488cf91a6ae4bd020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpItem
-  powerUpName: BLAZE
+  powerUpName: FLAMMES
   powerUpIcon: {fileID: 21300000, guid: 38abab0a72f5dfc4e8f0401bdd0f4ee9, type: 3}
   feedbackColor: {r: 0.96470594, g: 0.49803925, b: 0.09019608, a: 1}
 --- !u!114 &5570929467990219862

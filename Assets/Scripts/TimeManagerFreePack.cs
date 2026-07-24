@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Localization.Settings;
 
 public class TimeManagerFreePack : MonoBehaviour
 {
@@ -13,6 +14,15 @@ public class TimeManagerFreePack : MonoBehaviour
     public bool finished;
 
     public TextMeshProUGUI timerText;
+
+    [Header("Localization")]
+    public string stringTableName = "UITexts"; // Modifiez ceci avec le nom de votre Table
+    private string GetTranslation(string key, string fallback)
+    {
+        string tr = LocalizationSettings.StringDatabase.GetLocalizedString(stringTableName, key);
+        if (string.IsNullOrEmpty(tr) || tr.Contains("No translation")) return fallback;
+        return tr;
+    }
 
     public static TimeManagerFreePack instance;
 
@@ -25,6 +35,7 @@ public class TimeManagerFreePack : MonoBehaviour
         }
         instance = this;
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,7 +68,7 @@ public class TimeManagerFreePack : MonoBehaviour
         {
             //Finished
             finished = true;
-            timerText.text = "Collecter";
+            timerText.text = GetTranslation("Collecter", "Collecter");
             freepackButton.interactable = true;
         }
         else
@@ -78,11 +89,11 @@ public class TimeManagerFreePack : MonoBehaviour
             //totalSecondsRemaining -= Time.deltaTime;
             //TimeSpan ts = TimeSpan.FromSeconds(totalSecondsRemaining);
             
-            timerText.text = ts.Minutes + "min" + ts.Seconds + "s";
+            timerText.text = ts.Minutes + GetTranslation("min", "min") + ts.Seconds + GetTranslation("s", "s");
         }
         else
         {
-            timerText.text = "Collecter";
+            timerText.text = GetTranslation("Collecter", "Collecter");
         }
 
         if(ts <= TimeSpan.Zero)

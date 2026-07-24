@@ -79,6 +79,8 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"st: upgrade_speed"
+	"st: upgrade"
 ]
 searchItemFavorites = [
 ]

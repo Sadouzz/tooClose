@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Localization.Settings;
 
 public class PlaneUpgradeManager : MonoBehaviour
 {
@@ -43,14 +44,17 @@ public class PlaneUpgradeManager : MonoBehaviour
     [Header("Upgrade Definitions")]
     public List<UpgradeData> upgrades = new List<UpgradeData>()
     {
-        new UpgradeData { upgradeName = "Vitesse", type = UpgradeType.Speed, baseCost = 100, costMultiplier = 1.3f, maxLevel = 10, bonusPerLevel = 0.5f, description = "Voler plus vite" },
-        new UpgradeData { upgradeName = "Maniabilité", type = UpgradeType.Handling, baseCost = 100, costMultiplier = 1.3f, maxLevel = 10, bonusPerLevel = 1.0f, description = "Tourner plus sec" },
-        new UpgradeData { upgradeName = "Blindage", type = UpgradeType.Armor, baseCost = 300, costMultiplier = 1.5f, maxLevel = 5, bonusPerLevel = 1.0f, description = "Plus de points de vie" }
+        new UpgradeData { upgradeName = "VITESSE", type = UpgradeType.Speed, baseCost = 100, costMultiplier = 1.3f, maxLevel = 10, bonusPerLevel = 0.5f, description = "Voler plus vite" },
+        new UpgradeData { upgradeName = "CONTROLE", type = UpgradeType.Handling, baseCost = 100, costMultiplier = 1.3f, maxLevel = 10, bonusPerLevel = 1.0f, description = "Tourner plus sec" },
+        new UpgradeData { upgradeName = "BLINDAGE", type = UpgradeType.Armor, baseCost = 300, costMultiplier = 1.5f, maxLevel = 5, bonusPerLevel = 1.0f, description = "Plus de points de vie" }
     };
 
     [Header("UI Tabs (Les extensions de panels)")]
     public List<UpgradeTabUI> uiTabs;
     public float animationSpeed = 10f;
+
+    [Header("Localization")]
+    public string stringTableName = "UITexts"; // Modifiez ceci dans l'Inspecteur avec le VRAI nom de votre Table
 
     [Header("Ad Offer Settings")]
     [Range(0, 100)] public int adOfferChance = 30; // 30% de chance
@@ -136,8 +140,16 @@ public class PlaneUpgradeManager : MonoBehaviour
 
             int maxLvl = GetMaxLevel(tab.type);
 
-            if (tab.nameText != null) tab.nameText.text = data.upgradeName + " (" + currentLevel + "/" + maxLvl + ")";
-            if (tab.descText != null) tab.descText.text = data.description;
+            // On demande la traduction à partir des chaînes actuelles (qui servent de clés)
+            string translatedName = LocalizationSettings.StringDatabase.GetLocalizedString(stringTableName, data.upgradeName);
+            string translatedDesc = LocalizationSettings.StringDatabase.GetLocalizedString(stringTableName, data.description);
+
+            // Si la traduction est vide (clé introuvable), on affiche le texte par défaut
+            if (string.IsNullOrEmpty(translatedName) || translatedName.Contains("No translation")) translatedName = data.upgradeName;
+            if (string.IsNullOrEmpty(translatedDesc) || translatedDesc.Contains("No translation")) translatedDesc = data.description;
+
+            if (tab.nameText != null) tab.nameText.text = translatedName + " (" + currentLevel + "/" + maxLvl + ")";
+            if (tab.descText != null) tab.descText.text = translatedDesc;
 
             if (currentLevel >= maxLvl)
             {

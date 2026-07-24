@@ -23,6 +23,194 @@ MonoBehaviour:
     m_Key: difficulty_hard
     m_Metadata:
       m_Items: []
+  - m_Id: 446566359318528
+    m_Key: VITESSE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 447028915552256
+    m_Key: upgrade_speed_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 447207928446976
+    m_Key: upgrade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 450631222902784
+    m_Key: BLINDAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 451094836101120
+    m_Key: CONTROLE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 451335962443776
+    m_Key: Voler plus vite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 451474240258048
+    m_Key: Tourner plus sec
+    m_Metadata:
+      m_Items: []
+  - m_Id: 451667106938880
+    m_Key: Plus de points de vie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 454929482727424
+    m_Key: PAS DE PUB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 456723793395712
+    m_Key: REGARDER UNE PUB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 460214104440832
+    m_Key: MEILLEUR SCORE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 460497631002624
+    m_Key: OPTIONS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 461367575789568
+    m_Key: Sons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 463169738194944
+    m_Key: EVALUEZ-NOUS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 463297953873920
+    m_Key: Tutoriel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 463573125382144
+    m_Key: Musique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 463793087266816
+    m_Key: SUPP. LA PROGRESSION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 463919579086848
+    m_Key: confidentialite et conditions d'utilisation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 464498585976832
+    m_Key: Veuillez bien prendre connaissance de nos conditions.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 464660020543488
+    m_Key: CLIQUEZ ICI POUR LES CONSULTER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 464751422816256
+    m_Key: je confirme avoir lu les conditions et je les accepte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 464852560068608
+    m_Key: Preferences publicitaires
+    m_Metadata:
+      m_Items: []
+  - m_Id: 465126058049536
+    m_Key: UTILISEZ LE JOYSTICK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 465211860926464
+    m_Key: POUR FAIRE TOURNER L'avion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 465346917515264
+    m_Key: COLLECTEZ LES ETOILES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 465448721661952
+    m_Key: EVITEZ LES MISSILES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 465892206395392
+    m_Key: regarder  la pub
+    m_Metadata:
+      m_Items: []
+  - m_Id: 466064441294848
+    m_Key: ACHAT AVEC ETOILES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 466280770912256
+    m_Key: Pas assez d'etoiles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 466834846859264
+    m_Key: Jouer 20 secondes en une partie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 466968364138496
+    m_Key: Detruire 150 missiles au total
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467056209641472
+    m_Key: Utiliser 10 power-ups en une partie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467144323579904
+    m_Key: Detruire 500 missiles au total
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467218780864512
+    m_Key: Jouer 120 secondes en une partie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467285252194304
+    m_Key: Detruire 100 missiles en une partie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467354508541952
+    m_Key: Regarder 10 publicites
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467424205291520
+    m_Key: Jouer 240 secondes en une partie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467540567867392
+    m_Key: Regarder 30 publicites
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467720524480512
+    m_Key: Recompense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467964997877760
+    m_Key: Recuperer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468752675586048
+    m_Key: "MISSION TERMIN\xC9E"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 470889954492416
+    m_Key: VAGUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 470942110662656
+    m_Key: MODE COMBAT !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 471275817877504
+    m_Key: FLAMMES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 471327063883776
+    m_Key: BOUCLIER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 471377546526720
+    m_Key: SLOWMO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 471452410658816
+    m_Key: ZOOM
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

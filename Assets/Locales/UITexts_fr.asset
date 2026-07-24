@@ -26,6 +26,194 @@ MonoBehaviour:
     m_Localized: Difficile
     m_Metadata:
       m_Items: []
+  - m_Id: 446566359318528
+    m_Localized: VITESSE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 447028915552256
+    m_Localized: Plus de points de vie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 447207928446976
+    m_Localized: AMELIORATION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 450631222902784
+    m_Localized: Blindage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 451094836101120
+    m_Localized: Controle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 451335962443776
+    m_Localized: Voler plus vite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 451474240258048
+    m_Localized: Tourner plus sec
+    m_Metadata:
+      m_Items: []
+  - m_Id: 451667106938880
+    m_Localized: Plus de points de vie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 454929482727424
+    m_Localized: PAS DE PUB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 456723793395712
+    m_Localized: REGARDER UNE PUB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 460214104440832
+    m_Localized: MEILLEUR SCORE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 460497631002624
+    m_Localized: OPTIONS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 461367575789568
+    m_Localized: Sons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 463169738194944
+    m_Localized: EVALUEZ-NOUS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 463297953873920
+    m_Localized: Tutoriel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 463573125382144
+    m_Localized: Musique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 463793087266816
+    m_Localized: SUPP. LA PROGRESSION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 463919579086848
+    m_Localized: confidentialite et conditions d'utilisation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 464498585976832
+    m_Localized: Veuillez bien prendre connaissance de nos conditions.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 464660020543488
+    m_Localized: CLIQUEZ ICI POUR LES CONSULTER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 464751422816256
+    m_Localized: je confirme avoir lu les conditions et je les accepte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 464852560068608
+    m_Localized: Preferences publicitaires
+    m_Metadata:
+      m_Items: []
+  - m_Id: 465126058049536
+    m_Localized: UTILISEZ LE JOYSTICK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 465211860926464
+    m_Localized: POUR FAIRE TOURNER L'avion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 465346917515264
+    m_Localized: COLLECTEZ LES ETOILES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 465448721661952
+    m_Localized: EVITEZ LES MISSILES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 465892206395392
+    m_Localized: regarder la pub
+    m_Metadata:
+      m_Items: []
+  - m_Id: 466064441294848
+    m_Localized: ACHAT AVEC ETOILES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 466280770912256
+    m_Localized: Pas assez d'etoiles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 466834846859264
+    m_Localized: Jouer 20 secondes en une partie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 466968364138496
+    m_Localized: Detruire 150 missiles au total
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467056209641472
+    m_Localized: Utiliser 10 power-ups en une partie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467144323579904
+    m_Localized: Detruire 500 missiles au total
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467218780864512
+    m_Localized: Jouer 120 secondes en une partie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467285252194304
+    m_Localized: Detruire 100 missiles en une partie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467354508541952
+    m_Localized: Regarder 10 publicites
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467424205291520
+    m_Localized: Jouer 240 secondes en une partie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467540567867392
+    m_Localized: Regarder 30 publicites
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467720524480512
+    m_Localized: Recompense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467964997877760
+    m_Localized: Recuperer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468752675586048
+    m_Localized: "MISSION TERMIN\xC9E"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 470889954492416
+    m_Localized: VAGUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 470942110662656
+    m_Localized: MODE COMBAT !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 471275817877504
+    m_Localized: FLAMMES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 471327063883776
+    m_Localized: BOUCLIER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 471377546526720
+    m_Localized: SLOWMO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 471452410658816
+    m_Localized: ZOOM
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

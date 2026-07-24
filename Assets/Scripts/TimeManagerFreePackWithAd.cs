@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Localization.Settings;
 
 public class TimeManagerFreePackWithAd : MonoBehaviour
 {
@@ -13,6 +14,15 @@ public class TimeManagerFreePackWithAd : MonoBehaviour
     public bool finished;
 
     public TextMeshProUGUI timerText;
+
+    [Header("Localization")]
+    public string stringTableName = "UITexts"; // Modifiez ceci avec le nom de votre Table
+    private string GetTranslation(string key, string fallback)
+    {
+        string tr = LocalizationSettings.StringDatabase.GetLocalizedString(stringTableName, key);
+        if (string.IsNullOrEmpty(tr) || tr.Contains("No translation")) return fallback;
+        return tr;
+    }
 
     public static TimeManagerFreePackWithAd instance;
     private void Awake()
@@ -24,7 +34,7 @@ public class TimeManagerFreePackWithAd : MonoBehaviour
         }
         instance = this;
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         DateTime dateNow = DateTime.Now;
@@ -57,17 +67,17 @@ public class TimeManagerFreePackWithAd : MonoBehaviour
 
         if (!finished)
         {
-            timerText.text = ts.Minutes + "m " + ts.Seconds + "s";
+            timerText.text = ts.Minutes + GetTranslation("m ", "m ") + ts.Seconds + GetTranslation("s", "s");
         }
         else
         {
             if (AdMob.instance != null && !AdMob.instance.adReady)
             {
-                timerText.text = "PAS DE PUB";
+                timerText.text = GetTranslation("PAS DE PUB", "PAS DE PUB");
             }
             else
             {
-                timerText.text = "REGARDER UNE PUB";
+                timerText.text = GetTranslation("REGARDER UNE PUB", "REGARDER UNE PUB");
             }
         }
     }
