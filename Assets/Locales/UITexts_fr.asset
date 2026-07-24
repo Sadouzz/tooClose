@@ -214,6 +214,10 @@ MonoBehaviour:
     m_Localized: ZOOM
     m_Metadata:
       m_Items: []
+  - m_Id: 726372237918208
+    m_Localized: SERVEZ-VOUS DES POWERUPS
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

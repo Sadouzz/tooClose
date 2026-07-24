@@ -249,6 +249,12 @@ public class UIManager : MonoBehaviour
         Inventory.instance.dead = false;
         Inventory.instance.menu = false;
         PlayerMovement.instance.move = true;
+
+        // Afficher le tutoriel si c'est la première fois
+        if (PlayerPrefs.GetInt("TutorialDone", 0) == 0 && TutorialManager.instance != null)
+        {
+            TutorialManager.instance.OpenTutorial();
+        }
     }
 
     IEnumerator FadeMusicVolume(float targetVolume)

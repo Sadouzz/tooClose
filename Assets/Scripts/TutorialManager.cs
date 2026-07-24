@@ -31,16 +31,8 @@ public class TutorialManager : MonoBehaviour
 
     void Start()
     {
-        // Au démarrage, on vérifie si le tuto a déjà été fait
-        if (PlayerPrefs.GetInt(TUTORIAL_PREF_KEY, 0) == 0)
-        {
-            OpenTutorial();
-        }
-        else
-        {
-            // S'il a déjà été fait, on s'assure que le panneau est bien caché
-            if (tutorialPanel != null) tutorialPanel.SetActive(false);
-        }
+        // On s'assure que le panneau est bien caché au démarrage
+        if (tutorialPanel != null) tutorialPanel.SetActive(false);
     }
 
     // Ouvre le tutoriel (peut être appelé par un bouton du menu "Tutoriel")
@@ -49,6 +41,7 @@ public class TutorialManager : MonoBehaviour
         if (tutorialPanel != null) tutorialPanel.SetActive(true);
         currentPageIndex = 0;
         UpdateUI();
+        Time.timeScale = 0; // Pause le jeu
     }
 
     // Passe à la page suivante (à relier au OnClick de nextButton)
@@ -79,6 +72,7 @@ public class TutorialManager : MonoBehaviour
         PlayerPrefs.Save();
 
         if (tutorialPanel != null) tutorialPanel.SetActive(false);
+        Time.timeScale = 1; // Reprend le jeu
     }
 
     // Met à jour l'affichage des bonnes pages et des bons boutons

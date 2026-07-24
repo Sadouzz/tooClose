@@ -203,7 +203,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 471327063883776
-    m_Localized: SHILED
+    m_Localized: SHIELD
     m_Metadata:
       m_Items: []
   - m_Id: 471377546526720
@@ -212,6 +212,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 471452410658816
     m_Localized: ZOOM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 726372237918208
+    m_Localized: USE POWER-UPS
     m_Metadata:
       m_Items: []
   references:

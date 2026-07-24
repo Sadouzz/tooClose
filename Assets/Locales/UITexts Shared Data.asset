@@ -211,6 +211,10 @@ MonoBehaviour:
     m_Key: ZOOM
     m_Metadata:
       m_Items: []
+  - m_Id: 726372237918208
+    m_Key: SERVEZ-VOUS DES POWERUPS
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
