@@ -215,6 +215,14 @@ MonoBehaviour:
     m_Key: SERVEZ-VOUS DES POWERUPS
     m_Metadata:
       m_Items: []
+  - m_Id: 730680396300288
+    m_Key: "250 \xE9toiles vous attendent !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 730824999124992
+    m_Key: "Regardez une courte vid\xE9o pour r\xE9cup\xE9rer 250 \xE9toiles !"
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

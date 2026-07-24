@@ -218,6 +218,15 @@ MonoBehaviour:
     m_Localized: SERVEZ-VOUS DES POWERUPS
     m_Metadata:
       m_Items: []
+  - m_Id: 730680396300288
+    m_Localized: "250 \xE9toiles vous attendent !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 730824999124992
+    m_Localized: "Regardez une courte vid\xE9o pour r\xE9cup\xE9rer 250 \xE9toiles
+      !"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

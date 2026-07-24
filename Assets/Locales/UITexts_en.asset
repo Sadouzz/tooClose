@@ -218,6 +218,14 @@ MonoBehaviour:
     m_Localized: USE POWER-UPS
     m_Metadata:
       m_Items: []
+  - m_Id: 730680396300288
+    m_Localized: 250 stars are waiting for you !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 730824999124992
+    m_Localized: Watch a short video to claim 250 stars !
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

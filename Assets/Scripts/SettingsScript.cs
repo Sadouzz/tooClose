@@ -60,6 +60,31 @@ public class SettingsScript : MonoBehaviour
         ApplyMusicSetting();
         ApplySoundSetting();
         
+        // Attendre que le système de localisation soit prêt sans IEnumerator
+        var initOp = LocalizationSettings.InitializationOperation;
+        if (initOp.IsDone)
+        {
+            LoadSavedLanguage();
+        }
+        else
+        {
+            initOp.Completed += (op) => LoadSavedLanguage();
+        }
+    }
+
+    private void LoadSavedLanguage()
+    {
+        // Charger la langue sauvegardée
+        if (PlayerPrefs.HasKey("SavedLanguageIndex"))
+        {
+            int savedIndex = PlayerPrefs.GetInt("SavedLanguageIndex");
+            var locales = LocalizationSettings.AvailableLocales.Locales;
+            if (savedIndex >= 0 && savedIndex < locales.Count)
+            {
+                LocalizationSettings.SelectedLocale = locales[savedIndex];
+            }
+        }
+
         // Mettre à jour le texte de la langue au démarrage
         if (LocalizationSettings.SelectedLocale != null)
         {
@@ -213,6 +238,10 @@ public class SettingsScript : MonoBehaviour
         
         // On applique la nouvelle langue !
         LocalizationSettings.SelectedLocale = locales[nextIndex];
+
+        // On sauvegarde l'index de la langue pour le prochain lancement
+        PlayerPrefs.SetInt("SavedLanguageIndex", nextIndex);
+        PlayerPrefs.Save();
     }
 
     public void DeleteAllPlayerPrefs()

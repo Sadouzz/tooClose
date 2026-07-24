@@ -96,7 +96,7 @@ public class TimeManagerFreePackWithAd : MonoBehaviour
         {
             if (PushNotificationManager.instance != null)
             {
-                PushNotificationManager.instance.ScheduleNotification("Pack prêt !", "Votre pack publicitaire est de nouveau disponible.", interval);
+                PushNotificationManager.instance.ScheduleNotification("250 étoiles vous attendent !", "Regardez une courte vidéo pour récupérer 250 étoiles !", interval);
             }
         }
     }

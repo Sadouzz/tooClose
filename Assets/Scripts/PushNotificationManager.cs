@@ -57,8 +57,25 @@ public class PushNotificationManager : MonoBehaviour
     }
 #endif
 
-    public void ScheduleNotification(string title, string text, float secondsDelay)
+    public void ScheduleNotification(string titleKey, string textKey, float secondsDelay)
     {
+        string title = titleKey;
+        string text = textKey;
+
+        // Try to translate the title
+        string trTitle = UnityEngine.Localization.Settings.LocalizationSettings.StringDatabase.GetLocalizedString("UITexts", titleKey);
+        if (!string.IsNullOrEmpty(trTitle) && !trTitle.Contains("No translation")) 
+        {
+            title = trTitle;
+        }
+
+        // Try to translate the text
+        string trText = UnityEngine.Localization.Settings.LocalizationSettings.StringDatabase.GetLocalizedString("UITexts", textKey);
+        if (!string.IsNullOrEmpty(trText) && !trText.Contains("No translation")) 
+        {
+            text = trText;
+        }
+
 #if UNITY_ANDROID
         var notification = new AndroidNotification
         {
@@ -91,6 +108,6 @@ public class PushNotificationManager : MonoBehaviour
 
         iOSNotificationCenter.ScheduleNotification(notification);
 #endif
-        Debug.Log("Push Notification Scheduled in " + secondsDelay + " seconds.");
+        Debug.Log("Push Notification Scheduled in " + secondsDelay + " seconds. Title: " + title);
     }
 }
