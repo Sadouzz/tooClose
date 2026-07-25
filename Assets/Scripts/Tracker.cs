@@ -126,13 +126,21 @@ public class Tracker : MonoBehaviour
         float runTime = Inventory.instance != null ? Inventory.instance.totalSeconds : 0f;
         float currentSpeed = Mathf.Min(baseApproachSpeed + runTime * speedScalingPerSecond, maxApproachSpeed);
 
+        // --- SlowMo : ralentir le chasseur si le power-up est actif ---
+        float slowFactor = 1f;
+        if (PlayerPowerUpManager.instance != null && PlayerPowerUpManager.instance.isSlowMoActive)
+        {
+            slowFactor = PlayerPowerUpManager.instance.slowMoFactor;
+            currentSpeed *= slowFactor;
+        }
+
         // --- Mouvement vers le joueur avec jitter nerveux ---
         Vector3 dirToPlayer = (player.position - transform.position).normalized;
 
         // Bruit de Perlin pour le jitter latéral
-        float time = Time.time * jitterFrequency;
-        float jitterX = (Mathf.PerlinNoise(time + perlinSeedX, 0f) - 0.5f) * 2f * jitterAmplitude;
-        float jitterY = (Mathf.PerlinNoise(0f, time + perlinSeedY) - 0.5f) * 2f * jitterAmplitude;
+        float time = Time.time * jitterFrequency * slowFactor;
+        float jitterX = (Mathf.PerlinNoise(time + perlinSeedX, 0f) - 0.5f) * 2f * jitterAmplitude * slowFactor;
+        float jitterY = (Mathf.PerlinNoise(0f, time + perlinSeedY) - 0.5f) * 2f * jitterAmplitude * slowFactor;
         Vector3 jitterOffset = new Vector3(jitterX, jitterY, 0f);
 
         transform.position += (dirToPlayer * currentSpeed + jitterOffset) * Time.deltaTime;
@@ -239,8 +247,16 @@ public class Tracker : MonoBehaviour
         // Collision avec un missile = les deux explosent (alignement stratégique)
         else if (col.CompareTag("Missile"))
         {
+            // Sécurité : éviter que ça n'arrive hors-écran juste au moment du spawn
+            if (spriteRenderer != null && !spriteRenderer.isVisible) return;
+
             MissileScript ms = col.GetComponent<MissileScript>();
             if (ms != null) ms.HandleDestruction(true);
+
+            // Feedback pour l'alignement missile/chasseur
+            if (CameraShake.instance != null)
+                CameraShake.instance.Shake(0.15f, 1.2f);
+
             Explode();
         }
         // Collision avec le Blaze

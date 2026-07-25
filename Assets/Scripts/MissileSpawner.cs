@@ -146,18 +146,20 @@ public class MissileSpawner : MonoBehaviour
             initialSpawnDelay = easyInitialDelay;
             currentMaxBatch = easyMaxMissilesBatch;
             currentFastMissileMultiplier = easyFastMissileMultiplier;
-            // Courbe plus douce en Easy
+            // Courbe modérée en Easy
             hunterCooldown = 15f;
-            baseHunterSpawnChance = 0.05f;
+            baseHunterSpawnChance = 0.12f;
+            hunterChancePerScore = 0.0001f;
         }
         else
         {
             initialSpawnDelay = hardInitialDelay;
             currentMaxBatch = hardMaxMissilesBatch;
             currentFastMissileMultiplier = hardFastMissileMultiplier;
-            // Courbe plus agressive en Hard
-            hunterCooldown = 10f;
-            baseHunterSpawnChance = 0.10f;
+            // Courbe agressive en Hard
+            hunterCooldown = 8f;
+            baseHunterSpawnChance = 0.20f;
+            hunterChancePerScore = 0.00015f;
         }
 
         // Si le jeu n'a pas encore commence, on applique le delai initial
@@ -439,7 +441,7 @@ public class MissileSpawner : MonoBehaviour
     {
         if (waveBannerText == null) yield break;
 
-        string warningMsg = "⚠ " + hunterType;
+        string warningMsg = hunterType;
         Color warningColor = hunterType == "TRACKER" ? new Color(0f, 0.9f, 1f) : new Color(1f, 0.3f, 0.1f);
 
         waveBannerText.gameObject.SetActive(true);

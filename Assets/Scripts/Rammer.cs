@@ -172,13 +172,23 @@ public class Rammer : MonoBehaviour
     }
 
     // --- PHASE : APPROCHE ---
+    // --- Utilitaire : facteur de ralentissement SlowMo ---
+    private float GetSlowFactor()
+    {
+        if (PlayerPowerUpManager.instance != null && PlayerPowerUpManager.instance.isSlowMoActive)
+            return PlayerPowerUpManager.instance.slowMoFactor;
+        return 1f;
+    }
+
     void UpdateApproach()
     {
+        float slow = GetSlowFactor();
+
         // Se déplace vers une position à alignDistance du joueur (en amont)
         Vector3 targetPos = player.position + Vector3.up * alignDistance;
         Vector3 dirToTarget = (targetPos - transform.position).normalized;
 
-        transform.position += dirToTarget * approachSpeed * Time.deltaTime;
+        transform.position += dirToTarget * approachSpeed * slow * Time.deltaTime;
 
         // Rotation vers le joueur
         Vector3 dirToPlayer = (player.position - transform.position).normalized;
@@ -196,9 +206,11 @@ public class Rammer : MonoBehaviour
     // --- PHASE : ALIGNEMENT ---
     void UpdateAlign()
     {
+        float slow = GetSlowFactor();
+
         // S'aligne horizontalement avec le joueur (même X) en restant au-dessus
         float targetX = player.position.x;
-        float currentX = Mathf.Lerp(transform.position.x, targetX, 5f * Time.deltaTime);
+        float currentX = Mathf.Lerp(transform.position.x, targetX, 5f * slow * Time.deltaTime);
         transform.position = new Vector3(currentX, transform.position.y, transform.position.z);
 
         // Rotation vers le joueur
@@ -263,7 +275,9 @@ public class Rammer : MonoBehaviour
     // --- PHASE : CHARGE ---
     void UpdateCharge(float speed, float maxDuration)
     {
-        transform.position += chargeDirection * speed * Time.deltaTime;
+        float slow = GetSlowFactor();
+
+        transform.position += chargeDirection * speed * slow * Time.deltaTime;
 
         // Rotation verrouillée dans la direction de charge
         float angle = Mathf.Atan2(chargeDirection.y, chargeDirection.x) * Mathf.Rad2Deg - 90f;
@@ -376,6 +390,9 @@ public class Rammer : MonoBehaviour
         // Collision avec un missile = moment signature ! Les deux explosent.
         else if (col.CompareTag("Missile"))
         {
+            // Sécurité : éviter que ça n'arrive hors-écran juste au moment du spawn
+            if (spriteRenderer != null && !spriteRenderer.isVisible) return;
+
             MissileScript ms = col.GetComponent<MissileScript>();
             if (ms != null) ms.HandleDestruction(true);
 
@@ -384,7 +401,7 @@ public class Rammer : MonoBehaviour
                 CameraShake.instance.Shake(0.25f, 1.5f);
 
             // Petit slow-mo pour marquer l'exploit
-            StartCoroutine(BriefSlowMotion());
+            //StartCoroutine(BriefSlowMotion());
 
             Explode();
         }

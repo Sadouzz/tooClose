@@ -10864,6 +10864,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395388718}
   m_CullTransparentMesh: 1
+--- !u!224 &413796105 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6851255855011930831, guid: 96ee82fe271ff6e48885a5a3d3095e37, type: 3}
+  m_PrefabInstance: {fileID: 1760390859}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &413796106 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8304442983709823255, guid: 96ee82fe271ff6e48885a5a3d3095e37, type: 3}
+  m_PrefabInstance: {fileID: 1760390859}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &414819529
 GameObject:
   m_ObjectHideFlags: 0
@@ -13928,7 +13944,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.2
+  m_fontSize: 57.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -34968,7 +34984,7 @@ RectTransform:
   m_Father: {fileID: 149489184}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.554, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -42290,6 +42306,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NearMissManager
   nearMissText: {fileID: 959248618}
   scoreTarget: {fileID: 1501505343}
+  multiplierTarget: {fileID: 413796105}
+  multiplierText: {fileID: 413796106}
   globalVolume: {fileID: 1330948218}
   slowMoIntensity: 0.6
   distortionStrength: -0.5
@@ -51229,7 +51247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2619541935904808118, guid: 96ee82fe271ff6e48885a5a3d3095e37, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3731463795741904480, guid: 96ee82fe271ff6e48885a5a3d3095e37, type: 3}
       propertyPath: m_AnchorMax.x
@@ -51293,7 +51311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5407525913850117070, guid: 96ee82fe271ff6e48885a5a3d3095e37, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5466989897698686041, guid: 96ee82fe271ff6e48885a5a3d3095e37, type: 3}
       propertyPath: m_AnchorMax.x

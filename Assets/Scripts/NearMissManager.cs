@@ -13,6 +13,11 @@ public class NearMissManager : MonoBehaviour
     public TextMeshProUGUI nearMissText; // Le texte qui va pop et voler
     public RectTransform scoreTarget;     // L'endroit où le texte s'envole (ton Score HUD)
 
+    [Header("Multiplier Target")]
+    [Tooltip("La cible UI vers laquelle le texte near-miss vole (le texte du multiplier HUD).")]
+    public RectTransform multiplierTarget; // Assigne le RectTransform du texte multiplier
+    public TextMeshProUGUI multiplierText; // Le texte qui affiche le multiplier (ex: x2, x3...)
+
     [Header("Post-Processing Feedback")]
     public Volume globalVolume; // Glisse ton Global Volume ici
     private LensDistortion distortion;
@@ -52,7 +57,16 @@ public class NearMissManager : MonoBehaviour
         if (comboTimer > 0)
         {
             comboTimer -= Time.deltaTime;
-            if (comboTimer <= 0) currentCombo = 0;
+            if (comboTimer <= 0)
+            {
+                // Combo expiré → on reset le multiplier
+                currentCombo = 0;
+                if (Inventory.instance != null)
+                {
+                    Inventory.instance.scoreMultiplier = 1;
+                    RefreshMultiplierUI();
+                }
+            }
         }
     }
 
@@ -67,16 +81,37 @@ public class NearMissManager : MonoBehaviour
         Inventory.instance.score += gain;
         Inventory.instance.scoreText.text = Inventory.instance.score.ToString();
 
-        // 3. Lancer l'animation (On stoppe l'ancienne si elle tournait encore)
+        // 3. Augmenter le multiplier de score
+        Inventory.instance.scoreMultiplier = 1 + currentCombo;
+        RefreshMultiplierUI();
+
+        // 4. Lancer l'animation (On stoppe l'ancienne si elle tournait encore)
         if (activeAnim != null) StopCoroutine(activeAnim);
         activeAnim = StartCoroutine(AnimateNearMiss(currentCombo, gain, missilePosition));
 
         StopCoroutine("DoImpactEffects"); // Stop si un effet est déjà en cours
         StartCoroutine(DoImpactEffects());
 
-        // 4. Feedback feeling
+        // 5. Feedback feeling
         Handheld.Vibrate();
-        //StartCoroutine(DoSlowMo());
+    }
+
+    private void RefreshMultiplierUI()
+    {
+        if (multiplierText == null) return;
+        int mult = Inventory.instance != null ? Inventory.instance.scoreMultiplier : 1;
+        
+        // On s'assure qu'il est toujours visible
+        multiplierText.gameObject.SetActive(true);
+        multiplierText.text = "x" + mult;
+    }
+
+    public void ResetCombo()
+    {
+        currentCombo = 0;
+        comboTimer = 0f;
+        if (Inventory.instance != null) Inventory.instance.scoreMultiplier = 1;
+        RefreshMultiplierUI();
     }
     IEnumerator AnimateNearMiss(int combo, int gain, Vector3 worldPos)
     {
@@ -114,17 +149,19 @@ public class NearMissManager : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(0.3f);
 
-        // --- PHASE 2 : VOL VERS LE SCORE ---
+        // --- PHASE 2 : VOL VERS LA CIBLE (multiplier ou score) ---
         t = 0;
         Vector2 startPos = nearMissText.rectTransform.position;
+        RectTransform flyTarget = multiplierTarget != null ? multiplierTarget : scoreTarget;
+
         while (t < 1)
         {
             t += Time.unscaledDeltaTime * 2.5f;
             float easedT = t * t;
 
-            nearMissText.rectTransform.position = Vector2.Lerp(startPos, scoreTarget.position, easedT);
+            nearMissText.rectTransform.position = Vector2.Lerp(startPos, flyTarget.position, easedT);
 
-            // On réduit la taille vers le score sans jamais descendre en dessous de zéro
+            // On réduit la taille vers la cible sans jamais descendre en dessous de zéro
             float flyScale = Mathf.Lerp(1f, 0.3f, easedT);
             nearMissText.rectTransform.localScale = new Vector3(flyScale, flyScale, 1);
 
@@ -132,7 +169,12 @@ public class NearMissManager : MonoBehaviour
         }
 
         nearMissText.gameObject.SetActive(false);
-        StartCoroutine(PulseScore());
+
+        // Pulse sur la cible d'arrivée (multiplier ou score)
+        if (multiplierTarget != null)
+            StartCoroutine(PulseTransform(multiplierTarget));
+        else
+            StartCoroutine(PulseScore());
     }
     IEnumerator PulseScore()
     {
@@ -146,6 +188,19 @@ public class NearMissManager : MonoBehaviour
             yield return null;
         }
         sText.localScale = Vector3.one;
+    }
+
+    IEnumerator PulseTransform(RectTransform target)
+    {
+        float t = 0;
+        while (t < 1)
+        {
+            t += Time.unscaledDeltaTime * 5f;
+            float s = 1f + Mathf.Sin(t * Mathf.PI) * 0.3f;
+            target.localScale = new Vector3(s, s, 1);
+            yield return null;
+        }
+        target.localScale = Vector3.one;
     }
 
     IEnumerator DoSlowMo()
