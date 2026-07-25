@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2274446778142747135}
   - component: {fileID: 4332982052983839078}
   - component: {fileID: -7772651143923713859}
+  - component: {fileID: -1753597504856756636}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -27,14 +28,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797600244523330867}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1458.6511, y: 505.03534, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3676019566849489429}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2274446778142747135
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -100,7 +101,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797600244523330867}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec8d71c7230f511468ee2a4392cdfcde, type: 3}
   m_Name: 
@@ -160,6 +161,34 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.8, y: 3.2}
   m_EdgeRadius: 0
+--- !u!114 &-1753597504856756636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797600244523330867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc09560fc27ce394580bc2142e16b12e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Rammer
+  currentState: 0
+  approachSpeed: 3.5
+  alignDistance: 6
+  baseTellDuration: 1.2
+  minTellDuration: 0.4
+  tellReductionPerSecond: 0.005
+  tellFlashCount: 4
+  chargeSpeed: 18
+  chargeDuration: 1.2
+  secondChargeSpeed: 24
+  secondChargeDuration: 0.7
+  recoveryDuration: 0.6
+  disengageSpeed: 12
+  disengageFadeDuration: 1.5
+  chargeBuildupSound: {fileID: 0}
+  chargeReleaseSound: {fileID: 0}
 --- !u!1 &7520947668950659309
 GameObject:
   m_ObjectHideFlags: 0

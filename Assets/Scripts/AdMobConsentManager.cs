@@ -62,6 +62,10 @@ public class AdMobConsentManager : MonoBehaviour
         });
     }
 
+    [Header("Fallback UI")]
+    [Tooltip("Texte affiché quand les préférences pub ne sont pas disponibles (hors Europe).")]
+    public TMPro.TextMeshProUGUI feedbackText;
+
     public void OpenPrivacySettings()
     {
         if (ConsentInformation.PrivacyOptionsRequirementStatus == PrivacyOptionsRequirementStatus.Required)
@@ -74,6 +78,23 @@ public class AdMobConsentManager : MonoBehaviour
                 }
             });
         }
+        else
+        {
+            Debug.Log("Préférences publicitaires non requises dans cette région.");
+            StartCoroutine(ShowTemporaryFeedback("Non disponible dans votre région"));
+        }
+    }
+
+    private System.Collections.IEnumerator ShowTemporaryFeedback(string message)
+    {
+        if (feedbackText == null) yield break;
+
+        feedbackText.text = message;
+        feedbackText.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(2.5f);
+
+        feedbackText.gameObject.SetActive(false);
     }
 
     void StartAdMob()

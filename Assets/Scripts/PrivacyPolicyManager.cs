@@ -66,4 +66,11 @@ public class PrivacyPolicyManager : MonoBehaviour
         if (acceptButton != null) acceptButton.SetActive(isFirstTime);
         if (closeButton != null) closeButton.SetActive(!isFirstTime);
     }
+    private const string PRIVACY_URL = "https://ousmansadjo.com/projects/too-close/privacy/";
+
+    // Ouvre la politique de confidentialité dans le navigateur du téléphone
+    public void OpenPrivacyURL()
+    {
+        Application.OpenURL(PRIVACY_URL);
+    }
 }

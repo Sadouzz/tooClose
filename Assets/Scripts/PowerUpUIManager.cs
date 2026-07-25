@@ -117,17 +117,9 @@ public class PowerUpUIManager : MonoBehaviour
         flyingIcon.gameObject.SetActive(false);
 
         // --- STOCKAGE DE LA LOGIQUE ---
-        // On normalise le nom pour le PlayerPowerUpManager
-        if (name.ToUpper().Contains("BLAZE") || name.ToUpper().Contains("INFERNO"))
-            currentStoredPowerUp = "Blaze";
-        else if (name.ToUpper().Contains("SHIELD") || name.ToUpper().Contains("BOUCLIER"))
-            currentStoredPowerUp = "Shield";
-        else if (name.ToUpper().Contains("ZOOM"))
-            currentStoredPowerUp = "Zoom";
-        else if (name.ToUpper().Contains("SLOWMO"))
-            currentStoredPowerUp = "SlowMo";
-        else
-            currentStoredPowerUp = name;
+        // Mapping des noms localisés (FR/EN) vers les clés internes
+        string upper = name.ToUpper();
+        currentStoredPowerUp = NormalizePowerUpName(upper);
 
         activePowerUpSlot.sprite = icon;
         activePowerUpSlot.enabled = true;
@@ -144,5 +136,28 @@ public class PowerUpUIManager : MonoBehaviour
             yield return null;
         }
         slotTransform.localScale = Vector3.one;
+    }
+
+    // --- NORMALISATION DES NOMS LOCALISÉS ---
+    // Convertit les noms FR/EN en clé interne utilisée par PlayerPowerUpManager
+    private static readonly (string keyword, string key)[] powerUpMap = new[]
+    {
+        ("BLAZE",    "Blaze"),
+        ("INFERNO",  "Blaze"),
+        ("FLAMMES",  "Blaze"),
+        ("SHIELD",   "Shield"),
+        ("BOUCLIER", "Shield"),
+        ("ZOOM",     "Zoom"),
+        ("SLOWMO",   "SlowMo"),
+    };
+
+    private string NormalizePowerUpName(string upperName)
+    {
+        foreach (var (keyword, key) in powerUpMap)
+        {
+            if (upperName.Contains(keyword))
+                return key;
+        }
+        return upperName; // Fallback : retourne le nom brut
     }
 }

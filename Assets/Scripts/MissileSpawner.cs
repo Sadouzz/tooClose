@@ -37,7 +37,7 @@ public class MissileSpawner : MonoBehaviour
     private float currentSpawnDelay;
     private bool gameStarted;
 
-    // --- NOUVELLE VARIABLE ---
+    // --- ANTI-REPETITION ---
     private int lastSpawnIndex = -1;
 
     [Header("UI Indicators")]
@@ -59,41 +59,62 @@ public class MissileSpawner : MonoBehaviour
     private float currentFastMissileMultiplier;
     private int currentMaxBatch;
 
-    [Header("Wave Management")]
-    public int currentWave = 1;
-    public int missilesToSpawnThisWave;
-    public int missilesSpawnedThisWave;
-    public bool isTransitioningWave = false;
+    // ==========================================================
+    // SYSTÈME DE DENSITÉ CONTINUE (remplace les vagues)
+    // ==========================================================
 
-    [Header("Wave Settings")]
-    [Tooltip("Frequence recurrente des vagues de combat (ex: toutes les 5 vagues). Mettre a 0 pour desactiver la recurrence.")]
-    public int combatWaveFrequency = 5;
+    [Header("Courbe de Densité Continue")]
+    [Tooltip("Le score à partir duquel le Tracker peut apparaître.")]
+    public int trackerScoreThreshold = 300;
 
-    [Tooltip("Liste specifique de vagues qui doivent etre en mode combat (ex: 2, 3...)")]
-    public List<int> specificCombatWaves = new List<int>();
+    [Tooltip("Le score à partir duquel le Rammer peut apparaître.")]
+    public int rammerScoreThreshold = 800;
 
-    [Header("Wave Sounds")]
-    public AudioClip standardWaveSound;
-    public AudioClip combatWaveSound;
-    private AudioSource waveAudioSource;
+    [Tooltip("Le score à partir duquel Tracker et Rammer peuvent apparaître simultanément.")]
+    public int bothHuntersScoreThreshold = 1500;
 
-    [Header("Shooting Wave Settings")]
-    public int baseEnemiesToSpawn = 5;
-    public int enemiesToSpawnThisWave;
-    public int enemiesDestroyedThisWave;
-    public int activeEnemies;
-    public GameObject enemyPrefab;
-    public GameObject fastEnemyPrefab;
-    [Range(0f, 1f)]
-    public float fastEnemySpawnChance = 0.2f;
+    [Tooltip("Probabilité de base qu'un chasseur spawn à chaque cycle de spawn de missiles (0 à 1).")]
+    public float baseHunterSpawnChance = 0.08f;
+
+    [Tooltip("Augmentation de la probabilité de chasseur par point de score.")]
+    public float hunterChancePerScore = 0.00005f;
+
+    [Tooltip("Probabilité max de spawn de chasseur par cycle.")]
+    public float maxHunterSpawnChance = 0.35f;
+
+    [Tooltip("Cooldown minimum en secondes entre deux chasseurs.")]
+    public float hunterCooldown = 12f;
+
+    [Tooltip("Réduction du cooldown par seconde de run écoulée.")]
+    public float cooldownReductionPerSecond = 0.05f;
+
+    [Tooltip("Cooldown minimum absolu.")]
+    public float minHunterCooldown = 5f;
+
+    private float lastHunterSpawnTime = -999f;
+    private int activeHunters = 0;
+
+    [Header("Hunter Prefabs")]
+    [Tooltip("Prefab du Tracker. Laisser vide pour utiliser le template procédural.")]
+    public GameObject trackerPrefab;
+
+    [Tooltip("Prefab du Rammer. Laisser vide pour utiliser le template procédural.")]
+    public GameObject rammerPrefab;
+
+    // Templates procéduraux (fallback)
+    private GameObject proceduralTrackerTemplate;
+    private GameObject proceduralRammerTemplate;
+
+    [Header("UI Bannière (optionnel)")]
+    public TextMeshProUGUI waveBannerText;
+
+    // --- Compatibilité : gardé pour les références externes ---
+    [HideInInspector] public int currentWave = 0; // Plus utilisé activement, gardé pour les scripts qui le lisent
 
     bool justStarted = true;
-
-    private GameObject proceduralEnemyTemplate;
-    public TextMeshProUGUI waveBannerText;
     private Transform playerTransform;
 
-    void LateUpdate() // On utilise LateUpdate pour que les indicateurs suivent apres le mouvement
+    void LateUpdate()
     {
         for (int i = activeIndicators.Count - 1; i >= 0; i--)
         {
@@ -108,21 +129,12 @@ public class MissileSpawner : MonoBehaviour
     {
         if (instance == null) instance = this;
         currentSpawnDelay = initialSpawnDelay;
-
-        waveAudioSource = gameObject.AddComponent<AudioSource>();
-        waveAudioSource.playOnAwake = false;
     }
 
     private void Start()
     {
         UpdateDifficulty();
-
-        if (enemyPrefab == null)
-        {
-            proceduralEnemyTemplate = CreateProceduralEnemyPrefab();
-        }
-
-        CreateDynamicWaveUI();
+        CreateHunterTemplates();
     }
 
     public void UpdateDifficulty()
@@ -134,12 +146,18 @@ public class MissileSpawner : MonoBehaviour
             initialSpawnDelay = easyInitialDelay;
             currentMaxBatch = easyMaxMissilesBatch;
             currentFastMissileMultiplier = easyFastMissileMultiplier;
+            // Courbe plus douce en Easy
+            hunterCooldown = 15f;
+            baseHunterSpawnChance = 0.05f;
         }
         else
         {
             initialSpawnDelay = hardInitialDelay;
             currentMaxBatch = hardMaxMissilesBatch;
             currentFastMissileMultiplier = hardFastMissileMultiplier;
+            // Courbe plus agressive en Hard
+            hunterCooldown = 10f;
+            baseHunterSpawnChance = 0.10f;
         }
 
         // Si le jeu n'a pas encore commence, on applique le delai initial
@@ -162,48 +180,22 @@ public class MissileSpawner : MonoBehaviour
             gameStarted = true;
         }
 
-        // Only progress and handle timers in Dodging mode and when not transitioning
-        if (!isTransitioningWave && !IsCombatWave(currentWave))
-        {
-            HandleProgression();
-            HandleTimer();
-        }
-    }
-
-    public bool IsCombatWave(int wave)
-    {
-        /* --- MODE COMBAT DESACTIVE ---
-        if (specificCombatWaves != null && specificCombatWaves.Contains(wave))
-        {
-            return true;
-        }
-
-        if (combatWaveFrequency > 0 && wave % combatWaveFrequency == 0)
-        {
-            return true;
-        }
-        */
-
-        return false;
+        HandleProgression();
+        HandleTimer();
     }
 
     void HandleTimer()
     {
         timer += Time.deltaTime;
         
-        // Spawn missiles if delay met and we haven't reached the wave's spawn quota
-        if (timer >= currentSpawnDelay && missilesSpawnedThisWave < missilesToSpawnThisWave)
+        if (timer >= currentSpawnDelay)
         {
-            int toSpawn = Mathf.Min(missilesRequired, missilesToSpawnThisWave - missilesSpawnedThisWave);
+            int toSpawn = missilesRequired;
             SpawnMissileBatch(toSpawn);
             timer = 0;
-        }
 
-        // Check if all missiles spawned have been destroyed/escaped and we finished spawning
-        if (missilesSpawnedThisWave >= missilesToSpawnThisWave && currentMissiles <= 0 && !isTransitioningWave && !justStarted)
-        {
-            Debug.Log("Transitioning to next wave");
-            StartCoroutine(TransitionToNextWave());
+            // --- SYSTÈME DE CHASSEURS : vérifier si on doit spawner un chasseur ---
+            TrySpawnHunter();
         }
     }
 
@@ -222,43 +214,17 @@ public class MissileSpawner : MonoBehaviour
     IEnumerator DelaySpawn()
     {
         yield return new WaitForSeconds(1.5f);
-        
-        currentWave = 1;
-        isTransitioningWave = false;
-        
-        if (IsCombatWave(currentWave))
-        {
-            // Activer le mode shooting
-            if (PlayerMovement.instance != null)
-            {
-                PlayerMovement.instance.currentPhase = PlayerMovement.GamePhase.Shooting;
-                PlayerMovement.instance.transform.rotation = Quaternion.identity;
-                PlayerMovement.instance.InitializeCameraProxyY();
-            }
 
-            yield return StartCoroutine(ShowWaveBanner(GetTranslation("VAGUE", "VAGUE") + " " + currentWave + "\n" + GetTranslation("MODE COMBAT !", "MODE COMBAT !"), Color.red, true));
-
-            int divisionFactor = combatWaveFrequency > 0 ? combatWaveFrequency : 5;
-            enemiesToSpawnThisWave = baseEnemiesToSpawn + (currentWave / divisionFactor) * 2;
-            enemiesDestroyedThisWave = 0;
-            activeEnemies = 0;
-
-            // Spawn enemies in a beautiful grid occupying the whole top screen
-            StartCoroutine(SpawnEnemyGridRoutine());
-        }
-        else
-        {
-            missilesToSpawnThisWave = 3 + currentWave * 2; // Wave 1: 5 missiles
-            missilesSpawnedThisWave = 0;
-
-            yield return StartCoroutine(ShowWaveBanner(GetTranslation("VAGUE", "VAGUE") + " " + currentWave, new Color(1f, 0.9f, 0f), false));
-            
-            int toSpawn = Mathf.Min(missilesRequired, missilesToSpawnThisWave);
-            SpawnMissileBatch(toSpawn);
-        }
+        // Premier lot de missiles
+        int toSpawn = missilesRequired;
+        SpawnMissileBatch(toSpawn);
 
         justStarted = false;
     }
+
+    // ==========================================================
+    // SPAWN DE MISSILES (inchangé dans la logique)
+    // ==========================================================
 
     void SpawnMissileBatch(int count)
     {
@@ -276,16 +242,9 @@ public class MissileSpawner : MonoBehaviour
                 }
             }
 
-            lastSpawnIndex = randomIndex; // On enregistre le nouveau point utilise
+            lastSpawnIndex = randomIndex;
             SpawnSingleMissile(randomIndex);
         }
-    }
-
-    // Overload for backward compatibility
-    void SpawnMissileBatch()
-    {
-        int toSpawn = Mathf.Min(missilesRequired, missilesToSpawnThisWave - missilesSpawnedThisWave);
-        SpawnMissileBatch(toSpawn);
     }
 
     void SpawnSingleMissile(int posIndex)
@@ -324,8 +283,201 @@ public class MissileSpawner : MonoBehaviour
         }
 
         currentMissiles++;
-        missilesSpawnedThisWave++;
     }
+
+    // ==========================================================
+    // SYSTÈME DE CHASSEURS (DENSITÉ CONTINUE)
+    // ==========================================================
+
+    void TrySpawnHunter()
+    {
+        if (Inventory.instance == null) return;
+
+        int score = Inventory.instance.score;
+        float runTime = Inventory.instance.totalSeconds;
+
+        // Pas encore le seuil pour les chasseurs
+        if (score < trackerScoreThreshold) return;
+
+        // Cooldown entre chasseurs (diminue avec le temps de run)
+        float effectiveCooldown = Mathf.Max(minHunterCooldown, hunterCooldown - runTime * cooldownReductionPerSecond);
+        if (Time.time - lastHunterSpawnTime < effectiveCooldown) return;
+
+        // Limiter à 1 chasseur actif à la fois (sauf si seuil simultané atteint)
+        int maxActiveHunters = score >= bothHuntersScoreThreshold ? 2 : 1;
+        if (activeHunters >= maxActiveHunters) return;
+
+        // Probabilité de spawn
+        float spawnChance = Mathf.Min(baseHunterSpawnChance + score * hunterChancePerScore, maxHunterSpawnChance);
+
+        if (Random.value < spawnChance)
+        {
+            // Choisir le type de chasseur
+            bool canSpawnTracker = score >= trackerScoreThreshold;
+            bool canSpawnRammer = score >= rammerScoreThreshold;
+
+            if (canSpawnTracker && canSpawnRammer)
+            {
+                // Les deux sont disponibles : choix aléatoire pondéré
+                // Le Rammer est plus rare (40% de chance)
+                if (Random.value < 0.4f)
+                    SpawnRammer();
+                else
+                    SpawnTracker();
+            }
+            else if (canSpawnTracker)
+            {
+                SpawnTracker();
+            }
+            // canSpawnRammer seul ne devrait pas arriver car son seuil est plus haut
+        }
+    }
+
+    void SpawnTracker()
+    {
+        if (playerTransform == null) return;
+
+        // Spawn en dehors de l'écran, sur un côté aléatoire
+        Vector3 spawnOffset = GetHunterSpawnPosition();
+
+        GameObject prefab = trackerPrefab != null ? trackerPrefab : proceduralTrackerTemplate;
+        if (prefab == null) return;
+
+        GameObject tracker = Instantiate(prefab, playerTransform.position + spawnOffset, Quaternion.identity);
+        tracker.SetActive(true);
+
+        activeHunters++;
+        lastHunterSpawnTime = Time.time;
+
+        // Indicateur hors-écran pour le Tracker
+        CreateHunterIndicator(tracker.transform, new Color(0f, 0.9f, 1f)); // Cyan
+
+        // Notification visuelle subtile (pas de bannière intrusive)
+        StartCoroutine(ShowHunterWarning("TRACKER"));
+    }
+
+    void SpawnRammer()
+    {
+        if (playerTransform == null) return;
+
+        // Spawn au-dessus du joueur, en avance
+        Vector3 spawnOffset = Vector3.up * 12f + Vector3.right * Random.Range(-3f, 3f);
+
+        GameObject prefab = rammerPrefab != null ? rammerPrefab : proceduralRammerTemplate;
+        if (prefab == null) return;
+
+        GameObject rammer = Instantiate(prefab, playerTransform.position + spawnOffset, Quaternion.identity);
+        rammer.SetActive(true);
+
+        activeHunters++;
+        lastHunterSpawnTime = Time.time;
+
+        // Indicateur hors-écran pour le Rammer
+        CreateHunterIndicator(rammer.transform, new Color(1f, 0.3f, 0.1f)); // Orange-rouge
+
+        // Notification visuelle
+        StartCoroutine(ShowHunterWarning("RAMMER"));
+    }
+
+    Vector3 GetHunterSpawnPosition()
+    {
+        // Spawn en dehors du champ de vision, sur un côté aléatoire
+        int side = Random.Range(0, 4);
+        switch (side)
+        {
+            case 0: return new Vector3(0, 10f, 0);                      // Haut
+            case 1: return new Vector3(0, -8f, 0);                      // Bas
+            case 2: return new Vector3(-6f, Random.Range(2f, 8f), 0);   // Gauche
+            case 3: return new Vector3(6f, Random.Range(2f, 8f), 0);    // Droite
+            default: return Vector3.up * 10f;
+        }
+    }
+
+    void CreateHunterIndicator(Transform hunterTransform, Color color)
+    {
+        if (indicatorPrefab == null || canvasTransform == null) return;
+
+        GameObject indObj = Instantiate(indicatorPrefab, canvasTransform);
+        OffScreenIndicator indScript = indObj.GetComponent<OffScreenIndicator>();
+        indScript.target = hunterTransform;
+
+        // Couleur distinctive pour le chasseur
+        Image mainImg = indObj.GetComponent<Image>();
+        if (mainImg != null) mainImg.color = color;
+
+        if (indObj.transform.childCount > 0)
+        {
+            Image childImg = indObj.transform.GetChild(0).GetComponent<Image>();
+            if (childImg != null) childImg.color = Color.white;
+        }
+
+        activeIndicators.Add(indScript);
+    }
+
+    /// <summary>
+    /// Appelé par un chasseur quand il est détruit ou se désengage.
+    /// </summary>
+    public void OnHunterDestroyed()
+    {
+        activeHunters = Mathf.Max(0, activeHunters - 1);
+    }
+
+    /// <summary>
+    /// Compatibilité : appelé par EnemyScript quand un ennemi est détruit.
+    /// Plus de logique de vagues, mais le compteur reste utile pour les stats.
+    /// </summary>
+    public void OnEnemyDestroyed()
+    {
+        destroyedEnemies++;
+    }
+
+    // ==========================================================
+    // AVERTISSEMENT VISUEL (petit texte rapide, pas une bannière de vague)
+    // ==========================================================
+
+    IEnumerator ShowHunterWarning(string hunterType)
+    {
+        if (waveBannerText == null) yield break;
+
+        string warningMsg = "⚠ " + hunterType;
+        Color warningColor = hunterType == "TRACKER" ? new Color(0f, 0.9f, 1f) : new Color(1f, 0.3f, 0.1f);
+
+        waveBannerText.gameObject.SetActive(true);
+        waveBannerText.text = warningMsg;
+        waveBannerText.fontSize = 36;
+        waveBannerText.fontStyle = FontStyles.Bold;
+        waveBannerText.color = new Color(warningColor.r, warningColor.g, warningColor.b, 0f);
+        waveBannerText.transform.localScale = Vector3.one;
+
+        // Fade in rapide
+        float duration = 0.3f;
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+            waveBannerText.color = new Color(warningColor.r, warningColor.g, warningColor.b, Mathf.Lerp(0f, 1f, t));
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(0.8f);
+
+        // Fade out
+        elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+            waveBannerText.color = new Color(warningColor.r, warningColor.g, warningColor.b, Mathf.Lerp(1f, 0f, t));
+            yield return null;
+        }
+
+        waveBannerText.gameObject.SetActive(false);
+    }
+
+    // ==========================================================
+    // RESET / NETTOYAGE
+    // ==========================================================
 
     public void ResetData()
     {
@@ -334,13 +486,11 @@ public class MissileSpawner : MonoBehaviour
         destroyedEnemies = 0;
         missilesRequired = 1;
         
-        currentWave = 1;
-        isTransitioningWave = false;
         gameStarted = false;
         justStarted = true;
-        missilesSpawnedThisWave = 0;
-        missilesToSpawnThisWave = 0;
         timer = 0f;
+        activeHunters = 0;
+        lastHunterSpawnTime = -999f;
 
         // Reset player to Dodging mode
         if (PlayerMovement.instance != null)
@@ -350,13 +500,29 @@ public class MissileSpawner : MonoBehaviour
             PlayerMovement.instance.transform.rotation = Quaternion.identity;
         }
 
-        // Clear any active enemies
+        // Clear any active hunters
+        DestroyAllHunters();
+
+        // Clear any active enemies (compatibilité)
         GameObject[] activeEnemiesInGame = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject e in activeEnemiesInGame) Destroy(e);
         
         // Clear any active bullets
         GameObject[] activeBullets = GameObject.FindGameObjectsWithTag("Bullet");
         foreach (GameObject b in activeBullets) Destroy(b);
+    }
+
+    void DestroyAllHunters()
+    {
+        // Détruire tous les Trackers
+        GameObject[] trackers = GameObject.FindGameObjectsWithTag("Tracker");
+        foreach (GameObject t in trackers) Destroy(t);
+
+        // Détruire tous les Rammers
+        GameObject[] rammers = GameObject.FindGameObjectsWithTag("Rammer");
+        foreach (GameObject r in rammers) Destroy(r);
+
+        activeHunters = 0;
     }
 
     public void DestroyAllMissiles()
@@ -371,272 +537,28 @@ public class MissileSpawner : MonoBehaviour
         return GameObject.FindGameObjectsWithTag("Missile");
     }
 
-    // --- GESTION DES VAGUES ---
+    // ==========================================================
+    // TEMPLATES PROCÉDURAUX POUR LES CHASSEURS (FALLBACK)
+    // ==========================================================
 
-    IEnumerator TransitionToNextWave()
+    void CreateHunterTemplates()
     {
-        isTransitioningWave = true;
-        
-        // Attendre que l'ecran soit propre
-        yield return new WaitForSeconds(1.2f);
-        
-        // Nettoyer tous les missiles (comme les missiles tirÃ©s par les ennemis)
-        DestroyAllMissiles();
-
-        currentWave++;
-
-        // Mode combat de l'espace si la vague est de type combat
-        if (IsCombatWave(currentWave))
+        // Tracker template
+        if (trackerPrefab == null)
         {
-            yield return StartCoroutine(ShowWaveBanner(GetTranslation("VAGUE", "VAGUE") + " " + currentWave + "\n" + GetTranslation("MODE COMBAT !", "MODE COMBAT !"), Color.red, true));
-
-            // Activer le mode shooting
-            if (PlayerMovement.instance != null)
-            {
-                PlayerMovement.instance.currentPhase = PlayerMovement.GamePhase.Shooting;
-                // LOCK rotation straight up when entering combat!
-                PlayerMovement.instance.transform.rotation = Quaternion.identity;
-                
-                // Initialize the camera proxy Y coordinate immediately so it is guaranteed to be correct!
-                PlayerMovement.instance.InitializeCameraProxyY();
-            }
-
-            int divisionFactor = combatWaveFrequency > 0 ? combatWaveFrequency : 5;
-            enemiesToSpawnThisWave = baseEnemiesToSpawn + (currentWave / divisionFactor) * 2;
-            enemiesDestroyedThisWave = 0;
-            activeEnemies = 0;
-
-            // Spawn enemies in a beautiful grid occupying the whole top screen
-            StartCoroutine(SpawnEnemyGridRoutine());
-        }
-        else
-        {
-            // Mode dodge standard
-            if (PlayerMovement.instance != null)
-            {
-                PlayerMovement.instance.currentPhase = PlayerMovement.GamePhase.Dodging;
-                // REMOVED rotation reset here so the player's plane doesn't rotate unexpectedly during dodging wave changes!
-            }
-
-            yield return StartCoroutine(ShowWaveBanner(GetTranslation("VAGUE", "VAGUE") + " " + currentWave, new Color(1f, 0.9f, 0f), false));
-
-            missilesToSpawnThisWave = 3 + currentWave * 2;
-            missilesSpawnedThisWave = 0;
-            timer = 0f;
-
-            // Spawn premier lot
-            int toSpawn = Mathf.Min(missilesRequired, missilesToSpawnThisWave);
-            SpawnMissileBatch(toSpawn);
+            proceduralTrackerTemplate = new GameObject("ProceduralTracker");
+            proceduralTrackerTemplate.AddComponent<Tracker>();
+            proceduralTrackerTemplate.SetActive(false);
+            DontDestroyOnLoad(proceduralTrackerTemplate);
         }
 
-        isTransitioningWave = false;
-    }
-
-    IEnumerator SpawnEnemyGridRoutine()
-    {
-        if (playerTransform == null) yield break;
-
-        // Calculate the camera's base target Y coordinate using the pre-initialized value from PlayerMovement.cs
-        // This ensures the grid center is perfectly stable and unaffected by the player's momentary Y joystick offsets!
-        float baseCameraProxyY = PlayerMovement.instance != null ? PlayerMovement.instance.cameraProxyY : (playerTransform.position.y + 3.0f);
-
-        int count = enemiesToSpawnThisWave;
-        int cols = 3;
-        if (count >= 8) cols = 4; // Use 4 columns for denser formations
-
-        for (int i = 0; i < count; i++)
+        // Rammer template
+        if (rammerPrefab == null)
         {
-            int c = i % cols;
-            int r = i / cols;
-
-            // Distribute column X positions nicely between -1.4f and 1.4f to ensure they stay well inside the narrow mobile screen
-            float posX = -1.4f + c * (2.8f / Mathf.Max(1, cols - 1));
-            
-            // Distribute row Y positions perfectly spanning the ENTIRE top-half of the viewport (from 0.8f up to 4.0f relative to camera center)
-            float posY = 3f + r * 1.6f;
-
-            SpawnEnemyAtPosition(posX, baseCameraProxyY + posY);
-
-            // Stagger spawn delay
-            yield return new WaitForSeconds(0.15f);
+            proceduralRammerTemplate = new GameObject("ProceduralRammer");
+            proceduralRammerTemplate.AddComponent<Rammer>();
+            proceduralRammerTemplate.SetActive(false);
+            DontDestroyOnLoad(proceduralRammerTemplate);
         }
-    }
-
-    void SpawnEnemyAtPosition(float relX, float absY)
-    {
-        if (playerTransform == null) return;
-
-        // Vector3 uses playerTransform.position.x + relX for horizontal position, and the absolute Y coordinate!
-        Vector3 spawnPosVector = new Vector3(PlayerMovement.instance.cameraTargetProxy.position.x + relX, absY, 0);
-
-        GameObject prefab = enemyPrefab != null ? enemyPrefab : proceduralEnemyTemplate;
-        
-        if (fastEnemyPrefab != null && Random.value < fastEnemySpawnChance)
-        {
-            prefab = fastEnemyPrefab;
-        }
-
-        if (prefab != null)
-        {
-            // Rotated 180 degrees on the Z axis so the enemy ship faces downwards towards the player!
-            Quaternion enemyRotation = Quaternion.Euler(0, 0, 180f);
-            GameObject enemyObj = Instantiate(prefab, spawnPosVector, enemyRotation);
-            enemyObj.SetActive(true);
-            activeEnemies++;
-        }
-    }
-
-    // Keep this method signature for compatibility
-    void SpawnEnemy()
-    {
-        if (playerTransform == null) return;
-        float baseCameraProxyY = playerTransform.position.y + 3.0f;
-        SpawnEnemyAtPosition(Random.Range(-2.2f, 2.2f), baseCameraProxyY + 2.0f);
-    }
-
-    public void OnEnemyDestroyed()
-    {
-        activeEnemies--;
-        enemiesDestroyedThisWave++;
-
-        // Si tous les ennemis de la vague sont detruits, on passe a la vague suivante
-        if (enemiesDestroyedThisWave >= enemiesToSpawnThisWave && activeEnemies <= 0 && isTransitioningWave == false)
-        {
-            StartCoroutine(TransitionToNextWave());
-        }
-    }
-
-    // --- UI DYNAMIQUE DES VAGUES ---
-
-    void CreateDynamicWaveUI()
-    {
-        Transform targetCanvas = canvasTransform;
-        
-        if (targetCanvas == null)
-        {
-            Canvas canvas = FindFirstObjectByType<Canvas>();
-            if (canvas != null) targetCanvas = canvas.transform;
-        }
-
-        if (targetCanvas == null) return;
-
-        waveBannerText.gameObject.SetActive(true);
-
-
-
-        waveBannerText.fontSize = 50;
-        waveBannerText.fontStyle = FontStyles.Bold;
-        waveBannerText.color = new Color(1f, 0.9f, 0f, 0f); // transparent au depart
-
-        // Positionnement au milieu-haut de l'ecran
-        
-
-        waveBannerText.gameObject.SetActive(false);
-    }
-
-    IEnumerator ShowWaveBanner(string message, Color color, bool isCombat)
-    {
-        if (waveBannerText == null) CreateDynamicWaveUI();
-
-        if (waveBannerText != null)
-        {
-            if (waveAudioSource != null)
-            {
-                if (isCombat && combatWaveSound != null)
-                    waveAudioSource.PlayOneShot(combatWaveSound);
-                else if (!isCombat && standardWaveSound != null)
-                    waveAudioSource.PlayOneShot(standardWaveSound);
-            }
-
-            waveBannerText.gameObject.SetActive(true);
-            waveBannerText.text = message;
-            waveBannerText.color = new Color(color.r, color.g, color.b, 0f);
-
-            float duration = 0.5f;
-            float elapsed = 0f;
-            Vector3 targetScale = Vector3.one * 1.2f;
-            waveBannerText.transform.localScale = Vector3.one * 0.5f;
-
-            // Fade In & Scale Up
-            while (elapsed < duration)
-            {
-                elapsed += Time.deltaTime;
-                float t = elapsed / duration;
-                waveBannerText.color = new Color(color.r, color.g, color.b, Mathf.Lerp(0f, 1f, t));
-                waveBannerText.transform.localScale = Vector3.Lerp(Vector3.one * 0.5f, targetScale, t);
-                yield return null;
-            }
-
-            waveBannerText.color = color;
-            waveBannerText.transform.localScale = targetScale;
-
-            yield return new WaitForSeconds(1.6f);
-
-            // Fade Out & Scale Down
-            elapsed = 0f;
-            while (elapsed < duration)
-            {
-                elapsed += Time.deltaTime;
-                float t = elapsed / duration;
-                waveBannerText.color = new Color(color.r, color.g, color.b, Mathf.Lerp(1f, 0f, t));
-                waveBannerText.transform.localScale = Vector3.Lerp(targetScale, Vector3.one * 0.8f, t);
-                yield return null;
-            }
-
-            waveBannerText.gameObject.SetActive(false);
-        }
-    }
-
-    // Generateur procedural d'ennemi en cas d'absence de prefab dans l'editeur
-    private GameObject CreateProceduralEnemyPrefab()
-    {
-        GameObject enemy = new GameObject("ProceduralSpaceEnemy");
-        enemy.tag = "Enemy";
-
-        SpriteRenderer sr = enemy.AddComponent<SpriteRenderer>();
-        
-        // Texture de 32x32 representant un vaisseau ennemi sleek en triangle
-        Texture2D tex = new Texture2D(32, 32);
-        for (int y = 0; y < 32; y++)
-        {
-            for (int x = 0; x < 32; x++)
-            {
-                // Forme triangulaire pointant vers le bas
-                bool inTriangle = (x >= y / 2) && (31 - x >= y / 2);
-                if (inTriangle)
-                {
-                    float distToCenter = Vector2.Distance(new Vector2(x, y), new Vector2(16, 16)) / 16f;
-                    // Couleur rouge metallique avec coeur orange brillant
-                    Color c = Color.Lerp(new Color(1f, 0.3f, 0f), new Color(0.3f, 0.05f, 0.05f), distToCenter);
-                    tex.SetPixel(x, y, c);
-                }
-                else
-                {
-                    tex.SetPixel(x, y, Color.clear);
-                }
-            }
-        }
-        tex.Apply();
-        sr.sprite = Sprite.Create(tex, new Rect(0, 0, 32, 32), new Vector2(0.5f, 0.5f));
-        sr.sortingOrder = 4;
-
-        enemy.transform.localScale = new Vector3(1.3f, 1.3f, 1f);
-
-        // Collider 2D
-        BoxCollider2D col = enemy.AddComponent<BoxCollider2D>();
-        col.size = new Vector2(1.2f, 1.2f);
-        col.isTrigger = true;
-
-        // Rigidbody 2D Kinematic
-        Rigidbody2D rb2d = enemy.AddComponent<Rigidbody2D>();
-        rb2d.bodyType = RigidbodyType2D.Kinematic;
-
-        // Script de comportement
-        enemy.AddComponent<EnemyScript>();
-
-        enemy.SetActive(false);
-        DontDestroyOnLoad(enemy);
-
-        return enemy;
     }
 }
