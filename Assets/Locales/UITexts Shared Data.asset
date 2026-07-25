@@ -227,6 +227,10 @@ MonoBehaviour:
     m_Key: FAITES ATTENTION AUX TRAQUEURS ET AUX RAMEURS
     m_Metadata:
       m_Items: []
+  - m_Id: 1119144035958784
+    m_Key: "Pr\xE9f\xE9rences publicitaires non requises dans cette r\xE9gion"
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

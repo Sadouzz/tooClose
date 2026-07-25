@@ -63,8 +63,8 @@ public class AdMobConsentManager : MonoBehaviour
     }
 
     [Header("Fallback UI")]
-    [Tooltip("Texte affiché quand les préférences pub ne sont pas disponibles (hors Europe).")]
-    public TMPro.TextMeshProUGUI feedbackText;
+    [Tooltip("Panel affiché quand les préférences pub ne sont pas disponibles (hors Europe).")]
+    public GameObject feedbackPanel;
     private Coroutine _feedbackCoroutine;
 
     public void OpenPrivacySettings()
@@ -81,58 +81,21 @@ public class AdMobConsentManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Préférences publicitaires non requises dans cette région.");
-            
             if (_feedbackCoroutine != null)
             {
                 StopCoroutine(_feedbackCoroutine);
             }
-            _feedbackCoroutine = StartCoroutine(ShowTemporaryFeedback("Non disponible dans votre région"));
+            _feedbackCoroutine = StartCoroutine(ShowTemporaryFeedback());
         }
     }
 
-    private void CreateFeedbackText()
+    private System.Collections.IEnumerator ShowTemporaryFeedback()
     {
-        Canvas canvas = FindFirstObjectByType<Canvas>();
-        if (canvas == null)
-        {
-            GameObject canvasObj = new GameObject("FeedbackCanvas");
-            canvas = canvasObj.AddComponent<Canvas>();
-            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            canvasObj.AddComponent<UnityEngine.UI.CanvasScaler>();
-            canvasObj.AddComponent<UnityEngine.UI.GraphicRaycaster>();
-        }
+        if (feedbackPanel == null) yield break;
 
-        GameObject textObj = new GameObject("ConsentFeedbackText");
-        textObj.transform.SetParent(canvas.transform, false);
-        
-        feedbackText = textObj.AddComponent<TMPro.TextMeshProUGUI>();
-        feedbackText.alignment = TMPro.TextAlignmentOptions.Center;
-        feedbackText.fontSize = 50;
-        feedbackText.color = Color.white;
-        
-        // Position it near the bottom
-        RectTransform rt = feedbackText.rectTransform;
-        rt.anchorMin = new Vector2(0.5f, 0.1f);
-        rt.anchorMax = new Vector2(0.5f, 0.1f);
-        rt.pivot = new Vector2(0.5f, 0.5f);
-        rt.anchoredPosition = Vector2.zero;
-        rt.sizeDelta = new Vector2(800, 100);
-    }
-
-    private System.Collections.IEnumerator ShowTemporaryFeedback(string message)
-    {
-        if (feedbackText == null) 
-        {
-            CreateFeedbackText();
-        }
-
-        feedbackText.text = message;
-        feedbackText.gameObject.SetActive(true);
-
+        feedbackPanel.SetActive(true);
         yield return new WaitForSeconds(2.5f);
-
-        feedbackText.gameObject.SetActive(false);
+        feedbackPanel.SetActive(false);
     }
 
     void StartAdMob()

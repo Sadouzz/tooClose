@@ -230,6 +230,10 @@ MonoBehaviour:
     m_Localized: WATCH OUT FOR TRACKERS AND RAMMERS
     m_Metadata:
       m_Items: []
+  - m_Id: 1119144035958784
+    m_Localized: Ad preferences not required in this region
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

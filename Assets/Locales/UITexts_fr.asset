@@ -207,7 +207,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 471377546526720
-    m_Localized: SLOWMO
+    m_Localized: RALENTI
     m_Metadata:
       m_Items: []
   - m_Id: 471452410658816
@@ -229,6 +229,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 847765923381248
     m_Localized: FAITES ATTENTION AUX TRAQUEURS ET AUX RAMEURS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1119144035958784
+    m_Localized: Preferences publicitaires non requises dans cette region
     m_Metadata:
       m_Items: []
   references:
