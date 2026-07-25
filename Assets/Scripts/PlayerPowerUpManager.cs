@@ -4,10 +4,14 @@ using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Localization.Settings;
 
 public class PlayerPowerUpManager : MonoBehaviour
 {
     public static PlayerPowerUpManager instance;
+
+    [Header("Localization")]
+    public string stringTableName = "UITexts";
 
     [Header("Input Settings")]
     [SerializeField] private float doubleTapTimeThreshold = 0.3f;
@@ -178,21 +182,49 @@ public class PlayerPowerUpManager : MonoBehaviour
         }
     }
 
+    private string GetTranslation(string key, string fallback)
+    {
+        string tr = LocalizationSettings.StringDatabase.GetLocalizedString(stringTableName, key);
+        if (string.IsNullOrEmpty(tr) || tr.Contains("No translation")) return fallback;
+        return tr;
+    }
+
     private void SetupSlider(string powerUpName, float newTotalTime)
     {
         activeSliderPowerUp = powerUpName;
 
         if (powerUpSlider != null) powerUpSlider.maxValue = newTotalTime;
 
-        // --- NOUVEAU : On met � jour le texte affich� ---
-        if (powerUpNameText != null) powerUpNameText.text = powerUpName;
+        // --- NOUVEAU : On met à jour le texte affiché avec la localisation ---
+        if (powerUpNameText != null) 
+        {
+            string locKey = "";
+            string fallback = powerUpName;
+            
+            switch (powerUpName)
+            {
+                case "Shield": locKey = "BOUCLIER"; fallback = "Bouclier"; break;
+                case "Blaze": locKey = "FLAMMES"; fallback = "Flammes"; break;
+                case "SlowMo": locKey = "SLOWMO"; fallback = "Ralenti"; break;
+                case "Zoom": locKey = "ZOOM"; fallback = "Zoom"; break;
+            }
+            
+            if (!string.IsNullOrEmpty(locKey))
+            {
+                powerUpNameText.text = GetTranslation(locKey, fallback);
+            }
+            else
+            {
+                powerUpNameText.text = powerUpName;
+            }
+        }
     }
 
     // --- LOGIQUE SHIELD ---
     public void ActivateShield(float duration)
     {
         shieldTimer += duration;
-        SetupSlider("Bouclier", shieldTimer);
+        SetupSlider("Shield", shieldTimer);
 
         if (!isShieldActive) StartCoroutine(ShieldRoutine());
     }

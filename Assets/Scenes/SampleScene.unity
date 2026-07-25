@@ -45746,7 +45746,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1475626638}
         m_TargetAssemblyTypeName: PrivacyPolicyManager, Assembly-CSharp
-        m_MethodName: OuvrirDepuisMenu
+        m_MethodName: OpenPrivacyURL
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -55886,7 +55886,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:b76c987fe54c91b4b922a0932639c5a4
     m_TableEntryReference:
-      m_KeyId: 726372237918208
+      m_KeyId: 847765923381248
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -55896,12 +55896,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1895166876}
-        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_TargetAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
         m_MethodName: set_text
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

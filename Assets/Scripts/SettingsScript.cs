@@ -211,11 +211,11 @@ public class SettingsScript : MonoBehaviour
         {
             if (locale.Identifier.Code == "fr")
             {
-                languageText.text = "LANG : FR 🇫🇷";
+                languageText.text = "LANG : FR";
             }
             else if (locale.Identifier.Code == "en")
             {
-                languageText.text = "LANG : EN 🇬🇧";
+                languageText.text = "LANG : EN";
             }
             else
             {
