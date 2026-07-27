@@ -12,6 +12,10 @@ public class NotificationScript : MonoBehaviour
     public TextMeshProUGUI title;
     public Image reward;
 
+    [Header("Audio")]
+    public AudioClip notifSound;
+    public AudioSource audioSource;
+
     [Header("Localization")]
     public string stringTableName = "UITexts";
 
@@ -62,6 +66,12 @@ public class NotificationScript : MonoBehaviour
             title.text  = GetTranslation("MISSION TERMINÉE", "MISSION TERMINÉE");
             text.text   = label;
             reward.sprite = sprite;
+
+            if (notifSound != null)
+            {
+                if (audioSource != null) audioSource.PlayOneShot(notifSound);
+                else AudioSource.PlayClipAtPoint(notifSound, Camera.main != null ? Camera.main.transform.position : Vector3.zero);
+            }
 
             notifPanel.SetActive(true);
             yield return new WaitForSecondsRealtime(2f);

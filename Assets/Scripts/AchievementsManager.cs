@@ -30,9 +30,12 @@ public class AchievementsManager : MonoBehaviour
     private Button[] buttons;
     private const int MISSION_COUNT = 15;
 
+    public static AchievementsManager instance;
+
     // -------------------------------------------------------
     void Awake()
     {
+        if (instance == null) instance = this;
         CollectButtonsDynamically();
     }
 
@@ -141,6 +144,19 @@ public class AchievementsManager : MonoBehaviour
     }
 
     // -------------------------------------------------------
+    // Vérifie si la mission est active dans l'UI (non grisée/désactivée)
+    // -------------------------------------------------------
+    public bool IsMissionActive(int index)
+    {
+        if (buttons == null) return false;
+        if (index < 1 || index > buttons.Length) return false;
+        if (buttons[index - 1] == null) return false;
+        
+        // buttons[index - 1] est le bouton, son parent est l'objet "Mission"
+        return buttons[index - 1].transform.parent.gameObject.activeInHierarchy;
+    }
+
+    // -------------------------------------------------------
     // Attribution des rÃ©compenses par mission
     // -------------------------------------------------------
     void GrantReward(int index, Transform btnTransform)
@@ -150,7 +166,9 @@ public class AchievementsManager : MonoBehaviour
             // ── MISSIONS TEMPS ──────────────────────────────
             case 1:  GiveStars(200, btnTransform);  break;
             case 5:  GiveStars(350, btnTransform);  break;
-            case 8:  GiveStars(600, btnTransform);  break;
+            //case 8:  GiveStars(600, btnTransform);  break;
+            // Mission 8 : Dernière mission du jeu, débloque l'avion
+            case 8:  GivePlane(mission15PlaneIndex, mission15PlaneSprite, btnTransform); break;
 
             // ── MISSIONS MISSILES ────────────────────────────
             case 2:  GiveStars(500, btnTransform);  break;
@@ -170,11 +188,12 @@ public class AchievementsManager : MonoBehaviour
             // Mission 13 — Débloquer un avion (500 ennemis total)
             case 13: GiveStars(1500, btnTransform); break;
 
-            // Mission 14 30 ennemis en une partie
+            // Mission 14 — 30 ennemis en une partie
             case 14: GiveStars(750, btnTransform); break;
 
-            // Mission 15 : Regarder 30 pubs
-            case 15: GivePlane(mission15PlaneIndex, mission15PlaneSprite, btnTransform); break;
+/*case 15: GivePlane(mission15PlaneIndex, mission15PlaneSprite, btnTransform); break;*/
+            // Mission 15 : Regarder 30 pubs (Désactivée)
+            case 15: GiveStars(0, btnTransform); break;
         }
     }
 

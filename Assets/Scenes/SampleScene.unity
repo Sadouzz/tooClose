@@ -22259,7 +22259,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 78c2081a799d29e46af7ccb59b2f4760, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2e262be9053679479cec3e9adf8f991, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -22295,7 +22295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &699251317
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35861,7 +35861,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 78c2081a799d29e46af7ccb59b2f4760, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2e262be9053679479cec3e9adf8f991, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -36073,7 +36073,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 78c2081a799d29e46af7ccb59b2f4760, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2e262be9053679479cec3e9adf8f991, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -37857,7 +37857,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 78c2081a799d29e46af7ccb59b2f4760, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2e262be9053679479cec3e9adf8f991, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -42554,7 +42554,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 78c2081a799d29e46af7ccb59b2f4760, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2e262be9053679479cec3e9adf8f991, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -43133,6 +43133,8 @@ MonoBehaviour:
   text: {fileID: 630119784}
   title: {fileID: 630119785}
   reward: {fileID: 630119786}
+  notifSound: {fileID: 0}
+  audioSource: {fileID: 0}
   stringTableName: UITexts
 --- !u!114 &1475626636
 MonoBehaviour:
@@ -43205,6 +43207,9 @@ MonoBehaviour:
   adOfferPopup: {fileID: 1005666743}
   popupCostText: {fileID: 174477904}
   popupBuyWithStarsButton: {fileID: 463253020}
+  upgradeSound: {fileID: 8300000, guid: 8f2f894ac66c5164d888b19cd336e362, type: 3}
+  audioSource: {fileID: 0}
+  upgradeFont: {fileID: 11400000, guid: 06a6e69d4a2959d45986fc1f155d8de2, type: 2}
 --- !u!114 &1475626637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54460,7 +54465,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 78c2081a799d29e46af7ccb59b2f4760, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2e262be9053679479cec3e9adf8f991, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -55599,7 +55604,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 78c2081a799d29e46af7ccb59b2f4760, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2e262be9053679479cec3e9adf8f991, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -60882,7 +60887,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 78c2081a799d29e46af7ccb59b2f4760, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2e262be9053679479cec3e9adf8f991, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

@@ -61,6 +61,12 @@ public class PlaneUpgradeManager : MonoBehaviour
     public GameObject adOfferPopup; // Le panel Popup complet
     public TextMeshProUGUI popupCostText; // Le texte du prix sur le bouton "Achat avec Etoiles"
     public Button popupBuyWithStarsButton; // Le bouton "Achat avec Etoiles" dans le popup
+
+    [Header("Animation & Sound")]
+    public AudioClip upgradeSound;
+    public AudioSource audioSource;
+    public TMP_FontAsset upgradeFont; // Optionnel, si on veut utiliser une font précise (sinon on utilise celle par défaut)
+
     private bool isCurrentOfferAd = false;
 
     private UpgradeType currentSelectedType = UpgradeType.Speed;
@@ -244,6 +250,8 @@ public class PlaneUpgradeManager : MonoBehaviour
         {
             ChoosingPlaneScript.instance.UpdateActivePlaneStatsOnly();
         }
+
+        TriggerUpgradeAnimationAndSound(currentSelectedType);
     }
 
     public void BuyUpgrade(UpgradeType type)
@@ -271,7 +279,131 @@ public class PlaneUpgradeManager : MonoBehaviour
             {
                 ChoosingPlaneScript.instance.UpdateActivePlaneStatsOnly();
             }
+            
+            TriggerUpgradeAnimationAndSound(type);
         }
+    }
+
+    private void TriggerUpgradeAnimationAndSound(UpgradeType type)
+    {
+        if (upgradeSound != null)
+        {
+            if (audioSource != null)
+            {
+                audioSource.PlayOneShot(upgradeSound);
+            }
+            else
+            {
+                // Fallback si pas d'AudioSource assigné
+                AudioSource.PlayClipAtPoint(upgradeSound, Camera.main != null ? Camera.main.transform.position : Vector3.zero);
+            }
+        }
+        StartCoroutine(PlayUpgradeAnimation(type));
+    }
+
+    private System.Collections.IEnumerator PlayUpgradeAnimation(UpgradeType type)
+    {
+        Vector3 startPos = Vector3.zero;
+        Transform animParent = this.transform;
+        
+        foreach(var tab in uiTabs) {
+            if(tab.type == type && tab.buyButton != null) {
+                startPos = tab.buyButton.transform.position;
+                if (tab.buyButton.transform.parent != null && tab.buyButton.transform.parent.parent != null)
+                {
+                    animParent = tab.buyButton.transform.parent.parent;
+                }
+                break;
+            }
+        }
+
+        Vector3 endPos = Vector3.zero;
+        Transform targetStatText = null;
+
+        if (ChoosingPlaneScript.instance != null) {
+            switch (type) {
+                case UpgradeType.Speed: 
+                    targetStatText = ChoosingPlaneScript.instance.speedText.transform; 
+                    break;
+                case UpgradeType.Handling: 
+                    targetStatText = ChoosingPlaneScript.instance.angleSpeedText.transform; 
+                    break;
+                case UpgradeType.Armor: 
+                    targetStatText = ChoosingPlaneScript.instance.lifeText.transform; 
+                    break;
+            }
+            if (targetStatText != null) endPos = targetStatText.position;
+        }
+
+        if (startPos == Vector3.zero || endPos == Vector3.zero) yield break;
+
+        GameObject animObj = new GameObject("UpgradePlusOne");
+        
+        // On cherche le Canvas le plus haut pour être sûr d'être au premier plan
+        Canvas rootCanvas = animParent.GetComponentInParent<Canvas>();
+        if (rootCanvas != null) {
+            animObj.transform.SetParent(rootCanvas.rootCanvas.transform, false);
+        } else {
+            animObj.transform.SetParent(animParent, false);
+        }
+        
+        animObj.transform.position = startPos;
+        animObj.transform.SetAsLastSibling();
+
+        TextMeshProUGUI tmp = animObj.AddComponent<TextMeshProUGUI>();
+        
+        // Récupérer la vraie valeur d'amélioration (bonus par niveau)
+        float bonusValue = GetBonusPerLevel(type);
+        tmp.text = "+" + bonusValue.ToString("0.##"); // Affiche +0.5, +1, etc. sans trop de décimales
+        
+        tmp.fontSize = 70;
+        tmp.color = new Color(1f, 0.85f, 0f, 1f); // Jaune/Or
+        tmp.alignment = TextAlignmentOptions.Center;
+        tmp.fontStyle = FontStyles.Bold;
+        if (upgradeFont != null) tmp.font = upgradeFont;
+
+        float duration = 0.8f;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+            float easeT = 1f - (1f - t) * (1f - t); // Ease out quad
+            
+            animObj.transform.position = Vector3.Lerp(startPos, endPos, easeT);
+            
+            // Fading à la fin
+            if (t > 0.5f) {
+                float alphaT = (t - 0.5f) * 2f;
+                tmp.color = new Color(tmp.color.r, tmp.color.g, tmp.color.b, 1f - alphaT);
+            }
+            
+            yield return null;
+        }
+
+        Destroy(animObj);
+
+        // Animation de scale sur le texte des stats
+        if (targetStatText != null)
+        {
+            StartCoroutine(PulseStatText(targetStatText));
+        }
+    }
+
+    private System.Collections.IEnumerator PulseStatText(Transform textTransform)
+    {
+        float t = 0;
+        Vector3 startScale = Vector3.one; // On assume que la scale de base est 1
+
+        while (t < 1)
+        {
+            t += Time.deltaTime * 6f; // Vitesse de la pulsation
+            float scale = Mathf.Lerp(1f, 1.5f, Mathf.Sin(t * Mathf.PI));
+            textTransform.localScale = startScale * scale;
+            yield return null;
+        }
+        textTransform.localScale = startScale;
     }
 
     public int GetUpgradeLevel(int planeIndex, UpgradeType type)

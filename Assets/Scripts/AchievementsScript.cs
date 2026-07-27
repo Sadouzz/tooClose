@@ -94,6 +94,15 @@ public class AchievementsScript : MonoBehaviour
     // -------------------------------------------------------
     private void CompleteMission(string key, string missionNumber)
     {
+        // On vérifie d'abord si la mission est active dans l'UI
+        if (int.TryParse(missionNumber, out int mNum))
+        {
+            if (AchievementsManager.instance != null && !AchievementsManager.instance.IsMissionActive(mNum))
+            {
+                return; // La mission est désactivée dans l'UI, on ne fait rien
+            }
+        }
+
         if (PlayerPrefs.GetString(key, "no") != "no") return;
 
         PlayerPrefs.SetString(key, "yes");

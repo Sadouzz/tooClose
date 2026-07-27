@@ -94,7 +94,46 @@ public class AdMobConsentManager : MonoBehaviour
         if (feedbackPanel == null) yield break;
 
         feedbackPanel.SetActive(true);
-        yield return new WaitForSeconds(2.5f);
+        
+        CanvasGroup cg = feedbackPanel.GetComponent<CanvasGroup>();
+        if (cg == null) cg = feedbackPanel.AddComponent<CanvasGroup>();
+
+        float animDuration = 0.3f;
+        float elapsed = 0f;
+        Vector3 targetScale = Vector3.one; // Ou la scale initiale si différente
+
+        // Animation d'entrée (Fade + Zoom)
+        while (elapsed < animDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / animDuration;
+            float easeT = 1f - (1f - t) * (1f - t); // Ease out quad
+
+            cg.alpha = t;
+            feedbackPanel.transform.localScale = Vector3.Lerp(Vector3.zero, targetScale, easeT);
+            
+            yield return null;
+        }
+
+        cg.alpha = 1f;
+        feedbackPanel.transform.localScale = targetScale;
+
+        // Attendre 1.5 secondes
+        yield return new WaitForSeconds(1.5f);
+
+        // Animation de sortie (Fade + Zoom Inversé)
+        elapsed = 0f;
+        while (elapsed < animDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / animDuration;
+
+            cg.alpha = 1f - t;
+            feedbackPanel.transform.localScale = Vector3.Lerp(targetScale, Vector3.zero, t);
+            
+            yield return null;
+        }
+
         feedbackPanel.SetActive(false);
     }
 
