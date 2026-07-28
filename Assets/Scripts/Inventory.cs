@@ -25,6 +25,7 @@ public class Inventory : MonoBehaviour
 
     [Header("State")]
     public bool inPlay = false;
+    public bool hasRevived = false;
     public bool dead = false, menu = true;
     public GameObject player, explosionPrefab; // Assigne l'objet qui contient le PlayerMovement
 
@@ -201,6 +202,7 @@ public class Inventory : MonoBehaviour
     // Appelé par le bouton "Revive / Watch Ad"
     public void AdsReward()
     {
+        hasRevived = true;
         // 1. On annule les étoiles gagnées (puisqu'on continue la partie)
         int currentTotal = PlayerPrefs.GetInt("stars", 0);
         int totalDestroyedMissiles = PlayerPrefs.GetInt("totalDestroyedMissiles", 0);
@@ -232,6 +234,26 @@ public class Inventory : MonoBehaviour
         // 6. UI
         UIManager.instance.diePanel.SetActive(false);
         
+    }
+
+    
+    public void DoubleEndGameRewards()
+    {
+        int currentTotal = PlayerPrefs.GetInt("stars", 0);
+        PlayerPrefs.SetInt("stars", currentTotal + addedStarsLastDie);
+        
+        int totalDestroyedMissiles = PlayerPrefs.GetInt("totalDestroyedMissiles", 0);
+        PlayerPrefs.SetInt("totalDestroyedMissiles", totalDestroyedMissiles + MissileSpawner.instance.destroyedMissiles);
+        
+        int totalDestroyedEnemies = PlayerPrefs.GetInt("totalDestroyedEnemies", 0);
+        PlayerPrefs.SetInt("totalDestroyedEnemies", totalDestroyedEnemies + MissileSpawner.instance.destroyedEnemies);
+
+        PlayerPrefs.Save();
+
+        if (UIManager.instance != null)
+        {
+            UIManager.instance.Home();
+        }
     }
 
     public void ResetData()

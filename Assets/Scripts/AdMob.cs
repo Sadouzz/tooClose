@@ -390,6 +390,13 @@ public class AdMob : MonoBehaviour
                         PlayerPrefs.SetInt("stars", PlayerPrefs.GetInt("stars", 0) + 250);
                         PlayerPrefs.Save();
                     }
+                    if (_reward == "DoubleRewards")
+                    {
+                        if (Inventory.instance != null)
+                        {
+                            Inventory.instance.DoubleEndGameRewards();
+                        }
+                    }
                     if (_reward == "LifeRegen")
                     {
                         Inventory.instance.AdsReward();
