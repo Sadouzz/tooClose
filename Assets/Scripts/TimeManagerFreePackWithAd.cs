@@ -68,16 +68,19 @@ public class TimeManagerFreePackWithAd : MonoBehaviour
         if (!finished)
         {
             timerText.text = ts.Minutes + GetTranslation("m ", "m ") + ts.Seconds + GetTranslation("s", "s");
+            if (freepackButton != null) freepackButton.interactable = false;
         }
         else
         {
             if (AdMob.instance != null && !AdMob.instance.adReady)
             {
                 timerText.text = GetTranslation("PAS DE PUB", "PAS DE PUB");
+                if (freepackButton != null) freepackButton.interactable = false;
             }
             else
             {
                 timerText.text = GetTranslation("REGARDER UNE PUB", "REGARDER UNE PUB");
+                if (freepackButton != null) freepackButton.interactable = true;
             }
         }
     }

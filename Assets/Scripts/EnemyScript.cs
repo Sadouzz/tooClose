@@ -248,8 +248,10 @@ public class EnemyScript : MonoBehaviour
         // Grant score points
         if (Inventory.instance != null)
         {
-            Inventory.instance.score += 200 * Inventory.instance.scoreMultiplier;
+            int points = 200 * Inventory.instance.scoreMultiplier;
+            Inventory.instance.score += points;
             Inventory.instance.scoreText.text = Inventory.instance.score.ToString();
+            Inventory.instance.TriggerCrashBonus(transform.position, points);
         }
 
         // Notify Spawner

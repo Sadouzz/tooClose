@@ -201,7 +201,16 @@ public class MissileScript : MonoBehaviour
             MissileSpawner.instance.destroyedMissiles++;
 
             if (Inventory.instance != null)
+            {
                 Inventory.instance.RefreshDestroyedMissiles(MissileSpawner.instance.destroyedMissiles);
+                if (spawnExplosion)
+                {
+                    int points = 50 * Inventory.instance.scoreMultiplier;
+                    Inventory.instance.score += points;
+                    Inventory.instance.scoreText.text = Inventory.instance.score.ToString();
+                    Inventory.instance.TriggerCrashBonus(transform.position, points);
+                }
+            }
         }
 
         Destroy(gameObject);

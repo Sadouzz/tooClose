@@ -23,6 +23,11 @@ public class Inventory : MonoBehaviour
     private int addedStarsLastDie; // Pour la soustraction si Ads
     private float scoreTimer;
 
+    [Header("Crash Bonus UI")]
+    public TextMeshProUGUI crashBonusText; // Assigne le prefab de texte ici
+    public RectTransform crashBonusTarget; // Score HUD
+    private Coroutine activeCrashAnim;
+
     [Header("State")]
     public bool inPlay = false;
     public bool hasRevived = false;
@@ -267,6 +272,7 @@ public class Inventory : MonoBehaviour
         totalSeconds = 0;
         starsPicked = 0;
         addedStarsLastDie = 0;
+        hasRevived = false; // Réinitialiser le droit de revive pour cette nouvelle partie
         MissileSpawner.instance.ResetData();
         // Réinitialisation de l'UI
         scoreText.text = "0";
@@ -279,6 +285,55 @@ public class Inventory : MonoBehaviour
         // Réinitialisation des états
         //dead = false;
         //inPlay = true; // On repasse en jeu
+    }
+
+    public void TriggerCrashBonus(Vector3 worldPos, int gain)
+    {
+        if (crashBonusText == null) return;
+        
+        if (activeCrashAnim != null) StopCoroutine(activeCrashAnim);
+        activeCrashAnim = StartCoroutine(AnimateCrashBonus(gain, worldPos));
+    }
+
+    IEnumerator AnimateCrashBonus(int gain, Vector3 worldPos)
+    {
+        crashBonusText.text = "+" + gain;
+        crashBonusText.color = Color.yellow;
+        
+        Vector2 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+        crashBonusText.rectTransform.position = screenPos;
+        crashBonusText.rectTransform.rotation = Quaternion.identity;
+        crashBonusText.gameObject.SetActive(true);
+        crashBonusText.rectTransform.localScale = Vector3.zero;
+
+        float t = 0;
+        while (t < 1)
+        {
+            t += Time.unscaledDeltaTime * 10f;
+            float scaleValue = Mathf.Abs(Mathf.Sin(t * Mathf.PI * 1.1f) * 1.2f);
+            crashBonusText.rectTransform.localScale = new Vector3(scaleValue, scaleValue, 1);
+            yield return null;
+        }
+
+        crashBonusText.rectTransform.localScale = Vector3.one;
+        yield return new WaitForSecondsRealtime(0.2f);
+
+        t = 0;
+        Vector2 startPos = crashBonusText.rectTransform.position;
+        RectTransform flyTarget = crashBonusTarget != null ? crashBonusTarget : scoreText.rectTransform;
+
+        while (t < 1)
+        {
+            t += Time.unscaledDeltaTime * 2.5f;
+            float easedT = t * t;
+            crashBonusText.rectTransform.position = Vector2.Lerp(startPos, flyTarget.position, easedT);
+            
+            float flyScale = Mathf.Lerp(1f, 0.3f, easedT);
+            crashBonusText.rectTransform.localScale = new Vector3(flyScale, flyScale, 1);
+            yield return null;
+        }
+
+        crashBonusText.gameObject.SetActive(false);
     }
 
     /*public void RegisterNearMiss(Vector3 missilePos)

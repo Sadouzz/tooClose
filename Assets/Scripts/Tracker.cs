@@ -278,12 +278,13 @@ public class Tracker : MonoBehaviour
 
         if (CameraShake.instance != null)
             CameraShake.instance.Shake(0.15f, 0.8f);
-
         // Score bonus pour avoir éliminé un chasseur
         if (Inventory.instance != null)
         {
-            Inventory.instance.score += 300 * Inventory.instance.scoreMultiplier;
+            int points = 300 * Inventory.instance.scoreMultiplier;
+            Inventory.instance.score += points;
             Inventory.instance.scoreText.text = Inventory.instance.score.ToString();
+            Inventory.instance.TriggerCrashBonus(transform.position, points);
         }
 
         if (MissileSpawner.instance != null)

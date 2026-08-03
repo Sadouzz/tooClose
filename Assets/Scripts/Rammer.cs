@@ -433,8 +433,10 @@ public class Rammer : MonoBehaviour
         // Score bonus plus élevé (ennemi plus dangereux)
         if (Inventory.instance != null)
         {
-            Inventory.instance.score += 500 * Inventory.instance.scoreMultiplier;
+            int points = 500 * Inventory.instance.scoreMultiplier;
+            Inventory.instance.score += points;
             Inventory.instance.scoreText.text = Inventory.instance.score.ToString();
+            Inventory.instance.TriggerCrashBonus(transform.position, points);
         }
 
         if (MissileSpawner.instance != null)

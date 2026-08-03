@@ -361,7 +361,19 @@ public class AdMob : MonoBehaviour
                 }
                 else
                 {
-                    mainButtonInteractable = true;
+                    // Si ce n'est pas le Free Pack, c'est peut-être le bouton Revive.
+                    // On ne force true que si le joueur n'a pas déjà revécu.
+                    if (Inventory.instance != null && Inventory.instance.hasRevived)
+                    {
+                        // Si le joueur a déjà revécu, ce bouton (s'il s'agit du revive) doit rester désactivé.
+                        // Pour ne pas bloquer un éventuel bouton X2 qui serait assigné ici, on laisse le composant DieManagerUI s'en charger 
+                        // ou on se base sur l'interactabilité actuelle.
+                        mainButtonInteractable = false;
+                    }
+                    else
+                    {
+                        mainButtonInteractable = true;
+                    }
                 }
             }
         }
