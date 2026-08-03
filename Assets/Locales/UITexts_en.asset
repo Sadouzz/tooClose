@@ -234,6 +234,14 @@ MonoBehaviour:
     m_Localized: Ad preferences not required in this region
     m_Metadata:
       m_Items: []
+  - m_Id: 4236056181817344
+    m_Localized: Art, UI & Visuals
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4236305277337600
+    m_Localized: Music & Sound Effects
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

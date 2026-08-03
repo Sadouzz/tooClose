@@ -250,4 +250,24 @@ public class SettingsScript : MonoBehaviour
         PlayerPrefs.Save();
         SceneManager.LoadScene(0);
     }
+
+    // --- Credits ---
+    [Header("Credits UI")]
+    public GameObject creditsPanel;
+
+    public void OpenCredits()
+    {
+        if (creditsPanel != null)
+        {
+            creditsPanel.SetActive(true);
+        }
+    }
+
+    public void CloseCredits()
+    {
+        if (creditsPanel != null)
+        {
+            creditsPanel.SetActive(false);
+        }
+    }
 }

@@ -138,6 +138,13 @@ public class Inventory : MonoBehaviour
         dead = true;
         inPlay = false;
 
+        // On cache le joueur et on dclenche l'explosion immdiatement
+        player.SetActive(false);
+        if (explosionPrefab != null)
+        {
+            Instantiate(explosionPrefab, player.transform.position, Quaternion.identity);
+        }
+
         // 1. LE CHOC (Freeze + Shake + Zoom)
         Time.timeScale = 0f; // On fige tout
 
@@ -145,19 +152,15 @@ public class Inventory : MonoBehaviour
         {
             // On secoue fort (Amplitude 3.0)
             CameraShake.instance.Shake(0.3f, 3f);
-            // On zoom sur le crash (Taille ortho de 5.0 à 3.0 par exemple)
+            // On zoom sur le crash (Taille ortho de 5.0  3.0 par exemple)
             CameraShake.instance.ImpactZoom(3f, 10f, 2f, 0.5f);
         }
 
         // On laisse le joueur "admirer" son crash pendant 0.25s
         yield return new WaitForSecondsRealtime(0.25f);
 
-        // 2. L'EXPLOSION (On libère le temps)
+        // 2. L'EXPLOSION (On libre le temps)
         Time.timeScale = 1f;
-        player.SetActive(false);
-
-        // Ici, fais apparaître ton explosion de particules
-        Instantiate(explosionPrefab, player.transform.position, Quaternion.identity);
 
         int sessionStars = CalculateStars();
         SaveData(sessionStars);

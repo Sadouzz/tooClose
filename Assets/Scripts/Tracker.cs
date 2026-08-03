@@ -244,11 +244,16 @@ public class Tracker : MonoBehaviour
             }
             Explode();
         }
-        // Collision avec un missile = les deux explosent (alignement stratégique)
+        // Collision avec un missile = les deux explosent (alignement stratgique)
         else if (col.CompareTag("Missile"))
         {
-            // Sécurité : éviter que ça n'arrive hors-écran juste au moment du spawn
-            if (spriteRenderer != null && !spriteRenderer.isVisible) return;
+            // Scurit : viter que a n'arrive hors-cran juste au moment du spawn
+            if (Camera.main != null)
+            {
+                Vector3 vp = Camera.main.WorldToViewportPoint(transform.position);
+                if (vp.x < 0f || vp.x > 1f || vp.y < 0f || vp.y > 1f) return;
+            }
+            else if (spriteRenderer != null && !spriteRenderer.isVisible) return;
 
             MissileScript ms = col.GetComponent<MissileScript>();
             if (ms != null) ms.HandleDestruction(true);

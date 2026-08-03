@@ -215,6 +215,7 @@ public class NearMissManager : MonoBehaviour
         // --- 1. ONDE DE CHOC (Distortion) ---
         if (distortion != null)
         {
+            distortion.intensity.overrideState = true;
             distortion.intensity.value = distortionStrength;
             // On s'assure que l'override est bien actif
             distortion.active = true;
@@ -235,6 +236,7 @@ public class NearMissManager : MonoBehaviour
             // On remet la distortion à 0 progressivement
             if (distortion != null)
             {
+                distortion.intensity.overrideState = true;
                 distortion.intensity.value = Mathf.Lerp(distortionStrength, 0f, t);
             }
 
@@ -244,6 +246,7 @@ public class NearMissManager : MonoBehaviour
         // Sécurité finale
         if (distortion != null)
         {
+            distortion.intensity.overrideState = true;
             distortion.intensity.value = 0f;
         }
     }
