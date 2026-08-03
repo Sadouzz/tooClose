@@ -443,6 +443,16 @@ public class Rammer : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void Destabilize(Transform newTarget)
+    {
+        player = newTarget;
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = Color.cyan;
+            originalColor = Color.cyan;
+        }
+    }
+
     // --- Sprite procédural : silhouette massive, anguleuse ---
     Sprite CreateRammerSprite()
     {

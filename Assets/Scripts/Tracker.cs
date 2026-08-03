@@ -292,6 +292,15 @@ public class Tracker : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void Destabilize(Transform newTarget)
+    {
+        player = newTarget;
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = Color.cyan;
+        }
+    }
+
     // --- Sprite procédural : silhouette fine, nerveux ---
     Sprite CreateTrackerSprite()
     {

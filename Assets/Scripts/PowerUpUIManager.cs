@@ -149,6 +149,8 @@ public class PowerUpUIManager : MonoBehaviour
         ("BOUCLIER", "Shield"),
         ("ZOOM",     "Zoom"),
         ("SLOWMO",   "SlowMo"),
+        ("EMP",      "EMP"),
+        ("BOMBE",    "EMP"),
     };
 
     private string NormalizePowerUpName(string upperName)

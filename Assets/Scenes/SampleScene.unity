@@ -14736,7 +14736,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.2
+  m_fontSize: 57.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -36630,6 +36630,9 @@ MonoBehaviour:
   shieldEffectObject: {fileID: 541139769}
   blazeEffectObject: {fileID: 2056654283}
   slowMoEffectObject: {fileID: 0}
+  powerUpActivationSound: {fileID: 8300000, guid: d08a7a4fa24e8b5429ef8f2c24e0885c, type: 3}
+  powerUpActivationVolume: 0.8
+  empWaveSprite: {fileID: -6712742745050556316, guid: 1d42ce8a544a90a4bb8923937f0e568a, type: 3}
   blazeRotationSpeed: 360
   slowMoFactor: 0.5
   virtualCamera: {fileID: 1952108168}
@@ -42724,6 +42727,7 @@ MonoBehaviour:
   - {fileID: 5687125188462435035, guid: f37f179ff2ce043448da7621c02d2586, type: 3}
   - {fileID: 5687125188462435035, guid: 4cdb9771ff3f063429def8fb78f935ff, type: 3}
   - {fileID: 8922893439676325265, guid: b399ea99ee1331245904c7d3b71457b2, type: 3}
+  - {fileID: 5687125188462435035, guid: adab5e62b31b5694dbe25bf7e26ab861, type: 3}
   starSpawnChance: 0
   spawnPos:
   - {fileID: 1782787742}

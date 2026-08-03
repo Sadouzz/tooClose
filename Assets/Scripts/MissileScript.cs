@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -210,5 +210,14 @@ public class MissileScript : MonoBehaviour
     public void MuteVolume()
     {
         if (missileSound != null) missileSound.volume = 0f;
+    }
+
+    public void Destabilize(Transform newTarget)
+    {
+        target = newTarget;
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = Color.cyan;
+        }
     }
 }

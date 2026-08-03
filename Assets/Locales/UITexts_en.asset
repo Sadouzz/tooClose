@@ -242,6 +242,10 @@ MonoBehaviour:
     m_Localized: Music & Sound Effects
     m_Metadata:
       m_Items: []
+  - m_Id: 4257518917730304
+    m_Localized: EMP Bomb
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

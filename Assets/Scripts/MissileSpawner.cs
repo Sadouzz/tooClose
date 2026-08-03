@@ -40,6 +40,12 @@ public class MissileSpawner : MonoBehaviour
     // --- ANTI-REPETITION ---
     private int lastSpawnIndex = -1;
 
+    [Header("Audio Settings")]
+    [Tooltip("Son joué quand un Tracker ou un Rammer apparaît")]
+    public AudioClip hunterWarningSound;
+    public float hunterWarningVolume = 0.8f;
+    private AudioSource spawnerAudioSource;
+
     [Header("UI Indicators")]
     public GameObject indicatorPrefab;
     public Transform canvasTransform; // Glisse ton Canvas ici
@@ -129,6 +135,9 @@ public class MissileSpawner : MonoBehaviour
     {
         if (instance == null) instance = this;
         currentSpawnDelay = initialSpawnDelay;
+
+        spawnerAudioSource = gameObject.AddComponent<AudioSource>();
+        spawnerAudioSource.spatialBlend = 0f; // Son 2D global
     }
 
     private void Start()
@@ -439,6 +448,12 @@ public class MissileSpawner : MonoBehaviour
 
     IEnumerator ShowHunterWarning(string hunterType)
     {
+        // Jouer le son d'avertissement
+        if (hunterWarningSound != null && spawnerAudioSource != null)
+        {
+            spawnerAudioSource.PlayOneShot(hunterWarningSound, hunterWarningVolume);
+        }
+
         if (waveBannerText == null) yield break;
 
         string warningMsg = hunterType;

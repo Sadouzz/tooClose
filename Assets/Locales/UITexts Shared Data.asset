@@ -239,6 +239,10 @@ MonoBehaviour:
     m_Key: Musique & Effets Sonores
     m_Metadata:
       m_Items: []
+  - m_Id: 4257518917730304
+    m_Key: EMP
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

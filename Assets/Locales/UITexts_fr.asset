@@ -243,6 +243,10 @@ MonoBehaviour:
     m_Localized: Musique & Effets Sonores
     m_Metadata:
       m_Items: []
+  - m_Id: 4257518917730304
+    m_Localized: Bombe EMP
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
