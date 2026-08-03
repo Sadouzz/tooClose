@@ -42779,6 +42779,8 @@ MonoBehaviour:
   destroyedEnemies: 0
   currentMissiles: 0
   missilesRequired: 1
+  hunterWarningSound: {fileID: 8300000, guid: 5de0249af1e057740871f3a6dc3f3b14, type: 3}
+  hunterWarningVolume: 0.8
   indicatorPrefab: {fileID: 7688344482498268656, guid: 13d7479a9de5c22459a4ae6d7fe9f226, type: 3}
   canvasTransform: {fileID: 2065947248}
   easyInitialDelay: 5
