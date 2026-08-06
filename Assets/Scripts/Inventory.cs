@@ -15,7 +15,17 @@ public class Inventory : MonoBehaviour
     public TextMeshProUGUI pickedStarsText;
 
     [Header("Current Run Stats")]
-    public int score;
+    private int _score;
+    public int score
+    {
+        get { return _score; }
+        set
+        {
+            if (dead) return; // Empêche l'ajout de score après la mort
+            _score = value;
+            if (scoreText != null) scoreText.text = _score.ToString();
+        }
+    }
     public int scoreMultiplier = 1;
     public int starsPicked;
     public float totalSeconds;
@@ -205,6 +215,8 @@ public class Inventory : MonoBehaviour
         // On envoie le résultat au script de Highscore
         HighScoreScript.instance.SaveNewScore(score, isHardMode);
 
+        // Soumettre le score au leaderboard en ligne (UGS)
+        LeaderboardManager.instance?.SubmitScore(score, isHardMode);
     }
 
     // Appelé par le bouton "Revive / Watch Ad"

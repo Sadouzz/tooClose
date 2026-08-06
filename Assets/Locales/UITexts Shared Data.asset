@@ -243,6 +243,82 @@ MonoBehaviour:
     m_Key: EMP
     m_Metadata:
       m_Items: []
+  - m_Id: 5117245633544192
+    m_Key: tapez votre ecran 2 fois pour les utiliser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5119217526849536
+    m_Key: CLASSEMENT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5120223354503168
+    m_Key: PROFIL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5182612905082880
+    m_Key: MEILLEURS SCORES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5183332828004352
+    m_Key: TOTAL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5313751837786112
+    m_Key: MISSILES DETRUITS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5314062467940352
+    m_Key: AVIONS DETRUITS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5314761914269696
+    m_Key: AVIONS OBTENUS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5346071290527744
+    m_Key: CHARGEMENT...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5347959922704384
+    m_Key: SAUV. LA PROGRESSION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5411164783067136
+    m_Key: ID du joueur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5413438662066176
+    m_Key: AMIS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5413593377357824
+    m_Key: Requetes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5419444720844800
+    m_Key: Liste d'amis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5425644552273920
+    m_Key: Rechercher un joueur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5428010743709696
+    m_Key: MONDE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5508676328046592
+    m_Key: ID_COPIE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5508781496025088
+    m_Key: DEMANDE_ENVOYEE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5508939940052992
+    m_Key: ERREUR_AMI
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

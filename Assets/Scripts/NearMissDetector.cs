@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class NearMissDetector : MonoBehaviour
 {
@@ -16,11 +16,28 @@ public class NearMissDetector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Missile")) // Vérifie que c'est bien un missile
+        if (other.CompareTag("Missile"))
         {
-            // On demande à l'Inventory de calculer les points
-            // On passe la position du missile pour savoir où afficher le texte
-            NearMissManager.instance.TriggerNearMiss(other.transform.position);
+            MissileScript missile = other.GetComponent<MissileScript>();
+            if (missile != null)
+            {
+                if (Time.time - missile.lastNearMissTime >= 3.0f)
+                {
+                    missile.lastNearMissTime = Time.time;
+
+                    // Calcul de la proximité : 0 = bord de la zone, 1 = quasi-contact
+                    CircleCollider2D col = GetComponent<CircleCollider2D>();
+                    float radius = col != null ? col.radius : 1f;
+                    float distance = Vector2.Distance(transform.position, other.transform.position);
+                    float proximity = Mathf.Clamp01(1f - (distance / radius));
+
+                    NearMissManager.instance.TriggerNearMiss(other.transform.position, proximity);
+                }
+            }
+            else
+            {
+                NearMissManager.instance.TriggerNearMiss(other.transform.position);
+            }
         }
     }
     /*

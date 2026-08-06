@@ -185,8 +185,14 @@ public class SettingsScript : MonoBehaviour
     // --- Évaluez-nous ---
     public void RateUs()
     {
-        // Remplace par le vrai nom de ton package Play Store (ex: com.TonStudio.TonJeu)
-        Application.OpenURL("market://details?id=com.Sadouzz.tooClose");
+#if UNITY_ANDROID
+        Application.OpenURL("market://details?id=com.Sadouzz.TooClose");
+#elif UNITY_IOS
+        // Ouvre l'App Store sur la page de Too Close
+        Application.OpenURL("itms-apps://itunes.apple.com/app/id6762100000");
+#else
+        Application.OpenURL("https://play.google.com/store/apps/details?id=com.Sadouzz.TooClose");
+#endif
     }
 
     // --- UI Texts Update ---

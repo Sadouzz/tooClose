@@ -244,7 +244,83 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4257518917730304
-    m_Localized: Bombe EMP
+    m_Localized: BOMBE EMP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5117245633544192
+    m_Localized: tapez votre ecran 2 fois pour les utiliser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5119217526849536
+    m_Localized: CLASSEMENT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5120223354503168
+    m_Localized: PROFIL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5182612905082880
+    m_Localized: MEILLEURS SCORES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5183332828004352
+    m_Localized: TOTAL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5313751837786112
+    m_Localized: MISSILES DETRUITS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5314062467940352
+    m_Localized: AVIONS DETRUITS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5314761914269696
+    m_Localized: AVIONS OBTENUS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5346071290527744
+    m_Localized: CHARGEMENT...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5347959922704384
+    m_Localized: SAUV. LA PROGRESSION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5411164783067136
+    m_Localized: ID du joueur (cliquer pour copier)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5413438662066176
+    m_Localized: AMIS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5413593377357824
+    m_Localized: Requetes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5419444720844800
+    m_Localized: Liste d'amis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5425644552273920
+    m_Localized: Rechercher un joueur (ID)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5428010743709696
+    m_Localized: MONDE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5508676328046592
+    m_Localized: ID Copie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5508781496025088
+    m_Localized: Demande envoyee
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5508939940052992
+    m_Localized: Erreur ou deja ami
     m_Metadata:
       m_Items: []
   references:

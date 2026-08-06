@@ -412,6 +412,11 @@ public class AdMob : MonoBehaviour
                     if (_reward == "LifeRegen")
                     {
                         Inventory.instance.AdsReward();
+                        // Cacher définitivement le bouton revive — 1 seul revive autorisé par partie
+                        if (DieManagerUI.instance != null && DieManagerUI.instance.reviveButton != null)
+                        {
+                            DieManagerUI.instance.reviveButton.SetActive(false);
+                        }
                     }
                     if (_reward == "PlaneUpgrade")
                     {

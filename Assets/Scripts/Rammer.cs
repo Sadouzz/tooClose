@@ -27,7 +27,7 @@ public class Rammer : MonoBehaviour
 
     [Header("Approche")]
     [Tooltip("Vitesse de déplacement pendant la phase d'approche.")]
-    public float approachSpeed = 3.5f;
+    public float approachSpeed = 2.5f; // Réduit (était 3.5f)
 
     [Tooltip("Distance d'alignement cible avant de commencer le tell.")]
     public float alignDistance = 6.0f;
@@ -37,23 +37,23 @@ public class Rammer : MonoBehaviour
     public float baseTellDuration = 1.2f;
 
     [Tooltip("Durée minimum du tell (ne descend jamais en dessous).")]
-    public float minTellDuration = 0.4f;
+    public float minTellDuration = 0.7f; // Plus généreux (était 0.4f)
 
     [Tooltip("Réduction du tell par seconde de run écoulée.")]
-    public float tellReductionPerSecond = 0.005f;
+    public float tellReductionPerSecond = 0.003f; // Plus lent (était 0.005f)
 
     [Tooltip("Nombre de clignotements pendant le tell.")]
     public int tellFlashCount = 4;
 
     [Header("Charge")]
     [Tooltip("Vitesse de la première charge.")]
-    public float chargeSpeed = 18f;
+    public float chargeSpeed = 14f; // Réduit (était 18f)
 
     [Tooltip("Durée max de la première charge avant abandon.")]
     public float chargeDuration = 1.2f;
 
     [Tooltip("Vitesse de la seconde charge (plus rapide).")]
-    public float secondChargeSpeed = 24f;
+    public float secondChargeSpeed = 18f; // Réduit (était 24f)
 
     [Tooltip("Durée max de la seconde charge.")]
     public float secondChargeDuration = 0.7f;

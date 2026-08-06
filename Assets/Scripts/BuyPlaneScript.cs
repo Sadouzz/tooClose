@@ -52,7 +52,7 @@ public class BuyPlaneScript : MonoBehaviour
             // Si c'est le dernier avion, il se gagne par mission, pas achetable
             if (index == selectionScript.transform.childCount - 1)
             {
-                priceText.text = "MISSION 15";
+                priceText.text = "MISSION 9";
                 if (buyBtn != null) buyBtn.interactable = false;
             }
             else

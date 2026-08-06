@@ -33,6 +33,7 @@ public class MissileSpawner : MonoBehaviour
     [Header("Stats en cours")]
     public int currentMissiles;
     public int missilesRequired = 1;
+    public int maxConcurrentMissiles = 15; // Plafond global du nombre de missiles à l'écran
     private float timer;
     private float currentSpawnDelay;
     private bool gameStarted;
@@ -159,6 +160,7 @@ public class MissileSpawner : MonoBehaviour
             hunterCooldown = 15f;
             baseHunterSpawnChance = 0.12f;
             hunterChancePerScore = 0.0001f;
+            maxConcurrentMissiles = 10; // Plafond plus bas en Easy
         }
         else
         {
@@ -169,6 +171,7 @@ public class MissileSpawner : MonoBehaviour
             hunterCooldown = 8f;
             baseHunterSpawnChance = 0.20f;
             hunterChancePerScore = 0.00015f;
+            maxConcurrentMissiles = 16; // Plafond plus haut en Hard
         }
 
         // Si le jeu n'a pas encore commence, on applique le delai initial
@@ -201,8 +204,13 @@ public class MissileSpawner : MonoBehaviour
         
         if (timer >= currentSpawnDelay)
         {
-            int toSpawn = missilesRequired;
-            SpawnMissileBatch(toSpawn);
+            // Plafonner le nombre de missiles spawns
+            if (currentMissiles < maxConcurrentMissiles)
+            {
+                int toSpawn = Mathf.Min(missilesRequired, maxConcurrentMissiles - currentMissiles);
+                if (toSpawn > 0) SpawnMissileBatch(toSpawn);
+            }
+            
             timer = 0;
 
             // --- SYSTÈME DE CHASSEURS : vérifier si on doit spawner un chasseur ---

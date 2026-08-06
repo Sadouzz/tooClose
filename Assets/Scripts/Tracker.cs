@@ -12,16 +12,16 @@ public class Tracker : MonoBehaviour
 {
     [Header("Mouvement")]
     [Tooltip("Vitesse de base de rapprochement vers le joueur.")]
-    public float baseApproachSpeed = 1.8f;
+    public float baseApproachSpeed = 1.2f; // Réduit (était 1.8f)
 
     [Tooltip("Facteur multiplicateur appliqué à la vitesse en fonction du temps de run (par seconde écoulée).")]
-    public float speedScalingPerSecond = 0.003f;
+    public float speedScalingPerSecond = 0.001f; // Réduit (était 0.003f)
 
     [Tooltip("Vitesse max après scaling.")]
-    public float maxApproachSpeed = 4.5f;
+    public float maxApproachSpeed = 2.5f; // Réduit (était 4.5f)
 
     [Tooltip("Amplitude des micro-corrections nerveuses (bruit de Perlin).")]
-    public float jitterAmplitude = 0.6f;
+    public float jitterAmplitude = 0.3f; // Réduit (était 0.6f)
 
     [Tooltip("Fréquence du jitter (plus haut = plus nerveux).")]
     public float jitterFrequency = 4.0f;

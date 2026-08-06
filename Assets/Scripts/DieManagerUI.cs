@@ -42,11 +42,12 @@ public class DieManagerUI : MonoBehaviour
 
         if (reviveButton != null)
         {
-            reviveButton.SetActive(true); // Toujours visible
+            bool alreadyRevived = Inventory.instance != null && Inventory.instance.hasRevived;
+            reviveButton.SetActive(!alreadyRevived); // Caché définitivement si revive déjà utilisé
             Button btn = reviveButton.GetComponent<Button>();
             if (btn != null)
             {
-                btn.interactable = !(Inventory.instance != null && Inventory.instance.hasRevived);
+                btn.interactable = !alreadyRevived;
             }
         }
 

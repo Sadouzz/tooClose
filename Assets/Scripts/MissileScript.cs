@@ -20,6 +20,7 @@ public class MissileScript : MonoBehaviour
     [Header("PowerUp States")]
     public bool isShieldActive = false; 
     public bool isBlazeActive = false;   
+    public float lastNearMissTime = -999f;
 
     private Transform target;
     private bool isExpiring = false;

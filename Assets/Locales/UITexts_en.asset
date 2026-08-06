@@ -243,7 +243,79 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4257518917730304
-    m_Localized: EMP Bomb
+    m_Localized: EMP BOMB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5117245633544192
+    m_Localized: Tap your screen twice to use them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5119217526849536
+    m_Localized: LEADERBOARD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5120223354503168
+    m_Localized: PROFILE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5182612905082880
+    m_Localized: HIGHSCORES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5313751837786112
+    m_Localized: MISSILES DESTROYED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5314062467940352
+    m_Localized: TRACKERS DESTROYED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5314761914269696
+    m_Localized: AIRCRAFT OBTAINED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5346071290527744
+    m_Localized: LOADING...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5347959922704384
+    m_Localized: SAVE PROGRESSION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5411164783067136
+    m_Localized: Player ID (click to copy)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5413438662066176
+    m_Localized: FRIENDS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5413593377357824
+    m_Localized: requests
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5419444720844800
+    m_Localized: Friends List
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5425644552273920
+    m_Localized: Search for a player (ID)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5428010743709696
+    m_Localized: WORLD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5508676328046592
+    m_Localized: ID Copied
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5508781496025088
+    m_Localized: Request sent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5508939940052992
+    m_Localized: Mistake or already friends
     m_Metadata:
       m_Items: []
   references:

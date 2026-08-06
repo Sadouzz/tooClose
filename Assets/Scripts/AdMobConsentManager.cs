@@ -140,6 +140,10 @@ public class AdMobConsentManager : MonoBehaviour
     void StartAdMob()
     {
         Debug.Log("Initialisation d'AdMob...");
+
+        // Transmettre les consentements GDPR et CCPA à Unity Ads avant d'initialiser AdMob
+        PassConsentToUnityAds();
+
         if (AdMob.instance == null)
         {
             AdMob.instance = FindFirstObjectByType<AdMob>();
@@ -153,5 +157,64 @@ public class AdMobConsentManager : MonoBehaviour
         {
             Debug.LogError("AdMob instance non trouvée dans la scène.");
         }
+    }
+
+    void PassConsentToUnityAds()
+    {
+#if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
+        try
+        {
+            bool gdprConsent = IsGdprConsentGranted();
+            bool privacyConsent = IsPrivacyConsentGranted();
+
+            GoogleMobileAds.Api.Mediation.UnityAds.UnityAds.SetConsentMetaData("gdpr.consent", gdprConsent);
+            GoogleMobileAds.Api.Mediation.UnityAds.UnityAds.SetConsentMetaData("privacy.consent", privacyConsent);
+
+            Debug.Log($"[AdMobConsent] Passed consent to Unity Ads: gdpr.consent={gdprConsent}, privacy.consent={privacyConsent}");
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("[AdMobConsent] Failed to pass consent to Unity Ads: " + e.Message);
+        }
+#else
+        Debug.Log("[AdMobConsent] Consent passing to Unity Ads skipped (Editor/Unsupported Platform).");
+#endif
+    }
+
+    bool IsGdprConsentGranted()
+    {
+        // Si le consentement n'est pas requis (ex: Hors Europe), on accorde le consentement par défaut
+        if (ConsentInformation.ConsentStatus == ConsentStatus.NotRequired)
+        {
+            return true;
+        }
+
+        if (ConsentInformation.ConsentStatus == ConsentStatus.Obtained)
+        {
+            // Lire la chaîne de consentement IAB TCF v2
+            string purposeConsents = ApplicationPreferences.GetString("IABTCF_PurposeConsents");
+            if (!string.IsNullOrEmpty(purposeConsents) && purposeConsents.Length > 0)
+            {
+                // Caractère 0 = Purpose 1 (Stockage local/Accès cookies)
+                return purposeConsents[0] == '1';
+            }
+        }
+
+        return false;
+    }
+
+    bool IsPrivacyConsentGranted()
+    {
+        // Lire la chaîne de consentement IAB US Privacy (CCPA)
+        string usPrivacy = ApplicationPreferences.GetString("IABUSPrivacy_String");
+        if (!string.IsNullOrEmpty(usPrivacy) && usPrivacy.Length >= 3)
+        {
+            // Caractère 2 = Choix d'Opt-Out (Y = Refus du partage/vente de données, N = Acceptation)
+            if (usPrivacy[2] == 'Y')
+            {
+                return false;
+            }
+        }
+        return true; // Consentement accordé par défaut (l'utilisateur ne s'est pas opposé)
     }
 }
