@@ -10,9 +10,9 @@ using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 #endif
 
-#if UNITY_IOS || UNITY_TVOS
-using UnityEngine.SocialPlatforms.GameCenter;
-#endif
+//#if UNITY_IOS || UNITY_TVOS
+//using UnityEngine.SocialPlatforms.GameCenter;
+//#endif
 
 /// <summary>
 /// Gère l'authentification UGS au lancement de l'application.
@@ -159,8 +159,8 @@ public class AuthManager : MonoBehaviour
     {
 #if UNITY_ANDROID
         LinkGooglePlayGames();
-#elif UNITY_IOS || UNITY_TVOS
-        LinkGameCenter();
+//#elif UNITY_IOS || UNITY_TVOS
+//        LinkGameCenter();
 #else
         Debug.Log("[Auth] Platform not supported for automatic linking.");
 #endif
@@ -197,25 +197,25 @@ public class AuthManager : MonoBehaviour
     /// </summary>
     public async void LinkGameCenter()
     {
-#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
-        if (!IsAuthenticated)
-        {
-            Debug.LogWarning("[Auth] Not authenticated yet.");
-            return;
-        }
-
-        Debug.Log("[Auth] Starting manual Game Center link...");
-        await TryLinkGameCenter();
-
-        // Mettre à jour les infos locales
-        PlayerId   = AuthenticationService.Instance.PlayerId;
-        PlayerName = AuthenticationService.Instance.PlayerName ?? "Player";
-
-        OnAuthenticated?.Invoke();
-#else
-        Debug.LogWarning("[Auth] Game Center linking is only available on iOS device.");
-        await Task.CompletedTask;
-#endif
+//#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+//        if (!IsAuthenticated)
+//        {
+//            Debug.LogWarning("[Auth] Not authenticated yet.");
+//            return;
+//        }
+//
+//        Debug.Log("[Auth] Starting manual Game Center link...");
+//        await TryLinkGameCenter();
+//
+//        // Mettre à jour les infos locales
+//        PlayerId   = AuthenticationService.Instance.PlayerId;
+//        PlayerName = AuthenticationService.Instance.PlayerName ?? "Player";
+//
+//        OnAuthenticated?.Invoke();
+//#else
+//        Debug.LogWarning("[Auth] Game Center linking is only available on iOS device.");
+//        await Task.CompletedTask;
+//#endif
     }
 
     // ──────────────────────────────────────────────────────────
@@ -293,7 +293,8 @@ public class AuthManager : MonoBehaviour
     // ──────────────────────────────────────────────────────────
     // ─── iOS — Game Center ───────────────────────────────────
     // ──────────────────────────────────────────────────────────
-#if UNITY_IOS || UNITY_TVOS
+//#if UNITY_IOS || UNITY_TVOS
+/*
     async Task TryLinkGameCenter()
     {
         try
@@ -398,7 +399,8 @@ public class AuthManager : MonoBehaviour
 
         return tcs.Task;
     }
-#endif
+*/
+//#endif
 
     // ──────────────────────────────────────────────────────────
     // ─── Évènements AuthenticationService ────────────────────
