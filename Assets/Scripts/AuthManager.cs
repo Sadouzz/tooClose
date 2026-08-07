@@ -10,6 +10,10 @@ using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 #endif
 
+#if UNITY_IOS || UNITY_TVOS
+using UnityEngine.SocialPlatforms.GameCenter;
+#endif
+
 /// <summary>
 /// Gère l'authentification UGS au lancement de l'application.
 /// 
@@ -155,8 +159,8 @@ public class AuthManager : MonoBehaviour
     {
 #if UNITY_ANDROID
         LinkGooglePlayGames();
-#elif UNITY_IOS
-        LinkAppleGameCenter();
+#elif UNITY_IOS || UNITY_TVOS
+        LinkGameCenter();
 #else
         Debug.Log("[Auth] Platform not supported for automatic linking.");
 #endif
@@ -300,7 +304,20 @@ public class AuthManager : MonoBehaviour
                 return;
             }
 
-            await AuthenticationService.Instance.LinkWithAppleGameCenterAsync();
+            var gcData = await GetGameCenterAuthDataAsync();
+            if (gcData == null)
+            {
+                Debug.LogWarning("[Auth] Game Center: Could not retrieve authentication parameters.");
+                return;
+            }
+
+            await AuthenticationService.Instance.LinkWithAppleGameCenterAsync(
+                gcData.Value.userLoginId,
+                gcData.Value.publicKeyUrl,
+                gcData.Value.signature,
+                gcData.Value.salt,
+                gcData.Value.timestamp
+            );
             Debug.Log("[Auth] Linked to Apple Game Center successfully.");
         }
         catch (AuthenticationException ex) when (ex.ErrorCode == AuthenticationErrorCodes.AccountAlreadyLinked)
@@ -308,7 +325,17 @@ public class AuthManager : MonoBehaviour
             Debug.Log("[Auth] Game Center already linked. Signing in with Game Center.");
             try
             {
-                await AuthenticationService.Instance.SignInWithAppleGameCenterAsync();
+                var gcData = await GetGameCenterAuthDataAsync();
+                if (gcData != null)
+                {
+                    await AuthenticationService.Instance.SignInWithAppleGameCenterAsync(
+                        gcData.Value.userLoginId,
+                        gcData.Value.publicKeyUrl,
+                        gcData.Value.signature,
+                        gcData.Value.salt,
+                        gcData.Value.timestamp
+                    );
+                }
             }
             catch (Exception e2)
             {
@@ -319,6 +346,52 @@ public class AuthManager : MonoBehaviour
         {
             Debug.LogWarning("[Auth] Game Center link failed (staying anonymous): " + ex.Message);
         }
+    }
+
+    struct GameCenterAuthData
+    {
+        public string userLoginId;
+        public string publicKeyUrl;
+        public string signature;
+        public string salt;
+        public ulong timestamp;
+    }
+
+    Task<GameCenterAuthData?> GetGameCenterAuthDataAsync()
+    {
+        var tcs = new TaskCompletionSource<GameCenterAuthData?>();
+
+        Social.localUser.Authenticate(success =>
+        {
+            if (!success)
+            {
+                tcs.SetResult(null);
+                return;
+            }
+
+            GameCenterPlatform.RetrieveLocalPlayerSignature(signatureResult =>
+            {
+                if (!signatureResult.IsSuccess)
+                {
+                    Debug.LogWarning("[Auth] Failed to retrieve Game Center signature.");
+                    tcs.SetResult(null);
+                    return;
+                }
+
+                var data = new GameCenterAuthData
+                {
+                    userLoginId = Social.localUser.id,
+                    publicKeyUrl = signatureResult.PublicKeyUrl,
+                    signature = Convert.ToBase64String(signatureResult.Signature),
+                    salt = Convert.ToBase64String(signatureResult.Salt),
+                    timestamp = signatureResult.Timestamp
+                };
+
+                tcs.SetResult(data);
+            });
+        });
+
+        return tcs.Task;
     }
 #endif
 
