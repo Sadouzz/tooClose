@@ -249,7 +249,10 @@ public class Inventory : MonoBehaviour
         // 5. Nettoyage de l'écran
         MissileSpawner.instance.DestroyAllMissiles();
         
-        
+        if (PlayerMovement.instance != null)
+        {
+            PlayerMovement.instance.life = 1;
+        }
 
         // 6. UI
         UIManager.instance.diePanel.SetActive(false);
@@ -278,6 +281,7 @@ public class Inventory : MonoBehaviour
 
     public void ResetData()
     {
+        dead = false; // Reset dead state first so score can be reset
         // Réinitialisation des statistiques numériques
         score = 0;
         scoreTimer = 0;

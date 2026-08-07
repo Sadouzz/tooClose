@@ -167,6 +167,16 @@ public class UIManager : MonoBehaviour
         SpawnObjects.instance.DestroyAllObjects();
         PowerUpUIManager.instance.ClearStoredPowerUp();
         PlayerPowerUpManager.instance.Reset();
+        
+        if (ChoosingPlaneScript.instance != null)
+        {
+            ChoosingPlaneScript.instance.UpdateActivePlaneStatsOnly();
+        }
+        
+        if (PlayerMovement.instance != null && PlayerMovement.instance.smoke != null)
+        {
+            PlayerMovement.instance.smoke.SetActive(false);
+        }
 
         // 3. Reset du joueur et de la caméra
         if (vcam != null) vcam.enabled = false;
@@ -297,6 +307,15 @@ public class UIManager : MonoBehaviour
         SpawnObjects.instance.DestroyAllObjects();
         PowerUpUIManager.instance.ClearStoredPowerUp();
         PlayerPowerUpManager.instance.Reset();
+        if (ChoosingPlaneScript.instance != null)
+        {
+            ChoosingPlaneScript.instance.UpdateActivePlaneStatsOnly();
+        }
+
+        if (PlayerMovement.instance != null && PlayerMovement.instance.smoke != null)
+        {
+            PlayerMovement.instance.smoke.SetActive(false);
+        }
 
         // Disable Cinemachine virtual camera to prevent it from interpolating/damping from old position
         if (vcam != null)

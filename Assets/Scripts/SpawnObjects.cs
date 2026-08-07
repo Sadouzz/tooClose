@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -9,7 +9,7 @@ public class SpawnObjects : MonoBehaviour
     public GameObject[] powerUpPrefabs;    // Le reste des objets
 
     [Range(0, 100)]
-    public float starSpawnChance = 80f;    // 80% de chances d'avoir une étoile
+    public float starSpawnChance = 80f;    // 80% de chances d'avoir une Ã©toile
 
     [Header("References")]
     public Transform[] spawnPos;
@@ -21,8 +21,8 @@ public class SpawnObjects : MonoBehaviour
     private GameObject player;
 
     [Header("Difficulty Settings")]
-    public float easyStarChance = 85f;    // Beaucoup d'étoiles en facile
-    public float hardStarChance = 50f;    // Moins d'étoiles en difficile (plus de powerups ou juste plus vide)
+    public float easyStarChance = 85f;    // Beaucoup d'Ã©toiles en facile
+    public float hardStarChance = 50f;    // Moins d'Ã©toiles en difficile (plus de powerups ou juste plus vide)
     public float easySpawnInterval = 1.2f;
     public float hardSpawnInterval = 0.8f;
 
@@ -39,7 +39,7 @@ public class SpawnObjects : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        // Premier rafraîchissement au démarrage
+        // Premier rafraÃ®chissement au dÃ©marrage
         RefreshSpawningPositions();
         UpdateDifficulty();
     }
@@ -50,13 +50,13 @@ public class SpawnObjects : MonoBehaviour
 
         // Gestion du Timer de Spawn
         timer += Time.deltaTime;
-        if (timer >= currentSpawnInterval) // Un peu plus lent pour ne pas flood l'écran
+        if (timer >= currentSpawnInterval) // Un peu plus lent pour ne pas flood l'Ã©cran
         {
             SpawnRandomObject();
             timer = 0;
         }
 
-        // Rafraîchir les positions valides régulièrement
+        // RafraÃ®chir les positions valides rÃ©guliÃ¨rement
         if (Time.time > nextCheckTime)
         {
             RefreshSpawningPositions();
@@ -89,7 +89,7 @@ public class SpawnObjects : MonoBehaviour
         {
             float dist = Vector3.Distance(player.transform.position, sp.transform.position);
 
-            // On ne garde que les spawns à bonne distance et HORS ÉCRAN pour ne pas voir l'objet apparaître
+            // On ne garde que les spawns Ã  bonne distance et HORS Ã‰CRAN pour ne pas voir l'objet apparaÃ®tre
             if (dist < maxDistance && !IsInFieldOfView(sp.transform.position))
             {
                 validSpawns.Add(sp.transform);
@@ -106,11 +106,11 @@ public class SpawnObjects : MonoBehaviour
 
     void SpawnRandomObject()
     {
-        // Sécurité de base
+        // SÃ©curitÃ© de base
         if (spawnPos.Length == 0 || (starPrefab == null && powerUpPrefabs.Length == 0))
             return;
 
-        // --- 1. SÉLECTION DE L'OBJET (PROBABILITÉ) ---
+        // --- 1. SÃ‰LECTION DE L'OBJET (PROBABILITÃ‰) ---
         GameObject prefabToSpawn;
         float roll = Random.Range(0f, 100f);
 
@@ -123,12 +123,12 @@ public class SpawnObjects : MonoBehaviour
             if (powerUpPrefabs.Length > 0)
                 prefabToSpawn = powerUpPrefabs[Random.Range(0, powerUpPrefabs.Length)];
             else
-                prefabToSpawn = starPrefab; // Fallback sur l'étoile si pas de powerups définis
+                prefabToSpawn = starPrefab; // Fallback sur l'Ã©toile si pas de powerups dÃ©finis
         }
 
-        // --- 2. LOGIQUE DE POSITIONNEMENT (VÉRIFICATION DE PLACE) ---
+        // --- 2. LOGIQUE DE POSITIONNEMENT (VÃ‰RIFICATION DE PLACE) ---
         float checkRadius = 0.8f;
-        int maxTries = 5; // On limite à 5 essais pour ne pas geler le jeu si tout est plein
+        int maxTries = 5; // On limite Ã  5 essais pour ne pas geler le jeu si tout est plein
         int tries = 0;
 
         while (tries < maxTries)
@@ -154,15 +154,15 @@ public class SpawnObjects : MonoBehaviour
 
             if (areaClear)
             {
-                // Si la zone est libre, on fait apparaître l'objet
+                // Si la zone est libre, on fait apparaÃ®tre l'objet
                 Instantiate(prefabToSpawn, new Vector3(spawnPosition.x, spawnPosition.y, 0f), Quaternion.identity);
-                return; // On sort de la fonction car le spawn a réussi
+                return; // On sort de la fonction car le spawn a rÃ©ussi
             }
 
             tries++;
         }
 
-        // Debug.Log("Espace encombré, spawn annulé pour ce tick.");
+        // Debug.Log("Espace encombrÃ©, spawn annulÃ© pour ce tick.");
     }
     public void DestroyAllObjects()
     {
@@ -172,6 +172,17 @@ public class SpawnObjects : MonoBehaviour
         {
             GameObject[] objects = GameObject.FindGameObjectsWithTag(t);
             foreach (GameObject obj in objects) Destroy(obj);
+        }
+        PowerUpItem[] powerUps = FindObjectsByType<PowerUpItem>(FindObjectsSortMode.None);
+        foreach (PowerUpItem p in powerUps)
+        {
+            if (p != null) Destroy(p.gameObject);
+        }
+
+        PickUpStar[] stars = FindObjectsByType<PickUpStar>(FindObjectsSortMode.None);
+        foreach (PickUpStar s in stars)
+        {
+            if (s != null) Destroy(s.gameObject);
         }
     }
 }
