@@ -365,15 +365,20 @@ public class AuthManager : MonoBehaviour
         {
             if (!success)
             {
+                Debug.LogWarning("[Auth] Social.localUser authentication failed.");
                 tcs.SetResult(null);
                 return;
             }
 
-            GameCenterPlatform.RetrieveLocalPlayerSignature(signatureResult =>
+            // Retrieve identity verification signature parameters directly
+            GameCenterPlatform.ShowDefaultAchievementCompletionBanner(true);
+            
+            // Unity 2021/2022+ signature retrieval pattern
+            UnityEngine.SocialPlatforms.GameCenter.GameCenterPlatform.GetLocalUserSignature((signature, salt, timestamp, publicKeyUrl, error) =>
             {
-                if (!signatureResult.IsSuccess)
+                if (!string.IsNullOrEmpty(error) || signature == null)
                 {
-                    Debug.LogWarning("[Auth] Failed to retrieve Game Center signature.");
+                    Debug.LogWarning($"[Auth] Failed to retrieve Game Center signature: {error}");
                     tcs.SetResult(null);
                     return;
                 }
@@ -381,10 +386,10 @@ public class AuthManager : MonoBehaviour
                 var data = new GameCenterAuthData
                 {
                     userLoginId = Social.localUser.id,
-                    publicKeyUrl = signatureResult.PublicKeyUrl,
-                    signature = Convert.ToBase64String(signatureResult.Signature),
-                    salt = Convert.ToBase64String(signatureResult.Salt),
-                    timestamp = signatureResult.Timestamp
+                    publicKeyUrl = publicKeyUrl,
+                    signature = Convert.ToBase64String(signature),
+                    salt = Convert.ToBase64String(salt),
+                    timestamp = timestamp
                 };
 
                 tcs.SetResult(data);
