@@ -270,6 +270,14 @@ public class MissileSpawner : MonoBehaviour
     {
         Vector3 spawnPosVector = new Vector3(spawnPos[posIndex].position.x, spawnPos[posIndex].position.y, 0);
 
+        /*/ --- CIBLAGE INTELLIGENT ---
+        // 30% de chance de s'aligner parfaitement sur la position X du joueur
+        // Cela empêche de camper dans les "dead zones" entre les points de spawn.
+        if (Random.value < 0.3f && playerTransform != null)
+        {
+            spawnPosVector.x = playerTransform.position.x;
+        }*/
+
         int missileType = 0;
         // En Hard (1000f), la chance monte 2x plus vite qu'en Easy (2000f)
         float fastMissileChance = Mathf.Clamp(Inventory.instance.score / currentFastMissileMultiplier, 0f, 0.7f);
