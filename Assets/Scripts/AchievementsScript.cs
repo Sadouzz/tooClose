@@ -59,7 +59,7 @@ public class AchievementsScript : MonoBehaviour
         if (AdMob.instance != null && AdMob.instance.watchedCount >= 10)
             CompleteMission("mission7", "7");
 
-        // ── MISSIONS ENNEMIS ──────────────────────────────────────────
+        /*// ── MISSIONS ENNEMIS ──────────────────────────────────────────
         // Mission 9 — Détruire 1 ennemi en une partie
         if (MissileSpawner.instance.destroyedEnemies >= 1)
             CompleteMission("mission9", "9");
@@ -82,11 +82,11 @@ public class AchievementsScript : MonoBehaviour
 
         // Mission 14 — Detruire 30 ennemis en une seule partie
         if (MissileSpawner.instance.destroyedEnemies >= 30)
-            CompleteMission("mission14", "14");
+            CompleteMission("mission14", "14");*/
 
-        // Mission 15 — Regarder 30 pubs
+        // Mission 9 — Regarder 30 pubs
         if (AdMob.instance != null && AdMob.instance.watchedCount >= 30)
-            CompleteMission("mission15", "15");
+            CompleteMission("mission9", "9");
     }
 
     // -------------------------------------------------------

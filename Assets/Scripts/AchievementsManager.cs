@@ -22,12 +22,12 @@ public class AchievementsManager : MonoBehaviour
 
     [Header("RÃ©compense Mission 15")]
     [Tooltip("Index de l'avion Ã  dÃ©bloquer (position dans ChoosingPlaneScript, 0 = avion de base)")]
-    public int mission15PlaneIndex = 7;
+    public int mission15PlaneIndex = 6;
     public Sprite mission15PlaneSprite, starsSprite;
     public string mission15PlaneName = "JET";
 
-    // Boutons collectÃ©s dynamiquement â€” buttons[0] = Mission 1, etc.
-    private Button[] buttons;
+    // Boutons collectés dynamiquement (clé = numéro de la mission, valeur = bouton)
+    private System.Collections.Generic.Dictionary<int, Button> buttonMap = new System.Collections.Generic.Dictionary<int, Button>();
     private const int MISSION_COUNT = 15;
 
     public static AchievementsManager instance;
@@ -46,33 +46,40 @@ public class AchievementsManager : MonoBehaviour
     {
         if (content == null)
         {
-            Debug.LogError("[AchievementsManager] Content non assignÃ© !");
-            buttons = new Button[0];
+            Debug.LogError("[AchievementsManager] Content non assigné !");
             return;
         }
 
-        var found = new List<Button>();
+        buttonMap.Clear();
+        int activeMissionIndex = 1;
+
         for (int i = 0; i < content.childCount; i++)
         {
             Transform mission = content.GetChild(i);
-            // Cherche l'enfant direct nommÃ© "Button"
+            
+            // On ignore les missions désactivées dans l'éditeur (comme Mission 8 à 13)
+            if (!mission.gameObject.activeInHierarchy) continue;
+
             Transform btnTransform = mission.Find("Button");
             if (btnTransform != null)
             {
                 Button btn = btnTransform.GetComponent<Button>();
                 if (btn != null)
-                    found.Add(btn);
-                else
-                    Debug.LogWarning("[AchievementsManager] Pas de Button sur " + mission.name + "/Button");
-            }
-            else
-            {
-                Debug.LogWarning("[AchievementsManager] Pas d'enfant 'Button' dans " + mission.name);
+                {
+                    // Associe le bouton au vrai index actif (1 à 9)
+                    buttonMap[activeMissionIndex] = btn;
+                    
+                    // Sécurité : on force le bouton à envoyer ce bon index quand on clique,
+                    // peu importe ce qui est écrit dans l'inspecteur Unity !
+                    btn.onClick.RemoveAllListeners();
+                    int capturedIndex = activeMissionIndex;
+                    btn.onClick.AddListener(() => CollectRewardFromMission(capturedIndex));
+
+                    activeMissionIndex++;
+                }
             }
         }
-
-        buttons = found.ToArray();
-        Debug.Log("[AchievementsManager] " + buttons.Length + " boutons collectÃ©s dynamiquement.");
+        Debug.Log("[AchievementsManager] " + buttonMap.Count + " boutons actifs collectés et configurés.");
     }
 
     // -------------------------------------------------------
@@ -105,25 +112,28 @@ public class AchievementsManager : MonoBehaviour
     // -------------------------------------------------------
     void RefreshAllButtons()
     {
-        for (int i = 1; i <= buttons.Length; i++)
+        foreach (var kvp in buttonMap)
         {
-            if (buttons[i - 1] == null) continue;
+            int missionIndex = kvp.Key;
+            Button btn = kvp.Value;
 
-            bool completed = PlayerPrefs.GetString("mission" + i,               "no") == "yes";
-            bool collected = PlayerPrefs.GetString("mission" + i + "Collected", "no") == "yes";
+            if (btn == null) continue;
+
+            bool completed = PlayerPrefs.GetString("mission" + missionIndex, "no") == "yes";
+            bool collected = PlayerPrefs.GetString("mission" + missionIndex + "Collected", "no") == "yes";
 
             if (completed && !collected)
             {
-                buttons[i - 1].interactable = true;
+                btn.interactable = true;
             }
             else
             {
                 if (collected)
                 {
-                    var label = buttons[i - 1].transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+                    var label = btn.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
                     if (label != null) label.text = "DEJA COLLECTE";
                 }
-                buttons[i - 1].interactable = false;
+                btn.interactable = false;
             }
         }
     }
@@ -133,12 +143,19 @@ public class AchievementsManager : MonoBehaviour
     // -------------------------------------------------------
     public void CollectRewardFromMission(int _index)
     {
-        if (_index < 1 || _index - 1 >= buttons.Length) return;
+        Debug.Log("[AchievementsManager] Attempting to collect reward for mission: " + _index);
+        if (!buttonMap.ContainsKey(_index) || buttonMap[_index] == null) 
+        {
+            Debug.LogError("[AchievementsManager] Failed to collect: mission " + _index + " introuvable dans l'UI.");
+            return;
+        }
 
-        Button clickedBtn = buttons[_index - 1];
+        Button clickedBtn = buttonMap[_index];
         clickedBtn.interactable = false;
         PlayerPrefs.SetString("mission" + _index + "Collected", "yes");
         PlayerPrefs.Save();
+        
+        Debug.Log("[AchievementsManager] Granting reward for mission " + _index);
 
         GrantReward(_index, clickedBtn.transform);
     }
@@ -148,12 +165,7 @@ public class AchievementsManager : MonoBehaviour
     // -------------------------------------------------------
     public bool IsMissionActive(int index)
     {
-        if (buttons == null) return false;
-        if (index < 1 || index > buttons.Length) return false;
-        if (buttons[index - 1] == null) return false;
-        
-        // buttons[index - 1] est le bouton, son parent est l'objet "Mission"
-        return buttons[index - 1].transform.parent.gameObject.activeInHierarchy;
+        return buttonMap.ContainsKey(index) && buttonMap[index] != null && buttonMap[index].transform.parent.gameObject.activeInHierarchy;
     }
 
     // -------------------------------------------------------
@@ -166,9 +178,9 @@ public class AchievementsManager : MonoBehaviour
             // ── MISSIONS TEMPS ──────────────────────────────
             case 1:  GiveStars(200, btnTransform);  break;
             case 5:  GiveStars(350, btnTransform);  break;
-            //case 8:  GiveStars(600, btnTransform);  break;
-            // Mission 8 : Dernière mission du jeu, débloque l'avion
-            case 8:  GivePlane(mission15PlaneIndex, mission15PlaneSprite, btnTransform); break;
+            case 8:  GiveStars(600, btnTransform);  break;
+            // Mission 9 : Dernière mission du jeu, débloque l'avion
+            case 9:  GivePlane(mission15PlaneIndex, mission15PlaneSprite, btnTransform); break;
 
             // ── MISSIONS MISSILES ────────────────────────────
             case 2:  GiveStars(500, btnTransform);  break;
@@ -180,7 +192,7 @@ public class AchievementsManager : MonoBehaviour
             case 7:  GiveStars(700, btnTransform);  break;
 
             // ── MISSIONS ENNEMIS ─────────────────────────────
-            case 9:  GiveStars(150, btnTransform);  break;
+            /*case 9:  GiveStars(150, btnTransform);  break;
             case 10: GiveStars(300, btnTransform);  break;
             case 11: GiveStars(500, btnTransform);  break;
             case 12: GiveStars(800, btnTransform);  break;
@@ -191,9 +203,9 @@ public class AchievementsManager : MonoBehaviour
             // Mission 14 — 30 ennemis en une partie
             case 14: GiveStars(750, btnTransform); break;
 
-/*case 15: GivePlane(mission15PlaneIndex, mission15PlaneSprite, btnTransform); break;*/
+/*case 15: GivePlane(mission15PlaneIndex, mission15PlaneSprite, btnTransform); break;
             // Mission 15 : Regarder 30 pubs (Désactivée)
-            case 15: GiveStars(0, btnTransform); break;
+            case 15: GiveStars(0, btnTransform); break;*/
         }
     }
 
