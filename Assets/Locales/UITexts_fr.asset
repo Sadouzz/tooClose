@@ -323,6 +323,26 @@ MonoBehaviour:
     m_Localized: Erreur ou deja ami
     m_Metadata:
       m_Items: []
+  - m_Id: 7510294011527168
+    m_Localized: Aucun score pour l'instant.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7510395228471296
+    m_Localized: Chargement...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7510443173560320
+    m_Localized: "Pas encore class\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7510706169004032
+    m_Localized: 'Votre rang :'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7510795092443136
+    m_Localized: 'Best :'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

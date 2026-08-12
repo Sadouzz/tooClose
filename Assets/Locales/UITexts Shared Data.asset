@@ -319,6 +319,26 @@ MonoBehaviour:
     m_Key: ERREUR_AMI
     m_Metadata:
       m_Items: []
+  - m_Id: 7510294011527168
+    m_Key: NoScore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7510395228471296
+    m_Key: Loading
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7510443173560320
+    m_Key: NotRanked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7510706169004032
+    m_Key: YourRank
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7510795092443136
+    m_Key: BestScore
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

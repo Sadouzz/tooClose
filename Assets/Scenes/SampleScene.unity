@@ -32187,6 +32187,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e7c36949801aa7a419c003569e201429, type: 3}
   - {fileID: 21300000, guid: 27c4a426adb776346870b82d4c5f49bc, type: 3}
   loadingText: {fileID: 837339456}
+  stringTableName: UITexts
 --- !u!114 &787734536
 MonoBehaviour:
   m_ObjectHideFlags: 0

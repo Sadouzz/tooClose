@@ -318,6 +318,26 @@ MonoBehaviour:
     m_Localized: Mistake or already friends
     m_Metadata:
       m_Items: []
+  - m_Id: 7510294011527168
+    m_Localized: No score yet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7510395228471296
+    m_Localized: Loading...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7510443173560320
+    m_Localized: Not yet ranked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7510706169004032
+    m_Localized: 'Your rank :'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7510795092443136
+    m_Localized: 'Best :'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

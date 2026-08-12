@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Unity.Services.Leaderboards.Models;
 using Unity.Services.Authentication;
+using UnityEngine.Localization.Settings;
 
 /// <summary>
 /// UI de leaderboard avec pagination.
@@ -68,6 +69,16 @@ public class LeaderboardUI : MonoBehaviour
 
     [Header("Feedback")]
     public TextMeshProUGUI loadingText;
+
+    [Header("Localization")]
+    public string stringTableName = "UITexts";
+
+    private string GetTranslation(string key, string fallback)
+    {
+        string tr = LocalizationSettings.StringDatabase.GetLocalizedString(stringTableName, key);
+        if (string.IsNullOrEmpty(tr) || tr.Contains("No translation")) return fallback;
+        return tr;
+    }
 
     // ──────────────────────────────────────────────────────────
     // ─── Privé ────────────────────────────────────────────────
@@ -264,14 +275,14 @@ public class LeaderboardUI : MonoBehaviour
     {
         if (entry == null)
         {
-            if (playerRankText  != null) playerRankText.text  = "Pas encore classé";
+            if (playerRankText  != null) playerRankText.text  = GetTranslation("NotRanked", "Pas encore classé");
             if (playerScoreText != null) playerScoreText.text = "";
             if (playerPlaneIcon != null) playerPlaneIcon.gameObject.SetActive(false);
             return;
         }
 
-        if (playerRankText  != null) playerRankText.text  = $"Votre rang : #{entry.Rank + 1}";
-        if (playerScoreText != null) playerScoreText.text = $"Best : {(int)entry.Score}";
+        if (playerRankText  != null) playerRankText.text  = GetTranslation("YourRank", "Votre rang :") + $" #{entry.Rank + 1}";
+        if (playerScoreText != null) playerScoreText.text = GetTranslation("BestScore", "Best :") + $" {(int)entry.Score}";
 
         // Afficher le sprite de l'avion
         var (planeIdx, _) = LeaderboardManager.ParseMetadata(entry);
@@ -287,26 +298,49 @@ public class LeaderboardUI : MonoBehaviour
     {
         ClearRows();
 
-        if (currentResultsList == null || currentResultsList.Count == 0)
+        int pageSize = LeaderboardManager.instance != null ? LeaderboardManager.instance.pageSize : 10;
+
+        // Calculer le total réel si on a la réponse UGS
+        if (!isFriendsFilter && latestPage != null)
         {
-            if (loadingText != null) loadingText.text = "Aucun score pour l'instant.";
+            totalPages = Mathf.Max(1, Mathf.CeilToInt((float)latestPage.Total / pageSize));
+        }
+
+        // Si on est sur une page vide après la première page, on a dépassé la fin.
+        // (Sécurité au cas où)
+        if (!isFriendsFilter && (currentResultsList == null || currentResultsList.Count == 0) && currentPage > 0)
+        {
+            // On peut s'arrêter à totalPages - 1
+            currentPage = Mathf.Max(0, totalPages - 1);
+            FetchPageInternal();
             return;
         }
 
-        // Calculer totalPages (UGS ne retourne pas le total — on estime)
-        if (!isFriendsFilter)
+        if (currentResultsList == null || currentResultsList.Count == 0)
         {
-            int pageSize = LeaderboardManager.instance != null ? LeaderboardManager.instance.pageSize : 10;
-            int offset = latestPage != null ? latestPage.Offset : 0;
-            totalPages = Mathf.Max(1, Mathf.CeilToInt((float)(offset + currentResultsList.Count + (currentResultsList.Count >= pageSize ? 1 : 0)) / pageSize));
+            if (loadingText != null)
+            {
+                loadingText.gameObject.SetActive(true);
+                loadingText.text = GetTranslation("NoScore", "Aucun score pour l'instant.");
+            }
+
+            totalPages = 1;
+            if (pageText != null) pageText.gameObject.SetActive(false);
+            if (prevPageButton != null) prevPageButton.interactable = false;
+            if (nextPageButton != null) nextPageButton.interactable = false;
+            return;
         }
 
         // Mettre à jour le label de page (format 1/x)
-        if (pageText != null) pageText.text = $"{currentPage + 1}/{totalPages}";
+        if (pageText != null)
+        {
+            pageText.gameObject.SetActive(true);
+            pageText.text = $"{currentPage + 1}/{totalPages}";
+        }
 
         // Boutons pagination
         if (prevPageButton != null) prevPageButton.interactable = currentPage > 0 && !isFriendsFilter;
-        if (nextPageButton != null) nextPageButton.interactable = (!isFriendsFilter && latestPage != null && currentResultsList.Count >= (LeaderboardManager.instance != null ? LeaderboardManager.instance.pageSize : 10));
+        if (nextPageButton != null) nextPageButton.interactable = (!isFriendsFilter && currentPage < totalPages - 1);
 
         // Générer les lignes
         bool playerFoundInList = false;
@@ -446,7 +480,13 @@ public class LeaderboardUI : MonoBehaviour
         if (loadingText != null)
         {
             loadingText.gameObject.SetActive(loading);
-            loadingText.text = "Chargement...";
+            loadingText.text = GetTranslation("Loading", "Chargement...");
+        }
+
+        // On désactive le texte de pagination seulement si on vient d'ouvrir ou rafraîchir tout (latestPage == null)
+        if (loading && pageText != null && latestPage == null)
+        {
+            pageText.gameObject.SetActive(false);
         }
     }
 }
