@@ -27,33 +27,33 @@ public class Rammer : MonoBehaviour
 
     [Header("Approche")]
     [Tooltip("Vitesse de déplacement pendant la phase d'approche.")]
-    public float approachSpeed = 2.5f; // Réduit (était 3.5f)
+    public float approachSpeed = 1.5f; // Encore plus réduit (était 2.0f)
 
     [Tooltip("Distance d'alignement cible avant de commencer le tell.")]
     public float alignDistance = 6.0f;
 
     [Header("Tell (Télégraphie)")]
     [Tooltip("Durée de base du tell (en secondes). Se réduit avec le temps de run.")]
-    public float baseTellDuration = 1.2f;
+    public float baseTellDuration = 1.8f; // Encore augmenté (était 1.5f)
 
     [Tooltip("Durée minimum du tell (ne descend jamais en dessous).")]
-    public float minTellDuration = 0.7f; // Plus généreux (était 0.4f)
+    public float minTellDuration = 0.9f;
 
     [Tooltip("Réduction du tell par seconde de run écoulée.")]
-    public float tellReductionPerSecond = 0.003f; // Plus lent (était 0.005f)
+    public float tellReductionPerSecond = 0.002f;
 
     [Tooltip("Nombre de clignotements pendant le tell.")]
     public int tellFlashCount = 4;
 
     [Header("Charge")]
     [Tooltip("Vitesse de la première charge.")]
-    public float chargeSpeed = 14f; // Réduit (était 18f)
+    public float chargeSpeed = 8f; // Encore plus réduit (était 10f)
 
     [Tooltip("Durée max de la première charge avant abandon.")]
     public float chargeDuration = 1.2f;
 
     [Tooltip("Vitesse de la seconde charge (plus rapide).")]
-    public float secondChargeSpeed = 18f; // Réduit (était 24f)
+    public float secondChargeSpeed = 10f; // Encore plus réduit (était 14f)
 
     [Tooltip("Durée max de la seconde charge.")]
     public float secondChargeDuration = 0.7f;
@@ -243,6 +243,13 @@ public class Rammer : MonoBehaviour
             audioSource.PlayOneShot(chargeBuildupSound);
         }
 
+        // 1. Verrouiller la direction de charge DÈS LE DÉBUT du tell
+        chargeDirection = (player.position - transform.position).normalized;
+
+        // 2. Orienter le sprite visuellement vers cette direction verrouillée
+        float angle = Mathf.Atan2(chargeDirection.y, chargeDirection.x) * Mathf.Rad2Deg - 90f;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+
         // Clignotement rouge/blanc comme tell
         float flashInterval = tellDuration / (tellFlashCount * 2f);
         Color warningColor = new Color(1f, 0.2f, 0.1f); // Rouge vif
@@ -254,9 +261,6 @@ public class Rammer : MonoBehaviour
             spriteRenderer.color = originalColor;
             yield return new WaitForSeconds(flashInterval);
         }
-
-        // Verrouiller la direction de charge AU MOMENT du lancement
-        chargeDirection = (player.position - transform.position).normalized;
 
         // Son de lancement
         if (chargeReleaseSound != null && audioSource != null)
