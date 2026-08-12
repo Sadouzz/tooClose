@@ -60,6 +60,9 @@ public class AuthManager : MonoBehaviour
         if (instance != null) { Destroy(gameObject); return; }
         instance = this;
         DontDestroyOnLoad(gameObject);
+        
+        PlayerName = PlayerPrefs.GetString("CachedPlayerName", "Player");
+        PlayerId = PlayerPrefs.GetString("CachedPlayerId", "");
     }
 
     async void Start()
@@ -112,7 +115,16 @@ public class AuthManager : MonoBehaviour
             PlayerId   = AuthenticationService.Instance.PlayerId;
             PlayerName = !string.IsNullOrEmpty(AuthenticationService.Instance.PlayerName) 
                 ? AuthenticationService.Instance.PlayerName 
-                : "Player";
+                : PlayerName;
+
+            if (PlayerName == "Player" || string.IsNullOrEmpty(PlayerName))
+            {
+                PlayerName = "Player";
+            }
+
+            PlayerPrefs.SetString("CachedPlayerId", PlayerId);
+            PlayerPrefs.SetString("CachedPlayerName", PlayerName);
+            PlayerPrefs.Save();
 
             OnAuthenticated?.Invoke();
         }
@@ -139,6 +151,8 @@ public class AuthManager : MonoBehaviour
         {
             await AuthenticationService.Instance.UpdatePlayerNameAsync(newName);
             PlayerName = newName;
+            PlayerPrefs.SetString("CachedPlayerName", PlayerName);
+            PlayerPrefs.Save();
             Debug.Log("[Auth] Player name updated successfully to: " + newName);
             OnAuthenticated?.Invoke();
         }
@@ -183,7 +197,11 @@ public class AuthManager : MonoBehaviour
 
         // Mettre à jour les infos locales
         PlayerId   = AuthenticationService.Instance.PlayerId;
-        PlayerName = AuthenticationService.Instance.PlayerName ?? "Player";
+        PlayerName = AuthenticationService.Instance.PlayerName ?? PlayerName;
+        if (string.IsNullOrEmpty(PlayerName)) PlayerName = "Player";
+        PlayerPrefs.SetString("CachedPlayerId", PlayerId);
+        PlayerPrefs.SetString("CachedPlayerName", PlayerName);
+        PlayerPrefs.Save();
 
         OnAuthenticated?.Invoke();
 #else

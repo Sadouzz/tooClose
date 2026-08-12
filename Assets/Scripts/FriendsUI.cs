@@ -58,6 +58,15 @@ public class FriendsUI : MonoBehaviour
 
         FriendsManager.OnFriendsUpdated += RefreshUI;
         FriendsManager.OnFriendRequestReceived += OnRequestReceived;
+
+        // Affiche l'ID stocké localement dès le début
+        if (AuthManager.instance != null && myPlayerIdTexts != null)
+        {
+            foreach (var txt in myPlayerIdTexts)
+            {
+                if (txt != null) txt.text = AuthManager.instance.PlayerId;
+            }
+        }
     }
 
     void OnDestroy()

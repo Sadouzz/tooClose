@@ -57831,6 +57831,7 @@ MonoBehaviour:
   playerNameDisplays:
   - {fileID: 1251892823}
   - {fileID: 1070237014}
+  playerIdText: {fileID: 1083634762}
 --- !u!1 &1478772408
 GameObject:
   m_ObjectHideFlags: 0

@@ -42,6 +42,9 @@ public class ProfileManager : MonoBehaviour
     [Header("Affichages du Pseudo (Partout dans l'UI)")]
     public TextMeshProUGUI[] playerNameDisplays;
 
+    [Header("Affichage de l'ID")]
+    public TextMeshProUGUI playerIdText;
+
     // ──────────────────────────────────────────────────────────
     void Awake()
     {
@@ -58,6 +61,9 @@ public class ProfileManager : MonoBehaviour
 
         // Par défaut, le panel est fermé
         if (profilePanel != null) profilePanel.SetActive(false);
+
+        // Afficher immédiatement les pseudos mis en cache
+        RefreshPlayerNameDisplays();
 
         // Mettre à jour les pseudos dès que l'auth (ou un changement de pseudo) réussit
         AuthManager.OnAuthenticated += RefreshPlayerNameDisplays;
@@ -121,6 +127,12 @@ public class ProfileManager : MonoBehaviour
                 }
             }
         }
+
+        // Met à jour l'affichage de l'ID du joueur
+        if (playerIdText != null)
+        {
+            playerIdText.text = AuthManager.instance.PlayerId;
+        }
     }
 
     private string GetTranslation(string key, string fallback)
@@ -139,7 +151,7 @@ public class ProfileManager : MonoBehaviour
 
     public void RefreshProfileData()
     {
-        // 1. Mettre à jour tous les affichages du pseudo
+        // 1. Mettre à jour tous les affichages du pseudo et l'ID
         RefreshPlayerNameDisplays();
 
         // 2. Calculer le nombre d'avions débloqués
@@ -220,5 +232,14 @@ public class ProfileManager : MonoBehaviour
 
         // Rafraîchir l'affichage local du pseudo
         RefreshProfileData();
+    }
+
+    public void CopyPlayerId()
+    {
+        if (AuthManager.instance != null && !string.IsNullOrEmpty(AuthManager.instance.PlayerId))
+        {
+            GUIUtility.systemCopyBuffer = AuthManager.instance.PlayerId;
+            Debug.Log("[Profile] Player ID copied to clipboard: " + AuthManager.instance.PlayerId);
+        }
     }
 }
