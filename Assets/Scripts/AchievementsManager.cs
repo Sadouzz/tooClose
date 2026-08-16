@@ -1,8 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Localization.Settings;
 
 public class AchievementsManager : MonoBehaviour
 {
@@ -33,6 +34,14 @@ public class AchievementsManager : MonoBehaviour
     public static AchievementsManager instance;
 
     // -------------------------------------------------------
+    private string GetTranslation(string key, string fallback)
+    {
+        string tr = LocalizationSettings.StringDatabase.GetLocalizedString("UITexts", key);
+        if (string.IsNullOrEmpty(tr) || tr.Contains("No translation")) return fallback;
+        return tr;
+    }
+
+    // -------------------------------------------------------
     void Awake()
     {
         if (instance == null) instance = this;
@@ -58,7 +67,7 @@ public class AchievementsManager : MonoBehaviour
             Transform mission = content.GetChild(i);
             
             // On ignore les missions désactivées dans l'éditeur (comme Mission 8 à 13)
-            if (!mission.gameObject.activeInHierarchy) continue;
+            if (!mission.gameObject.activeSelf) continue;
 
             Transform btnTransform = mission.Find("Button");
             if (btnTransform != null)
@@ -122,16 +131,22 @@ public class AchievementsManager : MonoBehaviour
             bool completed = PlayerPrefs.GetString("mission" + missionIndex, "no") == "yes";
             bool collected = PlayerPrefs.GetString("mission" + missionIndex + "Collected", "no") == "yes";
 
+            var label = btn.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+
             if (completed && !collected)
             {
+                if (label != null) label.text = GetTranslation("COLLECTER", "COLLECTER");
                 btn.interactable = true;
             }
             else
             {
                 if (collected)
                 {
-                    var label = btn.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-                    if (label != null) label.text = "DEJA COLLECTE";
+                    if (label != null) label.text = GetTranslation("DEJA_COLLECTE", "DEJA COLLECTE");
+                }
+                else
+                {
+                    if (label != null) label.text = GetTranslation("NON_COMPLETE", "NON COMPLETE");
                 }
                 btn.interactable = false;
             }

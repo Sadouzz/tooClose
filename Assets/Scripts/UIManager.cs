@@ -86,6 +86,11 @@ public class UIManager : MonoBehaviour
         // On vérifie les 15 missions
         for (int i = 1; i <= 15; i++)
         {
+            if (AchievementsManager.instance != null && !AchievementsManager.instance.IsMissionActive(i))
+            {
+                continue; // Ignore les missions désactivées dans l'UI
+            }
+
             bool completed = PlayerPrefs.GetString("mission" + i, "no") == "yes";
             bool collected = PlayerPrefs.GetString("mission" + i + "Collected", "no") == "yes";
             if (completed && !collected)

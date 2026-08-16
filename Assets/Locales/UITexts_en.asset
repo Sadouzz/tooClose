@@ -338,6 +338,14 @@ MonoBehaviour:
     m_Localized: 'Best :'
     m_Metadata:
       m_Items: []
+  - m_Id: 8992098543419392
+    m_Localized: ALREADY COLLECTED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8992236678627328
+    m_Localized: INCOMPLETE
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
