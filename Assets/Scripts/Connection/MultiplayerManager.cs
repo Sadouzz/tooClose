@@ -23,26 +23,34 @@ namespace Connection
         private float heartbeatTimer;
         private float lobbyPollTimer;
         private bool isMatchmaking = false;
+        private string currentGameMode = "SurvivalRace";
 
         private void Awake()
         {
             if (instance == null) instance = this;
         }
 
-        public async void StartMatchmaking()
+        public async void StartMatchmaking(string gameMode)
         {
             if (isMatchmaking) return;
             isMatchmaking = true;
-            Debug.Log("Démarrage du matchmaking...");
+            currentGameMode = gameMode;
+            Debug.Log($"Démarrage du matchmaking pour le mode : {gameMode}...");
 
             try
             {
-                currentLobby = await LobbyService.Instance.QuickJoinLobbyAsync();
+                QuickJoinLobbyOptions quickJoinOptions = new QuickJoinLobbyOptions();
+                quickJoinOptions.Filter = new List<QueryFilter>()
+                {
+                    new QueryFilter(field: QueryFilter.FieldOptions.S1, op: QueryFilter.OpOptions.EQ, value: currentGameMode)
+                };
+
+                currentLobby = await LobbyService.Instance.QuickJoinLobbyAsync(quickJoinOptions);
                 Debug.Log("Lobby trouvé ! En attente du Host pour démarrer Relay...");
             }
             catch (LobbyServiceException)
             {
-                Debug.Log("Aucun lobby disponible. Création d'un nouveau lobby en tant que Host.");
+                Debug.Log("Aucun lobby disponible pour ce mode. Création d'un nouveau lobby en tant que Host.");
                 await CreateLobbyAndRelay();
             }
         }
@@ -60,7 +68,8 @@ namespace Connection
                     IsPrivate = false,
                     Data = new Dictionary<string, DataObject>
                     {
-                        { "RelayJoinCode", new DataObject(DataObject.VisibilityOptions.Public, joinCode) }
+                        { "RelayJoinCode", new DataObject(DataObject.VisibilityOptions.Public, joinCode) },
+                        { "GameMode", new DataObject(DataObject.VisibilityOptions.Public, currentGameMode, DataObject.IndexOptions.S1) }
                     }
                 };
 

@@ -163,5 +163,39 @@ namespace Connection
 
             transform.rotation = Quaternion.Euler(0f, 0f, smoothAngle);
         }
+
+        [Server]
+        public void DieAndRespawn()
+        {
+            StartCoroutine(DieRoutine());
+        }
+
+        private IEnumerator DieRoutine()
+        {
+            RpcHide();
+            yield return new WaitForSeconds(2f);
+            
+            Vector3 spawnPos = PuppetMasterManager.instance.pilotSpawnPoint != null ? PuppetMasterManager.instance.pilotSpawnPoint.position : Vector3.zero;
+            RpcRespawn(spawnPos);
+        }
+
+        [ClientRpc]
+        private void RpcHide()
+        {
+            if (sr != null) sr.enabled = false;
+            if (bc != null) bc.enabled = false;
+            move = false;
+            // TODO: Ajouter l'effet d'explosion ici
+        }
+
+        [ClientRpc]
+        private void RpcRespawn(Vector3 pos)
+        {
+            transform.position = pos;
+            if (sr != null) sr.enabled = true;
+            if (bc != null) bc.enabled = true;
+            move = true;
+            transform.rotation = Quaternion.identity;
+        }
     }
 }

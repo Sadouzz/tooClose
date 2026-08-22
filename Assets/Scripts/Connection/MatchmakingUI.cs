@@ -22,7 +22,13 @@ namespace Connection
             matchmakingPanel.SetActive(true);
             statusText.text = "Recherche d'un adversaire...";
 
-            MultiplayerManager.instance.StartMatchmaking();
+            string selectedMode = "SurvivalRace"; // Fallback par defaut
+            if (GameModeSelectorUI.instance != null)
+            {
+                selectedMode = GameModeSelectorUI.instance.SelectedMode;
+            }
+
+            MultiplayerManager.instance.StartMatchmaking(selectedMode);
         }
 
         public void UpdateStatus(string status)
