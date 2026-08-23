@@ -33,6 +33,26 @@ namespace Connection
         public async void StartMatchmaking(string gameMode)
         {
             if (isMatchmaking) return;
+
+            // S'assure que Unity Services et l'authentification sont bien initialisés
+            // (Utile si on lance directement cette scène pour tester sans passer par le menu principal)
+            try
+            {
+                if (UnityServices.State == ServicesInitializationState.Uninitialized)
+                {
+                    await UnityServices.InitializeAsync();
+                }
+                if (!AuthenticationService.Instance.IsSignedIn)
+                {
+                    await AuthenticationService.Instance.SignInAnonymouslyAsync();
+                }
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError("Erreur d'initialisation UGS dans MultiplayerManager : " + e.Message);
+                return;
+            }
+
             isMatchmaking = true;
             currentGameMode = gameMode;
             Debug.Log($"Démarrage du matchmaking pour le mode : {gameMode}...");
